@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Solutions for SMBs | YourCompany</title>
+<title>AI Solutions for SMBs | The Agent Company</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -214,12 +214,66 @@ img{max-width:100%;display:block}
   .footer-grid{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;text-align:center}
 }
+
+/* FOOTER */
+.site-footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:80px 0 0;background:rgba(0,0,0,.6)}
+.footer-top{display:grid;grid-template-columns:1.2fr 2fr;gap:60px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-brand{display:flex;flex-direction:column;gap:16px}
+.footer-logo{font-size:18px;margin-bottom:4px}
+.footer-logo::before{content:'';width:10px;height:10px;background:var(--red);display:inline-block;box-shadow:0 0 12px var(--red);transform:rotate(45deg);margin-right:10px}
+.footer-desc{font-size:14px;color:var(--text-secondary);line-height:1.7;max-width:320px}
+.footer-social{display:flex;gap:12px;margin-top:8px}
+.social-link{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);transition:all .25s ease}
+.social-link:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);box-shadow:0 0 16px rgba(230,57,70,.3)}
+.footer-links-group{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.footer-col-title{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-primary);margin-bottom:18px;position:relative;padding-bottom:12px}
+.footer-col-title::after{content:'';position:absolute;bottom:0;left:0;width:24px;height:1px;background:var(--red)}
+.footer-col-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col-list a{font-family:var(--mono);font-size:12px;color:var(--text-secondary);letter-spacing:.5px;transition:color .2s;display:inline-block}
+.footer-col-list a:hover{color:var(--red)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:24px 0;font-family:var(--mono);font-size:11px;color:var(--text-muted);letter-spacing:1px}
+.footer-bottom-right{color:var(--text-muted)}
+
+@media(max-width:900px){
+  .footer-top{grid-template-columns:1fr;gap:48px}
+  .footer-links-group{grid-template-columns:repeat(2,1fr);gap:32px}
+}
+@media(max-width:600px){
+  .footer-links-group{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+
+
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  .hero .container{grid-template-columns:1fr;gap:40px}
+  .hero-visual{height:400px}
+  .hero{padding:140px 0 80px}
+  .nav-links{display:none}
+  .nav-links.active{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.96);justify-content:center;align-items:center;gap:28px;z-index:200}
+  .nav-links.active a{font-size:16px}
+  .menu-btn{display:flex;align-items:center;justify-content:center;z-index:300}
+  .hud-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column}
+  .stat{border-right:none!important;border-bottom:1px solid var(--border);padding:16px 0}
+  .stat:last-child{border-bottom:none}
+}
+@media(max-width:600px){
+  .section{padding:60px 0}
+  .hero{padding:120px 0 60px}
+  .hero h1{font-size:32px}
+  .hero-visual{height:300px}
+  .section-title{font-size:28px}
+  .container{padding:0 16px}
+  .footer-top{gap:32px}
+}
+
 </style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
   <div class="container">
-    <a href="#" class="logo">YOURCOMPANY<span class="dot">/</span>AI</a>
+    <a href="#" class="logo">THE AGENT COMPANY<span class="dot">/</span>AI</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#solutions">Solutions</a></li>
       <li><a href="#pain">Challenges</a></li>
@@ -374,18 +428,63 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<footer class="footer">
+<!-- FOOTER -->
+<footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <!-- Footer Top -->
+    <div class="footer-top">
       <div class="footer-brand">
-        <span class="logo">YOURCOMPANY<span class="dot">/</span>AI</span>
-        <p>Enterprise-grade AI solutions built for small and medium businesses. We help you automate, optimize, and grow — without the enterprise price tag.</p>
+        <div class="logo footer-logo">
+          <span class="dot"></span>The Agent Company
+        </div>
+        <p class="footer-desc">Empowering SMBs with intelligent AI solutions that transform operations, enhance customer experiences, and drive measurable growth.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" aria-label="X / Twitter" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-col"><h5>Solutions</h5><a href="#">Workflow Automation</a><a href="#">Data Analytics</a><a href="#">AI Customer Service</a><a href="#">Custom AI Solutions</a></div>
-      <div class="footer-col"><h5>Industries</h5><a href="#">Retail and E-commerce</a><a href="#">Manufacturing</a><a href="#">Professional Services</a><a href="#">Construction</a></div>
-      <div class="footer-col"><h5>Company</h5><a href="#">About Us</a><a href="#">Case Studies</a><a href="#">Blog</a><a href="#">Contact</a></div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4 class="footer-col-title">// SOLUTIONS</h4>
+          <ul class="footer-col-list">
+            <li><a href="#solutions">Customer Service AI</a></li>
+            <li><a href="#solutions">Data Analytics AI</a></li>
+            <li><a href="#solutions">Process Automation</a></li>
+            <li><a href="#solutions">Sales AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">// INDUSTRIES</h4>
+          <ul class="footer-col-list">
+            <li><a href="#industries">Retail & E-commerce</a></li>
+            <li><a href="#industries">Healthcare</a></li>
+            <li><a href="#industries">Manufacturing</a></li>
+            <li><a href="#industries">Professional Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">// COMPANY</h4>
+          <ul class="footer-col-list">
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 YourCompany // All Rights Reserved</span><span><a href="#" style="margin-right:16px">Privacy Policy</a><a href="#">Terms of Service</a></span></div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Agent Company // All Rights Reserved</span>
+      <span class="footer-bottom-right">Built with precision.</span>
+    </div>
   </div>
 </footer>
 
@@ -397,6 +496,24 @@ img{max-width:100%;display:block}
 
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+</script>
+
+<script>
+// Mobile menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+if(menuBtn && navLinks){
+  menuBtn.addEventListener('click', function(){
+    navLinks.classList.toggle('active');
+    this.textContent = navLinks.classList.contains('active') ? 'X' : '//';
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navLinks.classList.remove('active');
+      menuBtn.textContent = '//';
+    });
+  });
+}
 </script>
 </body>
 </html>
