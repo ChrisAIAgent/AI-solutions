@@ -442,6 +442,19 @@ ul, ol {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .hero-subtitle.typewriter-subtitle::after {
+    content: '-';
+    display: inline-block;
+    margin-left: 0.1em;
+    color: var(--text-primary);
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
 }
 
 /* ── Hero Stats Row ── */

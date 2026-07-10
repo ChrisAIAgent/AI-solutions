@@ -59,13 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // Typewriter slogans — cycle through these
-  const typewriterSlogans = [
-    { en: 'Marketing Library Portal', cn: '营销素材门户' },
-    { en: 'Ship the Next Big Thing',   cn: '交付下一个重磅产品' },
-    { en: 'One Library, All Your Assets', cn: '一个库，所有素材' }
-  ];
-
   // ============================================
   // 0.5. NAVBAR SCROLL STATE DETECTION
   // ============================================
@@ -142,44 +135,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 2. TYPEWRITER ANIMATION
+  // 2. HERO SUBTITLE TYPEWRITER
   // ============================================
-  const typewriterTarget = document.getElementById('typewriterTarget');
+  const heroSubtitle = document.getElementById('heroSubtitle');
 
-  function typeWriter(texts, el, speed = 50, eraseSpeed = 30, pause = 2000) {
-    if (!el) return;
-    let textIdx = 0;
-    let charIdx = 0;
-    let isDeleting = false;
-
-    function tick() {
-      const currentText = texts[textIdx][currentLang] || texts[textIdx]['en'];
-      const displayText = currentText.substring(0, charIdx);
-      el.textContent = displayText;
-
-      if (!isDeleting && charIdx < currentText.length) {
-        charIdx++;
-        setTimeout(tick, speed);
-      } else if (!isDeleting && charIdx === currentText.length) {
-        isDeleting = true;
-        setTimeout(tick, pause);
-      } else if (isDeleting && charIdx > 0) {
-        charIdx--;
-        setTimeout(tick, eraseSpeed);
-      } else {
-        isDeleting = false;
-        textIdx = (textIdx + 1) % texts.length;
-        charIdx = 0;
-        setTimeout(tick, 400); // brief pause before next word
+  function typewriterSubtitle(speed = 60) {
+    if (!heroSubtitle) return;
+    const text = heroSubtitle.getAttribute(`data-${currentLang}`)
+                 || heroSubtitle.getAttribute('data-en')
+                 || '';
+    heroSubtitle.textContent = '';
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        heroSubtitle.textContent += text[i];
+        i++;
+        setTimeout(type, speed);
       }
     }
-    tick();
+    type();
   }
-
-  // Typewriter effect is disabled to keep the hero title static like the reference design
-  // if (typewriterTarget) {
-  //   typeWriter(typewriterSlogans, typewriterTarget);
-  // }
 
   // ============================================
   // 3. LANGUAGE SWITCH (EN / CN)
@@ -191,6 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update all [data-en] elements
     document.querySelectorAll('[data-en]').forEach(el => {
+      // Skip the subtitle; typewriterSubtitle will handle it below
+      if (el.id === 'heroSubtitle') return;
       const text = el.getAttribute(`data-${lang}`);
       if (text !== null) el.textContent = text;
     });
@@ -204,6 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langToggle) {
       langToggle.innerHTML = `<span style="font-size:12px;font-weight:600;">${lang.toUpperCase()}</span>`;
     }
+
+    // Re-type the subtitle in the new language
+    typewriterSubtitle();
   }
 
   if (langToggle) {
