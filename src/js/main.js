@@ -1,17 +1,20 @@
-/**
- * Marketing Library Portal — Main JavaScript
+﻿/**
+ * Marketing Library Portal 鈥?Main JavaScript
  * All client-side logic in one DOMContentLoaded handler.
  */
 
-// Import styles — Vite will bundle them automatically
+// Import styles 鈥?Vite will bundle them automatically
 import '../scss/main.scss';
+
+// v3: 3D hero scene (Three.js node network)
+import { initHeroScene } from './hero-scene.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================
-  // 0. SAFETY NET — never let a JS error white-screen the page
+  // 0. SAFETY NET 鈥?never let a JS error white-screen the page
   // If anything throws before fade-up reveal, force-show all content.
   // ============================================
   function revealAllFadeUp() {
@@ -20,13 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('error', revealAllFadeUp);
 
   // ============================================
+  // 0.6 HERO 3D SCENE (v3) - sparse node network, mobile + reduced-motion safe
+  // ============================================
+  const heroCanvas = document.getElementById('heroCanvas');
+  const heroScene = initHeroScene(heroCanvas);
+
+  // ============================================
   // STATE
   // ============================================
   let currentLang = 'en';
   let currentVideoIndex = 0;
   let openPanelId = null;
 
-  // Video sources — only local MP4 carousel, no external links
+  // Video sources 鈥?only local MP4 carousel, no external links
   // The first entry auto-plays when the page opens.
   const videoSources = [
     {
@@ -351,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!panel) return;
 
-      // If this panel is already open → close it
+      // If this panel is already open 鈫?close it
       if (openPanelId === panelId) {
         panel.classList.remove('open');
         card.classList.remove('expanded');
@@ -405,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeroStats();
 
   // ============================================
-  // 8. [REMOVED] TOC SIDEBAR SYNC — feature not needed
+  // 8. [REMOVED] TOC SIDEBAR SYNC 鈥?feature not needed
   // ============================================
   // ============================================
   // 9. VIDEO CAROUSEL
@@ -431,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentVideoIndex = index;
     resetVideoVisibility();
 
-    // Only local MP4s are supported now — keep iframe hidden
+    // Only local MP4s are supported now 鈥?keep iframe hidden
     if (showcaseIframe) {
       showcaseIframe.style.display = 'none';
       showcaseIframe.removeAttribute('src');
@@ -579,6 +588,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-});
+
+
+  // ============================================
+  // 12. HMR CLEANUP (v3) - dispose Three.js scene on hot reload
+  // ============================================
+  if (import.meta.hot) {
+    import.meta.hot.dispose(() => heroScene?.destroy());
+  }});
 
 
