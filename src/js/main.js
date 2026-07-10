@@ -422,29 +422,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // 7. HERO STATS DYNAMIC COUNTING
+  // 7. HERO STATS
   // ============================================
   function updateHeroStats() {
-    const totalCards = document.querySelectorAll('.category-card').length;
-    const statCategories = document.getElementById('statCategories');
-    if (statCategories) statCategories.previousElementSibling.style.display = 'none'; // hide + sign for categories count
-    if (statCategories) statCategories.textContent = totalCards;
-
-    // Count total assets (sum of meta-count numbers)
-    let totalAssets = 0;
-    document.querySelectorAll('.meta-count').forEach(el => {
-      const num = parseInt((el.textContent || '').match(/\d+/)?.[0]) || 0;
-      totalAssets += num;
-    });
-
-    // Set static values matching PRD examples
     const statCases = document.getElementById('statCases');
     const statVideos = document.getElementById('statVideos');
+    const statCategories = document.getElementById('statCategories');
     const statCollections = document.getElementById('statCollections');
 
-    if (statCases) statCases.innerHTML = '47<span>+</span>';
-    if (statVideos) statVideos.innerHTML = '270<span>+</span>';
-    if (statCollections) statCollections.innerHTML = '58<span>+</span>';
+    if (statCases) statCases.innerHTML = '50<span>+</span>';
+    if (statVideos) statVideos.innerHTML = '30<span>+</span>';
+    if (statCategories) statCategories.innerHTML = '100<span>+</span>';
+    if (statCollections) statCollections.innerHTML = '10<span>+</span>';
   }
 
   updateHeroStats();
