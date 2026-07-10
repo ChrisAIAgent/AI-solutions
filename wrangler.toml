@@ -4,4 +4,5 @@ compatibility_date = "2025-04-01"
 # Cloudflare Workers Static Assets:
 # serve the Vite build output (dist/) as a static site.
 # `npx wrangler deploy` reads this file and uploads ./dist.
-assets = { directory = "dist", binding = "ASSETS" }
+# NOTE: no `binding` allowed in an assets-only Worker (no `main` script).
+assets = { directory = "dist" }
