@@ -1,0 +1,55 @@
+/* ========== Marketing Library Design System Variables ========== */
+
+/* Brand Colors */
+$brand-purple: #7B2FFF;
+$brand-purple-mid: #9B59FF;
+$brand-purple-light: #C850C0;
+$brand-blue: #4158D0;
+$brand-cyan: #00B4D8;
+$brand-gradient: linear-gradient(135deg, #4158D0, #7B2FFF, #C850C0);
+$brand-gradient-hover: linear-gradient(135deg, #3247b8, #6a2ae0, #ba3fa9);
+
+/* Surfaces (Light) */
+$bg-page: #FFFFFF;
+$bg-surface: #F7F7F9;
+$bg-card: #FFFFFF;
+$bg-hover: #F0F0F2;
+$border-color: #E8E8E8;
+
+/* Text */
+$text-primary: rgba(0, 0, 0, 0.88);
+$text-secondary: rgba(0, 0, 0, 0.65);
+$text-tertiary: rgba(0, 0, 0, 0.45);
+
+/* Radius */
+$radius: 10px;
+$radius-sm: 6px;
+
+/* Typography */
+$font-body: 'Inter', 'PingFang SC', 'Noto Sans SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+$font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+$fs-xs: 0.75rem;
+$fs-sm: 0.875rem;
+$fs-base: 1rem;
+$fs-md: 1.125rem;
+$fs-lg: 1.25rem;
+$fs-xl: 1.5rem;
+$fs-2xl: 2rem;
+$fs-3xl: 2.5rem;
+$fs-4xl: 3.25rem;
+
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+
+$lh-tight: 1.2;
+$lh-normal: 1.6;
+$lh-relaxed: 1.7;
+
+$ls-tight: -0.02em;
+$ls-normal: 0em;
+$ls-wide: 0.03em;
+$ls-wider: 0.08em;

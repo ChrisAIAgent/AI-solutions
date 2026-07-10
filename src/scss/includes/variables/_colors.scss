@@ -1,0 +1,95 @@
+/* ========== Brand Colors (Light Theme) ========== */
+:root {
+  /* ── Core Brand Palette (immutable hue family) ── */
+  --brand-purple: #7B2FFF;
+  --brand-purple-mid: #9B59FF;
+  --brand-purple-light: #C850C0;
+  --brand-blue: #4158D0;
+  --brand-cyan: #00B4D8;
+  --brand-cyan-bright: #2EA7FF;
+  --brand-teal: #13DDC4;
+
+  /* ── Gradients ── */
+  --brand-gradient: linear-gradient(135deg, #4158D0, #7B2FFF, #C850C0);
+  --brand-gradient-hover: linear-gradient(135deg, #3247b8, #6a2ae0, #ba3fa9);
+  --aurora-gradient: linear-gradient(135deg, #2EA7FF 0%, #7B2FFF 52%, #C850C0 100%);
+  --aurora-gradient-subtle: linear-gradient(135deg, rgba(46,167,255,0.12) 0%, rgba(123,47,255,0.10) 52%, rgba(200,80,192,0.08) 100%);
+
+  /* ── Surfaces (Light) ── */
+  --bg-page: #FFFFFF;
+  --bg-surface: #F7F7F9;
+  --bg-card: #FFFFFF;
+  --bg-hover: #F0F0F2;
+  --border-color: #E8E8E8;
+  --border-color-subtle: #EEECEF;
+
+  /* ── Glassmorphism (Light) ── */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(123, 47, 255, 0.06);
+  --glass-blur: blur(20px);
+
+  /* ── Glow Effects (Light) ── */
+  --glow-purple: rgba(123, 47, 255, 0.20);
+  --glow-purple-strong: rgba(123, 47, 255, 0.35);
+  --glow-aurora: rgba(46, 167, 255, 0.15);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 12px 40px rgba(123, 47, 255, 0.12);
+  --shadow-elevated: 0 18px 56px rgba(0, 0, 0, 0.10);
+
+  /* ── Text ── */
+  --text-primary: rgba(0, 0, 0, 0.88);
+  --text-secondary: rgba(0, 0, 0, 0.65);
+  --text-tertiary: rgba(0, 0, 0, 0.45);
+
+  /* ── Radius ── */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+
+  /* ── Motion / Easing ── */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-micro: 120ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* ── Noise Texture (SVG data URI for subtle grain) ── */
+  --noise-opacity: 0.018;
+}
+
+/* ============================================
+   Dark Mode Override — Premium Deep Surfaces
+   ============================================ */
+[data-theme="dark"] {
+  /* ── Surfaces (Dark) ── */
+  --bg-page: #0B0B12;
+  --bg-surface: #12121A;
+  --bg-card: #181824;
+  --bg-hover: #222230;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-color-subtle: rgba(255, 255, 255, 0.04);
+
+  /* ── Glassmorphism (Dark) ── */
+  --glass-bg: rgba(18, 18, 26, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --glass-blur: blur(24px);
+
+  /* ── Glow Effects (Dark) — enhanced for depth ── */
+  --glow-purple: rgba(123, 47, 255, 0.25);
+  --glow-purple-strong: rgba(123, 47, 255, 0.45);
+  --glow-aurora: rgba(46, 167, 255, 0.18);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.20);
+  --shadow-card-hover: 0 12px 40px rgba(123, 47, 255, 0.15), 0 0 60px rgba(123, 47, 255, 0.05);
+  --shadow-elevated: 0 18px 56px rgba(0, 0, 0, 0.40);
+
+  /* ── Text (Dark) ── */
+  --text-primary: rgba(255, 255, 255, 0.94);
+  --text-secondary: rgba(255, 255, 255, 0.66);
+  --text-tertiary: rgba(255, 255, 255, 0.40);
+
+  /* ── Noise slightly more visible on dark ── */
+  --noise-opacity: 0.03;
+}

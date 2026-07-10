@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+*.log
+dev.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+
+# Local tooling / workspace data
+.codebuddy/
+.workbuddy/
+
+# Env
+.env
+.env.local
+.env.*.local

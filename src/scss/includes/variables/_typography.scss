@@ -1,0 +1,39 @@
+/* ========== Typography Tokens ========== */
+:root {
+  /* ── Font Families ──
+     EN body first, CN fallback after — browser auto-picks per glyph so
+     Latin uses Inter and CJK falls through to PingFang / Noto Sans SC
+  ── */
+  --font-body: 'Inter', 'PingFang SC', 'Noto Sans SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  --font-heading: 'Sora', 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Font sizes — clamped for fluidity on large screens */
+  --fs-xs: clamp(0.7rem, 0.68rem + 0.15vw, 0.75rem);       /* ~11-12px */
+  --fs-sm: clamp(0.82rem, 0.8rem + 0.2vw, 0.875rem);        /* ~13-14px */
+  --fs-base: clamp(0.95rem, 0.92rem + 0.25vw, 1rem);         /* ~15-16px */
+  --fs-md: clamp(1.05rem, 1rem + 0.35vw, 1.125rem);          /* ~17-18px */
+  --fs-lg: clamp(1.18rem, 1.1rem + 0.45vw, 1.25rem);         /* ~19-20px */
+  --fs-xl: clamp(1.4rem, 1.28rem + 0.65vw, 1.5rem);          /* ~22-24px */
+  --fs-2xl: clamp(1.85rem, 1.65rem + 1vw, 2rem);             /* ~29-32px */
+  --fs-3xl: clamp(2.3rem, 2rem + 1.5vw, 2.5rem);             /* ~37-40px */
+  --fs-4xl: clamp(2.9rem, 2.5rem + 2.2vw, 3.25rem);          /* ~46-52px */
+
+  /* Font weights */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Line heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.7;
+
+  /* Letter spacing */
+  --ls-tight: -0.02em;
+  --ls-normal: 0em;
+  --ls-wide: 0.03em;
+  --ls-wider: 0.08em;
+}
