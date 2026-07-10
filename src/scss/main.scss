@@ -762,12 +762,12 @@ ul, ol {
     /* Always dark cinematic base */
     background: linear-gradient(145deg, #111118, #0A0A10);
     border-radius: var(--radius);
-    padding: 48px 52px;
+    padding: 52px 36px 52px 40px;
     overflow: hidden;
-    min-height: 340px;
+    min-height: 420px;
     display: flex;
     align-items: center;
-    gap: 52px;
+    gap: 36px;
     box-shadow:
       0 24px 80px rgba(0, 0, 0, 0.35),
       0 0 1px rgba(255, 255, 255, 0.06) inset;
@@ -848,8 +848,9 @@ ul, ol {
   .showcase-content {
     position: relative;
     z-index: 1;
-    flex: 1;
-    max-width: 400px;
+    flex: 0 0 260px;
+    max-width: 260px;
+    padding-right: 0;
 
     .showcase-title {
       font-family: var(--font-heading);
@@ -872,8 +873,10 @@ ul, ol {
   .showcase-video-wrapper {
     position: relative;
     z-index: 1;
-    width: 440px;
-    max-width: 100%;
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none;
+    min-width: 0;
     aspect-ratio: 16 / 9;
     border-radius: var(--radius);
     overflow: hidden;
@@ -1641,11 +1644,13 @@ html.anim-ready .fade-up-element.visible {
   }
 
   .showcase-section .showcase-content {
+    flex: 1 1 auto;
     max-width: 100%;
     text-align: center;
   }
 
   .showcase-section .showcase-video-wrapper {
+    flex: 1 1 auto;
     width: 100%;
     max-width: 520px;
     margin: 0 auto;

@@ -26,36 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentVideoIndex = 0;
   let openPanelId = null;
 
-  // Video sources array — supports direct MP4 files or external links
+  // Video sources — only local MP4 carousel, no external links
   // The first entry auto-plays when the page opens.
   const videoSources = [
     {
-      type: 'youtube',
-      title: 'The Agent Company — Brand Film',
-      src: 'https://www.youtube.com/watch?v=_Sl8diqCAFw',
-      poster: 'https://img.youtube.com/vi/_Sl8diqCAFw/maxresdefault.jpg',
-      link: 'https://www.youtube.com/watch?v=_Sl8diqCAFw'
+      type: 'video',
+      title: 'Hi-Tech Intro',
+      src: '/videos/hi-tech-intro.mp4',
+      poster: '',
+      link: ''
     },
     {
       type: 'video',
-      title: 'The Agent Company Launch',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-      poster: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80',
-      link: '#'
-    },
-    {
-      type: 'video',
-      title: 'Agentic Era Product Demo',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-      poster: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
-      link: '#'
-    },
-    {
-      type: 'video',
-      title: 'Customer Success Story',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-      poster: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
-      link: '#'
+      title: 'Planet Earth Spin',
+      src: '/videos/planet-earth.mp4',
+      poster: '',
+      link: ''
     }
   ];
 
@@ -439,76 +425,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function youtubeId(url) {
-    if (!url) return null;
-    const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
-    return m ? m[1] : null;
-  }
-
   function loadVideo(index) {
     if (!showcaseVideo || !videoSources[index]) return;
     const source = videoSources[index];
     currentVideoIndex = index;
     resetVideoVisibility();
 
-    // Detect YouTube embed (either explicit type or a YouTube URL in external mode)
-    const ytId = (source.type === 'youtube' || source.type === 'external')
-      ? youtubeId(source.src || source.link)
-      : null;
-
-    if (ytId && showcaseIframe) {
-      // ── YouTube inline embed ──
-      showcaseVideo.style.display = 'none';
-      showcaseIframe.style.display = 'block';
-      showcaseIframe.src =
-        `https://www.youtube.com/embed/${ytId}` +
-        `?autoplay=1&mute=1&loop=1&playlist=${ytId}` +
-        `&rel=0&modestbranding=1&playsinline=1`;
-    } else {
-      // ── Direct MP4 / link-only path ──
-      if (showcaseIframe) {
-        showcaseIframe.style.display = 'none';
-        showcaseIframe.removeAttribute('src');
-      }
-      showcaseVideo.style.display = '';
-
-      while (showcaseVideo.firstChild) {
-        showcaseVideo.removeChild(showcaseVideo.firstChild);
-      }
-
-      if (source.type === 'external') {
-        showcaseVideo.removeAttribute('src');
-      } else {
-        const newSource = document.createElement('source');
-        newSource.src = source.src;
-        newSource.type = 'video/mp4';
-        showcaseVideo.appendChild(newSource);
-        showcaseVideo.load();
-        // Auto play muted
-        showcaseVideo.play().catch(() => {}); // Ignore autoplay policy errors
-      }
+    // Only local MP4s are supported now — keep iframe hidden
+    if (showcaseIframe) {
+      showcaseIframe.style.display = 'none';
+      showcaseIframe.removeAttribute('src');
     }
+    showcaseVideo.style.display = '';
 
-    // Update poster image
+    // Swap MP4 source
+    while (showcaseVideo.firstChild) {
+      showcaseVideo.removeChild(showcaseVideo.firstChild);
+    }
+    const newSource = document.createElement('source');
+    newSource.src = source.src;
+    newSource.type = 'video/mp4';
+    showcaseVideo.appendChild(newSource);
+    showcaseVideo.load();
+    showcaseVideo.play().catch(() => {}); // Ignore autoplay policy errors
+
+    // Toggle poster visibility
+    const hasPoster = !!(source.poster);
     if (videoPoster) {
       videoPoster.src = source.poster || '';
-      videoPoster.style.opacity = source.poster ? '1' : '0';
+      videoPoster.style.opacity = hasPoster ? '1' : '0';
+      videoPoster.style.pointerEvents = hasPoster ? '' : 'none';
     }
     showcaseVideo.poster = source.poster || '';
 
-    // Update watch link + overlay
-    const watchUrl = source.link || '#';
+    // Toggle watch link / overlay visibility (no external links = hide them)
+    const hasLink = !!(source.link);
     if (videoLinkBtn) {
-      videoLinkBtn.href = watchUrl;
-      videoLinkBtn.title = source.title || 'Watch video';
+      videoLinkBtn.style.display = hasLink ? '' : 'none';
+      if (hasLink) {
+        videoLinkBtn.href = source.link;
+        videoLinkBtn.title = source.title || 'Watch video';
+      }
     }
     if (videoOverlay) {
-      if (ytId) {
-        // Keep the embedded player interactive — hide the big play overlay
-        videoOverlay.style.display = 'none';
-      } else {
-        videoOverlay.style.display = '';
-        videoOverlay.href = watchUrl;
+      videoOverlay.style.display = hasLink ? '' : 'none';
+      if (hasLink) {
+        videoOverlay.href = source.link;
         videoOverlay.title = source.title || 'Watch video';
       }
     }
