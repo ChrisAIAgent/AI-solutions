@@ -1,6 +1,6 @@
-/* ============================================
-   Marketing Library Portal — Visual Upgrade v2
-   Premium Glassmorphism · Aurora Gradients · Micro-interactions
+﻿/* ============================================
+   Marketing Library Portal 鈥?Visual Upgrade v2
+   Premium Glassmorphism 路 Aurora Gradients 路 Micro-interactions
    Tech: Vite 5 + Bootstrap 5.3 + SCSS + FA6
    ============================================ */
 
@@ -96,7 +96,7 @@ ul, ol {
 
 
 /* ============================================
-   2. STICKY NAVBAR — Premium Glass
+   2. STICKY NAVBAR 鈥?Premium Glass
    ============================================ */
 .navbar-main {
   position: sticky;
@@ -112,7 +112,7 @@ ul, ol {
     box-shadow var(--duration-normal) var(--ease-out-quint);
   padding: 0;
 
-  /* Scroll state — deeper glass + subtle shadow */
+  /* Scroll state 鈥?deeper glass + subtle shadow */
   &.scrolled {
     background: var(--glass-bg);
     border-bottom-color: var(--border-color);
@@ -194,15 +194,49 @@ ul, ol {
   }
 
   .brand-logo {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 6px rgba(123, 47, 255, 0.20));
-    transition: filter var(--duration-fast) var(--ease-out-quint);
+    width: 38px;
+    height: 28px;
+    display: block;
+    filter: drop-shadow(0 2px 6px rgba(123, 47, 255, 0.22));
+    transition: filter var(--duration-fast) var(--ease-out-quint), transform var(--duration-fast) var(--ease-out-quint);
 
     [data-theme="dark"] & {
-      filter: drop-shadow(0 2px 8px rgba(123, 47, 255, 0.30));
+      filter: drop-shadow(0 2px 10px rgba(123, 47, 255, 0.35));
     }
+
+    /* Hover micro-rotation on the monogram itself */
+    .navbar-brand-area:hover & {
+      transform: scale(1.04);
+    }
+  }
+
+  /* Navbar wordmark + tagline (v3) */
+  .brand-wordmark {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 4px;
+    user-select: none;
+  }
+
+  .brand-name {
+    font-family: var(--font-heading);
+    font-weight: var(--fw-extrabold);
+    font-size: 15px;
+    letter-spacing: var(--ls-tight);
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .brand-tagline {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
   }
 
   /* Hover micro-interaction on the whole brand area */
@@ -221,7 +255,7 @@ ul, ol {
   50% { opacity: 0; }
 }
 
-/* ── Navbar Controls ── */
+/* 鈹€鈹€ Navbar Controls 鈹€鈹€ */
 .navbar-controls {
   display: flex;
   align-items: center;
@@ -314,7 +348,7 @@ ul, ol {
 
 
 /* ============================================
-   3. HERO SECTION — Aurora Impact
+   3. HERO SECTION 鈥?Aurora Impact
    ============================================ */
 .hero-section {
   position: relative;
@@ -322,7 +356,7 @@ ul, ol {
   text-align: center;
   overflow: hidden;
 
-  /* Layered gradient background — aurora + grid pattern */
+  /* Layered gradient background 鈥?aurora + grid pattern */
   background:
     /* Subtle radial glow from top-center */
     radial-gradient(ellipse 90% 60% at 50% -5%, rgba(123, 47, 255, 0.10) 0%, transparent 70%),
@@ -342,53 +376,57 @@ ul, ol {
   }
 
   /* Floating aurora orbs in hero background */
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  &::before {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, var(--brand-cyan-bright) 0%, transparent 70%);
-    top: -180px;
-    right: -120px;
-    animation: auroraFloat1 25s ease-in-out infinite;
-  }
-
-  &::after {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, var(--brand-purple-light) 0%, transparent 70%);
-    bottom: -80px;
-    left: -80px;
-    animation: auroraFloat2 30s ease-in-out infinite reverse;
-  }
-
-  @keyframes auroraFloat1 {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.35; }
-    33%      { transform: translate(40px, -25px) scale(1.08); opacity: 0.45; }
-    66%      { transform: translate(-20px, 20px) scale(0.95); opacity: 0.3; }
-  }
-
-  @keyframes auroraFloat2 {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-    33%      { transform: translate(-30px, 20px) scale(1.06); opacity: 0.4; }
-    66%      { transform: translate(25px, -15px) scale(0.94); opacity: 0.25; }
-  }
+  /* Static aurora orbs removed in v3 閳?replaced by Three.js node network in <canvas#heroCanvas>. */
 
   > * {
     position: relative;
     z-index: 1;
   }
 
-  /* ── Hero Badge ── */
+  /* 鈹€鈹€ Hero 3D Canvas (Three.js node network, v3) 鈹€鈹€ */
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: auto; /* keep mouse-tracking working */
+    opacity: 0.85;
+    /* Fade the canvas toward the edges so the hero text stays readable. */
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 35%, rgba(0,0,0,0.4) 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 35%, rgba(0,0,0,0.4) 70%, transparent 100%);
+
+    [data-theme="dark"] & {
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      display: none; /* scene is skipped on mobile (no canvas mounted) */
+    }
+  }
+
+  /* 鈹€鈹€ Hero Monogram Watermark (v3) 鈹€鈹€ */
+  .hero-mark {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateY(-8px);
+    animation: heroMarkIn 700ms var(--ease-out-quint) 100ms forwards;
+  }
+
+  .hero-mark-svg {
+    width: 84px;
+    height: 84px;
+    filter: drop-shadow(0 6px 24px rgba(123, 47, 255, 0.25))
+            drop-shadow(0 0 36px rgba(46, 167, 255, 0.10));
+  }
+
+  @keyframes heroMarkIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 鈹€鈹€ Hero Badge 鈹€鈹€ */
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -418,7 +456,7 @@ ul, ol {
     50%       { box-shadow: 0 4px 28px rgba(123, 47, 255, 0.40), 0 0 56px rgba(123, 47, 255, 0.12); }
   }
 
-  /* ── Hero Title ── */
+  /* 鈹€鈹€ Hero Title 鈹€鈹€ */
   .hero-title {
     font-family: var(--font-heading);
     font-size: var(--fs-4xl);
@@ -432,7 +470,7 @@ ul, ol {
     margin-right: auto;
   }
 
-  /* ── Hero Subtitle ── */
+  /* 鈹€鈹€ Hero Subtitle 鈹€鈹€ */
   .hero-subtitle {
     font-size: var(--fs-base);
     color: var(--text-secondary);
@@ -457,7 +495,7 @@ ul, ol {
   }
 }
 
-/* ── Hero Stats Row ── */
+/* 鈹€鈹€ Hero Stats Row 鈹€鈹€ */
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -512,7 +550,7 @@ ul, ol {
   }
 }
 
-/* ── Search Bar ── */
+/* 鈹€鈹€ Search Bar 鈹€鈹€ */
 .search-container {
   max-width: 620px;
   margin: 0 auto 24px;
@@ -604,7 +642,7 @@ ul, ol {
   }
 }
 
-/* ── Search Dropdown ── */
+/* 鈹€鈹€ Search Dropdown 鈹€鈹€ */
 .search-dropdown {
   position: absolute;
   top: calc(100% + 10px);
@@ -696,7 +734,7 @@ ul, ol {
   }
 }
 
-/* ── Quick Filter Tags ── */
+/* 鈹€鈹€ Quick Filter Tags 鈹€鈹€ */
 .filter-tags {
   display: flex;
   justify-content: center;
@@ -750,7 +788,7 @@ ul, ol {
 
 
 /* ============================================
-   4. SHOWCASE SECTION — Cinematic Dark Card
+   4. SHOWCASE SECTION 鈥?Cinematic Dark Card
    ============================================ */
 .showcase-section {
   position: relative;
@@ -788,7 +826,7 @@ ul, ol {
     }
   }
 
-  /* ── Animated Gradient Blobs ── */
+  /* 鈹€鈹€ Animated Gradient Blobs 鈹€鈹€ */
   .showcase-blob-1,
   .showcase-blob-2,
   .showcase-blob-3 {
@@ -844,7 +882,7 @@ ul, ol {
     66%      { transform: translate(20px, 24px) scale(0.98); }
   }
 
-  /* ── Showcase Content (left) ── */
+  /* 鈹€鈹€ Showcase Content (left) 鈹€鈹€ */
   .showcase-content {
     position: relative;
     z-index: 1;
@@ -869,7 +907,7 @@ ul, ol {
     }
   }
 
-  /* ── Showcase Video (right) ── */
+  /* 鈹€鈹€ Showcase Video (right) 鈹€鈹€ */
   .showcase-video-wrapper {
     position: relative;
     z-index: 1;
@@ -912,7 +950,7 @@ ul, ol {
       }
     }
 
-    /* YouTube / external iframe embed — sits above the poster, below controls */
+    /* YouTube / external iframe embed 鈥?sits above the poster, below controls */
     .showcase-iframe {
       position: absolute;
       inset: 0;
@@ -1095,7 +1133,7 @@ ul, ol {
 
 
 /* ============================================
-   5. CATEGORIES GRID — Glass Cards + Glow
+   5. CATEGORIES GRID 鈥?Glass Cards + Glow
    ============================================ */
 .main-content {
   padding: 56px 0 80px;
@@ -1143,7 +1181,7 @@ ul, ol {
   z-index: 1;
 }
 
-/* ── Category Card — Premium Glass ── */
+/* 鈹€鈹€ Category Card 鈥?Premium Glass 鈹€鈹€ */
 .category-card {
   position: relative;
   background: var(--glass-bg);
@@ -1159,7 +1197,7 @@ ul, ol {
     box-shadow var(--duration-normal) var(--ease-out-quint),
     border-color var(--duration-normal) var(--ease-out-quint);
 
-  /* Gradient border glow on hover — pseudo-element technique */
+  /* Gradient border glow on hover 鈥?pseudo-element technique */
   &::before {
     content: '';
     position: absolute;
@@ -1287,7 +1325,7 @@ ul, ol {
 
 
 /* ============================================
-   6. SUB-PANELS — Elastic Expand Animation
+   6. SUB-PANELS 鈥?Elastic Expand Animation
    ============================================ */
 .sub-panel {
   display: none;
@@ -1362,7 +1400,7 @@ ul, ol {
   }
 }
 
-/* ── Sub-Item Cards ── */
+/* 鈹€鈹€ Sub-Item Cards 鈹€鈹€ */
 .sub-item {
   display: flex;
   align-items: center;
@@ -1454,7 +1492,7 @@ ul, ol {
 
 
 /* ============================================
-   8. FOOTER — Premium Branding
+   8. FOOTER 鈥?Premium Branding
    ============================================ */
 .site-footer {
   background: var(--bg-surface);
@@ -1480,17 +1518,22 @@ ul, ol {
   .footer-brand {
     margin-bottom: 16px;
 
-    .footer-logo {
-      font-family: var(--font-heading);
-      font-size: var(--fs-xl);
-      font-weight: var(--fw-extrabold);
-      background: var(--brand-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: var(--ls-tight);
-      display: inline-block;
-      filter: drop-shadow(0 2px 8px var(--glow-purple));
+    /* v3: full monogram replaces the inline gradient text logo */
+    .footer-logo-svg {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 8px;
+      display: block;
+      filter: drop-shadow(0 4px 18px rgba(123, 47, 255, 0.22))
+              drop-shadow(0 0 32px rgba(46, 167, 255, 0.08));
+      opacity: 0.92;
+      transition: opacity var(--duration-fast) var(--ease-out-quint),
+                  transform var(--duration-fast) var(--ease-out-quint);
+
+      .site-footer:hover & {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
     }
 
     .footer-tagline {
@@ -1512,7 +1555,7 @@ ul, ol {
 
 
 /* ============================================
-   9. BACK TO TOP — Enhanced
+   9. BACK TO TOP 鈥?Enhanced
    ============================================ */
 .back-to-top {
   position: fixed;
@@ -1580,7 +1623,7 @@ body.edit-mode .edit-hide {
 /* ============================================
    11. SCROLL-TRIGGERED FADE-UP ANIMATION
    ============================================ */
-/* Default: VISIBLE (graceful degradation — never white-screen if JS fails) */
+/* Default: VISIBLE (graceful degradation 鈥?never white-screen if JS fails) */
 .fade-up-element {
   opacity: 1;
   transform: translateY(0);
@@ -1628,7 +1671,7 @@ html.anim-ready .fade-up-element.visible {
    13. RESPONSIVE BREAKPOINTS
    ============================================ */
 
-/* Tablet — TOC responsive rules removed (feature not needed) */
+/* Tablet 鈥?TOC responsive rules removed (feature not needed) */
 
 @media (max-width: 1024px) {
   .categories-grid {
@@ -1676,10 +1719,12 @@ html.anim-ready .fade-up-element.visible {
 
   .hero-section {
     padding: 48px 0 36px;
+  }
 
-    /* Reduce aurora orb sizes on mobile */
-    &::before { width: 280px; height: 280px; }
-    &::after  { width: 200px; height: 200px; }
+  /* v3: scale hero monogram and signature on mobile */
+  .hero-mark-svg {
+    width: 64px;
+    height: 64px;
   }
 
   .hero-section .hero-title {
@@ -1732,7 +1777,8 @@ html.anim-ready .fade-up-element.visible {
     display: none;
   }
 
-  .navbar-brand-area .brand-name-sub {
+  /* v3: hide tagline on mobile to save horizontal space */
+  .navbar-brand-area .brand-tagline {
     display: none;
   }
 

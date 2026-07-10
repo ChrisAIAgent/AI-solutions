@@ -15,6 +15,55 @@
 <body>
 
   <!-- ============================================
+       TAC BRAND MONOGRAM 鈥?reusable SVG symbols
+       Defined once via <symbol> + linearGradient so the same
+       identity mark renders consistently in navbar / hero / footer.
+       ============================================ -->
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- Aurora gradient: cyan 鈫?brand purple 鈫?magenta (immutable hue family) -->
+      <linearGradient id="tac-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"  stop-color="#2EA7FF"/>
+        <stop offset="52%" stop-color="#7B2FFF"/>
+        <stop offset="100%" stop-color="#C850C0"/>
+      </linearGradient>
+      <!-- Compact monogram (for navbar badge) -->
+      <symbol id="tac-mark" viewBox="0 0 240 180" overflow="visible">
+        <text x="120" y="132"
+              font-family="'Sora','Inter',system-ui,sans-serif"
+              font-weight="800" font-size="124"
+              text-anchor="middle" letter-spacing="-7"
+              fill="url(#tac-grad)">TAC</text>
+        <line x1="66" y1="156" x2="114" y2="156"
+              stroke="url(#tac-grad)" stroke-width="1.5" stroke-opacity="0.55"/>
+        <line x1="126" y1="156" x2="174" y2="156"
+              stroke="url(#tac-grad)" stroke-width="1.5" stroke-opacity="0.55"/>
+        <circle cx="66"  cy="156" r="4" fill="url(#tac-grad)"/>
+        <circle cx="120" cy="156" r="5" fill="url(#tac-grad)"/>
+        <circle cx="174" cy="156" r="4" fill="url(#tac-grad)"/>
+      </symbol>
+      <!-- Full monogram with sub-label (for hero signature / footer) -->
+      <symbol id="tac-monogram" viewBox="0 0 240 240" overflow="visible">
+        <text x="120" y="138"
+              font-family="'Sora','Inter',system-ui,sans-serif"
+              font-weight="800" font-size="100"
+              text-anchor="middle" letter-spacing="-6"
+              fill="url(#tac-grad)">TAC</text>
+        <line x1="60" y1="172" x2="180" y2="172"
+              stroke="url(#tac-grad)" stroke-width="1.5" stroke-opacity="0.55"/>
+        <circle cx="60"  cy="172" r="3.5" fill="url(#tac-grad)"/>
+        <circle cx="120" cy="172" r="4"   fill="url(#tac-grad)"/>
+        <circle cx="180" cy="172" r="3.5" fill="url(#tac-grad)"/>
+        <text x="120" y="200"
+              font-family="'JetBrains Mono',monospace"
+              font-weight="500" font-size="11"
+              text-anchor="middle" letter-spacing="4"
+              fill="url(#tac-grad)" fill-opacity="0.7">AGENT COMPANY</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============================================
        4.1 STICKY NAVBAR
        ============================================ -->
   <nav class="navbar-main">
@@ -23,13 +72,13 @@
         <!-- Brand -->
         <a href="#" class="navbar-brand-area">
           <span class="brand-logo-badge">
-            <img class="brand-logo" src="/images/logos/TAC.png" alt="The Agent Company" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-            <svg class="brand-logo" style="display:none;" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="120" rx="12" fill="#111118"/>
-              <path d="M30 85L55 35H72L97 85H78L70 67H57L49 85H30ZM52 54L63.5 76L75 54H52Z" fill="#E63946"/>
-              <path d="M90 85L115 35H132L157 85H138L130 67H117L109 85H90ZM112 54L123.5 76L135 54H112Z" fill="#E63946"/>
-              <path d="M150 85V35H168L190 65V35H205V85H187L165 55V85H150Z" fill="#E63946" transform="translate(-10,0)"/>
+            <svg class="brand-logo" viewBox="0 0 240 180" aria-label="The Agent Company">
+              <use href="#tac-mark"/>
             </svg>
+          </span>
+          <span class="brand-wordmark">
+            <span class="brand-name" data-en="TAC" data-cn="TAC">TAC</span>
+            <span class="brand-tagline" data-en="The Agent Company" data-cn="The Agent Company">The Agent Company</span>
           </span>
         </a>
 
@@ -57,6 +106,16 @@
          4.2 HERO SECTION
          ============================================ -->
     <section class="hero-section fade-up-element">
+      <!-- 3D node-network background (Three.js). Skipped on mobile / reduced-motion. -->
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Brand monogram watermark above the badge -->
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox="0 0 240 240" class="hero-mark-svg">
+          <use href="#tac-monogram"/>
+        </svg>
+      </div>
+
       <div class="hero-badge">
         <span class="badge-text">Ship the next</span>
         <span class="badge-cursor">|</span>
@@ -332,7 +391,9 @@
   <footer class="site-footer" id="contact">
     <div class="container-fluid-custom">
       <div class="footer-brand">
-        <div class="footer-logo text-gradient">TAC</div>
+        <svg class="footer-logo-svg" viewBox="0 0 240 240" aria-label="TAC monogram">
+          <use href="#tac-monogram"/>
+        </svg>
         <p class="footer-tagline" data-en="The Agent Company — Ship the next big thing."
            data-cn="The Agent Company — 交付下一个重磅产品。">The Agent Company — Ship the next big thing.</p>
       </div>
