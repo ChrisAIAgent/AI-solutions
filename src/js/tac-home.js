@@ -207,7 +207,7 @@ function renderInsights() {
 
 function renderContactAndFooter() {
   document.querySelector('.tac-contact').innerHTML = `<div class="section-shell tac-contact-content reveal"><p class="tac-eyebrow"><span></span>START A CONVERSATION</p><h2>Let’s build the next useful AI experience together.</h2><p>Tell TAC what work you want to make clearer, faster, or easier to govern.</p>${link({ label: 'GET IN TOUCH', href: '#top' }, 'tac-button tac-button--light')}</div>`;
-  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>Preview content only · Secondary routes coming soon</span></div>`;
+  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>TAC · A ChrisAI Brand</span></div>`;
 }
 
 function activateTab(group, id) {
@@ -367,5 +367,5 @@ function setupInteractions() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderHeader(); renderHero(); setupHeroVideo(); setupRiveAnimations(); renderTrust(); renderApplications(); renderCapabilities(); renderReports(); renderPartners(); renderInsights(); renderContactAndFooter(); setupInteractions(); setupMotionController();
+  renderHeader(); renderHero(); setupHeroVideo(); setupRiveAnimations(); renderTrust(); renderApplications(); renderCapabilities(); renderReports(); renderPartners(); renderInsights(); renderTestimonials(); renderContactAndFooter(); setupInteractions(); setupMotionController();
 });

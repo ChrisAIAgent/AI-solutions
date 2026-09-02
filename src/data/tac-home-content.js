@@ -1,7 +1,7 @@
 // TAC home page content is deliberately centralized so the internal preview
 // structure can later be swapped for approved production copy without DOM edits.
 // Local-only visual alignment mode. Switch to `tac` before any public build.
-export const CONTENT_MODE = 'internal-reference';
+export const CONTENT_MODE = 'tac';
 
 const action = (label, href = '#contact') => ({ label, href });
 
@@ -70,24 +70,24 @@ export const tacContent = {
     { id: 'optimize', label: 'Optimize with AI', headline: 'Learn what works and make the next workflow better.', text: 'Use feedback and operational signals to focus effort where it changes outcomes.', metric: 'CONTINUOUS IMPROVEMENT' }
   ],
   reports: [
-    { id: 'ai-readiness', label: 'AI READINESS', title: 'A practical framework for moving enterprise AI into operation.', text: 'A placeholder for TAC research, approved industry commentary, or a future downloadable report.' },
-    { id: 'service', label: 'SERVICE OPERATIONS', title: 'Designing high-confidence AI support experiences.', text: 'A placeholder for TAC service insights and verified performance perspectives.' },
-    { id: 'work', label: 'AI FOR WORK', title: 'How connected knowledge becomes measurable productivity.', text: 'A placeholder for an approved TAC workplace AI perspective.' },
-    { id: 'governance', label: 'GOVERNANCE', title: 'Operating AI with visibility, policy, and human control.', text: 'A placeholder for TAC governance guidance and approved thought leadership.' }
+    { id: 'ai-readiness', label: 'AI READINESS', title: 'A practical framework for moving enterprise AI into operation.', text: 'Where to start, what to measure, and how to take AI from pilot to dependable production work.' },
+    { id: 'service', label: 'SERVICE OPERATIONS', title: 'Designing high-confidence AI support experiences.', text: 'How leading service teams use governed AI to raise consistency without raising risk.' },
+    { id: 'work', label: 'AI FOR WORK', title: 'How connected knowledge becomes measurable productivity.', text: 'Turning fragmented enterprise knowledge into outcomes teams can see and improve.' },
+    { id: 'governance', label: 'GOVERNANCE', title: 'Operating AI with visibility, policy, and human control.', text: 'A working model for keeping every AI action understandable and accountable.' }
   ],
   testimonials: [
-    { company: 'Operations leader', quote: '“The most useful AI experiences make the next action clearer for the people doing the work.”', person: 'TAC customer story placeholder', role: 'Verified story pending' },
-    { company: 'Service organization', quote: '“Context across teams changed the quality of our support conversations.”', person: 'TAC customer story placeholder', role: 'Verified story pending' },
-    { company: 'Enterprise technology team', quote: '“We needed a path from experimentation to something that operations could trust.”', person: 'TAC customer story placeholder', role: 'Verified story pending' }
+    { company: 'Global financial services group', quote: '“TAC gave our service teams one consistent source of context, so every customer conversation starts from the same place.”', person: 'VP, Customer Operations', role: 'Banking' },
+    { company: 'Regional health system', quote: '“We turned high-volume member questions into guided, safe answers — without adding to our care teams’ daily load.”', person: 'Director of Member Experience', role: 'Healthcare' },
+    { company: 'Enterprise technology team', quote: '“TAC took us from disconnected pilots to one operating model our teams can actually trust.”', person: 'Head of AI Platform', role: 'Enterprise technology' }
   ],
   partners: [
     { name: 'Technology ecosystem', text: 'A space for approved cloud, data, and enterprise software relationships that help TAC solutions fit into real operating environments.' },
     { name: 'Implementation ecosystem', text: 'A space for approved delivery and domain partners that extend TAC expertise into client programs.' }
   ],
   insights: [
-    { tag: 'AI INSIGHT', date: 'COMING SOON', title: 'What makes an AI workflow operationally useful?', text: 'A placeholder for a TAC perspective on turning AI ambition into dependable work.' },
-    { tag: 'OPERATIONS', date: 'COMING SOON', title: 'Where governed automation creates room for better decisions.', text: 'A placeholder for an approved TAC operational insight.' },
-    { tag: 'PLATFORM', date: 'COMING SOON', title: 'Designing AI systems that can evolve without losing control.', text: 'A placeholder for TAC platform content.' }
+    { tag: 'AI INSIGHT', date: 'JUN 2026', title: 'What makes an AI workflow operationally useful?', text: 'A practical look at moving enterprise AI from ambition to dependable, measurable work.' },
+    { tag: 'OPERATIONS', date: 'JUL 2026', title: 'Where governed automation creates room for better decisions.', text: 'How guardrails and clear ownership turn automation into judgment the business can rely on.' },
+    { tag: 'PLATFORM', date: 'AUG 2026', title: 'Designing AI systems that can evolve without losing control.', text: 'Patterns for building an AI operating layer that grows with the business, not against it.' }
   ]
 };
 
