@@ -426,6 +426,72 @@ ul, ol {
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Hero Signature pill: TAC · A ChrisAI Brand */
+  .hero-signature {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 16px 7px 12px;
+    margin: 0 auto 22px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(123, 47, 255, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px rgba(46, 167, 255, 0.08);
+    opacity: 0;
+    transform: translateY(6px);
+    animation: heroSigIn 700ms var(--ease-out-quint) 380ms forwards;
+    width: fit-content;
+  }
+
+  .hero-sig-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--aurora-gradient);
+    box-shadow: 0 0 10px rgba(46, 167, 255, 0.7);
+    animation: heroSigPulse 2.4s ease-in-out infinite;
+  }
+
+  .hero-sig-text {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: var(--color-text-secondary);
+  }
+
+  .hero-sig-mark {
+    font-weight: 700;
+    background: var(--aurora-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .hero-sig-sep {
+    opacity: 0.45;
+  }
+
+  .hero-sig-sub {
+    opacity: 0.85;
+  }
+
+  @keyframes heroSigIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes heroSigPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.55; transform: scale(0.85); }
+  }
+
+
   /* 鈹€鈹€ Hero Badge 鈹€鈹€ */
   .hero-badge {
     display: inline-flex;
@@ -1727,6 +1793,17 @@ html.anim-ready .fade-up-element.visible {
     height: 64px;
   }
 
+  .hero-signature {
+    margin-bottom: 18px;
+    padding: 6px 12px 6px 10px;
+    gap: 8px;
+  }
+
+  .hero-sig-text {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+  }
+
   .hero-section .hero-title {
     font-size: var(--fs-3xl);
   }
@@ -1828,3 +1905,11 @@ html.anim-ready .fade-up-element.visible {
 
   /* (TOC fab responsive rule removed) */
 }
+  .hero-signature {
+    padding: 5px 10px 5px 9px;
+    gap: 7px;
+  }
+
+  .hero-sig-text {
+    font-size: 9px;
+  }

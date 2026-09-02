@@ -14,6 +14,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        'pages/tac-home': resolve(__dirname, 'pages/tac-home.html'),
         'pages/ai-models': resolve(__dirname, 'pages/ai-models.html'),
         'pages/brand-guidelines': resolve(__dirname, 'pages/brand-guidelines.html')
       }

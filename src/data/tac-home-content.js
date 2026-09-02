@@ -1,0 +1,96 @@
+// TAC home page content is deliberately centralized so the internal preview
+// structure can later be swapped for approved production copy without DOM edits.
+// Local-only visual alignment mode. Switch to `tac` before any public build.
+export const CONTENT_MODE = 'internal-reference';
+
+const action = (label, href = '#contact') => ({ label, href });
+
+export const tacContent = {
+  nav: [
+    { label: 'Agent Platform', target: '#platform', items: ['Build with confidence', 'Orchestrate workflows', 'Govern every action'] },
+    { label: 'Agentic AI Apps', target: '#applications', items: ['Pre-built applications', 'Application accelerators', 'Tailored applications'] },
+    { label: 'Agent Marketplace', target: '#accelerators', items: ['Agents', 'Templates', 'Integrations'] },
+    { label: 'More', target: '#insights', items: ['Industry insights', 'Partner ecosystem', 'Contact TAC'] }
+  ],
+  hero: {
+    eyebrow: 'TAC AI PLATFORM',
+    title: 'Build AI operations that move with your business.',
+    lead: 'TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.',
+    primary: action('GET IN TOUCH'),
+    secondary: action('EXPLORE THE PLATFORM', '#platform'),
+    featureCards: [
+      { title: 'Pre-built Applications', text: 'Use applications for Banking, Healthcare, Retail, HR, IT, and Recruiting today.' },
+      { title: 'Application Accelerators', text: 'Leverage reusable agents, templates, and integrations to move from idea to workflow.' },
+      { title: 'Tailored Applications', text: 'Design and build applications on the TAC Agent Platform across enterprise use cases.' }
+    ]
+  },
+  industries: [
+    { id: 'banking', label: 'BANKING', title: 'Trusted intelligence for every financial conversation.', text: 'Help teams bring consistent context, clear next steps, and controlled AI assistance to complex customer journeys.', logos: ['Risk operations', 'Service teams', 'Advisors', 'Compliance'], tone: 'blue' },
+    { id: 'healthcare', label: 'HEALTHCARE', title: 'More time for people. Less friction for care teams.', text: 'Turn high-volume questions and fragmented internal knowledge into safe, guided experiences for staff and customers.', logos: ['Care navigation', 'Member support', 'Operations', 'Knowledge'], tone: 'mint' },
+    { id: 'retail', label: 'RETAIL', title: 'Personal assistance across every retail moment.', text: 'Connect product knowledge, service policies, and operational workflows to create fast and dependable support.', logos: ['Commerce', 'Store teams', 'Service desk', 'Operations'], tone: 'lavender' },
+    { id: 'telecom', label: 'TELECOM + MEDIA', title: 'Resolve the moments that matter at scale.', text: 'Give service teams a shared view of issues, actions, and answers across high-volume digital channels.', logos: ['Networks', 'Subscribers', 'Support', 'Field teams'], tone: 'sky' },
+    { id: 'business', label: 'BUSINESS', title: 'Make enterprise work easier to find and finish.', text: 'Activate secure knowledge and workflows so people can move from question to outcome with less handoff.', logos: ['Finance', 'HR', 'IT', 'Legal'], tone: 'sand' }
+  ],
+  productTabs: [
+    { id: 'prebuilt', label: 'PRE-BUILT APPLICATIONS' },
+    { id: 'accelerators', label: 'APPLICATION ACCELERATORS' },
+    { id: 'tailored', label: 'TAILORED APPLICATIONS' },
+    { id: 'platform-tab', label: 'AGENT PLATFORM { ARTEMIS }' }
+  ],
+  applications: [
+    { title: 'AI for Banking', accent: 'Banking', text: 'Coordinate self-service and agent support with shared context, consistency, and built-in compliance.', actions: [action('LEARN MORE'), action('GUIDE: BANKING')] },
+    { title: 'AI for Healthcare', accent: 'Healthcare', text: 'Enable 24/7 patient and member self-service and reduce staff burden with HIPAA-compliant intelligent assistance.', actions: [action('LEARN MORE'), action('GUIDE: HEALTHCARE')] },
+    { title: 'AI for Retail', accent: 'Retail', text: 'Frictionless shopping and optimized operations with instant, personalized support at every touchpoint.', actions: [action('LEARN MORE'), action('GUIDE: RETAIL')] },
+    { title: 'AI for IT', accent: 'IT', text: 'Resolve incidents, reduce ticket volume, and deliver 24/7 IT support.', actions: [action('LEARN MORE')] },
+    { title: 'AI for HR', accent: 'HR', text: 'Automate, resolve, and reduce employee queries and manual workload.', actions: [action('LEARN MORE')] },
+    { title: 'AI for Recruiting', accent: 'Recruiting', text: 'Automate screening, accelerate hiring, and engage top talent.', actions: [action('LEARN MORE')] }
+  ],
+  accelerators: {
+    title: 'Start faster with reusable building blocks.',
+    lead: 'Bring proven AI patterns into new workflows with composable agents, templates, and integrations.',
+    items: [
+      ['Pre-built agents', 'Purpose-built starting points for common enterprise workflows.'],
+      ['Templates', 'Structured patterns that make teams productive from day one.'],
+      ['Integrations', 'Connect the knowledge and business systems your teams already use.']
+    ]
+  },
+  tailored: [
+    { title: 'AI for Service', text: 'Give customers and service teams clear, contextual support through every channel.', links: ['EXPLORE SERVICE', 'SERVICE BRIEF'] },
+    { title: 'AI for Work', text: 'Connect knowledge, systems, and people to remove the friction from daily enterprise work.', links: ['EXPLORE WORK', 'WORKFLOW GUIDE'] }
+  ],
+  capabilities: [
+    { id: 'build', label: 'Build with AI', headline: 'From idea to useful workflow — without a long runway.', text: 'Start from the business logic and move quickly toward a measurable, governed experience.', metric: 'FASTER STARTS' },
+    { id: 'orchestrate', label: 'Orchestrate with AI', headline: 'Coordinate the workflows that do not fit in a simple chat.', text: 'Bring specialized agents, policies, and business systems together around one outcome.', metric: 'CONNECTED WORKFLOWS' },
+    { id: 'prove', label: 'Prove with AI', headline: 'Make outcomes visible, not assumed.', text: 'Tie improvements to the workflows and decisions that produced them.', metric: 'CLEAR EVIDENCE' },
+    { id: 'test', label: 'Test with AI', headline: 'Validate the experience before people depend on it.', text: 'Use controlled scenarios to refine quality, safety, and handoffs before rollout.', metric: 'FEWER SURPRISES' },
+    { id: 'deploy', label: 'Deploy with AI', headline: 'Scale useful AI without scaling the complexity.', text: 'Move validated workflows into the channels where work already happens.', metric: 'READY TO OPERATE' },
+    { id: 'govern', label: 'Govern with AI', headline: 'Keep every action understandable and accountable.', text: 'Apply guardrails and build an audit trail around the AI experiences that matter.', metric: 'GOVERNED BY DESIGN' },
+    { id: 'scale', label: 'Scale with AI', headline: 'Create a foundation that can grow with the business.', text: 'Evolve models, tools, and workflows without rebuilding the operating layer.', metric: 'BUILT TO EVOLVE' },
+    { id: 'simplify', label: 'Simplify with AI', headline: 'Bring scattered AI work into one operating model.', text: 'Reduce duplicate tooling and make workflows easier for teams to manage.', metric: 'ONE OPERATING VIEW' },
+    { id: 'optimize', label: 'Optimize with AI', headline: 'Learn what works and make the next workflow better.', text: 'Use feedback and operational signals to focus effort where it changes outcomes.', metric: 'CONTINUOUS IMPROVEMENT' }
+  ],
+  reports: [
+    { id: 'ai-readiness', label: 'AI READINESS', title: 'A practical framework for moving enterprise AI into operation.', text: 'A placeholder for TAC research, approved industry commentary, or a future downloadable report.' },
+    { id: 'service', label: 'SERVICE OPERATIONS', title: 'Designing high-confidence AI support experiences.', text: 'A placeholder for TAC service insights and verified performance perspectives.' },
+    { id: 'work', label: 'AI FOR WORK', title: 'How connected knowledge becomes measurable productivity.', text: 'A placeholder for an approved TAC workplace AI perspective.' },
+    { id: 'governance', label: 'GOVERNANCE', title: 'Operating AI with visibility, policy, and human control.', text: 'A placeholder for TAC governance guidance and approved thought leadership.' }
+  ],
+  testimonials: [
+    { company: 'Operations leader', quote: '“The most useful AI experiences make the next action clearer for the people doing the work.”', person: 'TAC customer story placeholder', role: 'Verified story pending' },
+    { company: 'Service organization', quote: '“Context across teams changed the quality of our support conversations.”', person: 'TAC customer story placeholder', role: 'Verified story pending' },
+    { company: 'Enterprise technology team', quote: '“We needed a path from experimentation to something that operations could trust.”', person: 'TAC customer story placeholder', role: 'Verified story pending' }
+  ],
+  partners: [
+    { name: 'Technology ecosystem', text: 'A space for approved cloud, data, and enterprise software relationships that help TAC solutions fit into real operating environments.' },
+    { name: 'Implementation ecosystem', text: 'A space for approved delivery and domain partners that extend TAC expertise into client programs.' }
+  ],
+  insights: [
+    { tag: 'AI INSIGHT', date: 'COMING SOON', title: 'What makes an AI workflow operationally useful?', text: 'A placeholder for a TAC perspective on turning AI ambition into dependable work.' },
+    { tag: 'OPERATIONS', date: 'COMING SOON', title: 'Where governed automation creates room for better decisions.', text: 'A placeholder for an approved TAC operational insight.' },
+    { tag: 'PLATFORM', date: 'COMING SOON', title: 'Designing AI systems that can evolve without losing control.', text: 'A placeholder for TAC platform content.' }
+  ]
+};
+
+// Reserved for internal visual comparison without mixing third-party copy into the page source.
+export const internalReferenceContent = tacContent;
+export const content = CONTENT_MODE === 'internal-reference' ? internalReferenceContent : tacContent;
