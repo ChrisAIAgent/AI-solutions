@@ -16,7 +16,7 @@ export const tacContent = {
     eyebrow: 'TAC AI PLATFORM',
     title: 'Build AI operations that move with your business.',
     lead: 'TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.',
-    primary: action('GET IN TOUCH'),
+    primary: action('GET A DEMO'),
     secondary: action('EXPLORE THE PLATFORM', '#platform'),
     featureCards: [
       { title: 'Pre-built Applications', text: 'Use applications for Banking, Healthcare, Retail, HR, IT, and Recruiting today.' },

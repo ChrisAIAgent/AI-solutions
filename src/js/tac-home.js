@@ -35,7 +35,7 @@ function renderHeader() {
           <div class="tac-nav-popover" id="navMenu${index}" role="menu">${item.items.map((child) => `<a href="${item.target}" role="menuitem">${child}<span>↗</span></a>`).join('')}</div>
         </div>`).join('')}
       </div>
-      <div class="tac-nav-actions"><a class="tac-signin" href="#contact">Sign in</a>${link({ label: 'GET IN TOUCH', href: '#contact' }, 'tac-button tac-button--nav')}</div>
+      <div class="tac-nav-actions"><a class="tac-signin" href="#contact">Sign in</a>${link({ label: 'GET A DEMO', href: '#contact' }, 'tac-button tac-button--nav')}</div>
     </nav>`;
 }
 

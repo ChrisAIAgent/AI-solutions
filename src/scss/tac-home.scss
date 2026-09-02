@@ -38,9 +38,9 @@ body.tac-home { margin: 0; background: #edf5f7; color: #111415; font-family: 'TA
 .tac-nav-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
 .tac-button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 43px; padding: 0 17px; border-radius: 5px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .02em; transition: transform .16s ease, background .16s ease, color .16s ease; }
 .tac-button:hover, .tac-button:focus-visible { transform: translateY(-2px); }
-.tac-button--dark, .tac-button--nav { background: #161918; color: #fff; }
+.tac-home .tac-button--dark, .tac-home .tac-button--nav { background: #161918; color: #fff; }
 .tac-button--nav { min-height: 38px; font-size: 10px; }
-.tac-button--light { background: #fff; color: #15191a; border: 1px solid rgba(17,20,21,.16); }
+.tac-home .tac-button--light { background: #fff; color: #15191a; border: 1px solid rgba(17,20,21,.16); }
 .tac-menu-toggle { display: none; margin-left: auto; padding: 10px; border: 0; background: none; font-size: 18px; cursor: pointer; }
 .tac-hero { position: relative; min-height: 710px; padding: 128px 0 78px; overflow: hidden; background: radial-gradient(circle at 78% 20%, #d5eff1 0, transparent 31%), linear-gradient(130deg, #f3fbfc, #e9f4f7 54%, #dceef2); }
 .tac-hero-grid { position: absolute; inset: 0; opacity: .35; background-image: linear-gradient(rgba(19,50,55,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(19,50,55,.08) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(90deg, #000, transparent 78%); }
@@ -291,3 +291,32 @@ body.tac-home { margin: 0; background: #edf5f7; color: #111415; font-family: 'TA
 @media (max-width: 620px) { .tac-home .tac-capability-display { min-height: 345px; } .tac-home .tac-capability-tabs { grid-template-columns: 1fr; } .tac-home .tac-report-card { padding: 16px; } .tac-home .tac-report-visual { min-height: 245px; } .tac-home .tac-testimonial { min-height: 290px; } .tac-home .tac-testimonial footer { grid-template-columns: 1fr; gap: 4px; } .tac-home .tac-partner-grid, .tac-home .tac-insights-grid { grid-template-columns: 1fr; } .tac-home .tac-insight-image { min-height: 220px; } }
 
 @media (max-width: 620px) { .tac-home .tac-capability-track { width: calc(900% + 96px); gap: 12px; } .tac-home .tac-capability-tabs button { min-height: 245px; padding: 20px; } .tac-home .tac-capability-tabs button:nth-child(3n + 2), .tac-home .tac-capability-tabs button:nth-child(3n) { transform: none; } .tac-home .tac-capability-gallery-index { margin-top: 20px; } }
+
+/* Capabilities layout v2: large card centered, small cards in a row below */
+.tac-home .tac-capability-intro { display: block; text-align: center; }
+.tac-home .tac-capability-intro .tac-eyebrow { justify-content: center; }
+.tac-home .tac-capability-intro h2 { margin-inline: auto; }
+.tac-home .tac-capability-workspace { display: flex; flex-direction: column; align-items: center; gap: 28px; margin-top: 48px; }
+.tac-home .tac-capability-display { width: 100%; max-width: 920px; min-height: 400px; margin-inline: auto; }
+.tac-home .tac-capability-gallery { width: 100%; max-width: 1160px; margin-inline: auto; padding-top: 0; }
+.tac-home .tac-capability-gallery-head { justify-content: center; margin-bottom: 16px; }
+.tac-home .tac-capability-gallery-head > div { display: none; }
+.tac-home .tac-capability-tabs { overflow: visible; }
+.tac-home .tac-capability-track { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 10px; width: 100% !important; transform: none !important; }
+.tac-home .tac-capability-tabs button { min-height: 118px; padding: 16px 14px; gap: 8px; }
+.tac-home .tac-capability-tabs button:nth-child(3n + 2),
+.tac-home .tac-capability-tabs button:nth-child(3n) { transform: none; }
+.tac-home .tac-capability-tabs button b { font-size: clamp(13px, 1.2vw, 16px); }
+.tac-home .tac-capability-tabs button i { min-height: auto; font-size: 9px; }
+.tac-home .tac-capability-gallery-index { display: none; }
+
+@media (max-width: 980px) {
+  .tac-home .tac-capability-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tac-home .tac-capability-display { min-height: 360px; }
+}
+
+@media (max-width: 620px) {
+  .tac-home .tac-capability-track { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tac-home .tac-capability-tabs button { min-height: 96px; padding: 12px; }
+  .tac-home .tac-capability-tabs button b { font-size: 13px; }
+}
