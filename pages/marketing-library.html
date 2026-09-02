@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Library Portal</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <meta name="description" content="Browse marketing assets by category — AI models, brand guidelines, case studies, videos, and more.">
+
+  <!-- Google Fonts: Inter (body) + Sora (headings) + JetBrains Mono (labels/mono) + Noto Sans SC (CN fallback) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================
+       TAC BRAND MONOGRAM 鈥?reusable SVG symbols
+       Defined once via <symbol> + linearGradient so the same
+       identity mark renders consistently in navbar / hero / footer.
+       ============================================ -->
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- Aurora gradient: cyan 鈫?brand purple 鈫?magenta (immutable hue family) -->
+      <linearGradient id="tac-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"  stop-color="#2EA7FF"/>
+        <stop offset="52%" stop-color="#7B2FFF"/>
+        <stop offset="100%" stop-color="#C850C0"/>
+      </linearGradient>
+      <!-- Compact monogram (for navbar badge) -->
+      <symbol id="tac-mark" viewBox="0 0 240 180" overflow="visible">
+        <text x="120" y="132"
+              font-family="'Sora','Inter',system-ui,sans-serif"
+              font-weight="800" font-size="124"
+              text-anchor="middle" letter-spacing="-7"
+              fill="url(#tac-grad)">TAC</text>
+        <line x1="66" y1="156" x2="114" y2="156"
+              stroke="url(#tac-grad)" stroke-width="1.5" stroke-opacity="0.55"/>
+        <line x1="126" y1="156" x2="174" y2="156"
+              stroke="url(#tac-grad)" stroke-width="1.5" stroke-opacity="0.55"/>
+        <circle cx="66"  cy="156" r="4" fill="url(#tac-grad)"/>
+        <circle cx="120" cy="156" r="5" fill="url(#tac-grad)"/>
+        <circle cx="174" cy="156" r="4" fill="url(#tac-grad)"/>
+      </symbol>
+      <!-- Full monogram with sub-label (for hero signature / footer) -->
+      <symbol id="tac-monogram" viewBox="0 0 240 240" overflow="visible">
+        <text x="120" y="138"
+              font-family="'Sora','Inter',system-ui,sans-serif"
+              font-weight="800" font-size="100"
+              text-anchor="middle" letter-spacing="-6"
+              fill="url(#tac-grad)">TAC</text>
+        <line x1="60" y1="172" x2="180" y2="172"
+              stroke="url(#tac-grad)" stroke-width="1.5" stroke-opacity="0.55"/>
+        <circle cx="60"  cy="172" r="3.5" fill="url(#tac-grad)"/>
+        <circle cx="120" cy="172" r="4"   fill="url(#tac-grad)"/>
+        <circle cx="180" cy="172" r="3.5" fill="url(#tac-grad)"/>
+        <text x="120" y="200"
+              font-family="'JetBrains Mono',monospace"
+              font-weight="500" font-size="11"
+              text-anchor="middle" letter-spacing="4"
+              fill="url(#tac-grad)" fill-opacity="0.7">AGENT COMPANY</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============================================
+       4.1 STICKY NAVBAR
+       ============================================ -->
+  <nav class="navbar-main">
+    <div class="container-fluid-custom">
+      <div class="navbar-inner">
+        <!-- Brand -->
+        <a href="#" class="navbar-brand-area">
+          <span class="brand-logo-badge">
+            <svg class="brand-logo" viewBox="0 0 240 180" aria-label="The Agent Company">
+              <use href="#tac-mark"/>
+            </svg>
+          </span>
+          <span class="brand-wordmark">
+            <span class="brand-name" data-en="TAC" data-cn="TAC">TAC</span>
+            <span class="brand-tagline" data-en="The Agent Company" data-cn="The Agent Company">The Agent Company</span>
+          </span>
+        </a>
+
+        <!-- Right Controls -->
+        <div class="navbar-controls">
+          <button class="ctrl-btn active" id="langToggle" title="Switch language">
+            <span style="font-size:12px;font-weight:600;">EN</span>
+          </button>
+          <button class="ctrl-link edit-only" id="editToggle">
+            <i class="fas fa-pen-to-square"></i><span data-en="Edit" data-cn="编辑">Edit</span>
+          </button>
+          <a href="#contact" class="ctrl-link">
+            <i class="fas fa-envelope"></i><span data-en="Contact" data-cn="联系">Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- MAIN CONTENT AREA (full-width) -->
+  <main class="main-content container-fluid-custom" id="mainContent">
+
+    <!-- ============================================
+         4.2 HERO SECTION
+         ============================================ -->
+    <section class="hero-section fade-up-element">
+      <!-- 3D node-network background (Three.js). Skipped on mobile / reduced-motion. -->
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Brand monogram watermark above the badge -->
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox="0 0 240 240" class="hero-mark-svg">
+          <use href="#tac-monogram"/>
+        </svg>
+      </div>
+
+      <div class="hero-badge">
+        <span class="badge-text">Ship the next</span>
+        <span class="badge-cursor">|</span>
+      </div>
+      <h1 class="hero-title" id="typewriterTarget" data-en="The Agent Company" data-cn="The Agent Company">
+        The Agent Company
+      </h1>
+      <p class="hero-subtitle typewriter-subtitle" id="heroSubtitle"
+         data-en="Ready For Agentic Era"
+         data-cn="准备好迎接智能体时代">
+        Ready For Agentic Era
+      </p>
+
+      <!-- Hero Signature pill: anchors the brand mark under the headline -->
+      <div class="hero-signature" aria-hidden="true">
+        <span class="hero-sig-dot"></span>
+        <span class="hero-sig-text">
+          <span class="hero-sig-mark">TAC</span>
+          <span class="hero-sig-sep">·</span>
+          <span class="hero-sig-sub" data-en="A ChrisAI Brand" data-cn="ChrisAI 旗下品牌">A ChrisAI Brand</span>
+        </span>
+      </div>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number" id="statCases">50<span>+</span></div>
+          <div class="stat-label" data-en="Customer Cases" data-cn="客户案例">Customer Cases</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="statVideos">30<span>+</span></div>
+          <div class="stat-label" data-en="AI Models" data-cn="AI 模型">AI Models</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="statCategories">100<span>+</span></div>
+          <div class="stat-label" data-en="Products" data-cn="产品">Products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="statCollections">10<span>+</span></div>
+          <div class="stat-label" data-en="Available Regions" data-cn="覆盖区域">Available Regions</div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-input-group">
+          <i class="fas fa-search search-input-icon"></i>
+          <input type="text" class="search-field"
+                 id="searchInput"
+                 data-placeholder-en="Search materials, assets, reports…"
+                 data-placeholder-cn="搜索材料、资产、报告…"
+                 placeholder="Search materials, assets, reports…"
+                 autocomplete="off">
+          <button class="search-submit" id="searchSubmit" aria-label="Search">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        <!-- Search Dropdown -->
+        <div class="search-dropdown" id="searchDropdown"></div>
+      </div>
+
+      <!-- Quick Filter Tags -->
+      <div class="filter-tags" id="filterTags">
+        <button class="filter-chip active" data-filter="all" data-en="All" data-cn="全部">All</button>
+        <button class="filter-chip" data-filter="ai" data-en="AI Models" data-cn="AI 模型">AI Models</button>
+        <button class="filter-chip" data-filter="cloud" data-en="Cloud" data-cn="云服务">Cloud</button>
+        <button class="filter-chip" data-filter="cases" data-en="Case Studies" data-cn="案例">Case Studies</button>
+        <button class="filter-chip" data-filter="docs" data-en="Docs" data-cn="文档">Docs</button>
+        <button class="filter-chip" data-filter="dev" data-en="Developer" data-cn="开发者">Developer</button>
+        <button class="filter-chip" data-filter="archive" data-en="Archive" data-cn="归档">Archive</button>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+         4.3 SHOWCASE SECTION
+         ============================================ -->
+    <section class="showcase-section fade-up-element">
+      <div class="showcase-card">
+        <!-- Animated Blobs -->
+        <div class="showcase-blob-1"></div>
+        <div class="showcase-blob-2"></div>
+        <div class="showcase-blob-3"></div>
+
+        <!-- Left Content -->
+        <div class="showcase-content">
+          <h2 class="showcase-title" data-en="Ship the Next Big Thing"
+              data-cn="交付下一个重磅产品">Ship the Next Big Thing</h2>
+          <p class="showcase-subtitle"
+             data-en="Our showcase highlights the latest campaigns, product launches, and creative work from teams across The Agent Company."
+             data-cn="展示区精选了来自 The Agent Company 各团队的最新营销活动、产品发布和创意作品。">
+            Our showcase highlights the latest campaigns, product launches, and creative work from teams across The Agent Company.
+          </p>
+        </div>
+
+        <!-- Right Video -->
+        <div class="showcase-video-wrapper">
+          <img class="video-poster" id="videoPoster" src="" alt="" style="display:none;">
+          <a class="video-overlay" id="videoOverlay" href="#" target="_blank" rel="noopener" aria-label="Watch video" style="display:none;">
+            <span class="video-play-icon"><i class="fas fa-play"></i></span>
+          </a>
+          <video class="showcase-video" id="showcaseVideo"
+                 muted playsinline>
+            <!-- Videos will be populated by JS -->
+          </video>
+          <div class="video-controls">
+            <div class="video-dots" id="videoDots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+            <div class="video-actions">
+              <a class="video-link-btn" id="videoLinkBtn" href="#" target="_blank" rel="noopener" style="display:none;">
+                <span data-en="Watch" data-cn="观看">Watch</span> <i class="fas fa-external-link-alt"></i>
+              </a>
+              <div class="video-arrows">
+                <button class="arrow-btn" id="videoPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow-btn" id="videoNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+         4.4 CATEGORIES GRID (Main Content)
+         ============================================ -->
+    <section class="categories-section fade-up-element" id="categoriesSection">
+
+      <div class="section-header">
+        <h2 class="section-title" data-en="All Categories" data-cn="全部分类">All Categories</h2>
+        <span class="section-meta" data-en="6 sections" data-cn="6 个分类">6 sections</span>
+      </div>
+
+      <div class="categories-grid" id="categoriesGrid">
+
+        <!-- ========== Card 01: AI Models & MaaS (Expandable) ========== -->
+        <div class="category-card expandable" data-category="ai-models"
+             data-title-en="AI Models and MaaS Products"
+             data-title-cn="AI 模型与 MaaS 产品"
+             data-desc-en="Latest branding materials for our AI models, and more."
+             data-desc-cn="我们 AI 模型等最新品牌素材。"
+             data-tags="ai,models,maas">
+          <div class="card-icon"><i class="fas fa-robot"></i></div>
+          <h3 data-en="AI Models and MaaS Products" data-cn="AI 模型与 MaaS 产品">AI Models and MaaS Products</h3>
+          <p data-en="Latest branding materials for our AI models, and more." data-desc="我们 AI 模型等最新品牌素材。">Latest branding materials for our AI models, and more.</p>
+          <div class="card-footer">
+            <span class="meta-count" data-en="8 assets" data-cn="8 个素材">8 assets</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+        </div>
+
+        <!-- Sub-panel for AI Models -->
+        <div class="sub-panel" id="panel-ai-models">
+          <div class="sub-panel-header">
+            <span class="sub-panel-title" data-en="Sub-categories" data-cn="子分类">Sub-categories</span>
+          </div>
+          <div class="sub-grid">
+            <a href="#" class="sub-item" target="_blank">
+              <img class="sub-icon sub-logo" src="/images/logos/foundation.png" alt="Foundation Models" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="sub-icon sub-logo-square" style="display:none;background:#7B2FFF;color:#fff;font-size:11px;font-weight:700;">F</div>
+              <div class="sub-info">
+                <div class="sub-title" data-en="Foundation Models" data-cn="基础模型">Foundation Models</div>
+                <div class="sub-desc" data-en="Branding materials for our foundation models." data-cn="我们基础模型的品牌素材。">Branding materials for our foundation models.</div>
+              </div>
+              <i class="fas fa-arrow-right sub-arrow"></i>
+            </a>
+            <a href="#" class="sub-item" target="_blank">
+              <img class="sub-icon sub-logo" src="/images/logos/vision.png" alt="Vision Models" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="sub-icon sub-logo-square" style="display:none;background:#C850C0;color:#fff;font-size:11px;font-weight:700;">V</div>
+              <div class="sub-info">
+                <div class="sub-title" data-en="Vision Models" data-cn="视觉模型">Vision Models</div>
+                <div class="sub-desc" data-en="Image and video model branding." data-cn="图像与视频模型品牌素材。">Image and video model branding.</div>
+              </div>
+              <i class="fas fa-arrow-right sub-arrow"></i>
+            </a>
+            <a href="#" class="sub-item" target="_blank">
+              <img class="sub-icon sub-logo" src="/images/logos/voice.png" alt="Voice Models" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="sub-icon sub-logo-square" style="display:none;background:#4158D0;color:#fff;font-size:11px;font-weight:700;">Vo</div>
+              <div class="sub-info">
+                <div class="sub-title" data-en="Voice Models" data-cn="语音模型">Voice Models</div>
+                <div class="sub-desc" data-en="Speech and audio model branding." data-cn="语音与音频模型品牌素材。">Speech and audio model branding.</div>
+              </div>
+              <i class="fas fa-arrow-right sub-arrow"></i>
+            </a>
+            <a href="#" class="sub-item" target="_blank">
+              <img class="sub-icon sub-logo" src="/images/logos/agent-runtime.png" alt="Agent Runtime" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="sub-icon sub-logo-square" style="display:none;background:#00B4D8;color:#fff;font-size:11px;font-weight:700;">A</div>
+              <div class="sub-info">
+                <div class="sub-title" data-en="Agent Runtime" data-cn="智能体运行时">Agent Runtime</div>
+                <div class="sub-desc" data-en="Agent execution platform identity." data-cn="智能体运行平台视觉识别。">Agent execution platform identity.</div>
+              </div>
+              <i class="fas fa-arrow-right sub-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ========== Card 02: The Agent Company Cloud (inactive for now) ========== -->
+        <div class="category-card" data-category="alibaba-cloud"
+             data-title-en="The Agent Company Cloud"
+             data-title-cn="The Agent Company 云平台"
+             data-desc-en="Cloud platform logos, icons, and service marks."
+             data-desc-cn="云平台 Logo、图标和服务标识。"
+             data-tags="cloud,alibaba,platform">
+          <div class="card-icon"><i class="fas fa-cloud"></i></div>
+          <h3 data-en="The Agent Company Cloud" data-cn="The Agent Company 云平台">The Agent Company Cloud</h3>
+          <p data-en="Cloud platform logos, icons, and service marks." data-desc="云平台 Logo、图标和服务标识。">Cloud platform logos, icons, and service marks.</p>
+          <div class="card-footer">
+            <span class="meta-count" data-en="12 assets" data-cn="12 个素材">12 assets</span>
+          </div>
+        </div>
+
+        <!-- ========== Card 03: Customer Cases (inactive for now) ========== -->
+        <div class="category-card" data-category="customer-cases"
+             data-title-en="Customer Cases & Success Stories"
+             data-title-cn="客户案例与成功故事"
+             data-desc-en="Real-world implementations and customer testimonials."
+             data-desc-cn="真实落地案例与客户证言。"
+             data-tags="cases,stories,customers">
+          <div class="card-icon"><i class="fas fa-trophy"></i></div>
+          <h3 data-en="Customer Cases & Success Stories" data-cn="客户案例与成功故事">Customer Cases &amp; Success Stories</h3>
+          <p data-en="Real-world implementations and customer testimonials." data-desc="真实落地案例与客户证言。">Real-world implementations and customer testimonials.</p>
+          <div class="card-footer">
+            <span class="meta-count" data-en="47+ assets" data-cn="47+ 个素材">47+ assets</span>
+          </div>
+        </div>
+
+        <!-- ========== Card 04: Product Documentation (inactive for now) ========== -->
+        <div class="category-card" data-category="documentation"
+             data-title-en="Product Documentation"
+             data-title-cn="产品文档"
+             data-desc-en="API docs, user guides, technical whitepapers."
+             data-desc-cn="API 文档、用户手册、技术白皮书。"
+             data-tags="docs,api,technical">
+          <div class="card-icon"><i class="fas fa-book"></i></div>
+          <h3 data-en="Product Documentation" data-cn="产品文档">Product Documentation</h3>
+          <p data-en="API docs, user guides, technical whitepapers." data-desc="API 文档、用户手册、技术白皮书。">API docs, user guides, technical whitepapers.</p>
+          <div class="card-footer">
+            <span class="meta-count" data-en="15 assets" data-cn="15 个素材">15 assets</span>
+          </div>
+        </div>
+
+        <!-- ========== Card 05: Developer Resources (inactive for now) ========== -->
+        <div class="category-card" data-category="developer"
+             data-title-en="Developer Resources"
+             data-title-cn="开发者资源"
+             data-desc-en="SDKs, code samples, GitHub repos, and dev tools."
+             data-desc-cn="SDK、代码示例、GitHub 仓库和开发工具。"
+             data-tags="dev,sdk,github,code">
+          <div class="card-icon"><i class="fas fa-code-branch"></i></div>
+          <h3 data-en="Developer Resources" data-cn="开发者资源">Developer Resources</h3>
+          <p data-en="SDKs, code samples, GitHub repos, and dev tools." data-desc="SDK、代码示例、GitHub 仓库和开发工具。">SDKs, code samples, GitHub repos, and dev tools.</p>
+          <div class="card-footer">
+            <span class="meta-count" data-en="19 assets" data-cn="19 个素材">19 assets</span>
+          </div>
+        </div>
+
+        <!-- ========== Card 06: Archive (inactive for now) ========== -->
+        <div class="category-card" data-category="archive"
+             data-title-en="Archive"
+             data-title-cn="归档库"
+             data-desc-en="Legacy assets and deprecated materials."
+             data-desc-cn="历史素材和已弃用材料。"
+             data-tags="archive,legacy,old">
+          <div class="card-icon"><i class="fas fa-box-archive"></i></div>
+          <h3 data-en="Archive" data-cn="归档库">Archive</h3>
+          <p data-en="Legacy assets and deprecated materials." data-desc="历史素材和已弃用材料。">Legacy assets and deprecated materials.</p>
+          <div class="card-footer">
+            <span class="meta-count" data-en="58+ assets" data-cn="58+ 个素材">58+ assets</span>
+          </div>
+        </div>
+
+      </div><!-- /.categories-grid -->
+    </section>
+
+  </main>
+
+
+  <!-- ============================================
+       4.7 FOOTER
+       ============================================ -->
+  <footer class="site-footer" id="contact">
+    <div class="container-fluid-custom">
+      <div class="footer-brand">
+        <svg class="footer-logo-svg" viewBox="0 0 240 240" aria-label="TAC monogram">
+          <use href="#tac-monogram"/>
+        </svg>
+        <p class="footer-tagline" data-en="The Agent Company — Ship the next big thing."
+           data-cn="The Agent Company — 交付下一个重磅产品。">The Agent Company — Ship the next big thing.</p>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 The Agent Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <!-- Main JS (Vite entry — imports all styles automatically) -->
+  <script type="module" src="../src/js/main.js"></script>
+</body>
+</html>

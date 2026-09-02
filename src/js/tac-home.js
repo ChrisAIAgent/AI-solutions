@@ -27,7 +27,7 @@ function renderHeader() {
   const header = document.querySelector('.tac-header');
   header.innerHTML = `
     <nav class="tac-nav" aria-label="Primary navigation">
-      <a class="tac-brand" href="#top" aria-label="TAC home"><img src="../assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a>
+      <a class="tac-brand" href="#top" aria-label="TAC home"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a>
       <button class="tac-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">${icon('fa-bars')}</button>
       <div class="tac-nav-links" id="navLinks">
         ${content.nav.map((item, index) => `<div class="tac-nav-item">
@@ -47,7 +47,7 @@ function renderHero() {
       <div class="tac-hero-copy"><p class="tac-eyebrow hero-reveal"><span></span>${content.hero.eyebrow}</p><h1 class="hero-reveal">${content.hero.title}</h1><p class="tac-lead hero-reveal">${content.hero.lead}</p><div class="tac-hero-actions hero-reveal">${link(content.hero.primary)}${link(content.hero.secondary, 'tac-button tac-button--light')}</div></div>
       <article class="tac-artemis-card" id="artemisCard" tabindex="0" aria-label="TAC Agent Platform visual preview">
         <div class="tac-artemis-copy"><p>THE TAC AI AGENT PLATFORM</p><h2>Meet <span>{ TAC }</span></h2><b>NEW</b><p class="tac-artemis-description">An AI-programmable foundation for building dependable agent workflows across the enterprise.</p></div>
-        <div class="tac-artemis-visual" aria-hidden="true"><img class="tac-artemis-fallback" src="../assets/tac/industrial-hero.png" alt=""><video class="tac-artemis-video" muted loop playsinline preload="metadata" poster="../assets/tac/industrial-hero.png"><source src="../videos/planet-earth.mp4" type="video/mp4"></video><div class="tac-artemis-bloom"></div><div class="tac-artemis-grid"></div><div class="tac-artemis-orbit tac-artemis-orbit--one"></div><div class="tac-artemis-orbit tac-artemis-orbit--two"></div></div>
+        <div class="tac-artemis-visual" aria-hidden="true"><img class="tac-artemis-fallback" src="/assets/tac/industrial-hero.png" alt=""><video class="tac-artemis-video" muted loop playsinline preload="metadata" poster="/assets/tac/industrial-hero.png"><source src="/videos/planet-earth.mp4" type="video/mp4"></video><div class="tac-artemis-bloom"></div><div class="tac-artemis-grid"></div><div class="tac-artemis-orbit tac-artemis-orbit--one"></div><div class="tac-artemis-orbit tac-artemis-orbit--two"></div></div>
         <span class="tac-artemis-arrow">↗</span>
       </article>
       <div class="tac-feature-cards" aria-label="TAC application models">${content.hero.featureCards.map((card, index) => `<article class="tac-feature-card tac-feature-card--${index + 1}"><div class="tac-feature-card-heading"><h2>${card.title}</h2><span>↗</span></div><p>${card.text}</p>${featureCardVisual(index)}</article>`).join('')}</div>
@@ -72,7 +72,7 @@ function setupHeroVideo() {
 function featureCardVisual(index) {
   const sources = ['prebuilt.riv', 'accelerators.riv', 'tailored.riv'];
   const labels = ['Pre-built Applications animation', 'Application Accelerators animation', 'Tailored Applications animation'];
-  return `<div class="tac-feature-rive" aria-hidden="true"><canvas class="tac-rive-canvas" data-rive-src="../assets/tac/rive/${sources[index]}" aria-label="${labels[index]}"></canvas><div class="tac-feature-fallback">${featureCardFallback(index)}</div></div>`;
+  return `<div class="tac-feature-rive" aria-hidden="true"><canvas class="tac-rive-canvas" data-rive-src="/assets/tac/rive/${sources[index]}" aria-label="${labels[index]}"></canvas><div class="tac-feature-fallback">${featureCardFallback(index)}</div></div>`;
 }
 
 function featureCardFallback(index) {
@@ -125,7 +125,7 @@ function renderTrust() {
 function applicationVisual(index) {
   const screens = ['banking', 'healthcare', 'retail', 'it', 'hr', 'recruiting'];
   const item = screens[index] || screens[0];
-  return `<div class="tac-reference-screen" aria-hidden="true"><img src="../assets/tac/reference-apps/${item}.webp" loading="lazy" alt=""></div>`;
+  return `<div class="tac-reference-screen" aria-hidden="true"><img src="/assets/tac/reference-apps/${item}.webp" loading="lazy" alt=""></div>`;
 }
 
 function renderApplications() {
@@ -149,7 +149,7 @@ function tailoredMarkup() {
 }
 
 function platformMarkup() {
-  return `<div class="tac-product-panel-heading"><p class="tac-eyebrow"><span></span>AGENT PLATFORM</p><h3>A dependable layer for AI work that needs to operate.</h3><p>Move from isolated pilots to intentional, governed experiences across teams and systems.</p></div><div class="tac-platform-brief"><div class="tac-platform-motion" aria-hidden="true"><img src="../assets/tac/logo-system.png" alt=""><span></span><span></span></div><div><p>PLATFORM BRIEF</p><h4>Bring your people, systems, and AI experiences into one operating model.</h4>${link({ label: 'EXPLORE THE PLATFORM', href: '#platform' }, 'tac-text-link')}</div></div>`;
+  return `<div class="tac-product-panel-heading"><p class="tac-eyebrow"><span></span>AGENT PLATFORM</p><h3>A dependable layer for AI work that needs to operate.</h3><p>Move from isolated pilots to intentional, governed experiences across teams and systems.</p></div><div class="tac-platform-brief"><div class="tac-platform-motion" aria-hidden="true"><img src="/assets/tac/logo-system.png" alt=""><span></span><span></span></div><div><p>PLATFORM BRIEF</p><h4>Bring your people, systems, and AI experiences into one operating model.</h4>${link({ label: 'EXPLORE THE PLATFORM', href: '#platform' }, 'tac-text-link')}</div></div>`;
 }
 
 function setProductPanel(id) {
@@ -207,7 +207,7 @@ function renderInsights() {
 
 function renderContactAndFooter() {
   document.querySelector('.tac-contact').innerHTML = `<div class="section-shell tac-contact-content reveal"><p class="tac-eyebrow"><span></span>START A CONVERSATION</p><h2>Let’s build the next useful AI experience together.</h2><p>Tell TAC what work you want to make clearer, faster, or easier to govern.</p>${link({ label: 'GET IN TOUCH', href: '#top' }, 'tac-button tac-button--light')}</div>`;
-  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="../assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>Preview content only · Secondary routes coming soon</span></div>`;
+  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>Preview content only · Secondary routes coming soon</span></div>`;
 }
 
 function activateTab(group, id) {
