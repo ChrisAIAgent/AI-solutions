@@ -21,7 +21,7 @@ export const tacContent = {
   nav: [
     { label: 'Agent Platform', target: '#platform', items: ['Build with confidence', 'Orchestrate workflows', 'Govern every action'] },
     { label: 'Agentic AI Apps', target: '#applications', items: ['Pre-built applications', 'Application accelerators', 'Tailored applications'] },
-    { label: 'Agent Marketplace', target: '#accelerators', items: ['Agents', 'Templates', 'Integrations'] },
+    { label: 'Agent Marketplace', target: '#accelerators', items: ['Agents', 'Templates', 'Integrations', { label: 'Skills', href: './pages/skills.html' }, { label: 'TAC AI Assistant Asset Lab', href: './pages/tac-assistant-assets.html' }] },
     { label: 'More', target: '#insights', items: ['Industry insights', 'Partner ecosystem', 'Contact TAC'] }
   ],
   hero: {
@@ -87,11 +87,13 @@ export const tacContent = {
     { id: 'work', label: 'AI FOR WORK', title: 'How connected knowledge becomes measurable productivity.', text: 'Turning fragmented enterprise knowledge into outcomes teams can see and improve.' },
     { id: 'governance', label: 'GOVERNANCE', title: 'Operating AI with visibility, policy, and human control.', text: 'A working model for keeping every AI action understandable and accountable.' }
   ],
-  testimonials: [
-    { company: 'Global financial services group', quote: '“TAC gave our service teams one consistent source of context, so every customer conversation starts from the same place.”', person: 'VP, Customer Operations', role: 'Banking' },
-    { company: 'Regional health system', quote: '“We turned high-volume member questions into guided, safe answers — without adding to our care teams’ daily load.”', person: 'Director of Member Experience', role: 'Healthcare' },
-    { company: 'Enterprise technology team', quote: '“TAC took us from disconnected pilots to one operating model our teams can actually trust.”', person: 'Head of AI Platform', role: 'Enterprise technology' }
-  ],
+  skillsMarketplace: {
+    eyebrow: 'SKILL MARKETPLACE',
+    title: 'Discover skills that turn AI into useful work.',
+    text: 'Explore public community skills for design, development, planning, and presentation workflows. Review each original source before you use it.',
+    route: './pages/skills.html',
+    featuredIds: ['frontend-design', 'skill-creator', 'ui-ux-pro-max']
+  },
   partners: [
     { name: 'Technology ecosystem', text: 'A space for approved cloud, data, and enterprise software relationships that help TAC solutions fit into real operating environments.' },
     { name: 'Implementation ecosystem', text: 'A space for approved delivery and domain partners that extend TAC expertise into client programs.' }

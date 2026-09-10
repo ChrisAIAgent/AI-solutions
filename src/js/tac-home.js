@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { Rive } from '@rive-app/canvas';
 import { content } from '../data/tac-home-content.js';
+import { skills } from '../data/tac-skills.js';
+import { mountTacAssistant } from './tac-assistant.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +27,12 @@ const link = ({ label, href = '#' }, className = 'tac-button tac-button--dark') 
 
 function renderHeader() {
   const header = document.querySelector('.tac-header');
+  const renderNavChild = (item, child) => {
+    const label = typeof child === 'string' ? child : child.label;
+    const href = typeof child === 'string' ? item.target : child.href;
+    const external = /^https?:\/\//i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return `<a href="${href}" role="menuitem"${external}>${label}<span>↗</span></a>`;
+  };
   header.innerHTML = `
     <nav class="tac-nav" aria-label="Primary navigation">
       <a class="tac-brand" href="#top" aria-label="TAC home"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a>
@@ -32,7 +40,7 @@ function renderHeader() {
       <div class="tac-nav-links" id="navLinks">
         ${content.nav.map((item, index) => `<div class="tac-nav-item">
           <button class="tac-nav-trigger" type="button" aria-expanded="false" aria-controls="navMenu${index}">${item.label} ${icon('fa-chevron-down')}</button>
-          <div class="tac-nav-popover" id="navMenu${index}" role="menu">${item.items.map((child) => `<a href="${item.target}" role="menuitem">${child}<span>↗</span></a>`).join('')}</div>
+          <div class="tac-nav-popover" id="navMenu${index}" role="menu">${item.items.map((child) => renderNavChild(item, child)).join('')}</div>
         </div>`).join('')}
       </div>
       <div class="tac-nav-actions"><a class="tac-signin" href="#contact">Sign in</a>${link({ label: content.download.navLabel, href: './pages/tacwork-download.html' }, 'tac-button tac-button--nav')}</div>
@@ -193,8 +201,19 @@ function renderReports() {
     <div class="tac-reports-tabs reveal" role="tablist" aria-label="TAC reports">${content.reports.map((report, index) => `<button role="tab" data-report="${report.id}" aria-selected="${index === 0}" tabindex="${index === 0 ? '0' : '-1'}">${report.label}</button>`).join('')}</div><article class="tac-report-card reveal" id="reportPanel"><div class="tac-report-visual"><span>TAC<br>INSIGHT<br>01</span></div><div><p class="tac-eyebrow"><span></span>TAC INSIGHT</p><h2>${first.title}</h2><p>${first.text}</p>${link({ label: 'REGISTER INTEREST', href: '#contact' }, 'tac-text-link')}</div></article>`;
 }
 
-function renderTestimonials() {
-  document.querySelector('.tac-testimonials').innerHTML = `<div class="tac-testimonials-heading reveal"><p class="tac-eyebrow"><span></span>CUSTOMER STORIES</p><h2>What dependable AI makes possible.</h2></div><div class="tac-carousel reveal"><div class="tac-carousel-track" id="testimonialTrack">${content.testimonials.map((story, index) => `<article class="tac-testimonial" data-slide="${index}"><p class="tac-testimonial-company">${story.company}</p><blockquote>${story.quote}</blockquote><footer><strong>${story.person}</strong><span>${story.role}</span></footer></article>`).join('')}</div><div class="tac-carousel-controls"><p><span id="testimonialIndex">01</span> / ${String(content.testimonials.length).padStart(2, '0')}</p><button id="testimonialPrev" aria-label="Previous story">←</button><button id="testimonialNext" aria-label="Next story">→</button><button id="testimonialPause" aria-label="Pause story rotation">Ⅱ</button></div></div>`;
+function renderSkillMarketplaceFeature() {
+  const feature = content.skillsMarketplace;
+  const featuredSkills = feature.featuredIds.map((id) => skills.find((skill) => skill.id === id)).filter(Boolean);
+  document.querySelector('.tac-skills-feature').innerHTML = `
+    <div class="tac-skills-feature-heading reveal">
+      <p class="tac-eyebrow"><span></span>${feature.eyebrow}</p>
+      <div><h2>${feature.title}</h2><p>${feature.text}</p></div>
+    </div>
+    <div class="tac-skills-feature-panel reveal">
+      <div class="tac-skills-feature-panel-top"><span>COMMUNITY SKILLS</span><span>PUBLIC SOURCE DIRECTORY</span></div>
+      <div class="tac-skills-feature-grid">${featuredSkills.map((skill, index) => `<a class="tac-skill-feature-card" href="${feature.route}#${skill.id}"><div class="tac-skill-feature-card-meta"><span>0${index + 1}</span><span>${skill.category}</span></div><h3>${skill.name}</h3><p>${skill.description}</p><div class="tac-skill-feature-tags">${skill.tags.map((tag) => `<span>${tag}</span>`).join('')}</div><b aria-hidden="true">↗</b></a>`).join('')}</div>
+      <a class="tac-skills-feature-cta" href="${feature.route}">Explore Skill Marketplace <b aria-hidden="true">↗</b></a>
+    </div>`;
 }
 
 function renderPartners() {
@@ -207,7 +226,7 @@ function renderInsights() {
 
 function renderContactAndFooter() {
   document.querySelector('.tac-contact').innerHTML = `<div class="section-shell tac-contact-content reveal"><p class="tac-eyebrow"><span></span>START A CONVERSATION</p><h2>Let’s build the next useful AI experience together.</h2><p>Tell TAC what work you want to make clearer, faster, or easier to govern.</p>${link({ label: 'GET IN TOUCH', href: '#top' }, 'tac-button tac-button--light')}</div>`;
-  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a><a class="tac-footer-download" href="./pages/tacwork-download.html">${content.download.navLabel}</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>TAC · A ChrisAI Brand</span></div>`;
+  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a><a class="tac-footer-download" href="./pages/tacwork-download.html">${content.download.navLabel}</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="./pages/skills.html">Skills Marketplace</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>TAC · A ChrisAI Brand</span></div>`;
 }
 
 function activateTab(group, id) {
@@ -350,12 +369,6 @@ function setupInteractions() {
   document.querySelectorAll('[data-capability-direction]').forEach((button) => button.addEventListener('click', () => moveCapabilityGallery(button.dataset.capabilityDirection === 'next' ? 1 : -1)));
   document.querySelector('.tac-reports-tabs')?.addEventListener('click', (event) => { const button = event.target.closest('[data-report]'); if (!button) return; const report = content.reports.find((item) => item.id === button.dataset.report); activateTab('report', report.id); document.querySelector('#reportPanel').innerHTML = `<div class="tac-report-visual"><span>TAC<br>INSIGHT<br>${String(content.reports.indexOf(report) + 1).padStart(2, '0')}</span></div><div><p class="tac-eyebrow"><span></span>${report.label}</p><h2>${report.title}</h2><p>${report.text}</p>${link({ label: 'REGISTER INTEREST', href: '#contact' }, 'tac-text-link')}</div>`; });
 
-  let slide = 0; let rotating = true; const track = document.querySelector('#testimonialTrack'); const updateSlide = () => { if (!track) return; track.style.transform = `translateX(-${slide * 100}%)`; document.querySelector('#testimonialIndex').textContent = String(slide + 1).padStart(2, '0'); };
-  document.querySelector('#testimonialNext')?.addEventListener('click', () => { slide = (slide + 1) % content.testimonials.length; rotating = false; updateSlide(); });
-  document.querySelector('#testimonialPrev')?.addEventListener('click', () => { slide = (slide - 1 + content.testimonials.length) % content.testimonials.length; rotating = false; updateSlide(); });
-  document.querySelector('#testimonialPause')?.addEventListener('click', (event) => { rotating = !rotating; event.currentTarget.textContent = rotating ? 'Ⅱ' : '▶'; event.currentTarget.setAttribute('aria-label', rotating ? 'Pause story rotation' : 'Resume story rotation'); });
-  window.setInterval(() => { if (rotating && !document.hidden) { slide = (slide + 1) % content.testimonials.length; updateSlide(); } }, 6500);
-
   setupRovingTabs('.tac-industry-tabs, .tac-product-tabs, .tac-capability-tabs, .tac-reports-tabs');
   const applyProductHash = (scroll = false) => {
     const normalizedHash = window.location.hash.toLowerCase();
@@ -367,5 +380,5 @@ function setupInteractions() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderHeader(); renderHero(); setupHeroVideo(); setupRiveAnimations(); renderTrust(); renderApplications(); renderCapabilities(); renderReports(); renderPartners(); renderInsights(); renderTestimonials(); renderContactAndFooter(); setupInteractions(); setupMotionController();
+  renderHeader(); renderHero(); setupHeroVideo(); setupRiveAnimations(); renderTrust(); renderApplications(); renderCapabilities(); renderReports(); renderPartners(); renderInsights(); renderSkillMarketplaceFeature(); renderContactAndFooter(); setupInteractions(); setupMotionController(); mountTacAssistant(content);
 });

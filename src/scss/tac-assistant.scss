@@ -1,0 +1,73 @@
+@keyframes tac-assistant-float { 50% { transform: translateY(-6px) rotate(-1deg); } }
+@keyframes tac-assistant-breathe { 50% { opacity: .72; transform: scale(1.08); } }
+@keyframes tac-assistant-greeting { 0% { opacity: .5; transform: scale(.92) translateY(12px); } 65% { transform: scale(1.04) translateY(-3px); } 100% { opacity: 1; transform: none; } }
+@keyframes tac-assistant-thinking { 50% { transform: translateX(4px) rotate(1deg); filter: brightness(1.12); } }
+@keyframes tac-assistant-typing { 50% { transform: translateY(-4px) scale(1.02); filter: brightness(1.1); } }
+@keyframes tac-assistant-complete { 45% { transform: scale(1.08) translateY(-6px); } }
+@keyframes tac-assistant-handoff { 50% { transform: translate(4px, -4px) rotate(2deg); } }
+@keyframes tac-assistant-error { 50% { opacity: .68; filter: saturate(.7); } }
+
+.tac-assistant { position: fixed; z-index: 50; right: clamp(18px, 3vw, 42px); bottom: clamp(18px, 3vw, 34px); width: min(390px, calc(100vw - 36px)); color: #172a30; font-family: 'TAC Roboto', Arial, sans-serif; pointer-events: none; }
+.tac-assistant *, .tac-assistant *::before, .tac-assistant *::after { box-sizing: border-box; }
+.tac-assistant button, .tac-assistant input { font: inherit; }
+.tac-assistant button, .tac-assistant a { -webkit-tap-highlight-color: transparent; }
+.tac-assistant-panel { display: flex; visibility: hidden; flex-direction: column; width: 100%; max-height: min(640px, calc(100vh - 120px)); margin-bottom: 14px; overflow: hidden; border: 1px solid rgba(61, 129, 149, .2); border-radius: 18px; background: linear-gradient(150deg, rgba(255,255,255,.98), rgba(242,250,252,.99)); box-shadow: 0 24px 70px rgba(35, 107, 135, .2), 0 0 0 1px rgba(239, 29, 45, .04); opacity: 0; transform: translateY(14px) scale(.97); transform-origin: bottom right; transition: visibility .2s ease, opacity .2s ease, transform .2s ease; pointer-events: none; }
+.tac-assistant.is-open .tac-assistant-panel { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
+.tac-assistant-panel-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 17px 18px 14px; border-bottom: 1px solid rgba(26, 74, 88, .1); }
+.tac-assistant-panel-header > div { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 8px; }
+.tac-assistant-panel-header strong { font-size: 14px; letter-spacing: -.025em; }
+.tac-assistant-panel-header small { grid-column: 2; margin-top: 3px; color: #6c858d; font: 9px 'TAC Source Code Pro', monospace; letter-spacing: .08em; }
+.tac-assistant-state-readout { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 17px; border-bottom: 1px solid rgba(26, 74, 88, .08); color: #d82736; font: 9px 'TAC Source Code Pro', monospace; letter-spacing: .05em; }
+.tac-assistant-state-readout small { color: #6c858d; font: inherit; }
+.tac-assistant-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #ef2635; box-shadow: 0 0 0 5px rgba(239, 38, 53, .12), 0 0 18px rgba(239, 38, 53, .65); }
+.tac-assistant-close { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(26, 74, 88, .2); border-radius: 50%; background: transparent; color: #57727b; font-size: 18px; line-height: 1; cursor: pointer; }
+.tac-assistant-close:hover { border-color: #ef2635; color: #172a30; }
+.tac-assistant-messages { display: flex; flex-direction: column; gap: 12px; min-height: 156px; max-height: 300px; padding: 17px 17px 10px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(239,38,53,.6) transparent; }
+.tac-assistant-message { display: grid; gap: 6px; max-width: 91%; }
+.tac-assistant-message--user { align-self: flex-end; justify-items: end; }
+.tac-assistant-message-bubble { padding: 11px 13px; border: 1px solid rgba(61, 129, 149, .14); border-radius: 11px 11px 11px 3px; background: #edf6f8; color: #28454e; font-size: 12px; line-height: 1.55; }
+.tac-assistant-message--user .tac-assistant-message-bubble { border-color: rgba(239,38,53,.2); border-radius: 11px 11px 3px 11px; background: rgba(239,38,53,.11); color: #84202b; }
+.tac-assistant-sources { display: flex; flex-wrap: wrap; gap: 5px; }
+.tac-assistant-sources a { color: #527d88; font-size: 10px; text-decoration: none; }
+.tac-assistant-sources a:hover { color: #ef5260; }
+.tac-assistant-sales-cta { display: inline-flex; align-items: center; gap: 7px; width: fit-content; padding: 7px 10px; border-radius: 999px; background: #ef2635; color: #fff; font-size: 10px; text-decoration: none; }
+.tac-assistant-sales-cta:hover { background: #ff4250; }
+.tac-assistant-retry { width: fit-content; padding: 6px 10px; border: 1px solid rgba(132, 177, 187, .3); border-radius: 999px; background: transparent; color: #a8bec2; font-size: 10px; cursor: pointer; }
+.tac-assistant-retry:hover { border-color: #ef2635; color: #fff; }
+.tac-assistant-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 17px 13px; }
+.tac-assistant-quick button { padding: 7px 9px; border: 1px solid rgba(61, 129, 149, .2); border-radius: 999px; background: rgba(233, 245, 247, .82); color: #52727b; font-size: 10px; cursor: pointer; }
+.tac-assistant-quick button:hover { border-color: rgba(239,38,53,.65); color: #fff; }
+.tac-assistant-form { display: flex; gap: 8px; padding: 0 17px 9px; }
+.tac-assistant-input-label { flex: 1; }
+.tac-assistant-form input { width: 100%; height: 40px; padding: 0 12px; border: 1px solid rgba(61, 129, 149, .24); border-radius: 9px; outline: 0; background: rgba(255,255,255,.92); color: #172a30; font-size: 12px; }
+.tac-assistant-form input::placeholder { color: #7a9299; }
+.tac-assistant-form input:focus { border-color: rgba(239,38,53,.8); box-shadow: 0 0 0 3px rgba(239,38,53,.1); }
+.tac-assistant-form > button { display: grid; width: 40px; height: 40px; flex: none; place-items: center; border: 0; border-radius: 9px; background: #ef2635; color: #fff; font-size: 19px; cursor: pointer; }
+.tac-assistant-form > button:hover { background: #ff4250; }
+.tac-assistant-form-note { display: flex; justify-content: space-between; gap: 10px; padding: 0 17px 14px; color: #6c858d; font: 9px 'TAC Source Code Pro', monospace; letter-spacing: .02em; }
+.tac-assistant-form-note button { padding: 0; border: 0; background: transparent; color: #718b91; font: inherit; text-decoration: underline; cursor: pointer; }
+.tac-assistant-form-note button:hover { color: #ef5260; }
+.tac-assistant-launcher { position: relative; display: grid; width: 80px; height: 80px; margin-left: auto; place-items: center; border: 1px solid #ef2635; border-radius: 50%; background: radial-gradient(circle, #ffffff 0%, #e6f5f7 72%); box-shadow: 0 10px 30px rgba(35, 107, 135, .2), 0 0 0 8px rgba(239,38,53,.08), 0 0 30px rgba(239,38,53,.16); cursor: pointer; pointer-events: auto; animation: tac-assistant-float 2.6s ease-in-out infinite; }
+.tac-assistant-launcher:hover { box-shadow: 0 10px 30px rgba(35, 107, 135, .24), 0 0 0 10px rgba(239,38,53,.12), 0 0 38px rgba(239,38,53,.28); }
+.tac-assistant-launcher img { width: 72px; height: 72px; object-fit: contain; }
+.tac-assistant-launcher-ring { position: absolute; inset: -8px; border: 1px solid rgba(239,38,53,.28); border-radius: 50%; animation: tac-assistant-breathe 2.6s ease-in-out infinite; }
+.tac-assistant-launcher-badge { position: absolute; right: -3px; bottom: -2px; display: grid; width: 23px; height: 23px; place-items: center; border: 2px solid #edf7f8; border-radius: 50%; background: #ef2635; color: #fff; font-size: 10px; }
+.tac-assistant[data-state='greeting'] .tac-assistant-launcher img { animation: tac-assistant-greeting .6s ease-out both; }
+.tac-assistant[data-state='thinking'] .tac-assistant-launcher img { animation: tac-assistant-thinking 2.4s ease-in-out infinite; }
+.tac-assistant[data-state='typing'] .tac-assistant-launcher img { animation: tac-assistant-typing 1.1s ease-in-out infinite; }
+.tac-assistant[data-state='complete'] .tac-assistant-launcher img { animation: tac-assistant-complete .9s ease-out both; }
+.tac-assistant[data-state='no-answer'] .tac-assistant-launcher img { animation: tac-assistant-handoff .7s ease-in-out both; }
+.tac-assistant[data-state='sales'] .tac-assistant-launcher img { animation: tac-assistant-handoff .7s ease-in-out both; }
+.tac-assistant[data-state='error-offline'] .tac-assistant-launcher img { animation: tac-assistant-error 4.2s ease-in-out infinite; }
+.tac-assistant.is-paused * { animation-play-state: paused !important; }
+.tac-assistant .visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+
+@media (max-width: 620px) {
+  .tac-assistant { right: 16px; bottom: 16px; width: min(378px, calc(100vw - 32px)); }
+  .tac-assistant-panel { max-height: min(600px, calc(100vh - 98px)); }
+  .tac-assistant-messages { max-height: 260px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tac-assistant *, .tac-assistant *::before, .tac-assistant *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

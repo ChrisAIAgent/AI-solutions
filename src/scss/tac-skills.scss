@@ -1,0 +1,113 @@
+@font-face { font-family: 'TAC Skills Roboto'; src: url('/assets/tac/fonts/Roboto-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'TAC Skills Roboto'; src: url('/assets/tac/fonts/Roboto-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'TAC Skills Roboto'; src: url('/assets/tac/fonts/Roboto-Bold.ttf') format('truetype'); font-weight: 700 900; font-display: swap; }
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html:has(body.tac-skills) { scroll-behavior: smooth; }
+body.tac-skills { margin: 0; background: #edf6f9; color: #11191d; font-family: 'TAC Skills Roboto', Arial, sans-serif; }
+.tac-skills a { color: inherit; text-decoration: none; }
+.tac-skills button, .tac-skills input { font: inherit; }
+.tac-skills-skip { position: fixed; z-index: 100; left: 16px; top: -70px; padding: 10px 14px; background: #11191d; color: #fff; transition: top .18s ease; }
+.tac-skills-skip:focus { top: 16px; }
+.tac-skills-header { width: min(1400px, calc(100% - 64px)); min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 18px auto 0; padding: 12px 24px; border: 1px solid rgba(18, 52, 63, .08); border-radius: 16px; background: rgba(255,255,255,.92); box-shadow: 0 13px 38px rgba(34, 103, 129, .08); }
+.tac-skills-brand { display: inline-flex; align-items: center; gap: 9px; font-size: 18px; font-weight: 700; letter-spacing: -.06em; }
+.tac-skills-brand img { width: 38px; height: 38px; border-radius: 6px; object-fit: cover; }
+.tac-skills-brand span span { color: #dd201e; }
+.tac-skills-back { color: #42636e; font-size: 14px; }
+.tac-skills-back span, .tac-skills-source-link span { color: #1c91cd; }
+.tac-skills-hero, .tac-skills-directory, .tac-skills-safety, .tac-skills-footer { width: min(1240px, calc(100% - 64px)); margin-inline: auto; }
+.tac-skills-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr); gap: 42px 64px; align-items: end; padding: 122px 0 86px; }
+.tac-skills-eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: #4e6c76; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.tac-skills-eyebrow > span { width: 28px; height: 1px; background: #ed3732; }
+.tac-skills-hero h1 { max-width: 800px; margin: 0; font-size: clamp(50px, 6.3vw, 88px); line-height: .96; letter-spacing: -.075em; font-weight: 500; }
+.tac-skills-lead { max-width: 570px; margin: 26px 0 0; color: #607984; font-size: 18px; line-height: 1.5; }
+.tac-skills-hero-visual { position: relative; min-height: 300px; margin: 0; overflow: hidden; border: 1px solid rgba(18,52,63,.18); border-radius: 16px; background: #070b0e; box-shadow: 0 22px 42px rgba(28,66,82,.16); }
+.tac-skills-hero-visual::after { position: absolute; inset: 0; content: ''; background: linear-gradient(180deg, transparent 52%, rgba(3,8,10,.72)); pointer-events: none; }
+.tac-skills-hero-visual img { display: block; width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: 58% center; filter: saturate(.9) contrast(1.04); }
+.tac-skills-hero-visual figcaption { position: absolute; z-index: 1; right: 18px; bottom: 16px; left: 18px; display: flex; justify-content: space-between; gap: 12px; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+.tac-skills-search-wrap { grid-column: 1 / -1; width: min(650px, 100%); }
+.tac-skills-search-wrap label { display: block; margin-bottom: 10px; color: #4e6c76; font-size: 12px; font-weight: 700; }
+.tac-skills-search-box { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 16px; border: 1px solid rgba(27, 65, 80, .18); border-radius: 8px; background: rgba(255,255,255,.72); box-shadow: 0 10px 30px rgba(35,107,135,.06); }
+.tac-skills-search-box > span { color: #1d9ce0; font-size: 25px; line-height: 1; }
+.tac-skills-search-box input { width: 100%; border: 0; outline: 0; background: transparent; color: #11191d; font-size: 14px; }
+.tac-skills-search-box input::placeholder { color: #789099; }
+.tac-skills-directory { padding: 80px 0 118px; }
+.tac-skills-directory-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+.tac-skills-directory-heading h2, .tac-skills-safety h2 { max-width: 720px; margin: 0; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.02; letter-spacing: -.065em; font-weight: 500; }
+.tac-skills-result-count { margin: 0 0 4px; color: #5d7882; font-size: 13px; }
+.tac-skills-filters { display: flex; gap: 8px; margin-top: 42px; padding-bottom: 10px; border-bottom: 1px solid rgba(27, 65, 80, .14); overflow-x: auto; }
+.tac-skills-filters button { flex: 0 0 auto; padding: 10px 16px; border: 1px solid rgba(27, 65, 80, .18); border-radius: 999px; background: transparent; color: #4d6d78; font-size: 13px; cursor: pointer; transition: color .18s ease, background .18s ease, border-color .18s ease; }
+.tac-skills-filters button:hover, .tac-skills-filters button:focus-visible { border-color: #1d9ce0; color: #126f9e; }
+.tac-skills-filters button[aria-selected='true'] { border-color: #161918; background: #161918; color: #fff; }
+.tac-skills-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: 24px; margin-top: 28px; align-items: start; }
+.tac-skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.tac-skill-card { position: relative; min-height: 275px; display: flex; flex-direction: column; align-items: flex-start; padding: 23px; border: 1px solid rgba(27,65,80,.13); border-radius: 14px; background: rgba(255,255,255,.82); color: #11191d; text-align: left; box-shadow: 0 12px 28px rgba(35,107,135,.06); cursor: pointer; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.tac-skill-card:hover, .tac-skill-card:focus-visible, .tac-skill-card.is-selected { transform: translateY(-4px); border-color: rgba(29,156,224,.56); box-shadow: 0 18px 34px rgba(35,107,135,.14); outline: none; }
+.tac-skill-card-top, .tac-skill-card-tags, .tac-skills-detail-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
+.tac-skill-card-top { color: #1687c8; font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+.tac-skill-card-top span:last-child { color: #5f7881; letter-spacing: .02em; }
+.tac-skill-card-number { margin-top: 30px; color: #b1c8ce; font-size: 12px; }
+.tac-skill-card strong { margin: 12px 0 9px; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.04; letter-spacing: -.055em; font-weight: 500; }
+.tac-skill-card-description { color: #5d7580; font-size: 13px; line-height: 1.52; }
+.tac-skill-card-tags { justify-content: flex-start; flex-wrap: wrap; margin-top: auto; padding-top: 18px; }
+.tac-skill-card-tags i, .tac-skills-detail-tags span { padding: 5px 8px; border: 1px solid rgba(27,65,80,.13); border-radius: 999px; color: #52717b; font-size: 10px; font-style: normal; }
+.tac-skill-card-arrow { position: absolute; top: 22px; right: 22px; color: #172a30; font-size: 18px; }
+.tac-skills-detail { position: sticky; top: 24px; min-height: 460px; padding: 28px; border: 1px solid rgba(27,65,80,.14); border-radius: 14px; background: #152326; color: #eef7f7; box-shadow: 0 18px 38px rgba(17,42,49,.14); }
+.tac-skills-detail-empty { padding-top: 135px; }
+.tac-skills-detail .tac-skills-eyebrow { color: #a7d7dc; }
+.tac-skills-detail-top { align-items: flex-start; }
+.tac-skills-detail-status { color: #99d54b; font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.tac-skills-detail h2 { max-width: 450px; margin: 36px 0 0; font-size: clamp(30px, 3.2vw, 48px); line-height: 1.02; letter-spacing: -.06em; font-weight: 500; }
+.tac-skills-detail-description { margin: 18px 0 0; color: #bdd0d1; font-size: 14px; line-height: 1.6; }
+.tac-skills-detail-visual { position: relative; height: 112px; margin-top: 24px; overflow: hidden; border: 1px solid rgba(214,247,247,.18); border-radius: 9px; background: #070b0e; }
+.tac-skills-detail-visual::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgba(7,11,14,.65), rgba(7,11,14,.06)); }
+.tac-skills-detail-visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 62%; opacity: .78; }
+.tac-skills-detail-visual span { position: absolute; z-index: 1; left: 14px; bottom: 12px; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .11em; }
+.tac-skills-meta { display: grid; gap: 0; margin: 27px 0 0; border-top: 1px solid rgba(214,247,247,.18); }
+.tac-skills-meta > div { display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 11px 0; border-bottom: 1px solid rgba(214,247,247,.14); font-size: 12px; }
+.tac-skills-meta dt { color: #85aab0; }
+.tac-skills-meta dd { margin: 0; color: #e2eeee; overflow-wrap: anywhere; }
+.tac-skills-detail-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+.tac-skills-detail-tags span { border-color: rgba(214,247,247,.22); color: #b8d7da; }
+.tac-skills-source-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 25px; padding-bottom: 5px; border-bottom: 1px solid #9fd7e5; color: #fff; font-size: 13px; font-weight: 700; }
+.tac-skills-detail-note { margin: 22px 0 0; color: #88a6aa; font-size: 11px; line-height: 1.55; }
+.tac-skills-empty { grid-column: 1 / -1; min-height: 230px; display: grid; place-content: center; padding: 30px; border: 1px dashed rgba(27,65,80,.24); border-radius: 14px; background: rgba(255,255,255,.4); text-align: center; }
+.tac-skills-empty h3 { margin: 0; font-size: 24px; }
+.tac-skills-empty p { color: #607984; }
+.tac-skills-safety { display: grid; grid-template-columns: minmax(180px, .42fr) minmax(0, 1.58fr); gap: 42px; padding: 76px 0; border-top: 1px solid rgba(27,65,80,.14); }
+.tac-skills-safety h2 { max-width: 700px; font-size: clamp(30px, 3.7vw, 50px); }
+.tac-skills-safety h2 + p { max-width: 650px; margin: 18px 0 0; color: #607984; font-size: 15px; line-height: 1.6; }
+.tac-skills-footer { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding: 50px 0 38px; border-top: 1px solid rgba(27,65,80,.14); color: #4d6d78; }
+.tac-skills-footer p { max-width: 240px; margin: 14px 0 0; font-size: 13px; line-height: 1.5; }
+.tac-skills-footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12px; }
+.tac-skills-footer-links a:hover, .tac-skills-footer-links a:focus-visible { color: #1d91c7; }
+@media (max-width: 980px) {
+  .tac-skills-hero { grid-template-columns: 1fr; gap: 40px; padding-top: 90px; }
+  .tac-skills-hero-visual { width: min(640px, 100%); }
+  .tac-skills-layout, .tac-skills-safety { grid-template-columns: 1fr; }
+  .tac-skills-detail { position: static; }
+}
+@media (max-width: 620px) {
+  .tac-skills-header, .tac-skills-hero, .tac-skills-directory, .tac-skills-safety, .tac-skills-footer { width: calc(100% - 32px); }
+  .tac-skills-header { min-height: 62px; margin-top: 8px; padding: 9px 13px; border-radius: 12px; }
+  .tac-skills-brand { font-size: 16px; }
+  .tac-skills-brand img { width: 31px; height: 31px; }
+  .tac-skills-back { font-size: 12px; }
+  .tac-skills-hero { padding: 78px 0 64px; }
+  .tac-skills-hero h1 { font-size: 50px; }
+  .tac-skills-lead { font-size: 16px; }
+  .tac-skills-hero-visual, .tac-skills-hero-visual img { min-height: 230px; }
+  .tac-skills-directory { padding-block: 64px 80px; }
+  .tac-skills-directory-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .tac-skills-filters { margin-top: 30px; }
+  .tac-skills-grid { grid-template-columns: 1fr; }
+  .tac-skill-card { min-height: 250px; }
+  .tac-skills-detail { min-height: 0; padding: 23px; }
+  .tac-skills-detail-empty { padding-top: 55px; }
+  .tac-skills-safety { padding-block: 58px; }
+  .tac-skills-footer { align-items: flex-start; flex-direction: column; padding-block: 38px 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

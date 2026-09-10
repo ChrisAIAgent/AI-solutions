@@ -1,0 +1,104 @@
+{
+  "version": "0.1.0",
+  "defaultState": "idle",
+  "priority": ["error-offline", "sales", "no-answer", "complete", "typing", "thinking", "greeting", "idle"],
+  "states": {
+    "idle": {
+      "asset": "expressions/happy.webp",
+      "loop": true,
+      "durationMs": 2600,
+      "trigger": "assistant is closed and the page is visible",
+      "next": "idle",
+      "motion": "float-and-breathe"
+    },
+    "greeting": {
+      "asset": "expressions/happy.webp",
+      "loop": false,
+      "durationMs": 600,
+      "trigger": "assistant opens",
+      "next": "idle",
+      "motion": "pop-and-settle"
+    },
+    "thinking": {
+      "asset": "states/thinking.webp",
+      "loop": true,
+      "durationMs": 2400,
+      "trigger": "question submitted",
+      "next": "typing",
+      "motion": "scan-and-pulse"
+    },
+    "typing": {
+      "asset": "states/typing.webp",
+      "loop": true,
+      "durationMs": 1100,
+      "trigger": "answer generation is active",
+      "next": "complete|no-answer|error-offline",
+      "motion": "thinking-pulse"
+    },
+    "complete": {
+      "asset": "states/complete.webp",
+      "loop": false,
+      "durationMs": 900,
+      "holdMs": 2600,
+      "trigger": "grounded answer is available",
+      "next": "idle",
+      "motion": "success-bounce"
+    },
+    "no-answer": {
+      "asset": "states/no-answer.webp",
+      "loop": false,
+      "durationMs": 700,
+      "holdMs": 3600,
+      "trigger": "no supported homepage evidence is found",
+      "next": "sales",
+      "motion": "question-nudge"
+    },
+    "sales": {
+      "asset": "states/sales.webp",
+      "loop": false,
+      "durationMs": 700,
+      "holdMs": 3600,
+      "trigger": "visitor chooses contact sales or high-intent handoff is detected",
+      "next": "idle",
+      "motion": "handoff-point"
+    },
+    "error-offline": {
+      "asset": "states/error-offline.webp",
+      "loop": true,
+      "durationMs": 4200,
+      "trigger": "network or assistant request fails",
+      "next": "thinking",
+      "motion": "low-power-pulse"
+    }
+  },
+  "transitions": [
+    { "from": "closed", "event": "open", "to": "greeting" },
+    { "from": "greeting", "event": "animation-end", "to": "idle" },
+    { "from": "idle", "event": "submit", "to": "thinking" },
+    { "from": "thinking", "event": "generation-start", "to": "typing" },
+    { "from": "typing", "event": "answer-ready", "to": "complete" },
+    { "from": "typing", "event": "unsupported", "to": "no-answer" },
+    { "from": "typing", "event": "request-error", "to": "error-offline" },
+    { "from": "no-answer", "event": "animation-end", "to": "sales" },
+    { "from": "sales|error-offline", "event": "user-action", "to": "idle" },
+    { "from": "complete|no-answer|sales", "event": "new-submit", "to": "thinking" }
+  ],
+  "timingPolicy": {
+    "showProgressAfterMs": 8000,
+    "fallbackAfterMs": 15000,
+    "pauseWhenDocumentHidden": true,
+    "interruptibleStates": ["greeting", "complete", "no-answer", "sales"],
+    "terminalUntilAction": ["error-offline"]
+  },
+  "reducedMotion": {
+    "enabledByMediaQuery": "prefers-reduced-motion: reduce",
+    "disableLoops": true,
+    "replaceWith": "static-asset-and-short-fade",
+    "maxTransitionMs": 120
+  },
+  "implementationNotes": [
+    "Keep overlays such as check, cross, dots and sales arrow in HTML/CSS; never bake them into mascot images.",
+    "Use transform and opacity for motion; avoid continuous layout changes and flashing.",
+    "The preview uses CSS keyframes. The eventual homepage integration can map the same state IDs to GSAP or Rive."
+  ]
+}

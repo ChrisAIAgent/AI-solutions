@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TAC AI Assistant mascot and motion asset preview.">
+  <title>TAC AI Assistant · Asset Lab</title>
+</head>
+<body class="tac-assistant-preview">
+  <a class="preview-skip" href="#main" data-i18n="skip">Skip to main content</a>
+  <header class="preview-header">
+    <a class="preview-brand" href="../index.html" aria-label="Back to TAC home" data-i18n-aria-label="brandAria">
+      <img src="../assets/tac/tac-mark.png" alt="TAC">
+      <span>TAC AI Assistant</span>
+    </a>
+    <div class="preview-header-actions">
+      <span class="preview-header-note">ASSET + MOTION PREVIEW / v0.1.0</span>
+      <div class="preview-language-switch" role="group" aria-label="Language" data-i18n-aria-label="languageLabel">
+        <button type="button" class="language-button is-active" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" class="language-button" data-language="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="preview-shell">
+    <section class="preview-hero">
+      <div>
+        <p class="preview-kicker"><span></span><span data-i18n="heroKicker">PRE-INTEGRATION REVIEW</span></p>
+        <h1>TAC AI Assistant<br><em>Asset Lab</em></h1>
+        <p data-i18n="heroDescription">An independent review page for mascot assets, motion states, and playback rules. No homepage Q&amp;A or sales system is connected here.</p>
+      </div>
+      <div class="preview-hero-badge" aria-hidden="true">
+        <div class="preview-glow"></div>
+        <img src="../assets/tac/assistant/expressions/happy.webp" alt="">
+      </div>
+    </section>
+
+    <section class="preview-section" aria-labelledby="views-title">
+      <div class="preview-section-head">
+        <div><p class="preview-kicker"><span></span><span data-i18n="viewsKicker">01 / MASCOT VIEWS</span></p><h2 id="views-title" data-i18n="viewsTitle">Unified mascot views</h2></div>
+        <p data-i18n="viewsDescription">Transparent assets for brand surfaces, asset maintenance, and responsive adaptations.</p>
+      </div>
+      <div id="views-grid" class="asset-grid asset-grid--views"></div>
+    </section>
+
+    <section class="preview-section" aria-labelledby="expressions-title">
+      <div class="preview-section-head">
+        <div><p class="preview-kicker"><span></span><span data-i18n="expressionsKicker">02 / EXPRESSIONS</span></p><h2 id="expressions-title" data-i18n="expressionsTitle">Six feedback expressions</h2></div>
+        <p data-i18n="expressionsDescription">Status overlays are drawn in CSS; the robot images remain clean and contain no embedded UI copy.</p>
+      </div>
+      <div id="expressions-grid" class="asset-grid asset-grid--expressions"></div>
+    </section>
+
+    <section class="preview-section" aria-labelledby="motion-title">
+      <div class="preview-section-head">
+        <div><p class="preview-kicker"><span></span><span data-i18n="motionKicker">03 / STATE MACHINE</span></p><h2 id="motion-title" data-i18n="motionTitle">Motion state simulation</h2></div>
+        <div class="preview-controls">
+          <button type="button" class="control-button" data-background="dark" data-i18n="darkStage">Dark stage</button>
+          <button type="button" class="control-button is-active" data-background="light" data-i18n="lightStage">Light stage</button>
+        </div>
+      </div>
+      <div class="motion-lab">
+        <div class="motion-stage" id="motionStage" data-state="idle" data-background="light">
+          <div class="state-orbit" aria-hidden="true"></div>
+          <div class="state-spark" aria-hidden="true"></div>
+          <div class="state-overlay" id="stateOverlay" aria-hidden="true">•</div>
+          <img id="stateMascot" class="state-mascot" src="../assets/tac/assistant/expressions/happy.webp" alt="TAC AI Assistant 当前状态">
+          <div class="state-caption"><span id="stateName">IDLE</span><small id="stateSemantic">Idle behavior</small></div>
+        </div>
+        <div class="motion-panel">
+          <div class="motion-panel-top"><span data-i18n="tryState">TRY A STATE</span><span id="stateDuration">2600ms / LOOP</span></div>
+          <div id="stateButtons" class="state-buttons"></div>
+          <div class="size-row" aria-label="View different sizes" data-i18n-aria-label="sizeLabel">
+            <span data-i18n="size">Size</span>
+            <button type="button" class="is-active" data-size="64">64</button>
+            <button type="button" data-size="48">48</button>
+            <button type="button" data-size="32">32</button>
+            <button type="button" data-size="24">24</button>
+          </div>
+          <p id="stateTrigger" class="state-trigger"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-section" aria-labelledby="rules-title">
+      <div class="preview-section-head">
+        <div><p class="preview-kicker"><span></span><span data-i18n="rulesKicker">04 / MOTION RULES</span></p><h2 id="rules-title" data-i18n="rulesTitle">Motion rules</h2></div>
+        <p data-i18n="rulesDescription">Fixed state IDs and transition rules that can map directly to GSAP or Rive later.</p>
+      </div>
+      <div class="rules-table-wrap">
+        <table class="rules-table">
+          <thead><tr><th data-i18n="tableState">State</th><th data-i18n="tableTrigger">Trigger</th><th data-i18n="tableDuration">Duration</th><th data-i18n="tablePlayback">Playback</th><th data-i18n="tableNext">Next</th></tr></thead>
+          <tbody id="rulesBody"></tbody>
+        </table>
+      </div>
+      <div id="timingNotes" class="timing-notes"></div>
+    </section>
+  </main>
+  <footer class="preview-footer"><span>TAC · A ChrisAI Brand</span><span data-i18n="footerNote">Reference-only preview · No assistant API connected</span></footer>
+  <script type="module" src="../src/js/tac-assistant-assets.js"></script>
+</body>
+</html>

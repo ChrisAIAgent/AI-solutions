@@ -31,7 +31,9 @@ export default defineConfig({
         'pages/marketing-library': resolve(__dirname, 'pages/marketing-library.html'),
         'pages/ai-models': resolve(__dirname, 'pages/ai-models.html'),
         'pages/brand-guidelines': resolve(__dirname, 'pages/brand-guidelines.html'),
-        'pages/tacwork-download': resolve(__dirname, 'pages/tacwork-download.html')
+        'pages/tacwork-download': resolve(__dirname, 'pages/tacwork-download.html'),
+        'pages/skills': resolve(__dirname, 'pages/skills.html'),
+        'pages/tac-assistant-assets': resolve(__dirname, 'pages/tac-assistant-assets.html')
       }
     }
   }

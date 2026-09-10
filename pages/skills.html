@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore a curated directory of public community skills for useful AI work.">
+  <title>TAC Skill Marketplace</title>
+</head>
+<body class="tac-skills">
+  <a class="tac-skills-skip" href="#main">Skip to content</a>
+  <header class="tac-skills-header">
+    <a class="tac-skills-brand" href="../index.html" aria-label="Back to TAC AI home">
+      <img src="../assets/tac/tac-mark.png" alt="TAC">
+      <span>TAC<span>.</span>AI</span>
+    </a>
+    <a class="tac-skills-back" href="../index.html">Back to TAC AI <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="tac-skills-hero">
+      <div class="tac-skills-hero-copy">
+        <p class="tac-skills-eyebrow"><span></span>SKILL MARKETPLACE</p>
+        <h1>Explore skills for useful AI work.</h1>
+        <p class="tac-skills-lead">A curated directory of public community skills for design, development, planning, and presentation workflows.</p>
+      </div>
+      <figure class="tac-skills-hero-visual">
+        <img src="../assets/tac/skills/tac-skill-hero.png" alt="TAC AI robot on a red-lit landscape">
+        <figcaption><span>TAC AI / SKILL SYSTEM</span><span>AGENTIC ERA ↗</span></figcaption>
+      </figure>
+      <div class="tac-skills-search-wrap">
+        <label for="skillSearch">Search the directory</label>
+        <div class="tac-skills-search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="skillSearch" type="search" placeholder="Search by name, category, or tag" autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <section class="tac-skills-directory" aria-labelledby="directoryTitle">
+      <div class="tac-skills-directory-heading">
+        <div>
+          <p class="tac-skills-eyebrow"><span></span>CURATED DIRECTORY</p>
+          <h2 id="directoryTitle">Find a starting point.</h2>
+        </div>
+        <p id="skillResultCount" class="tac-skills-result-count" aria-live="polite"></p>
+      </div>
+      <div id="skillFilters" class="tac-skills-filters" role="tablist" aria-label="Filter skills by category"></div>
+      <div class="tac-skills-layout">
+        <div class="tac-skills-results">
+          <div id="skillGrid" class="tac-skills-grid" aria-live="polite"></div>
+        </div>
+        <aside id="skillDetail" class="tac-skills-detail" aria-labelledby="skillDetailTitle" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section class="tac-skills-safety" aria-labelledby="safetyTitle">
+      <p class="tac-skills-eyebrow"><span></span>REVIEW BEFORE USE</p>
+      <div>
+        <h2 id="safetyTitle">Community skills are public starting points, not TAC certifications.</h2>
+        <p>Each entry links to its original repository. Review the source, scope, supporting files, and license before using a community skill in your own workflow.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tac-skills-footer">
+    <div>
+      <a class="tac-skills-brand" href="../index.html"><img src="../assets/tac/tac-mark.png" alt="TAC"><span>TAC<span>.</span>AI</span></a>
+      <p>Useful AI work starts with a clear operating context.</p>
+    </div>
+    <div class="tac-skills-footer-links">
+      <a href="../index.html">TAC AI home</a>
+      <a href="../pages/tacwork-download.html">TACWork</a>
+      <span>© 2026 TAC</span>
+    </div>
+  </footer>
+
+  <script type="module" src="../src/js/tac-skills.js"></script>
+</body>
+</html>

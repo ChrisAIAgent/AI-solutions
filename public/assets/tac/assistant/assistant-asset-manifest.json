@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "role": "TAC AI Assistant pre-integration asset package",
+  "source": {
+    "type": "generated-reference-derivative",
+    "references": [
+      "ChatGPT Image 2026年9月10日 12_11_43.png",
+      "ChatGPT Image 2026年9月10日 11_40_24.png"
+    ],
+    "backgroundProcess": "Generated on a flat cyan chroma-key background, then extracted to real alpha and validated on dark and light backgrounds.",
+    "textPolicy": "No UI labels or state names are baked into the image assets."
+  },
+  "validation": {
+    "canvas": "1024x1024",
+    "alpha": "real transparent RGBA",
+    "transparentPadding": "preserved for 64/48/32/24px display",
+    "backgroundChecks": ["#10181c", "#edf4f5"],
+    "brandLogoPolicy": "Keep approved TAC logo treatment in the brand/UI layer; generated imagery is not a logo master."
+  },
+  "defaults": {
+    "view": "mascot-front.png",
+    "expression": "expressions/happy.webp",
+    "launcherSize": 64,
+    "panelSize": 48,
+    "smallSizes": [32, 24]
+  },
+  "views": [
+    { "id": "front", "file": "mascot-front.png", "alt": "TAC AI assistant robot front view" },
+    { "id": "side", "file": "mascot-side.png", "alt": "TAC AI assistant robot side view" },
+    { "id": "back", "file": "mascot-back.png", "alt": "TAC AI assistant robot back view" },
+    { "id": "left", "file": "mascot-left.png", "alt": "TAC AI assistant robot left view" },
+    { "id": "right", "file": "mascot-right.png", "alt": "TAC AI assistant robot right view" },
+    { "id": "45", "file": "mascot-45.png", "alt": "TAC AI assistant robot three-quarter view" }
+  ],
+  "expressions": [
+    { "id": "happy", "file": "expressions/happy.webp", "label": "开心 / Happy" },
+    { "id": "wink", "file": "expressions/wink.webp", "label": "眨眼 / Wink" },
+    { "id": "thinking", "file": "expressions/thinking.webp", "label": "思考 / Thinking" },
+    { "id": "surprised", "file": "expressions/surprised.webp", "label": "惊讶 / Surprised" },
+    { "id": "sleep", "file": "expressions/sleep.webp", "label": "睡眠 / Sleep" },
+    { "id": "question", "file": "expressions/question.webp", "label": "疑惑 / Question" }
+  ],
+  "states": {
+    "thinking": { "asset": "states/thinking.webp", "overlay": "spark", "semantic": "分析问题" },
+    "typing": { "asset": "states/typing.webp", "overlay": "dots", "semantic": "生成回答" },
+    "complete": { "asset": "states/complete.webp", "overlay": "check", "semantic": "回答完成" },
+    "no-answer": { "asset": "states/no-answer.webp", "overlay": "cross", "semantic": "无法确认" },
+    "sales": { "asset": "states/sales.webp", "overlay": "arrow", "semantic": "转销售" },
+    "error-offline": { "asset": "states/error-offline.webp", "overlay": "offline", "semantic": "错误或离线" }
+  }
+}
