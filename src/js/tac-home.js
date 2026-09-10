@@ -35,7 +35,7 @@ function renderHeader() {
           <div class="tac-nav-popover" id="navMenu${index}" role="menu">${item.items.map((child) => `<a href="${item.target}" role="menuitem">${child}<span>↗</span></a>`).join('')}</div>
         </div>`).join('')}
       </div>
-      <div class="tac-nav-actions"><a class="tac-signin" href="#contact">Sign in</a>${link({ label: 'GET A DEMO', href: '#contact' }, 'tac-button tac-button--nav')}</div>
+      <div class="tac-nav-actions"><a class="tac-signin" href="#contact">Sign in</a>${link({ label: content.download.navLabel, href: './pages/tacwork-download.html' }, 'tac-button tac-button--nav')}</div>
     </nav>`;
 }
 
@@ -207,7 +207,7 @@ function renderInsights() {
 
 function renderContactAndFooter() {
   document.querySelector('.tac-contact').innerHTML = `<div class="section-shell tac-contact-content reveal"><p class="tac-eyebrow"><span></span>START A CONVERSATION</p><h2>Let’s build the next useful AI experience together.</h2><p>Tell TAC what work you want to make clearer, faster, or easier to govern.</p>${link({ label: 'GET IN TOUCH', href: '#top' }, 'tac-button tac-button--light')}</div>`;
-  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>TAC · A ChrisAI Brand</span></div>`;
+  document.querySelector('.tac-footer').innerHTML = `<div class="section-shell tac-footer-grid"><div><a class="tac-brand tac-brand--footer" href="#top"><img src="/assets/tac/tac-mark.png" alt="TAC"><span>TAC<span class="tac-brand-dot">.</span>AI</span></a><p>Dependable AI operations for enterprise teams.</p></div><div><p>PRODUCT</p><a href="#applications">AI Applications</a><a href="#platform">Agent Platform</a><a href="#accelerators">Accelerators</a><a class="tac-footer-download" href="./pages/tacwork-download.html">${content.download.navLabel}</a></div><div><p>COMPANY</p><a href="#industries">Industries</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div><p>RESOURCES</p><a href="#insights">Insights</a><a href="#reports">Reports</a><a href="#contact">Support</a></div></div><div class="section-shell tac-footer-bottom"><span>© 2026 TAC. All rights reserved.</span><span>TAC · A ChrisAI Brand</span></div>`;
 }
 
 function activateTab(group, id) {

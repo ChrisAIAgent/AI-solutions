@@ -6,6 +6,18 @@ export const CONTENT_MODE = 'tac';
 const action = (label, href = '#contact') => ({ label, href });
 
 export const tacContent = {
+  download: {
+    product: 'TACWork',
+    version: '0.19.1',
+    platform: 'Windows x64',
+    available: false,
+    artifact: '../downloads/tacwork-win-x64-0.19.1-rc.1.exe',
+    label: 'Download for Windows',
+    navLabel: 'Download TACWork',
+    fileName: 'tacwork-win-x64-0.19.1-rc.1.exe',
+    fileSize: '198 MB',
+    checksum: '1CBA01573DCD7AC2CD0D2235D1A93591A505727FC5E48201BDE812E27065E8CE'
+  },
   nav: [
     { label: 'Agent Platform', target: '#platform', items: ['Build with confidence', 'Orchestrate workflows', 'Govern every action'] },
     { label: 'Agentic AI Apps', target: '#applications', items: ['Pre-built applications', 'Application accelerators', 'Tailored applications'] },

@@ -16,7 +16,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         'pages/marketing-library': resolve(__dirname, 'pages/marketing-library.html'),
         'pages/ai-models': resolve(__dirname, 'pages/ai-models.html'),
-        'pages/brand-guidelines': resolve(__dirname, 'pages/brand-guidelines.html')
+        'pages/brand-guidelines': resolve(__dirname, 'pages/brand-guidelines.html'),
+        'pages/tacwork-download': resolve(__dirname, 'pages/tacwork-download.html')
       }
     }
   }
