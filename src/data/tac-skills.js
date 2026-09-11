@@ -1,5 +1,5 @@
-// Curated public examples. TAC does not distribute, install, or certify these skills.
-// Keep the source repository visible so visitors can review the original project and license.
+// TAC owns the catalog metadata. Only entries with an artifactUrl are hosted by TAC.
+// Community entries remain source-only until redistribution rights and packaging are reviewed.
 export const skills = [
   {
     id: 'frontend-design',
@@ -10,6 +10,13 @@ export const skills = [
     sourceRepo: 'anthropics/skills',
     sourceUrl: 'https://github.com/anthropics/skills/tree/main/skills/frontend-design',
     license: 'See source repository',
+    version: null,
+    distribution: 'source-only',
+    trust: 'community',
+    artifactType: null,
+    artifactUrl: null,
+    sha256: null,
+    minTacWorkVersion: null,
     tags: ['UI', 'Web', 'Design'],
     featured: true,
     lastUpdated: '2026-09-03'
@@ -23,6 +30,13 @@ export const skills = [
     sourceRepo: 'anthropics/skills',
     sourceUrl: 'https://github.com/anthropics/skills/tree/main/skills/skill-creator',
     license: 'See source repository',
+    version: null,
+    distribution: 'source-only',
+    trust: 'community',
+    artifactType: null,
+    artifactUrl: null,
+    sha256: null,
+    minTacWorkVersion: null,
     tags: ['Authoring', 'Evaluation', 'Agents'],
     featured: true,
     lastUpdated: '2026-04-20'
@@ -36,6 +50,13 @@ export const skills = [
     sourceRepo: 'nextlevelbuilder/ui-ux-pro-max-skill',
     sourceUrl: 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
     license: 'MIT',
+    version: null,
+    distribution: 'source-only',
+    trust: 'community',
+    artifactType: null,
+    artifactUrl: null,
+    sha256: null,
+    minTacWorkVersion: null,
     tags: ['UX', 'UI', 'Design Systems'],
     featured: true,
     lastUpdated: '2026-09-06'
@@ -49,6 +70,13 @@ export const skills = [
     sourceRepo: 'obra/superpowers',
     sourceUrl: 'https://github.com/obra/superpowers',
     license: 'See source repository',
+    version: null,
+    distribution: 'source-only',
+    trust: 'community',
+    artifactType: null,
+    artifactUrl: null,
+    sha256: null,
+    minTacWorkVersion: null,
     tags: ['Ideation', 'Planning', 'Discovery'],
     featured: false,
     lastUpdated: '2026-08-12'
@@ -62,6 +90,13 @@ export const skills = [
     sourceRepo: 'vercel-labs/agent-skills',
     sourceUrl: 'https://github.com/vercel-labs/agent-skills',
     license: 'See source repository',
+    version: null,
+    distribution: 'source-only',
+    trust: 'community',
+    artifactType: null,
+    artifactUrl: null,
+    sha256: null,
+    minTacWorkVersion: null,
     tags: ['React', 'Performance', 'Web'],
     featured: false,
     lastUpdated: '2026-04-14'
@@ -75,6 +110,13 @@ export const skills = [
     sourceRepo: 'bytedance/deer-flow',
     sourceUrl: 'https://github.com/bytedance/deer-flow',
     license: 'See source repository',
+    version: null,
+    distribution: 'source-only',
+    trust: 'community',
+    artifactType: null,
+    artifactUrl: null,
+    sha256: null,
+    minTacWorkVersion: null,
     tags: ['Slides', 'Storytelling', 'Documents'],
     featured: false,
     lastUpdated: '2026-03-16'

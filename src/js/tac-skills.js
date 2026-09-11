@@ -1,5 +1,5 @@
 import '../scss/tac-skills.scss';
-import { skillCategories, skills } from '../data/tac-skills.js';
+import { skills as fallbackSkills } from '../data/tac-skills.js';
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -8,33 +8,90 @@ const escapeHtml = (value) => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
-const state = { query: '', category: 'All' };
+const state = {
+  query: '',
+  category: 'All',
+  skills: [...fallbackSkills],
+  categories: ['All', ...new Set(fallbackSkills.map((skill) => skill.category))]
+};
 let selectedId = '';
+
+function normalizeManifestSkill(skill) {
+  return {
+    ...skill,
+    featured: Boolean(skill.featured),
+    tags: Array.isArray(skill.tags) ? skill.tags : [],
+    lastUpdated: skill.lastUpdated || skill.packagedAt?.slice(0, 10) || skill.version || '',
+    minTacWorkVersion: skill.minTacWorkVersion || null
+  };
+}
+
+function isLocalArtifactUrl(value) {
+  return typeof value === 'string' && value.startsWith('/skill-artifacts/');
+}
+
+async function loadSkillManifest() {
+  try {
+    const response = await fetch('../skill-artifacts/MANIFEST.json', { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Manifest request failed with ${response.status}`);
+    const payload = await response.json();
+    const manifestSkills = Array.isArray(payload.skills)
+      ? payload.skills.filter((skill) => skill && skill.id && skill.name && isLocalArtifactUrl(skill.artifactUrl)).map(normalizeManifestSkill)
+      : [];
+    if (!manifestSkills.length) throw new Error('Manifest has no publishable skills');
+    state.skills = manifestSkills;
+    state.categories = ['All', ...new Set(manifestSkills.map((skill) => skill.category).filter(Boolean))];
+  } catch (error) {
+    console.warn('[TAC Skill Hub] Using fallback catalog.', error);
+  }
+}
 
 function matchesFilter(skill) {
   const query = state.query.trim().toLowerCase();
   const categoryMatches = state.category === 'All' || skill.category === state.category;
   if (!categoryMatches) return false;
   if (!query) return true;
-  const searchable = [skill.name, skill.description, skill.category, skill.author, skill.sourceRepo, ...skill.tags].join(' ').toLowerCase();
+  const searchable = [skill.name, skill.description, skill.category, skill.author, skill.sourceRepo, ...(skill.tags || [])].join(' ').toLowerCase();
   return searchable.includes(query);
 }
 
 function renderFilters() {
   const container = document.querySelector('#skillFilters');
-  container.innerHTML = skillCategories.map((category, index) => `<button type="button" role="tab" aria-selected="${category === state.category}" tabindex="${index === 0 ? '0' : '-1'}" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('');
+  container.innerHTML = state.categories.map((category, index) => `<button type="button" role="tab" aria-selected="${category === state.category}" tabindex="${index === 0 ? '0' : '-1'}" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('');
 }
 
 function renderCard(skill) {
   const selected = selectedId === skill.id;
-  return `<button type="button" class="tac-skill-card${skill.featured ? ' is-featured' : ''}${selected ? ' is-selected' : ''}" data-skill-id="${escapeHtml(skill.id)}" aria-pressed="${selected}">
-    <span class="tac-skill-card-top"><span>${skill.featured ? 'FEATURED' : 'COMMUNITY'}</span><span>${escapeHtml(skill.category)}</span></span>
-    <span class="tac-skill-card-number">${String(skills.indexOf(skill) + 1).padStart(2, '0')}</span>
+  const label = skill.trust === 'tac-authored' ? 'TAC AUTHORED' : skill.featured ? 'FEATURED' : 'COMMUNITY';
+  const availability = skill.artifactUrl ? 'TACWORK PACKAGE' : 'SOURCE ONLY';
+  return `<button type="button" class="tac-skill-card${skill.featured ? ' is-featured' : ''}${skill.artifactUrl ? ' is-downloadable' : ''}${selected ? ' is-selected' : ''}" data-skill-id="${escapeHtml(skill.id)}" aria-pressed="${selected}">
+    <span class="tac-skill-card-top"><span>${label}</span><span>${escapeHtml(skill.category)}</span></span>
+    <span class="tac-skill-card-number">${String(state.skills.indexOf(skill) + 1).padStart(2, '0')}</span>
     <strong>${escapeHtml(skill.name)}</strong>
     <span class="tac-skill-card-description">${escapeHtml(skill.description)}</span>
     <span class="tac-skill-card-tags">${skill.tags.map((tag) => `<i>${escapeHtml(tag)}</i>`).join('')}</span>
+    <span class="tac-skill-card-availability">${availability}${skill.version ? ` · v${escapeHtml(skill.version)}` : ''}</span>
     <span class="tac-skill-card-arrow" aria-hidden="true">↗</span>
   </button>`;
+}
+
+function getDetailStatus(skill) {
+  if (skill.trust === 'tac-authored') return 'TAC AUTHORED';
+  if (skill.featured) return 'FEATURED EXAMPLE';
+  return 'PUBLIC EXAMPLE';
+}
+
+function getDistributionLabel(skill) {
+  return skill.artifactUrl ? 'TAC-hosted package' : 'Source repository only';
+}
+
+function renderDownloadAction(skill) {
+  if (!skill.artifactUrl) return '';
+  const requirement = skill.minTacWorkVersion ? ` · TACWork ${escapeHtml(skill.minTacWorkVersion)}+` : '';
+  return `<div class="tac-skills-detail-actions">
+    <a class="tac-skills-download-link" href="${escapeHtml(skill.artifactUrl)}" download>Download for TACWork <span aria-hidden="true">↘</span></a>
+    <span>${escapeHtml(skill.artifactType || 'package').toUpperCase()} · v${escapeHtml(skill.version || 'unversioned')}${requirement}</span>
+  </div>`;
 }
 
 function renderDetail(skill) {
@@ -44,26 +101,32 @@ function renderDetail(skill) {
     return;
   }
 
+  const note = skill.artifactUrl
+    ? 'This TAC-hosted package is downloaded from the static Skill Hub. Import it through TACWork’s local Skill importer.'
+    : 'TAC does not host or certify this community skill. Review the original repository before use.';
   detail.innerHTML = `<div class="tac-skills-detail-content">
-    <div class="tac-skills-detail-top"><p class="tac-skills-eyebrow"><span></span>SKILL DETAIL</p><span class="tac-skills-detail-status">${skill.featured ? 'FEATURED EXAMPLE' : 'PUBLIC EXAMPLE'}</span></div>
+    <div class="tac-skills-detail-top"><p class="tac-skills-eyebrow"><span></span>SKILL DETAIL</p><span class="tac-skills-detail-status">${getDetailStatus(skill)}</span></div>
     <h2 id="skillDetailTitle">${escapeHtml(skill.name)}</h2>
     <p class="tac-skills-detail-description">${escapeHtml(skill.description)}</p>
+    ${renderDownloadAction(skill)}
     <div class="tac-skills-detail-visual"><img src="../assets/tac/skills/tac-skill-system.png" alt="TAC AI robot and interface system" loading="lazy" decoding="async"><span>TAC / COMMUNITY SKILLS</span></div>
     <dl class="tac-skills-meta">
       <div><dt>Category</dt><dd>${escapeHtml(skill.category)}</dd></div>
       <div><dt>Author</dt><dd>${escapeHtml(skill.author)}</dd></div>
       <div><dt>Source</dt><dd>${escapeHtml(skill.sourceRepo)}</dd></div>
       <div><dt>License</dt><dd>${escapeHtml(skill.license)}</dd></div>
+      <div><dt>Distribution</dt><dd>${getDistributionLabel(skill)}</dd></div>
+      ${skill.version ? `<div><dt>Version</dt><dd>${escapeHtml(skill.version)}</dd></div>` : ''}
       <div><dt>Reference date</dt><dd>${escapeHtml(skill.lastUpdated)}</dd></div>
     </dl>
-    <div class="tac-skills-detail-tags">${skill.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div>
+    <div class="tac-skills-detail-tags">${(skill.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}</div>
     <a class="tac-skills-source-link" href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>
-    <p class="tac-skills-detail-note">TAC does not host or certify this skill. Review the original repository before use.</p>
+    <p class="tac-skills-detail-note">${note}</p>
   </div>`;
 }
 
 function renderGrid() {
-  const filtered = skills.filter(matchesFilter);
+  const filtered = state.skills.filter(matchesFilter);
   const grid = document.querySelector('#skillGrid');
   const count = document.querySelector('#skillResultCount');
   count.textContent = `${filtered.length} ${filtered.length === 1 ? 'skill' : 'skills'} shown`;
@@ -73,7 +136,7 @@ function renderGrid() {
 }
 
 function setSelectedSkill(id, { updateHash = false } = {}) {
-  const skill = skills.find((item) => item.id === id);
+  const skill = state.skills.find((item) => item.id === id);
   if (!skill) return;
   selectedId = skill.id;
   if (updateHash) history.pushState(null, '', `#${skill.id}`);
@@ -83,8 +146,14 @@ function setSelectedSkill(id, { updateHash = false } = {}) {
 
 function syncFromHash() {
   const id = window.location.hash.slice(1).trim();
-  const matchingSkill = skills.find((skill) => skill.id === id);
-  if (matchingSkill) setSelectedSkill(matchingSkill.id);
+  const matchingSkill = state.skills.find((skill) => skill.id === id);
+  if (matchingSkill) {
+    setSelectedSkill(matchingSkill.id);
+  } else if (id) {
+    selectedId = '';
+    renderGrid();
+    renderDetail(null);
+  }
 }
 
 function setupRovingFilters() {
@@ -130,4 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('hashchange', syncFromHash);
   syncFromHash();
+
+  loadSkillManifest().then(() => {
+    renderFilters();
+    syncFromHash();
+    if (!window.location.hash) renderGrid();
+  });
 });
