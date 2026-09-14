@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Download TACWork for Windows and get started with a shared AI workspace.">
   <title>Download TACWork</title>
+  <link rel="icon" type="image/webp" href="/assets/tac/assistant/expressions/happy.webp" sizes="1024x1024">
+  <link rel="apple-touch-icon" href="/assets/tac/assistant/expressions/happy.webp">
 </head>
 <body class="tac-download">
   <a class="tac-download-skip" href="#main">Skip to content</a>
@@ -21,7 +23,15 @@
         <h1>Download TACWork.</h1>
         <p class="tac-download-lead">A dependable workspace for building, sharing, and running AI workflows with your team.</p>
         <div id="tacDownloadAction"></div>
-        <p class="tac-download-note"><span id="tacDownloadHeroMeta"></span> · Download method to be announced</p>
+        <form class="tac-download-gate" id="tacDownloadGate" hidden>
+          <label for="tacDownloadKey">Internal access key</label>
+          <div class="tac-download-gate-row">
+            <input id="tacDownloadKey" name="accessKey" type="password" autocomplete="off" spellcheck="false" placeholder="Enter access key">
+            <button type="submit">Activate</button>
+          </div>
+          <p id="tacDownloadGateStatus" role="status">Enter the internal key to enable this download.</p>
+        </form>
+        <p class="tac-download-note"><span id="tacDownloadHeroMeta"></span> · <span id="tacDownloadAvailability"></span></p>
       </div>
       <div class="tac-download-hero-art" aria-label="TACWork product mark">
         <div class="tac-download-orbit tac-download-orbit--one"></div>

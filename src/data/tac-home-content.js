@@ -8,15 +8,16 @@ const action = (label, href = '#contact') => ({ label, href });
 export const tacContent = {
   download: {
     product: 'TACWork',
-    version: '0.19.1',
+    version: '0.2.0',
     platform: 'Windows x64',
     available: false,
-    artifact: '../downloads/tacwork-win-x64-0.19.1-rc.1.exe',
+    artifact: '../downloads/tacwork-win-x64-0.2.0.exe',
     label: 'Download for Windows',
     navLabel: 'Download TACWork',
-    fileName: 'tacwork-win-x64-0.19.1-rc.1.exe',
-    fileSize: '198 MB',
-    checksum: '1CBA01573DCD7AC2CD0D2235D1A93591A505727FC5E48201BDE812E27065E8CE'
+    fileName: 'tacwork-win-x64-0.2.0.exe',
+    fileSize: '171 MB',
+    checksum: '770D888A899D1C29E2C22B227BDE5A45ECC6D453E223AC46BA352DA959D935DB',
+    activationKey: 'TACWork'
   },
   nav: [
     { label: 'Agent Platform', target: '#platform', items: ['Build with confidence', 'Orchestrate workflows', 'Govern every action'] },
