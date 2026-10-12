@@ -8,15 +8,15 @@ const action = (label, href = '#contact') => ({ label, href });
 export const tacContent = {
   download: {
     product: 'TACWork',
-    version: '0.2.0',
+    version: '0.2.1-rc.1',
     platform: 'Windows x64',
     available: false,
-    artifact: '../downloads/tacwork-win-x64-0.2.0.exe',
+    artifact: '../downloads/tacwork-win-x64-0.2.1-rc.1.exe',
     label: 'Download for Windows',
     navLabel: 'Download TACWork',
-    fileName: 'tacwork-win-x64-0.2.0.exe',
+    fileName: 'tacwork-win-x64-0.2.1-rc.1.exe',
     fileSize: '171 MB',
-    checksum: '770D888A899D1C29E2C22B227BDE5A45ECC6D453E223AC46BA352DA959D935DB',
+    checksum: '06F7B9202F8153E852ED7D6ED8F72BE8F9EF2AEB32C4ECF76937C0ACA56E1E6C',
     activationKey: 'TACWork'
   },
   nav: [
