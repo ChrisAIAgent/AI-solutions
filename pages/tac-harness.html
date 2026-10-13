@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TAC Harness brings AI agents, composable plugins, and a desktop workspace together.">
+  <title>TAC Harness — Smarter Agents. Bigger Possibilities.</title>
+  <link rel="icon" type="image/webp" href="../assets/tac/assistant/expressions/happy.webp">
+</head>
+<body class="tac-harness">
+  <a class="h-skip" href="#main">Skip to content</a>
+  <header class="h-header">
+    <a class="h-brand" href="../index.html"><img src="../assets/tac/tacwork-logo-black.png" alt="TAC"><span>Harness</span></a>
+    <nav aria-label="Product navigation">
+      <a href="#download">Download Desktop</a>
+      <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="https://deepseek-harness.github.io/deepseek-harness/en/guide/quickstart" target="_blank" rel="noopener noreferrer">Developer docs ↗</a>
+      <a href="./tac-plugins.html">Community plugins</a>
+    </nav>
+    <a class="h-home" href="../index.html">TAC AI ↗</a>
+  </header>
+  <main id="main">
+    <section class="h-hero">
+      <span class="h-preview">✧ Preview</span>
+      <h1>TAC Harness<br>Smarter agents. Bigger possibilities.</h1>
+      <p>A workspace for everyday work, development, and the agent tools you want to build.</p>
+      <p>Extend the experience with composable plugins, reusable skills, and your own agent presets.</p>
+      <a class="h-button" href="#download">↓ Download Desktop</a>
+      <div class="h-desktop" aria-label="TAC Harness desktop demonstration">
+        <aside class="h-sidebar">
+          <div class="h-lights"><i></i><i></i><i></i></div>
+          <div class="h-app-brand"><img src="../assets/tac/harness/tac-app.png" alt=""><b>TAC Harness</b></div>
+          <span class="h-new">⊕ New Session</span>
+          <span>♧ Plugins</span><span>◷ Automation</span>
+          <small>Workspace <span>⌕　⚙　＋</span></small>
+          <span class="h-folder">▱ Default workspace</span>
+          <div class="h-sessions"><b>Meet TAC Harness</b><span>Q3 summary slides</span><span>Review prep</span><span>Sales report</span><span>Data analysis</span><span>Plugin development</span></div>
+          <div class="h-account">◉ <span>TAC</span></div>
+        </aside>
+        <div class="h-workspace">
+          <div class="h-windowbar">Meet TAC Harness <span>◫　−　□　×</span></div>
+          <div class="h-conversation">
+            <p class="h-question">Could you introduce yourself?</p>
+            <small class="h-thought">✧ Thought for a while</small>
+            <p>I'm TAC Harness, a desktop workspace for working with AI agents and composable plugins.</p>
+            <p>I can help you explore:</p>
+            <ol class="h-reply">
+              <li><b>Everyday work</b> — Work with documents, data, and presentations.</li>
+              <li><b>Coding</b> — Understand repositories and develop changes.</li>
+              <li><b>Research</b> — Gather information and review sources.</li>
+              <li><b>Background tasks</b> — Organize scripts and scheduled work.</li>
+              <li><b>Plugins</b> — Add capabilities or create your own.</li>
+            </ol>
+            <span class="h-more">And so much more…</span>
+          </div>
+          <div class="h-composer"><span>Describe what you want to build, / commands, @ files or sessions</span><div><span>＋　♧ Workspace Write⌄</span><span>Select model ⌄　<b>↑</b></span></div></div>
+        </div>
+      </div>
+      <small class="h-demo-note">Interactive presentation of the product experience</small>
+    </section>
+    <section class="h-capabilities" aria-labelledby="capabilities-title">
+      <h2 id="capabilities-title">More capabilities.<br>A workspace that adapts to you.</h2>
+      <div class="h-card-grid">
+        <article class="h-card">
+          <div class="h-card-copy"><h3>Everything is a plugin</h3><p>Add tools and skills, or use Creator mode to shape new capabilities through conversation.</p></div>
+          <div class="h-demo h-plugin-demo" data-demo>
+            <button class="h-pause" type="button" aria-label="Pause plugin demonstration" aria-pressed="false">Ⅱ</button>
+            <img class="h-plugin-fallback" src="../assets/tac/harness/reference/feat-plugins-en.webp" alt="Plugin manager with plugin controls" loading="lazy">
+            <div class="h-plugin-chat"><small>Creator mode</small><p class="h-bubble">Create a floating focus timer.</p><div class="h-build-steps"><p>✧ Planning the plugin…</p><p>✓ Load plugin development skill</p><p>✓ Create the timer interface</p><p>✓ Install plugin bundle</p><p>✓ Timer ready</p></div></div>
+            <div class="h-timer"><span>◴ Pomodoro timer　⋯</span><small>Focus　　Short break</small><strong data-timer>25:00</strong><span class="h-timer-action">Start focus</span></div>
+          </div>
+        </article>
+        <article class="h-card">
+          <div class="h-card-copy"><h3>Complete a range of tasks</h3><p>Bring documents, spreadsheets, and code into the same workflow. Review an output and keep refining it in conversation.</p></div>
+          <div class="h-demo h-files-demo" data-demo>
+            <button class="h-pause" type="button" aria-label="Pause files demonstration" aria-pressed="false">Ⅱ</button>
+            <div class="h-file-stream"><div class="h-file-track" id="hFileTrack"></div></div>
+            <div class="h-diff"><small>Review · turn 1</small><div><img src="../assets/tac/harness/reference/typescript.svg" alt="">src/label.ts <b>+2 −1</b></div><pre><span>  function label(name: string) {</span>
+<span class="h-removed">−   return name;</span>
+<span class="h-added">+   const text = name.trim();</span>
+<span class="h-added">+   return text || 'Untitled';</span>
+<span>  }</span></pre></div>
+          </div>
+        </article>
+        <article class="h-card">
+          <div class="h-card-copy"><h3>Adapt to your workflow</h3><p>Use scheduled tasks for recurring work, and follow the steps your agent takes along the way.</p></div>
+          <div class="h-demo h-schedule-demo" data-demo>
+            <button class="h-pause" type="button" aria-label="Pause schedule demonstration" aria-pressed="false">Ⅱ</button>
+            <div class="h-schedule-chat"><p class="h-bubble">Prepare a weekly project summary every Friday at 17:00.</p><small>✧ Working…</small><div class="h-tool-call"><b>◷ Create reminder</b><span>Weekly project report</span><pre>{
+  "title": "Weekly project report",
+  "weekly": {
+    "time": "17:00:00",
+    "time_zone": "Asia/Shanghai",
+    "weekdays": [5]
+  }
+}</pre></div></div>
+            <div class="h-schedule-result"><span>◷</span><div><strong>Weekly project report</strong><small>Every Friday at 17:00 · UTC+08:00</small></div><b>Scheduled</b></div>
+          </div>
+        </article>
+        <article class="h-card">
+          <div class="h-card-copy"><h3>Developer tools</h3><p>Explore execution traces, tool calls, and timing information to understand how a task ran.</p></div>
+          <div class="h-demo h-trace-demo" data-demo>
+            <button class="h-pause" type="button" aria-label="Pause execution trace demonstration" aria-pressed="false">Ⅱ</button>
+            <div class="h-trace"><div class="h-trace-tabs">Trajectory　　Duration　　Turns　　Calls　　⌕</div><div class="h-timeline" id="hTimeline"></div><div class="h-trace-columns"><div class="h-trace-log"><p><b>SYSTEM</b> Initial workspace context</p><p><b>USER</b> Review the project files.</p><p><b>AGENT</b> Inspect the workspace and prepare a plan.</p><p><b>TOOL</b> read README.md</p><p><b>TOOL</b> search project sources</p><p><b>AGENT</b> Summarize findings and next steps.</p><p><b>TOOL</b> read src/index.ts</p><p><b>AGENT</b> Review complete.</p></div><aside><b>TOOL · Step 1</b><small>Summary　Payload　Result</small><p>read</p><small>Status</small><p>Completed</p><small>Duration</small><p>34 ms</p></aside></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="h-developers" aria-labelledby="developers-title">
+      <h2 id="developers-title">Developer experience</h2>
+      <div class="h-developer-grid">
+        <article><h3>Launch the desktop workspace</h3><p>The current TAC source workspace includes a desktop launcher.</p><div class="h-command"><code>&amp; &quot;.\TAC Harness Desktop.bat&quot;</code><button type="button" data-copy="&amp; &quot;.\TAC Harness Desktop.bat&quot;" aria-label="Copy desktop launch command">Copy</button></div></article>
+        <article><h3>Explore the foundation</h3><p>Read the upstream source and the developer setup guide.</p><div class="h-command"><code>github.com/deepseek-ai/deepseek-harness</code><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener noreferrer">Open ↗</a></div></article>
+      </div>
+    </section>
+    <section class="h-ecosystem" id="download">
+      <span class="h-preview">✧ TAC Harness Preview</span>
+      <h2>Build your own agent experience.</h2>
+      <p>Explore composable tools, skills, and plugins. TAC Harness is currently available as a local source build; the desktop installer will be listed here when it is ready.</p>
+      <div class="h-actions"><a class="h-button" href="./tac-plugins.html">Explore plugins ↗</a><a class="h-button h-button--outline" href="./skills.html">Skill Marketplace ↗</a></div>
+      <div class="h-resources"><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener noreferrer">Upstream GitHub ↗</a><a href="https://deepseek-harness.github.io/deepseek-harness/en/guide/quickstart" target="_blank" rel="noopener noreferrer">Developer docs ↗</a></div>
+    </section>
+  </main>
+  <footer class="h-footer"><span>TAC Harness · Preview · © 2026 TAC</span><a href="../index.html">Back to TAC AI ↗</a></footer>
+  <script type="module" src="../src/js/tac-harness.js"></script>
+</body>
+</html>

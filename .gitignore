@@ -16,11 +16,13 @@ Thumbs.db
 .codebuddy/
 .workbuddy/
 .codex/
+.wrangler/
 
 # Env
 .env
 .env.local
 .env.*.local
+.dev.vars*
 
 # Temp / scratch
 tmp/

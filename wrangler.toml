@@ -1,9 +1,13 @@
 name = "ai-solutions"
 compatibility_date = "2025-04-01"
+main = "worker.js"
 
-# Cloudflare Workers Static Assets:
-# serve the Vite build output (dist/) as a static site.
-# `npx wrangler deploy` reads this file and uploads ./dist.
-# The disabled local TACWork installer is intentionally excluded from dist by Vite.
-# NOTE: no `binding` allowed in an assets-only Worker (no `main` script).
-assets = { directory = "dist" }
+# Route API requests through the server-side Worker; static pages remain asset-served.
+[assets]
+directory = "dist"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+# Local development reads this from process.env or an ignored .dev.vars file.
+[secrets]
+required = ["AGNES_API_KEY"]

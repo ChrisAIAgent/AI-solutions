@@ -30,8 +30,9 @@ function renderHeader() {
   const renderNavChild = (item, child) => {
     const label = typeof child === 'string' ? child : child.label;
     const href = typeof child === 'string' ? item.target : child.href;
-    const external = /^https?:\/\//i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : '';
-    return `<a href="${href}" role="menuitem"${external}>${label}<span>↗</span></a>`;
+    const external = /^https?:\/\//i.test(href) && !child.sameTab ? ' target="_blank" rel="noopener noreferrer"' : '';
+    const suffix = child.note ? `<small>${child.note}</small>` : '<span aria-hidden="true">↗</span>';
+    return `<a href="${href}" role="menuitem"${external}>${label}${suffix}</a>`;
   };
   header.innerHTML = `
     <nav class="tac-nav" aria-label="Primary navigation">

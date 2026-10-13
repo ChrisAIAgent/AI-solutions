@@ -1,0 +1,1106 @@
+{
+  "updated": "2026-10-13",
+  "source": "https://awesome-dsh-plugin.com/zh/?cat=vision",
+  "plugins": [
+    {
+      "name": "dsh-vision-fallback",
+      "owner": "1HelloMan1",
+      "repository": "https://github.com/1HelloMan1/dsh-vision-fallback",
+      "description": "Routes chat images to a fixed OpenAI-compatible vision model, returns factual observations to the selected main model, and reuses session-scoped observations across replay, compaction, and restarts.",
+      "package": "dsh-vision-fallback",
+      "stars": 1,
+      "downloads": 907,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-vision#vision-route",
+      "owner": "314857493",
+      "repository": "https://github.com/314857493/dsh-vision/tree/main/packages/vision-route",
+      "description": "Registers a `deepseek-vision` provider route: the Web GUI accepts pasted images and transcribes them to text via the free Zhipu GLM vision API before delegating to the DeepSeek adapter.",
+      "package": "dsh-vision-proxy-route",
+      "stars": 2,
+      "downloads": 1149,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-vision#vision-tool",
+      "owner": "314857493",
+      "repository": "https://github.com/314857493/dsh-vision/tree/main/packages/vision-tool",
+      "description": "Model-facing `vision` tool for DeepSeek Harness: describe and OCR image files by calling the free Zhipu GLM vision API directly (glm-4v-flash fallback chain), no external CLI required.",
+      "package": "dsh-vision-free-eyes",
+      "stars": 2,
+      "downloads": 1108,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-vision",
+      "owner": "54xkeee",
+      "repository": "https://github.com/54xkeee/dsh-vision",
+      "description": "Vision for text-only DeepSeek via Doubao Web by default (zero-cost, no API key — drives your logged-in Chrome through a Windows CDP bridge), with Antigravity IDE quota (flash/pro) or Gemini fallback; auto detail escalation, vision evidence memory with compaction rehydration, content-hash cache, and a bilingual client panel.",
+      "package": "dsh-vision-web",
+      "stars": 7,
+      "downloads": 1441,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-youreyes",
+      "owner": "54xkeee",
+      "repository": "https://github.com/54xkeee/dsh-youreyes",
+      "description": "Vision toolkit for text-only DeepSeek: model-invokable `vision` tool, wrapper adapters for deepseek/opencode-go (v4 flash/pro), Antigravity IDE quota (default, flash/pro) / any OpenAI-compatible VLM / Gemini / local Ollama channels, evidence memory with compaction rehydration, content-hash cache, and a bilingual client panel.",
+      "package": "dsh-youreyes",
+      "stars": 2,
+      "downloads": 1157,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-image-conatiner",
+      "owner": "aa2246740",
+      "repository": "https://github.com/aa2246740/dsh-image-conatiner",
+      "description": "Displays generated images in a conversation gallery with a lightbox viewer.",
+      "package": null,
+      "stars": null,
+      "downloads": null,
+      "added": "2026-10-13"
+    },
+    {
+      "name": "dsh-vision-bridge",
+      "owner": "alaxrpg",
+      "repository": "https://github.com/alaxrpg/dsh-vision-bridge",
+      "description": "Adds image input and recognition through configured DSH providers or an OpenAI-compatible endpoint.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-27"
+    },
+    {
+      "name": "dsh-pdf-reader",
+      "owner": "AngelosZou",
+      "repository": "https://github.com/AngelosZou/dsh-pdf-reader",
+      "description": "A content-aware PDF reading plugin for vision models: profiles each page for figures (vector and raster), tables, formula risk and double-column layout, then applies content-aware hybrid extraction, rendering figure/table/formula pages as high-DPI region crops. Provides a low-resolution preview to understand the page layout, and renders a specified region at high resolution. Packaged as multiple tools for agents.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-27"
+    },
+    {
+      "name": "dsh-vision-toolkit",
+      "owner": "Anionex",
+      "repository": "https://github.com/Anionex/dsh-vision-toolkit",
+      "description": "Vision for text-only models: paste an image and the model switches to a Vision Toolkit variant for image Q&A, multi-image comparison, long-screenshot OCR, screenshot-to-UI reproduction, element grounding, and pixel diff. No API key by default — images are processed by the author-hosted free service, 100 per machine per day; configurable to your own provider.",
+      "package": "@anionex/dsh-vision-toolkit",
+      "stars": 887,
+      "downloads": 13566,
+      "added": "2026-08-13"
+    },
+    {
+      "name": "dsh-client-vision#tool-vision",
+      "owner": "ankye",
+      "repository": "https://github.com/ankye/dsh-client-vision/tree/main/packages/tool-vision",
+      "description": "Screen capture and external vision recognition: take_screenshot, list_windows, analyze_image and view_image tools with a configurable GPT vision channel (gpt-5.5 / gpt-5.6-sol / gpt-5.6-terra), API key via the credentials service, and a settings card; view_image shows the screenshot in the Web UI while the model context keeps text only.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-21"
+    },
+    {
+      "name": "dsh-image-generation#tool-image-generation",
+      "owner": "ankye",
+      "repository": "https://github.com/ankye/dsh-image-generation/tree/main/packages/tool-image-generation",
+      "description": "Model-facing image-generation tool with a configurable channel and normalized image parameters.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-09-03"
+    },
+    {
+      "name": "dsh-guide-dog",
+      "owner": "AtropinolTT",
+      "repository": "https://github.com/AtropinolTT/dsh-guide-dog",
+      "description": "MiniMax-powered multimodal plugin: real-time voice call mode (streaming conversation, floating dock UI), voice mode and mic voice input, plus image/video/music/speech generation and vision inspection tools.",
+      "package": null,
+      "stars": 5,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-highres-vision",
+      "owner": "azwosile",
+      "repository": "https://github.com/azwosile/dsh-highres-vision",
+      "description": "For the DeepSeek Harness native vision model deepseek-v4-flash-vision-exp, raises image admission limits to 32 MiB / 8192 px / 600 images and adds a highres_read tool that tiles large images, then returns the whole image plus 800x800 tiles through the host read_image tool.",
+      "package": null,
+      "stars": 8,
+      "downloads": null,
+      "added": "2026-08-28"
+    },
+    {
+      "name": "dseyesopen",
+      "owner": "balue8246-maker",
+      "repository": "https://github.com/balue8246-maker/dseyesopen",
+      "description": "Vision bridge for text-only DeepSeek: send images (alone or mixed with text) and a fast tiny vision model describes them behind the scenes — the chat keeps the picture, DeepSeek sees only text. Pure plugin: uninstall restores everything.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-19"
+    },
+    {
+      "name": "phone-eye",
+      "owner": "boheastill",
+      "repository": "https://github.com/boheastill/phone-eye",
+      "description": "Let your AI agent see and operate a real Android phone: phone_look (vision + UI-tree fusion), tap/swipe/type, screenshot — over adb, for any MCP client.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-27"
+    },
+    {
+      "name": "dsh-vision-solution",
+      "owner": "br1nosense",
+      "repository": "https://github.com/br1nosense/dsh-vision-solution",
+      "description": "Give DSH text-only models vision: an image/OCR/document recognition skill (race pool → custom channels → local) plus an idempotent host patch so image messages reach the model.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-vision-plugin",
+      "owner": "bug-huntter",
+      "repository": "https://github.com/bug-huntter/dsh-vision-plugin",
+      "description": "Configurable image recognition for text-only DSH models: image messages are first transcribed by an OpenAI-compatible vision model (Base URL, model ID and API key set in a Settings section) and then passed to the main model as text, while image-input support is advertised. The API key auth scheme is selectable — OpenAI, Anthropic, Gemini or Azure style request headers — and a missing key is reported before any request is sent.",
+      "package": "@lp181818/dsh-vision-plugin",
+      "stars": 2,
+      "downloads": 1683,
+      "added": "2026-09-05"
+    },
+    {
+      "name": "dsh-gpt-image",
+      "owner": "CAI-MH",
+      "repository": "https://github.com/CAI-MH/dsh-gpt-image",
+      "description": "Generate images through a logged-in web ChatGPT session and download them to a local directory.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-09-18"
+    },
+    {
+      "name": "dsh-deepseek-vision",
+      "owner": "Cheng-cheng9669",
+      "repository": "https://github.com/Cheng-cheng9669/dsh-deepseek-vision",
+      "description": "Reuses DeepSeek web's built-in vision mode for text-only models: the deepseek_vision tool drives the local deepseek-vision-cli browser automation (manual login helper, deep-think enabled, auto-closes browser) and returns image descriptions as text.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "aura-vision",
+      "owner": "Ck-epsilon",
+      "repository": "https://github.com/Ck-epsilon/aura-vision",
+      "description": "Free vision OCR with adaptive tile recognition for long documents and Markdown/Word/PNG/Excel export.",
+      "package": "aura-vision",
+      "stars": 1,
+      "downloads": 1016,
+      "added": "2026-08-25"
+    },
+    {
+      "name": "Gemini-Eyes",
+      "owner": "ConsoleSun",
+      "repository": "https://github.com/ConsoleSun/Gemini-Eyes",
+      "description": "MCP bridge to gemini.google.com: vision analysis of images and videos, Imagen image and Veo video generation, and conversation management using the logged-in browser session with no API key.",
+      "package": null,
+      "stars": 11,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-chat-imagine",
+      "owner": "corrinehu",
+      "repository": "https://github.com/corrinehu/dsh-chat-imagine",
+      "description": "Automatically generates and displays images in the DSH chat via API channels or local CLIs (mmx / codex / agy), and can also recognize images using the corresponding CLI.",
+      "package": "dsh-chat-imagine",
+      "stars": 9,
+      "downloads": 812,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-image-pathify",
+      "owner": "dami9527",
+      "repository": "https://github.com/dami9527/dsh-image-pathify",
+      "description": "Lets text-only models handle pasted chat images, with a native vision experience, batch image viewing, and a built-in OpenAI-compatible analyze_image tool; vision-capable models are unaffected.",
+      "package": "dsh-image-pathify",
+      "stars": 4,
+      "downloads": 3758,
+      "added": "2026-08-21"
+    },
+    {
+      "name": "dsh-web-ui#dsh-tool-describe-image",
+      "owner": "DamonKoy",
+      "repository": "https://github.com/DamonKoy/dsh-web-ui/tree/main/packages/dsh-tool-describe-image",
+      "description": "Gives a text-only model image understanding via a vision-language model, exposed as a `describe_image` tool.",
+      "package": null,
+      "stars": 24,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-screen-eye",
+      "owner": "davidekingsss",
+      "repository": "https://github.com/davidekingsss/dsh-screen-eye",
+      "description": "Agent screen capture on macOS and Windows: one tool captures the screen and returns the image itself, so the model sees it without a second call. On Windows a whole burst runs in one engine call; on macOS a resident helper drops a region capture to 13ms and a change check to 23ms. A second tool, macOS only, reports whether Screen Recording is granted and opens the settings pane that fixes it.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-09-18"
+    },
+    {
+      "name": "dsh-imagegen",
+      "owner": "dickpy",
+      "repository": "https://github.com/dickpy/dsh-imagegen",
+      "description": "AI image generation for the DSH Web GUI: text-to-image and image-to-image through a configurable OpenAI-compatible endpoint (gpt-image-2 / gpt-image-1 / dall-e-3), with an api_url/api_key settings card and a sidebar split-pane generation studio.",
+      "package": "@dickpy/dsh-imagegen",
+      "stars": 107,
+      "downloads": 11019,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-llm-vision-bridge",
+      "owner": "Einskyle",
+      "repository": "https://github.com/Einskyle/dsh-llm-vision-bridge",
+      "description": "Native LLM-provider vision bridge: images pasted in the chat are described by a vision model (Qwen3-VL via pi-ai/llama.cpp) and the text description is fed to text-only DeepSeek for the reply — image admission, routing and compaction all run through harness-native mechanisms, with an LRU description cache and 503 retry.",
+      "package": "dsh-llm-vision-bridge",
+      "stars": 3,
+      "downloads": 881,
+      "added": "2026-08-14"
+    },
+    {
+      "name": "dsh-plugin-image-input",
+      "owner": "Elohia",
+      "repository": "https://github.com/Elohia/dsh-plugin-image-input",
+      "description": "Image-to-text input for the Web UI: paste or drag an image and it is transcribed into structured text and sent, giving text-only LLMs image-input takeover (OpenAI-compatible vision API).",
+      "package": "dsh-plugin-image-input",
+      "stars": 0,
+      "downloads": 968,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-plugin-mm-vision",
+      "owner": "Elohia",
+      "repository": "https://github.com/Elohia/dsh-plugin-mm-vision",
+      "description": "Synesthesia Encoder for DSH: a vision model translates images into compact structured spatial text (canvas/elements/percentage coordinates), giving text-only LLMs pixel-level image understanding via the `mm_vision` tool.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-labnana",
+      "owner": "exoticknight",
+      "repository": "https://github.com/exoticknight/dsh-labnana",
+      "description": "Labnana image generation for DeepSeek Harness: text-to-image / image-to-image / precise editing with credits estimation, subscription balance and web settings UI.",
+      "package": "dsh-labnana",
+      "stars": 2,
+      "downloads": 1409,
+      "added": "2026-08-24"
+    },
+    {
+      "name": "dsh-comfyui",
+      "owner": "fandc520",
+      "repository": "https://github.com/fandc520/dsh-comfyui",
+      "description": "Drive a local or remote ComfyUI server from DeepSeek Harness: comfyui_run / comfyui_object_info / comfyui_workflow tools generate and edit images and videos, with a workflow library (graph extraction: per component / main flow / all), a load area with resolution auto-match, a live queue, SDXL and Wan 2.1 templates, a companion skill, and a same-origin media proxy.",
+      "package": "dsh-comfyui",
+      "stars": 107,
+      "downloads": 4841,
+      "added": "2026-08-28"
+    },
+    {
+      "name": "dsh-vision-proxy",
+      "owner": "Flyvhidbwo",
+      "repository": "https://github.com/Flyvhidbwo/dsh-vision-proxy",
+      "description": "DeepSeek brain + automatic image transcription: attach images in the GUI and each one is transcribed via the official deepseek-v4-flash-vision-exp by default (a pure-text V4-Pro brain can see images), with any OpenAI-compatible VLM or local Ollama as alternatives.",
+      "package": "dsh-vision-proxy",
+      "stars": 16,
+      "downloads": 2363,
+      "added": "2026-08-14"
+    },
+    {
+      "name": "dsh-free-vision",
+      "owner": "FuzzySoul",
+      "repository": "https://github.com/FuzzySoul/dsh-free-vision",
+      "description": "Free vision bridge for text-only models: image understanding, OCR, UI and debug analysis via free-tier providers (Qwen3-VL-Flash, Doubao, DeepSeek-OCR) with a settings GUI.",
+      "package": "dsh-free-vision",
+      "stars": 8,
+      "downloads": 2477,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-tool-vision",
+      "owner": "gloryxpnv",
+      "repository": "https://github.com/gloryxpnv/dsh-tool-vision",
+      "description": "Local-first structured vision for text-only agents: images go to a local OpenAI-compatible VLM and come back as JSON evidence (summary, verbatim OCR, layout regions, entities/relations, colors, explicit uncertainty), with anti-hallucination fallback and an optional paste/upload bridge; zero cloud cost, images never leave the machine.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-vision-guard",
+      "owner": "good-boy4069",
+      "repository": "https://github.com/good-boy4069/dsh-vision-guard",
+      "description": "Transparent image guard for text-only routes: paste images without the 400 session deadlock, plus a vision_analyze tool for OCR/PDF/docx/pptx/video.",
+      "package": "dsh-vision-guard",
+      "stars": 0,
+      "downloads": 879,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-vision-bridge",
+      "owner": "GooDAnDReaDY",
+      "repository": "https://github.com/GooDAnDReaDY/dsh-vision-bridge",
+      "description": "Routes images to a vision model of your choice - auto-rewrite, explicit tools, or hybrid - so a text-only chat model does not fail a turn that contains a picture.",
+      "package": "@goodandready/dsh-vision-bridge",
+      "stars": 2,
+      "downloads": 5929,
+      "added": "2026-08-26"
+    },
+    {
+      "name": "deepseek-vision#plugins/dsh-plugin-deepseek-vision",
+      "owner": "GOU-GEE",
+      "repository": "https://github.com/GOU-GEE/deepseek-vision/tree/main/plugins/dsh-plugin-deepseek-vision",
+      "description": "Vision MCP and DSH bundle for text-only DeepSeek: analyze_image, analyze_clipboard, compare_images and vision_status tools, a visual settings page, free GLM-4.6V-Flash by default, result caching and rate-limit tolerance; keys stay out of logs.",
+      "package": "dsh-plugin-deepseek-vision",
+      "stars": 4,
+      "downloads": 835,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-ocr-local",
+      "owner": "grelvan",
+      "repository": "https://github.com/grelvan/dsh-ocr-local",
+      "description": "Local OCR fallback for text-only routes: when the session model declares it cannot accept images, the attached image is cached locally and its path injected so the model can call ocr_image — PP-OCRv5 + ONNX Runtime on CPU, no API key, images never leave the machine. Silent when the model can see images.",
+      "package": "dsh-ocr-local",
+      "stars": 5,
+      "downloads": 178,
+      "added": "2026-09-15"
+    },
+    {
+      "name": "dsh-vision-bridge",
+      "owner": "GXX182",
+      "repository": "https://github.com/GXX182/dsh-vision-bridge",
+      "description": "Bridges session images to configurable vision providers and returns text-only analysis to eligible DeepSeek Harness model routes.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-vision-mix",
+      "owner": "haiziyao",
+      "repository": "https://github.com/haiziyao/dsh-vision-mix",
+      "description": "Combine text, vision, and image-generation APIs into one Mix model with automatic routing: text-only requests go to the chat model, user images and agent screenshots go to the vision model, follow-ups keep using the same session image, and agents can generate or edit images with session-scoped call history.",
+      "package": "dsh-vision-mix",
+      "stars": 3,
+      "downloads": 1304,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-vision-analysis",
+      "owner": "Harvey-Will",
+      "repository": "https://github.com/Harvey-Will/dsh-vision-analysis",
+      "description": "DeepSeek Harness vision plugin: 8 analysis modes (describe, OCR, chart data, UI review, object detection, compare, code-gen, debug), any OpenAI- or Anthropic-compatible vision API, with a built-in free vision model and automatic rate-limit failover.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-23"
+    },
+    {
+      "name": "dsh-maclens",
+      "owner": "Harzva",
+      "repository": "https://github.com/Harzva/dsh-maclens",
+      "description": "Apple on-device Vision tools for text-only dsh models: local OCR (zh-Hans + 30 langs), image classification, face detection, document layout, and a combined describe — 100% offline, no API key, tall-screenshot slicing.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-19"
+    },
+    {
+      "name": "wechat-ocr",
+      "owner": "hawkhai",
+      "repository": "https://github.com/hawkhai/wechat-ocr",
+      "description": "Local WeChat OCR tool for DSH: `wechat_ocr_recognize` returns recognized text and the engine structured result for a local image path.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "win11-oneocr",
+      "owner": "hawkhai",
+      "repository": "https://github.com/hawkhai/win11-oneocr",
+      "description": "Local Windows 11 OneOCR tool for DSH: `oneocr_recognize` returns OCR text and structured line/word polygons, confidence, rotation, and handwriting style.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-omni-workstation",
+      "owner": "huashenglian",
+      "repository": "https://github.com/huashenglian/dsh-omni-workstation",
+      "description": "Omni-modal workstation for DSH: analyze_image over an ordered multi-card VLM failover chain, a six-tool vision toolkit (zoom, colour sampling, pixel diff, OCR, element detection, inline display) sharing the same image resolver, generate_image over OpenAI/DashScope/ComfyUI protocols, multi-card async generate_video with a /build-video-tool builder, and speak/clone_voice TTS over seven providers, all driven by one auto-saving settings page.",
+      "package": "dsh-omni-workstation",
+      "stars": 4,
+      "downloads": 915,
+      "added": "2026-09-19"
+    },
+    {
+      "name": "dsh-open-eyes",
+      "owner": "hyper-dsh-plugins",
+      "repository": "https://github.com/hyper-dsh-plugins/dsh-open-eyes",
+      "description": "Vision bridge for text-only DeepSeek routes that analyzes attached and local images through configurable OpenAI Responses, Chat Completions, or Anthropic Messages endpoints while leaving image-capable routes native.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-tool-visual-primitives",
+      "owner": "InkshadeWoods",
+      "repository": "https://github.com/InkshadeWoods/dsh-tool-visual-primitives",
+      "description": "Analyzes conversation images through mode-specific prompts (caption, UI, document, grounding, topology, etc.) and injects structured evidence with coordinate primitives (boxes, points, refs) as text, with session-level caching for reuse across replay and compaction.",
+      "package": "dsh-tool-visual-primitives",
+      "stars": 2,
+      "downloads": 1311,
+      "added": "2026-08-27"
+    },
+    {
+      "name": "dsh-quicksight",
+      "owner": "Isanti2016",
+      "repository": "https://github.com/Isanti2016/dsh-quicksight",
+      "description": "Two-tier image reading for text-only models: fast local OCR (RapidOCR, offline) first, vision-model fallback (modlens).",
+      "package": "dsh-quicksight",
+      "stars": 0,
+      "downloads": 903,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "picturereader",
+      "owner": "jing-hy",
+      "repository": "https://github.com/jing-hy/picturereader",
+      "description": "Image \"reading\" for text-only models: downscale + reduce color depth + structure/color fingerprints into text grids fed back to the conversation, letting the model zoom, sample and OCR autonomously like a multimodal model; fully local with zero external model dependency, ships an image-reading methodology skill and optional PaddleOCR.",
+      "package": "picturereader",
+      "stars": 35,
+      "downloads": 1865,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-mmroute",
+      "owner": "jmxsxwyzjdwl",
+      "repository": "https://github.com/jmxsxwyzjdwl/dsh-mmroute",
+      "description": "Transparent multimodal routing for text-only models: every image in every model call is fully transcribed (verbatim OCR, data, uncertainty zones, injection-hardened) by your own multimodal understander, with focused re-look via vision_relook and automatic retry on image-related failures. No bundled endpoints, no borrowed logins.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-25"
+    },
+    {
+      "name": "dsh-autovision",
+      "owner": "Junkrat9527",
+      "repository": "https://github.com/Junkrat9527/dsh-autovision",
+      "description": "Vision for text-only dsh models: paste an image and a configured multimodal model transcribes it to text automatically — transparent twin routing, an agent-callable read-image tool, no built-in keys or relay.",
+      "package": "@iroam2375/dsh-autovision",
+      "stars": 0,
+      "downloads": 702,
+      "added": "2026-08-19"
+    },
+    {
+      "name": "dsh-visual-plugin",
+      "owner": "jyh20030112",
+      "repository": "https://github.com/jyh20030112/dsh-visual-plugin",
+      "description": "Gives text-only models vision: forwards user images to an OpenAI-compatible vision model and shows the descriptions in a Web UI right panel.",
+      "package": null,
+      "stars": 16,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-auto-vision",
+      "owner": "k2d5rqjpkg-art",
+      "repository": "https://github.com/k2d5rqjpkg-art/dsh-auto-vision",
+      "description": "Auto-switch the DeepSeek route to the vision model on demand: flash main session switches (A), pro keeps deep reasoning and delegates image reading to a vision subagent (B), subagents always switch, with fatal-failure fallback. No manual model switching.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-29"
+    },
+    {
+      "name": "dsh-vision-recognizer",
+      "owner": "kaixinbaba",
+      "repository": "https://github.com/kaixinbaba/dsh-vision-recognizer",
+      "description": "Vision provider route that transcribes attached images to text through a configurable model (15+ OpenAI-compatible and Anthropic vendors) while DeepSeek keeps answering.",
+      "package": "dsh-vision-recognizer",
+      "stars": 2,
+      "downloads": 1103,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-mindseye",
+      "owner": "kanchengw",
+      "repository": "https://github.com/kanchengw/dsh-mindseye",
+      "description": "Plug-in vision for text-only models on DSH, with native interaction for image understanding and generation, GUI automation, through layered evidence memory and cache.",
+      "package": "dsh-mindseye",
+      "stars": 1,
+      "downloads": 1164,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "deepseek-plugin",
+      "owner": "klingai-dev",
+      "repository": "https://github.com/klingai-dev/deepseek-plugin",
+      "description": "Turn every idea into an image or video with Kling AI. In DeepSeek Harness, use natural language for text-to-image, image-to-image, text-to-video, image-to-video, reference-image creation, task tracking, and result previews.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-29"
+    },
+    {
+      "name": "dsh-vision-plugin",
+      "owner": "ld-1101",
+      "repository": "https://github.com/ld-1101/dsh-vision-plugin",
+      "description": "Give your text-only model eyes - chat image attachments are auto-described via a vision model (default prompt), with iterative re-parsing through model-generated prompts when details are missing; system/custom model modes + GUI config panel, key-safe secret handling, and a small host patch for DSH 0.1.0-rc.6 (see repo README).",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-image-gen",
+      "owner": "LeemanCheung",
+      "repository": "https://github.com/LeemanCheung/dsh-image-gen",
+      "description": "GPT Image 2 `image_gen` with Codex subscription OAuth by default or explicit API-key mode: developing card, up to three live API partials, durable attachment replay/lightbox/download, text-only model output, and bounded credential-safe requests.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-eyes",
+      "owner": "Leeminjing",
+      "repository": "https://github.com/Leeminjing/dsh-eyes",
+      "description": "On-demand vision for text-only DeepSeek models: upload images, and the model calls a view_image tool backed by any OpenAI-compatible vision endpoint (Qwen/DashScope by default).",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-visibridge",
+      "owner": "lhbsaa",
+      "repository": "https://github.com/lhbsaa/dsh-visibridge",
+      "description": "Structured vision evidence (OCR/layout/semantics) plus a USB camera capture tool for a \"shoot-look-adjust\" debug loop; backends: Ollama, DeepSeek, Xiaomi.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-28"
+    },
+    {
+      "name": "dsh-vision",
+      "owner": "linenxi-ctrl",
+      "repository": "https://github.com/linenxi-ctrl/dsh-vision",
+      "description": "External vision plugin for DeepSeek Harness: whale-button config panel, image recognition with auto-reply, and agent screenshot/recognize tools.",
+      "package": null,
+      "stars": 9,
+      "downloads": null,
+      "added": "2026-08-14"
+    },
+    {
+      "name": "Deepseek-Continuity",
+      "owner": "linxuhao",
+      "repository": "https://github.com/linxuhao/Deepseek-Continuity",
+      "description": "Local image, voice, music and SFX generation plus transcription, with pinned identity: characters, animals, objects and actor voices are defined once and reused on every later call, degenerate output (a near-flat image, silent audio) is rejected instead of returned as success, and a generated line can be read back as text so a clone that swallowed its ending becomes visible. The engines unload when idle, and image generation and transcription can each be pointed at an OpenAI-shaped API instead of the local Vulkan backend.",
+      "package": "dsh-plugin-continuity",
+      "stars": 3,
+      "downloads": 1143,
+      "added": "2026-08-27"
+    },
+    {
+      "name": "modlens",
+      "owner": "liustack",
+      "repository": "https://github.com/liustack/modlens",
+      "description": "Vision bridge for text-only models: paste an image, get structured JSON evidence (OCR, layout, semantics).",
+      "package": "@liustack/modlens",
+      "stars": 4226,
+      "downloads": 94116,
+      "added": "2026-08-14"
+    },
+    {
+      "name": "screenshot-feedback-hook-mcp#dsh-screenshot-feedback-hook-mcp",
+      "owner": "lkh081231",
+      "repository": "https://github.com/lkh081231/screenshot-feedback-hook-mcp/tree/main/dsh-plugin",
+      "description": "Adds a take screenshot tool plus two optional automatic capture points, putting the screen into the conversation as an image block; requires an image-capable model.",
+      "package": "dsh-screenshot-feedback-hook-mcp",
+      "stars": 5,
+      "downloads": 919,
+      "added": "2026-08-27"
+    },
+    {
+      "name": "dsh-plugin-grok2api-media-tool",
+      "owner": "lsjspl",
+      "repository": "https://github.com/lsjspl/dsh-plugin-grok2api-media-tool",
+      "description": "Gives dsh the ability to generate images and videos through the grok2api API.",
+      "package": "dsh-plugin-grok2api-media-tool",
+      "stars": 3,
+      "downloads": 809,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-image-guard",
+      "owner": "mafeis",
+      "repository": "https://github.com/mafeis/dsh-image-guard",
+      "description": "Trims historical images in outgoing chat requests down to a recent-image count, learns the provider per-prompt image cap from HTTP 400 responses, and retries with fewer images so image-heavy sessions keep working.",
+      "package": "dsh-image-guard",
+      "stars": 0,
+      "downloads": 771,
+      "added": "2026-09-15"
+    },
+    {
+      "name": "dsh-capture",
+      "owner": "Max-Null",
+      "repository": "https://github.com/Max-Null/dsh-capture",
+      "description": "Dual-engine screen capture for DSH: inside the SSiD desktop shell, a global hotkey or tray opens a fullscreen box-select overlay (all monitors, per-display pixel-perfect frames) with in-place red-box annotation and a WeChat-style toolbar; in plain DSH (browser), the composer camera button captures the display via getDisplayMedia and reuses the same single-phase box-select + annotation overlay in-page. The cropped image lands in the current conversation composer through the official attachment intake.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-25"
+    },
+    {
+      "name": "lookover#dsh-look",
+      "owner": "mengxiaoxian",
+      "repository": "https://github.com/mengxiaoxian/lookover/tree/main/dsh-look",
+      "description": "Scene-awareness probe for DSH on macOS: a privacy-first, pull-model `look` tool that reads the frontmost non-self window (app info, AX title/selection, gated local OCR), plus a summon-hotkey snapshot captured the instant you press.",
+      "package": "dsh-look",
+      "stars": 0,
+      "downloads": 725,
+      "added": "2026-09-23"
+    },
+    {
+      "name": "dsh-koboldcpp-hands",
+      "owner": "MicroHEROX",
+      "repository": "https://github.com/MicroHEROX/dsh-koboldcpp-hands",
+      "description": "Hands repetitive text and vision labor (OCR, image analysis, comparison) to a local KoboldCpp (llama.cpp) server through koboldcpp_run and koboldcpp_vision tools, with on-demand server lifecycle management.",
+      "package": "dsh-koboldcpp-hands",
+      "stars": 0,
+      "downloads": 1184,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-unsloth-hands",
+      "owner": "MicroHEROX",
+      "repository": "https://github.com/MicroHEROX/dsh-unsloth-hands",
+      "description": "Hands repetitive text and vision labor (OCR, image analysis, comparison) to a locally running Unsloth Desktop (Unsloth Studio) server through unsloth_run and unsloth_vision tools; pure HTTP client, never spawns or owns processes.",
+      "package": "dsh-unsloth-hands",
+      "stars": 0,
+      "downloads": 1045,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-media-skills",
+      "owner": "MJorgin",
+      "repository": "https://github.com/MJorgin/dsh-media-skills",
+      "description": "Free vision bridge and image generation for text-only models: paste-image reading, GLM-4V-Flash and Gemini engine failover, ModLens-style structured evidence, and a seeded free vision model route.",
+      "package": null,
+      "stars": 19,
+      "downloads": null,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-vision-tools",
+      "owner": "moon09300731",
+      "repository": "https://github.com/moon09300731/dsh-vision-tools",
+      "description": "Full vision-capability bundle for DeepSeek Harness: a vision_understand tool (OpenAI-compatible vision APIs, free Zhipu GLM-4V-Flash by default) plus paste/drag-and-drop/button entry points for image recognition.",
+      "package": "dsh-vision-tools",
+      "stars": 3,
+      "downloads": 1102,
+      "added": "2026-08-17"
+    },
+    {
+      "name": "dsh-llm-deepseek-vision",
+      "owner": "NagasakiSoyo-ui",
+      "repository": "https://github.com/NagasakiSoyo-ui/dsh-llm-deepseek-vision",
+      "description": "Vision-augmented DeepSeek adapter: a vision-capable model describes image input, then a text-only DeepSeek model reasons over the description.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-subagent-vision",
+      "owner": "niuniuaba",
+      "repository": "https://github.com/niuniuaba/dsh-subagent-vision",
+      "description": "Lets a text-only DeepSeek agent read images in the same session by delegating to a vision-capable subagent, with send-time image-to-path conversion.",
+      "package": "dsh-subagent-vision",
+      "stars": 0,
+      "downloads": 1026,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "free-vision-skill",
+      "owner": "niyongsheng",
+      "repository": "https://github.com/niyongsheng/free-vision-skill",
+      "description": "Fully-local image understanding & OCR via macOS Vision Framework: `ocr_image` (text, table layout + coordinates) and `view_image` (scene, faces, QR) — paste multiple images into the web input box or pass path/URL/base64; images never leave your Mac.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-auto-vision",
+      "owner": "NormanFxxkingRockwell",
+      "repository": "https://github.com/NormanFxxkingRockwell/dsh-auto-vision",
+      "description": "Auto-discovery vision bridge for text-only DeepSeek Harness agents: automatically finds an image-capable model from your configured providers and returns picture descriptions as plain text via a vision tool.",
+      "package": "dsh-auto-vision",
+      "stars": 1,
+      "downloads": 964,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-hos-scrcpy",
+      "owner": "ns-zzj",
+      "repository": "https://github.com/ns-zzj/dsh-hos-scrcpy",
+      "description": "Control a HarmonyOS phone from the DSH web UI with AI: live H.264 screen mirroring, mouse touch and system keys, hilog streaming, and agentic tools that let the model read the screen, locate UI controls, then tap, long-press, press keys, or type.",
+      "package": null,
+      "stars": 6,
+      "downloads": null,
+      "added": "2026-08-26"
+    },
+    {
+      "name": "DSH-dseyes",
+      "owner": "Okkay712",
+      "repository": "https://github.com/Okkay712/DSH-dseyes",
+      "description": "Native image attachments for text-only DeepSeek in the Web GUI: pasted or dropped images appear as thumbnails in the session, and before dispatch the host reads them with the free Zhipu GLM-4V-Flash vision API (glm-4v-flash fallback chain) and substitutes the description, so DeepSeek answers about the image while the original is kept in history.",
+      "package": "dsh-dseyes",
+      "stars": 2,
+      "downloads": 1970,
+      "added": "2026-08-19"
+    },
+    {
+      "name": "dsh-screenshot",
+      "owner": "paicat1",
+      "repository": "https://github.com/paicat1/dsh-screenshot",
+      "description": "Zero-dependency screen capture for DSH: Lightweight — zero deps, zero binaries; Stage & shoot — one-click full screen, window layout, hover-snap capture of occluded windows; Agent self-service — path-only delivery; paths are universal, pair with modlens (optional) for one-call structured evidence.",
+      "package": "@paicat1/dsh-screenshot",
+      "stars": 5,
+      "downloads": 1473,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-draw",
+      "owner": "PerryLink",
+      "repository": "https://github.com/PerryLink/dsh-draw",
+      "description": "Multi-engine text-to-image generation (OpenAI Images and Zhipu CogView presets) with per-session quota tracking, engine failover, credential-safe config, and a result card with regenerate.",
+      "package": "dsh-draw",
+      "stars": 9,
+      "downloads": 3859,
+      "added": "2026-09-03"
+    },
+    {
+      "name": "dsh-vision-opencode",
+      "owner": "poiuyjie",
+      "repository": "https://github.com/poiuyjie/dsh-vision-opencode",
+      "description": "Adds a configurable vision model to text-only main models: a vision_read_image tool, a composer-bar vision-model selector, and automatic image-to-text conversion for text-only routes.",
+      "package": null,
+      "stars": 13,
+      "downloads": null,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-omni-vision",
+      "owner": "Renji004",
+      "repository": "https://github.com/Renji004/dsh-omni-vision",
+      "description": "Local eyes for text-only models: eyes_render draws text/shapes/Mermaid onto a canvas in the Web GUI, eyes_paste captures pasted images, eyes_ocr reads text via the built-in Windows OCR (offline), and eyes_analyze inspects pixels as structured data — no vision model required.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-19"
+    },
+    {
+      "name": "dsh-vision-subagent",
+      "owner": "ruby1304",
+      "repository": "https://github.com/ruby1304/dsh-vision-subagent",
+      "description": "Vision for any DSH route: paste images in the Web composer with intent-aware auto-analysis, delegate workspace image reads to a Kimi/MiniMax vision subagent, and materialize pasted originals for editing.",
+      "package": "dsh-vision-subagent",
+      "stars": 1,
+      "downloads": 872,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-easyvision",
+      "owner": "s3yf1337",
+      "repository": "https://github.com/s3yf1337/dsh-easyvision",
+      "description": "Give text-only models vision: a describe_image tool that delegates images to a vision model from your dsh model list over the harness's own LLM runtime.",
+      "package": null,
+      "stars": 0,
+      "downloads": null,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-tool-vision",
+      "owner": "Scorp1o117",
+      "repository": "https://github.com/Scorp1o117/dsh-tool-vision",
+      "description": "Send local images or HTTP(S) image URLs to a configured OpenAI-compatible vision endpoint with the inspect_image tool and return its text response to the conversation.",
+      "package": "dsh-tool-vision",
+      "stars": 8,
+      "downloads": 3623,
+      "added": "2026-09-05"
+    },
+    {
+      "name": "dsh-vision-pro-bridge",
+      "owner": "ShaineDemo",
+      "repository": "https://github.com/ShaineDemo/dsh-vision-pro-bridge",
+      "description": "Vision bridge for text-only DeepSeek models: transcribes attached images with deepseek-v4-flash-vision-exp before they reach deepseek-v4-pro, with no third-party dependencies.",
+      "package": "dsh-vision-pro-bridge",
+      "stars": 0,
+      "downloads": 841,
+      "added": "2026-09-03"
+    },
+    {
+      "name": "dsh-plugin-multimodal",
+      "owner": "shinjiyu",
+      "repository": "https://github.com/shinjiyu/dsh-plugin-multimodal",
+      "description": "Advertise image paste on text-only DeepSeek routes, describe attachments with a vision sidecar, and leave native vision models untouched.",
+      "package": null,
+      "stars": 3,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-deepseek-vision",
+      "owner": "siegfly",
+      "repository": "https://github.com/siegfly/dsh-deepseek-vision",
+      "description": "A vision-language gateway provider route: pasted images are described by a configurable VL model (Qwen-VL by default) before the DeepSeek wire.",
+      "package": "dsh-deepseek-vision",
+      "stars": 9,
+      "downloads": 2012,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-design-qa",
+      "owner": "sunxin-ai",
+      "repository": "https://github.com/sunxin-ai/dsh-design-qa",
+      "description": "Design-fidelity QA for text-only models: a `deepseek_vision` tool borrows an eye from any OpenAI-compatible vision route, so the model can judge whether an implementation matches its mock — shipped with the benchmark behind that judgement (four fixtures, 23 injected defects, raw transcripts) and the questioning discipline it depends on.",
+      "package": "dsh-design-qa",
+      "stars": 44,
+      "downloads": 1399,
+      "added": "2026-08-19"
+    },
+    {
+      "name": "dsh-plugin-appshot",
+      "owner": "TaurusWood",
+      "repository": "https://github.com/TaurusWood/dsh-plugin-appshot",
+      "description": "Codex Appshots for DSH: capture the frontmost active window via global shortcut and seamlessly mount it into the composer for agent queries.",
+      "package": "dsh-plugin-appshot",
+      "stars": 5,
+      "downloads": 2099,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "taxue-dsh-artisan",
+      "owner": "taxueseek",
+      "repository": "https://github.com/taxueseek/taxue-dsh-artisan",
+      "description": "Integrated visual creation toolchain for DSH: prompt reverse-engineering and audit optimization plus multi-provider image generation with async background rendering.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-24"
+    },
+    {
+      "name": "dsh-plugins#dsh-vision-tool",
+      "owner": "TZHR-invest",
+      "repository": "https://github.com/TZHR-invest/dsh-plugins/tree/main/packages/dsh-vision",
+      "description": "Agent-callable vision tool that describes local images via any OpenAI-compatible vision endpoint you configure, with an optional multi-model cross-check and no built-in keys.",
+      "package": null,
+      "stars": 3,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "visual-review",
+      "owner": "wang-bool",
+      "repository": "https://github.com/wang-bool/visual-review",
+      "description": "Renders pasted/uploaded images inline in the DSH Web chat and gives text-only models vision: the model-invokable visual_review tool calls any OpenAI-compatible multimodal API first, falling back to a local Qwen3-VL worker.",
+      "package": "visual-review",
+      "stars": 3,
+      "downloads": 783,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-tool-vision",
+      "owner": "wanshichenguang",
+      "repository": "https://github.com/wanshichenguang/dsh-tool-vision",
+      "description": "Model-facing image_describe (识图) tool over the DashScope OpenAI-compatible API (qwen3.7-flash), plus a paste bridge: on text-only sessions, pasted images auto-convert to file paths at send time and render back in the transcript, so they never trip image admission. Bring your own DASHSCOPE_API_KEY; endpoint/model/budgets configurable, redirect-proof HTTP client, works in every agent preset.",
+      "package": null,
+      "stars": 1,
+      "downloads": null,
+      "added": "2026-08-18"
+    },
+    {
+      "name": "dsh-image-generation",
+      "owner": "whiteS18",
+      "repository": "https://github.com/whiteS18/dsh-image-generation",
+      "description": "Configure multiple image providers in Settings and call image_generate with the one selected model; images save under generate/image and show inline in the conversation.",
+      "package": "dsh-image-generation",
+      "stars": 0,
+      "downloads": 1795,
+      "added": "2026-09-11"
+    },
+    {
+      "name": "dsh-appshots",
+      "owner": "WongYuYe",
+      "repository": "https://github.com/WongYuYe/dsh-appshots",
+      "description": "Codex-style window capture for DSH Desktop on macOS and Windows: press both Command keys (macOS) or both Ctrl keys (Windows), or the camera button, to grab the frontmost window, attach it to the current chat, and inject a VoiceOver-style accessibility tree as hidden context.",
+      "package": "dsh-appshots",
+      "stars": 7,
+      "downloads": 1133,
+      "added": "2026-09-04"
+    },
+    {
+      "name": "dsh-image-viewer",
+      "owner": "WSL043",
+      "repository": "https://github.com/WSL043/dsh-image-viewer",
+      "description": "Upgrades DSH image viewing with pointer-centered zoom, pan, galleries, downloads, keyboard support, and inline region notes.",
+      "package": "dsh-image-viewer",
+      "stars": 1,
+      "downloads": 7718,
+      "added": "2026-08-30"
+    },
+    {
+      "name": "mimo-vision",
+      "owner": "wulusai2333",
+      "repository": "https://github.com/wulusai2333/mimo-vision",
+      "description": "`describe_image` tool: a vision bridge that sends images to mimo-v2.5 through the opencode Zen API (credential `OPENCODE_GO_API_KEY`, free route first with paid fallback) and returns text descriptions for text-only models, with native passthrough and ImageMagick transcoding of SVG/TIFF/HEIC formats.",
+      "package": "mimo-vision",
+      "stars": 1,
+      "downloads": 788,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-vision",
+      "owner": "xiaoshihou514",
+      "repository": "https://github.com/xiaoshihou514/dsh-vision",
+      "description": "Native vision capability extension, using either Zhipu (free) or Qwen-VL (local).",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "dsh-image-vision",
+      "owner": "xiaoyuink",
+      "repository": "https://github.com/xiaoyuink/dsh-image-vision",
+      "description": "Image understanding for any DSH model: vision, OCR, grounding, and crop tools with domain presets for histopathology, cell biology, anatomy, clinical images and scientific figures.",
+      "package": null,
+      "stars": 3,
+      "downloads": null,
+      "added": "2026-08-23"
+    },
+    {
+      "name": "dsh-draw-router",
+      "owner": "xiaozhe7772222",
+      "repository": "https://github.com/xiaozhe7772222/dsh-draw-router",
+      "description": "Unified image generation router for DeepSeek Harness (DSH): auto-discovers image models from any OpenAI-compatible endpoint, provides draw_image and draw_list_sources tools, supports SenseNova, StepFun, Agnes, Qwen, Flux, SD, Imagen and more.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-15"
+    },
+    {
+      "name": "dsh-vision-bridge",
+      "owner": "ximengxiaolan",
+      "repository": "https://github.com/ximengxiaolan/dsh-vision-bridge",
+      "description": "Composer-attached images are transcribed to text by an OpenAI-compatible vision model before reaching text-only DeepSeek models.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-14"
+    },
+    {
+      "name": "dsh-vision-hub#tool-vision",
+      "owner": "xing666173",
+      "repository": "https://github.com/xing666173/dsh-vision-hub/tree/main/tool-vision",
+      "description": "Enhanced vision toolbox: 14 pixel-level vision tools (describe, ground, detect, crop, pixel-diff, OCR, long-screenshot OCR, vectorize, colors, cutout, screenshot, present, materialize, html-screenshot) driven by one OpenAI-compatible endpoint, with clean \\[图片: path] bridge markers, content-safety classification and rate-limit auto-retry.",
+      "package": null,
+      "stars": 4,
+      "downloads": null,
+      "added": "2026-08-23"
+    },
+    {
+      "name": "dsh-image-vision",
+      "owner": "xsoc1",
+      "repository": "https://github.com/xsoc1/dsh-image-vision",
+      "description": "Chat image-attachment bridge with a `view_image` tool for any OpenAI-compatible VLM (local Ollama or cloud): pasted/dropped images become `view_image` path markers before reaching text-only DeepSeek models.",
+      "package": null,
+      "stars": 2,
+      "downloads": null,
+      "added": "2026-08-16"
+    },
+    {
+      "name": "computer-use-vision",
+      "owner": "xuanyuanluoxue",
+      "repository": "https://github.com/xuanyuanluoxue/computer-use-vision",
+      "description": "Windows computer-use capability for DSH: screenshot → vision model → simulated mouse/keyboard with self-evolving knowledge base. Dual-mode plugin tools + skill-only pwsh fallback.",
+      "package": "dsh-computer-use-vision",
+      "stars": 1,
+      "downloads": 416,
+      "added": "2026-10-08"
+    },
+    {
+      "name": "deepseek-harness-plugins#vision-bridge",
+      "owner": "Yinxe",
+      "repository": "https://github.com/Yinxe/deepseek-harness-plugins/tree/main/plugins/vision-bridge",
+      "description": "Let text-only models see images: when a picture arrives with a placeholder like \\[image omitted because this model accepts text only], the model calls the vision_describe tool and the plugin forwards the image reference plus the question to a multimodal model, retrying with a fallback model on failure. Configured in the settings page and persisted via the official settings API.",
+      "package": null,
+      "stars": 7,
+      "downloads": null,
+      "added": "2026-09-19"
+    },
+    {
+      "name": "dsh-vision-router",
+      "owner": "ysr666",
+      "repository": "https://github.com/ysr666/dsh-vision-router",
+      "description": "Free vision for text-only agents: built-in keyless vision chain plus pixel tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots); paste an image to use it.",
+      "package": "dsh-vision-router",
+      "stars": 1146,
+      "downloads": 34249,
+      "added": "2026-08-14"
+    },
+    {
+      "name": "phone-lens#phone-lens",
+      "owner": "yxqfg",
+      "repository": "https://github.com/yxqfg/phone-lens/tree/main/packages/phone-lens",
+      "description": "Turn a phone camera into a live viewfinder and photo input for your dsh session, over LAN or USB.",
+      "package": "phone-lens",
+      "stars": 2,
+      "downloads": 3445,
+      "added": "2026-08-26"
+    },
+    {
+      "name": "dsh-image-router",
+      "owner": "zhiwuli0228",
+      "repository": "https://github.com/zhiwuli0228/dsh-image-router",
+      "description": "Digests the images in a prompt with a vision model before admission, so any model — a text-only one included — can read them without the session ever switching models, and adds a describe_image tool for image paths.",
+      "package": "dsh-image-router",
+      "stars": 0,
+      "downloads": 1048,
+      "added": "2026-09-15"
+    },
+    {
+      "name": "dsh-agnes-studio",
+      "owner": "zmm863-commits",
+      "repository": "https://github.com/zmm863-commits/dsh-agnes-studio",
+      "description": "AI image and video studio as a floating DSH panel, so creation runs alongside the conversation instead of replacing it: text-to-image, image-to-image and multi-image composition at 1K-4K across eight aspect ratios; text-to-video and image-to-video with first-frame control at 4-12 seconds; short-drama mode that imports a script (.txt/.md/.json), breaks it into storyboard shots for preview and batch generation; and a prompt-expert workspace. Zero runtime dependencies.",
+      "package": "dsh-agnes-studio",
+      "stars": 16,
+      "downloads": 1978,
+      "added": "2026-09-16"
+    }
+  ]
+}

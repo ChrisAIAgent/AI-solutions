@@ -35,6 +35,7 @@ body.tac-home { margin: 0; background: #edf5f7; color: #111415; font-family: 'TA
 .tac-nav-trigger[aria-expanded='true'] + .tac-nav-popover { display: grid; }
 .tac-nav-popover a { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-radius: 6px; font-size: 12px; }
 .tac-nav-popover a:hover, .tac-nav-popover a:focus-visible { background: #edf5f7; }
+.tac-nav-popover small { margin-left: 18px; color: #66818b; font-size: 10px; white-space: nowrap; }
 .tac-nav-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
 .tac-button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 43px; padding: 0 17px; border-radius: 5px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .02em; transition: transform .16s ease, background .16s ease, color .16s ease; }
 .tac-button:hover, .tac-button:focus-visible { transform: translateY(-2px); }

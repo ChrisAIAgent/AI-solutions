@@ -20,9 +20,13 @@ export const tacContent = {
     activationKey: 'TACWork'
   },
   nav: [
-    { label: 'Agent Platform', target: '#platform', items: ['Build with confidence', 'Orchestrate workflows', 'Govern every action'] },
+    { label: 'Agent Platform', target: '#platform', items: [
+      { label: 'TACWork', href: 'https://aisolution.worldtoolx.com/pages/tacwork-download', sameTab: true },
+      { label: 'TAC Harness', href: './pages/tac-harness.html' },
+      { label: 'TAC CLI', href: './pages/tac-cli.html', note: 'Coming soon' }
+    ] },
     { label: 'Agentic AI Apps', target: '#applications', items: ['Pre-built applications', 'Application accelerators', 'Tailored applications'] },
-    { label: 'Agent Marketplace', target: '#accelerators', items: ['Agents', 'Templates', 'Integrations', { label: 'Skills', href: './pages/skills.html' }, { label: 'TAC AI Assistant Asset Lab', href: './pages/tac-assistant-assets.html' }] },
+    { label: 'Agent Marketplace', target: '#accelerators', items: ['Agents', { label: 'Plugin', href: './pages/tac-plugins.html' }, 'Integrations', { label: 'Skills', href: './pages/skills.html' }, { label: 'TAC AI Assistant Asset Lab', href: './pages/tac-assistant-assets.html' }] },
     { label: 'More', target: '#insights', items: ['Industry insights', 'Partner ecosystem', 'Contact TAC'] }
   ],
   hero: {

@@ -118,6 +118,17 @@ export function retrieveHomepageKnowledge(query, knowledge) {
   }).filter(({ score }) => score > 0).sort((a, b) => b.score - a.score).slice(0, 3);
 }
 
+export function retrieveRelevantHomepageKnowledge(query, knowledge) {
+  const normalized = normalize(query);
+  const intentSections = /industry|industries|sector|vertical|行业|行业方案/.test(normalized)
+    ? ['industries']
+    : /what can tac|what does tac do|capabilities|overview|介绍|能做什么|能力/.test(normalized)
+      ? ['hero', 'solutions', 'platform']
+      : [];
+  const searchPool = intentSections.length ? knowledge.filter((item) => intentSections.includes(item.section)) : knowledge;
+  return retrieveHomepageKnowledge(query, searchPool);
+}
+
 function localizeAnswer(item, locale) {
   if (locale === 'zh') return zhAnswers[item.id] || zhSectionAnswers[item.section] || '这个主题可以在 TAC 主页的相关内容中继续了解。';
   return `${item.title}: ${item.text}`;
@@ -144,13 +155,7 @@ export function buildMockAnswer(query, knowledge) {
     };
   }
 
-  const intentSections = /industry|industries|sector|vertical|行业|行业方案/.test(normalized)
-    ? ['industries']
-    : /what can tac|what does tac do|capabilities|overview|介绍|能做什么|能力/.test(normalized)
-      ? ['hero', 'solutions', 'platform']
-      : [];
-  const searchPool = intentSections.length ? knowledge.filter((item) => intentSections.includes(item.section)) : knowledge;
-  const matches = retrieveHomepageKnowledge(query, searchPool);
+  const matches = retrieveRelevantHomepageKnowledge(query, knowledge);
   if (!matches.length || matches[0].score < 2) {
     return {
       language: locale,
