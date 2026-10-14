@@ -75,6 +75,30 @@ test('persistent throttling is bounded to two attempts', async () => {
   assert.equal(calls, 2);
 });
 
+test('non-JSON gateway throttling is identified without logging response bodies', async () => {
+  const logs = [];
+  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+    log: (line) => logs.push(JSON.parse(line)),
+    fetchImpl: async () => new Response('error code: 1015', {
+      status: 429, headers: { 'retry-after': '60', server: 'cloudflare', 'content-type': 'text/plain' }
+    })
+  }), { code: 'provider_busy' });
+  assert.equal(logs[0].gatewayCode, '1015');
+  assert.equal(logs[0].reason, 'gateway-rate-limit');
+  assert.equal(logs[0].responseFormat, 'non-json');
+});
+
+test('Cloudflare 1015 is never immediately retried even without Retry-After', async () => {
+  let calls = 0;
+  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+    log() {}, retryBaseMs: 1, fetchImpl: async () => {
+      calls += 1;
+      return new Response('error code: 1015', { status: 429 });
+    }
+  }), { code: 'provider_busy' });
+  assert.equal(calls, 1);
+});
+
 test('Worker distinguishes empty model output from a genuine knowledge handoff', async () => {
   const originalFetch = globalThis.fetch;
   const originalError = console.error;

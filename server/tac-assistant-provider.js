@@ -47,18 +47,22 @@ export async function requestAgnesCompletion(payload, apiKey, {
       try { responseBody = await response.text(); detail = JSON.parse(responseBody); }
       catch { /* Some gateways return HTML; do not log their raw body. */ }
       const providerError = detail?.error;
+      const gatewayCode = responseBody.match(/error\s*code\s*:\s*(\d{3,5})/i)?.[1];
       // Keep credentials, questions and provider bodies out of logs and browser replies.
       const safeField = (value) => typeof value === 'string' && /^[\w.-]{1,80}$/.test(value) ? value : undefined;
       log(JSON.stringify({ event: 'assistant_provider_error', requestId, attempt,
         status: response.status, providerCode: safeField(providerError?.code),
         providerType: safeField(providerError?.type),
+        gatewayCode,
+        gatewayServer: safeField(response.headers.get('server')),
         responseFormat: response.headers.get('content-type')?.includes('json') ? 'json' : 'non-json',
-        reason: /quota|credit|balance/i.test(responseBody) ? 'quota' : /concurren/i.test(responseBody) ? 'concurrency'
+        reason: gatewayCode === '1015' ? 'gateway-rate-limit' : /quota|credit|balance/i.test(responseBody) ? 'quota' : /concurren/i.test(responseBody) ? 'concurrency'
           : /rate.?limit|too many requests/i.test(responseBody) ? 'rate-limit' : 'unspecified',
         retryAfterSeconds: Math.ceil(retryDelay(retryAfter) / 1000) }));
 
       const delayMs = retryAfter ? retryDelay(retryAfter) : retryBaseMs;
-      const transient = response.status === 429 || [500, 502, 503, 504].includes(response.status);
+      // Cloudflare 1015 is an edge block; repeating requests can extend it.
+      const transient = gatewayCode !== '1015' && (response.status === 429 || [500, 502, 503, 504].includes(response.status));
       if (attempt === 1 && transient && delayMs <= 10_000 && Date.now() + delayMs + 1000 < deadline) {
         await new Promise((resolve, reject) => {
           const onAbort = () => { clearTimeout(timer); reject(new DOMException('Timed out', 'AbortError')); };
