@@ -32,8 +32,9 @@
 .tac-assistant-sources a:hover { color: #ef5260; }
 .tac-assistant-sales-cta { display: inline-flex; align-items: center; gap: 7px; width: fit-content; padding: 7px 10px; border-radius: 999px; background: #ef2635; color: #fff; font-size: 10px; text-decoration: none; }
 .tac-assistant-sales-cta:hover { background: #ff4250; }
-.tac-assistant-retry { width: fit-content; padding: 6px 10px; border: 1px solid rgba(132, 177, 187, .3); border-radius: 999px; background: transparent; color: #a8bec2; font-size: 10px; cursor: pointer; }
-.tac-assistant-retry:hover { border-color: #ef2635; color: #fff; }
+.tac-assistant-retry { width: fit-content; padding: 6px 10px; border: 1px solid rgba(132, 177, 187, .3); border-radius: 999px; background: transparent; color: #52727b; font-size: 10px; cursor: pointer; }
+.tac-assistant-retry:hover { border-color: #ef2635; color: #84202b; }
+.tac-assistant button:disabled { opacity: .55; cursor: wait; }
 .tac-assistant-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 17px 13px; }
 .tac-assistant-quick button { padding: 7px 9px; border: 1px solid rgba(61, 129, 149, .2); border-radius: 999px; background: rgba(233, 245, 247, .82); color: #52727b; font-size: 10px; cursor: pointer; }
 .tac-assistant-quick button:hover { border-color: rgba(239,38,53,.65); color: #fff; }

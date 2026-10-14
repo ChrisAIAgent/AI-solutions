@@ -85,7 +85,8 @@
   ],
   "timingPolicy": {
     "showProgressAfterMs": 8000,
-    "fallbackAfterMs": 15000,
+    "fallbackAfterMs": 55000,
+    "providerBudgetMs": 45000,
     "pauseWhenDocumentHidden": true,
     "interruptibleStates": ["greeting", "complete", "no-answer", "sales"],
     "terminalUntilAction": ["error-offline"]

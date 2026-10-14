@@ -5,19 +5,20 @@ import {
   retrieveRelevantHomepageKnowledge
 } from './src/data/tac-assistant-knowledge.js';
 
-const CHAT_ENDPOINT = 'https://apihub.agnes-ai.com/v1/chat/completions';
+import { ProviderError, requestAgnesCompletion } from './server/tac-assistant-provider.js';
 const MODEL = 'agnes-3.0-flash';
 const SALES_INTENT = /销售|联系|演示|报价|价格|采购|contact|sales|demo|price|quote/i;
 const SALES_LINK = { label: 'Contact sales', href: '#contact' };
 const knowledge = buildHomepageKnowledge(content);
 
-function jsonResponse(payload, status = 200) {
+function jsonResponse(payload, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(payload), {
     status,
     headers: {
       'content-type': 'application/json; charset=utf-8',
       'cache-control': 'no-store',
-      'x-content-type-options': 'nosniff'
+      'x-content-type-options': 'nosniff',
+      ...extraHeaders
     }
   });
 }
@@ -104,16 +105,9 @@ async function handleChat(request, env) {
     '<homepage_excerpts>', context, '</homepage_excerpts>'
   ].join('\n');
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 18_000);
+  const requestId = crypto.randomUUID();
   try {
-    const upstream = await fetch(CHAT_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        authorization: `Bearer ${env.AGNES_API_KEY}`,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
+    const result = await requestAgnesCompletion({
         model: MODEL,
         messages: [
           { role: 'system', content: systemPrompt },
@@ -122,20 +116,7 @@ async function handleChat(request, env) {
         temperature: 0.2,
         max_tokens: 350,
         stream: false
-      }),
-      signal: controller.signal
-    });
-    if (!upstream.ok) {
-      console.error(`Agnes API request failed with status ${upstream.status}`);
-      return jsonResponse({ error: upstream.status === 429 ? 'provider_busy' : 'provider_error' }, upstream.status === 429 ? 429 : 502);
-    }
-
-    let result;
-    try {
-      result = await upstream.json();
-    } catch {
-      return jsonResponse({ error: 'invalid_provider_response' }, 502);
-    }
+      }, env.AGNES_API_KEY, { requestId });
     const rawContent = result?.choices?.[0]?.message?.content;
     const answer = typeof rawContent === 'string'
       ? rawContent.trim()
@@ -143,7 +124,8 @@ async function handleChat(request, env) {
         ? rawContent.map((part) => typeof part?.text === 'string' ? part.text : '').join('').trim()
         : '';
 
-    if (!answer || answer === '__HANDOFF__') return jsonResponse(noAnswer(language));
+    if (!answer) throw new ProviderError('invalid_provider_response', 502);
+    if (answer === '__HANDOFF__') return jsonResponse(noAnswer(language));
 
     return jsonResponse({
       language,
@@ -153,11 +135,10 @@ async function handleChat(request, env) {
       cta: null
     });
   } catch (error) {
-    if (error?.name === 'AbortError') return jsonResponse({ error: 'provider_timeout' }, 504);
-    console.error('Agnes API request could not be completed.');
-    return jsonResponse({ error: 'provider_unavailable' }, 502);
-  } finally {
-    clearTimeout(timeout);
+    const failure = error instanceof ProviderError ? error : new ProviderError('provider_unavailable', 502);
+    console.error(JSON.stringify({ event: 'assistant_request_failed', requestId, code: failure.code }));
+    return jsonResponse({ error: failure.code, requestId, retryAfterSeconds: failure.retryAfterSeconds }, failure.status,
+      failure.retryAfterSeconds ? { 'retry-after': String(failure.retryAfterSeconds) } : {});
   }
 }
 

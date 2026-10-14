@@ -1,5 +1,7 @@
 import '../scss/tac-assistant.scss';
 import { detectAnswerLanguage } from '../data/tac-assistant-knowledge.js';
+import { CLIENT_TIMEOUT_MS, PROGRESS_AFTER_MS } from '../data/tac-assistant-runtime.js';
+import { fetchAssistantAnswer, failurePresentation } from './tac-assistant-client.js';
 
 const assistantRoot = '/assets/tac/assistant/';
 const mascot = `${assistantRoot}expressions/happy.webp`;
@@ -40,7 +42,7 @@ export function mountTacAssistant() {
         <label class="tac-assistant-input-label"><span class="visually-hidden">Ask TAC AI Assistant a question</span><input name="question" autocomplete="off" placeholder="Ask about TAC homepage..." maxlength="240"></label>
         <button type="submit" aria-label="Send question">↗</button>
       </form>
-      <div class="tac-assistant-form-note"><span>Answers grounded in TAC homepage</span><button type="button" data-assistant-error>Simulate offline</button></div>
+      <div class="tac-assistant-form-note"><span>Answers grounded in TAC homepage</span>${import.meta.env.DEV ? '<button type="button" data-assistant-error>Simulate offline</button>' : ''}</div>
     </section>
     <button type="button" class="tac-assistant-launcher" data-assistant-open aria-label="Open TAC AI Assistant">
       <span class="tac-assistant-launcher-ring"></span><img class="tac-assistant-state-image" src="${mascot}" alt="TAC AI Assistant"><span class="tac-assistant-launcher-badge tac-assistant-state-overlay">✦</span>
@@ -59,6 +61,8 @@ export function mountTacAssistant() {
   let terminalTimer;
   let requestSequence = 0;
   let activeRequest;
+  let retryAvailableAt = 0;
+  let cooldownTimer;
 
   const clearTimers = () => {
     window.clearTimeout(responseTimer);
@@ -67,15 +71,28 @@ export function mountTacAssistant() {
     window.clearTimeout(terminalTimer);
   };
 
-  const updateState = (nextState) => {
+  const refreshControls = () => {
+    const pending = state === 'thinking' || state === 'typing';
+    const seconds = Math.max(0, Math.ceil((retryAvailableAt - Date.now()) / 1000));
+    root.querySelectorAll('[data-question], [data-assistant-retry], .tac-assistant-form > button').forEach((button) => {
+      button.disabled = pending || seconds > 0;
+      if (button.hasAttribute('data-assistant-retry')) button.textContent = seconds > 0 ? `Retry in ${seconds}s` : 'Retry';
+    });
+    if (!seconds) window.clearInterval(cooldownTimer);
+  };
+
+  const updateState = (nextState, label) => {
     state = nextState;
     root.dataset.state = nextState;
     const image = root.querySelector('.tac-assistant-state-image');
     const overlay = root.querySelector('.tac-assistant-state-overlay');
     if (image) image.src = stateAssets[nextState] || stateAssets.idle;
     if (overlay) overlay.textContent = stateOverlays[nextState] || '';
-    root.querySelector('.tac-assistant-state-label')?.replaceChildren(document.createTextNode(stateLabels[nextState] || nextState));
+    root.querySelector('.tac-assistant-state-label')?.replaceChildren(document.createTextNode(label || stateLabels[nextState] || nextState));
     root.querySelector('.tac-assistant-duration')?.replaceChildren(document.createTextNode(stateDurations[nextState] || ''));
+    const pending = nextState === 'thinking' || nextState === 'typing';
+    messages.setAttribute('aria-busy', String(pending));
+    refreshControls();
   };
 
   const addMessage = (role, text, meta = {}) => {
@@ -89,6 +106,7 @@ export function mountTacAssistant() {
     message.innerHTML = `<div class="tac-assistant-message-bubble">${plainText.replace(/\n/g, '<br>')}</div>${meta.sources?.length ? `<div class="tac-assistant-sources">${meta.sources.map((source) => `<a href="${escapeHtml(source.href)}">${sourcePrefix}${escapeHtml(source.label)}</a>`).join('')}</div>` : ''}${meta.cta ? `<a class="tac-assistant-sales-cta" href="${escapeHtml(meta.cta.href)}">${escapeHtml(meta.cta.label)} <span aria-hidden="true">↗</span></a>` : ''}${meta.retry ? '<button type="button" class="tac-assistant-retry" data-assistant-retry>Retry</button>' : ''}`;
     messages.appendChild(message);
     messages.scrollTop = messages.scrollHeight;
+    refreshControls();
   };
 
   const open = () => {
@@ -108,11 +126,15 @@ export function mountTacAssistant() {
     if (state === 'greeting') updateState('idle');
   };
 
-  const showFailure = () => {
-    updateState('error-offline');
-    addMessage('assistant', lastLanguage === 'zh'
-      ? '目前无法连接 TAC 助手服务，请稍后重试，或联系 TAC 销售团队。'
-      : 'The TAC assistant service is unavailable right now. Please try again or contact TAC sales.', {
+  const showFailure = (code = 'provider_unavailable', retryAfterSeconds = 0) => {
+    if (code === 'provider_busy' && Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0) {
+      retryAvailableAt = Date.now() + Math.min(retryAfterSeconds, 3600) * 1000;
+      window.clearInterval(cooldownTimer);
+      cooldownTimer = window.setInterval(refreshControls, 1000);
+    }
+    const failure = failurePresentation(code, lastLanguage);
+    updateState('error-offline', failure.label);
+    addMessage('assistant', failure.text, {
       language: lastLanguage,
       cta: { label: 'Contact sales', href: '#contact' },
       retry: true
@@ -121,7 +143,7 @@ export function mountTacAssistant() {
 
   const submit = async (question, { showUser = true } = {}) => {
     const value = String(question || '').trim();
-    if (!value || state === 'thinking' || state === 'typing') return;
+    if (!value || state === 'thinking' || state === 'typing' || Date.now() < retryAvailableAt) return;
 
     clearTimers();
     activeRequest?.abort();
@@ -140,32 +162,18 @@ export function mountTacAssistant() {
     slowTimer = window.setTimeout(() => {
       if (sequence !== requestSequence) return;
       addMessage('assistant', lastLanguage === 'zh' ? '我还在检索主页内容，请稍候…' : 'I’m still checking the homepage. One moment…', { language: lastLanguage });
-    }, 8_000);
+    }, PROGRESS_AFTER_MS);
     fallbackTimer = window.setTimeout(() => {
       if (sequence !== requestSequence) return;
       requestSequence += 1;
       activeRequest = null;
       controller.abort();
-      updateState('no-answer');
-      addMessage('assistant', lastLanguage === 'zh'
-        ? '这次回答耗时较长，暂时无法完成。我可以为你转接 TAC 销售团队。'
-        : 'This is taking longer than expected, so I could not complete the answer. I can connect you with TAC sales.', {
-        language: lastLanguage,
-        cta: { label: 'Contact sales', href: '#contact' }
-      });
-      terminalTimer = window.setTimeout(() => { if (state === 'no-answer') updateState('sales'); }, 740);
-    }, 15_000);
+      clearTimers();
+      showFailure('client_timeout');
+    }, CLIENT_TIMEOUT_MS);
 
     try {
-      const response = await fetch('/api/assistant/chat', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ question: value }),
-        signal: controller.signal
-      });
-      if (sequence !== requestSequence) return;
-      if (!response.ok) throw new Error('assistant_request_failed');
-      const answer = await response.json();
+      const answer = await fetchAssistantAnswer(value, { signal: controller.signal });
       if (sequence !== requestSequence) return;
 
       clearTimers();
@@ -175,11 +183,11 @@ export function mountTacAssistant() {
       addMessage('assistant', answer.text, { ...answer, language: lastLanguage });
       if (answer.state === 'no-answer') terminalTimer = window.setTimeout(() => { if (state === 'no-answer') updateState('sales'); }, 740);
       else if (answer.state === 'complete') terminalTimer = window.setTimeout(() => { if (state === 'complete') updateState('idle'); }, 1_000);
-    } catch {
+    } catch (error) {
       if (sequence !== requestSequence) return;
       clearTimers();
       activeRequest = null;
-      showFailure();
+      showFailure(error.code, error.retryAfterSeconds);
     }
   };
 
@@ -196,7 +204,7 @@ export function mountTacAssistant() {
   root.querySelector('[data-assistant-close]').addEventListener('click', close);
   root.querySelector('.tac-assistant-form').addEventListener('submit', (event) => { event.preventDefault(); submit(input.value); });
   root.querySelectorAll('[data-question]').forEach((button) => button.addEventListener('click', () => submit(button.dataset.question)));
-  root.querySelector('[data-assistant-error]').addEventListener('click', () => {
+  root.querySelector('[data-assistant-error]')?.addEventListener('click', () => {
     clearTimers();
     requestSequence += 1;
     activeRequest?.abort();
