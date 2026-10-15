@@ -35,9 +35,6 @@
 .tac-assistant-retry { width: fit-content; padding: 6px 10px; border: 1px solid rgba(132, 177, 187, .3); border-radius: 999px; background: transparent; color: #52727b; font-size: 10px; cursor: pointer; }
 .tac-assistant-retry:hover { border-color: #ef2635; color: #84202b; }
 .tac-assistant button:disabled { opacity: .55; cursor: wait; }
-.tac-assistant-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 17px 13px; }
-.tac-assistant-quick button { padding: 7px 9px; border: 1px solid rgba(61, 129, 149, .2); border-radius: 999px; background: rgba(233, 245, 247, .82); color: #52727b; font-size: 10px; cursor: pointer; }
-.tac-assistant-quick button:hover { border-color: rgba(239,38,53,.65); color: #fff; }
 .tac-assistant-form { display: flex; gap: 8px; padding: 0 17px 9px; }
 .tac-assistant-input-label { flex: 1; }
 .tac-assistant-form input { width: 100%; height: 40px; padding: 0 12px; border: 1px solid rgba(61, 129, 149, .24); border-radius: 9px; outline: 0; background: rgba(255,255,255,.92); color: #172a30; font-size: 12px; }

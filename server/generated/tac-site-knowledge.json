@@ -1,0 +1,3649 @@
+{
+  "schemaVersion": 1,
+  "revision": "b769557a07e7ce02",
+  "pages": [
+    {
+      "href": "/index.html",
+      "title": "TAC AI Platform",
+      "documentCount": 40
+    },
+    {
+      "href": "/pages/marketing-library.html",
+      "title": "Marketing Library Portal",
+      "documentCount": 3
+    },
+    {
+      "href": "/pages/ai-models.html",
+      "title": "AI Models & MaaS Products | Marketing Library",
+      "documentCount": 1
+    },
+    {
+      "href": "/pages/brand-guidelines.html",
+      "title": "Brand Guidelines | Marketing Library",
+      "documentCount": 1
+    },
+    {
+      "href": "/pages/tacwork-download.html",
+      "title": "Download TACWork",
+      "documentCount": 6
+    },
+    {
+      "href": "/pages/tac-harness.html",
+      "title": "TAC Harness — Smarter Agents. Bigger Possibilities.",
+      "documentCount": 4
+    },
+    {
+      "href": "/pages/tac-cli.html",
+      "title": "TAC CLI — Coming Soon",
+      "documentCount": 1
+    },
+    {
+      "href": "/pages/tac-plugins.html",
+      "title": "TAC Harness Plugin Directory",
+      "documentCount": 114
+    },
+    {
+      "href": "/pages/skills.html",
+      "title": "TAC Skill Marketplace",
+      "documentCount": 44
+    },
+    {
+      "href": "/pages/tac-assistant-assets.html",
+      "title": "TAC AI Assistant · Asset Lab",
+      "documentCount": 14
+    }
+  ],
+  "documents": [
+    {
+      "id": "hero",
+      "section": "hero",
+      "title": "TAC AI PLATFORM",
+      "text": "Build AI operations that move with your business. TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.",
+      "keywords": [
+        "TAC",
+        "AI",
+        "平台",
+        "智能体",
+        "自动化",
+        "AI platform"
+      ],
+      "href": "/index.html#top",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "solutions",
+      "section": "solutions",
+      "title": "AI Solutions",
+      "text": "Pre-built Applications: Use applications for Banking, Healthcare, Retail, HR, IT, and Recruiting today. Application Accelerators: Leverage reusable agents, templates, and integrations to move from idea to workflow. Tailored Applications: Design and build applications on the TAC Agent Platform across enterprise use cases.",
+      "keywords": [
+        "解决方案",
+        "solutions",
+        "应用",
+        "enterprise AI"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "agent-platform",
+      "section": "platform",
+      "title": "Agent Platform",
+      "text": "TAC provides a platform foundation for building dependable agent workflows across enterprise teams and systems.",
+      "keywords": [
+        "平台",
+        "智能体平台",
+        "agent platform",
+        "workflow",
+        "工作流"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "contact",
+      "section": "contact",
+      "title": "Contact TAC",
+      "text": "Tell TAC what work you want to make clearer, faster, or easier to govern. Start a conversation with TAC.",
+      "keywords": [
+        "联系",
+        "销售",
+        "演示",
+        "合作",
+        "contact",
+        "sales",
+        "demo"
+      ],
+      "href": "/index.html#contact",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "industries-overview",
+      "section": "industries",
+      "title": "Industries supported by TAC",
+      "text": "TAC presents solutions for these sectors: BANKING; HEALTHCARE; RETAIL; TELECOM + MEDIA; BUSINESS.",
+      "keywords": [
+        "行业",
+        "行业方案",
+        "industries",
+        "industry",
+        "sectors",
+        "verticals"
+      ],
+      "href": "/index.html#industries",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "industry-banking",
+      "section": "industries",
+      "title": "BANKING: Trusted intelligence for every financial conversation.",
+      "text": "Help teams bring consistent context, clear next steps, and controlled AI assistance to complex customer journeys. Relevant capabilities: Risk operations, Service teams, Advisors, Compliance.",
+      "keywords": [
+        "行业",
+        "方案",
+        "industry",
+        "industries",
+        "solution",
+        "solutions",
+        "BANKING",
+        "银行",
+        "金融",
+        "banking",
+        "finance"
+      ],
+      "href": "/index.html#industries",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "industry-healthcare",
+      "section": "industries",
+      "title": "HEALTHCARE: More time for people. Less friction for care teams.",
+      "text": "Turn high-volume questions and fragmented internal knowledge into safe, guided experiences for staff and customers. Relevant capabilities: Care navigation, Member support, Operations, Knowledge.",
+      "keywords": [
+        "行业",
+        "方案",
+        "industry",
+        "industries",
+        "solution",
+        "solutions",
+        "HEALTHCARE",
+        "医疗",
+        "健康",
+        "healthcare",
+        "care"
+      ],
+      "href": "/index.html#industries",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "industry-retail",
+      "section": "industries",
+      "title": "RETAIL: Personal assistance across every retail moment.",
+      "text": "Connect product knowledge, service policies, and operational workflows to create fast and dependable support. Relevant capabilities: Commerce, Store teams, Service desk, Operations.",
+      "keywords": [
+        "行业",
+        "方案",
+        "industry",
+        "industries",
+        "solution",
+        "solutions",
+        "RETAIL",
+        "零售",
+        "电商",
+        "retail",
+        "commerce"
+      ],
+      "href": "/index.html#industries",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "industry-telecom",
+      "section": "industries",
+      "title": "TELECOM + MEDIA: Resolve the moments that matter at scale.",
+      "text": "Give service teams a shared view of issues, actions, and answers across high-volume digital channels. Relevant capabilities: Networks, Subscribers, Support, Field teams.",
+      "keywords": [
+        "行业",
+        "方案",
+        "industry",
+        "industries",
+        "solution",
+        "solutions",
+        "TELECOM + MEDIA",
+        "电信",
+        "媒体",
+        "telecom",
+        "media"
+      ],
+      "href": "/index.html#industries",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "industry-business",
+      "section": "industries",
+      "title": "BUSINESS: Make enterprise work easier to find and finish.",
+      "text": "Activate secure knowledge and workflows so people can move from question to outcome with less handoff. Relevant capabilities: Finance, HR, IT, Legal.",
+      "keywords": [
+        "行业",
+        "方案",
+        "industry",
+        "industries",
+        "solution",
+        "solutions",
+        "BUSINESS",
+        "企业",
+        "business",
+        "hr",
+        "it",
+        "legal"
+      ],
+      "href": "/index.html#industries",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "application-banking",
+      "section": "applications",
+      "title": "AI for Banking",
+      "text": "Coordinate self-service and agent support with shared context, consistency, and built-in compliance.",
+      "keywords": [
+        "Banking",
+        "银行",
+        "金融",
+        "banking",
+        "AI application"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "application-healthcare",
+      "section": "applications",
+      "title": "AI for Healthcare",
+      "text": "Enable 24/7 patient and member self-service and reduce staff burden with HIPAA-compliant intelligent assistance.",
+      "keywords": [
+        "Healthcare",
+        "医疗",
+        "健康",
+        "healthcare",
+        "AI application"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "application-retail",
+      "section": "applications",
+      "title": "AI for Retail",
+      "text": "Frictionless shopping and optimized operations with instant, personalized support at every touchpoint.",
+      "keywords": [
+        "Retail",
+        "零售",
+        "retail",
+        "AI application"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "application-it",
+      "section": "applications",
+      "title": "AI for IT",
+      "text": "Resolve incidents, reduce ticket volume, and deliver 24/7 IT support.",
+      "keywords": [
+        "IT",
+        "IT",
+        "工单",
+        "incident",
+        "support",
+        "AI application"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "application-hr",
+      "section": "applications",
+      "title": "AI for HR",
+      "text": "Automate, resolve, and reduce employee queries and manual workload.",
+      "keywords": [
+        "HR",
+        "HR",
+        "人力",
+        "employee",
+        "AI application"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "application-recruiting",
+      "section": "applications",
+      "title": "AI for Recruiting",
+      "text": "Automate screening, accelerate hiring, and engage top talent.",
+      "keywords": [
+        "Recruiting",
+        "招聘",
+        "recruiting",
+        "hiring",
+        "AI application"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "accelerator-pre-built-agents",
+      "section": "accelerators",
+      "title": "Pre-built agents",
+      "text": "Purpose-built starting points for common enterprise workflows.",
+      "keywords": [
+        "accelerator",
+        "加速器",
+        "模板",
+        "集成",
+        "Pre-built agents"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "accelerator-templates",
+      "section": "accelerators",
+      "title": "Templates",
+      "text": "Structured patterns that make teams productive from day one.",
+      "keywords": [
+        "accelerator",
+        "加速器",
+        "模板",
+        "集成",
+        "Templates"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "accelerator-integrations",
+      "section": "accelerators",
+      "title": "Integrations",
+      "text": "Connect the knowledge and business systems your teams already use.",
+      "keywords": [
+        "accelerator",
+        "加速器",
+        "模板",
+        "集成",
+        "Integrations"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "tailored-ai-for-service",
+      "section": "tailored",
+      "title": "AI for Service",
+      "text": "Give customers and service teams clear, contextual support through every channel.",
+      "keywords": [
+        "tailored",
+        "定制",
+        "自定义",
+        "AI for Service"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "tailored-ai-for-work",
+      "section": "tailored",
+      "title": "AI for Work",
+      "text": "Connect knowledge, systems, and people to remove the friction from daily enterprise work.",
+      "keywords": [
+        "tailored",
+        "定制",
+        "自定义",
+        "AI for Work"
+      ],
+      "href": "/index.html#applications",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-build",
+      "section": "platform",
+      "title": "Build with AI",
+      "text": "From idea to useful workflow — without a long runway. Start from the business logic and move quickly toward a measurable, governed experience. Metric: FASTER STARTS.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Build with AI",
+        "FASTER STARTS"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-orchestrate",
+      "section": "platform",
+      "title": "Orchestrate with AI",
+      "text": "Coordinate the workflows that do not fit in a simple chat. Bring specialized agents, policies, and business systems together around one outcome. Metric: CONNECTED WORKFLOWS.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Orchestrate with AI",
+        "CONNECTED WORKFLOWS"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-prove",
+      "section": "platform",
+      "title": "Prove with AI",
+      "text": "Make outcomes visible, not assumed. Tie improvements to the workflows and decisions that produced them. Metric: CLEAR EVIDENCE.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Prove with AI",
+        "CLEAR EVIDENCE"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-test",
+      "section": "platform",
+      "title": "Test with AI",
+      "text": "Validate the experience before people depend on it. Use controlled scenarios to refine quality, safety, and handoffs before rollout. Metric: FEWER SURPRISES.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Test with AI",
+        "FEWER SURPRISES"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-deploy",
+      "section": "platform",
+      "title": "Deploy with AI",
+      "text": "Scale useful AI without scaling the complexity. Move validated workflows into the channels where work already happens. Metric: READY TO OPERATE.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Deploy with AI",
+        "READY TO OPERATE"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-govern",
+      "section": "platform",
+      "title": "Govern with AI",
+      "text": "Keep every action understandable and accountable. Apply guardrails and build an audit trail around the AI experiences that matter. Metric: GOVERNED BY DESIGN.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Govern with AI",
+        "GOVERNED BY DESIGN"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-scale",
+      "section": "platform",
+      "title": "Scale with AI",
+      "text": "Create a foundation that can grow with the business. Evolve models, tools, and workflows without rebuilding the operating layer. Metric: BUILT TO EVOLVE.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Scale with AI",
+        "BUILT TO EVOLVE"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-simplify",
+      "section": "platform",
+      "title": "Simplify with AI",
+      "text": "Bring scattered AI work into one operating model. Reduce duplicate tooling and make workflows easier for teams to manage. Metric: ONE OPERATING VIEW.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Simplify with AI",
+        "ONE OPERATING VIEW"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "capability-optimize",
+      "section": "platform",
+      "title": "Optimize with AI",
+      "text": "Learn what works and make the next workflow better. Use feedback and operational signals to focus effort where it changes outcomes. Metric: CONTINUOUS IMPROVEMENT.",
+      "keywords": [
+        "能力",
+        "capability",
+        "Optimize with AI",
+        "CONTINUOUS IMPROVEMENT"
+      ],
+      "href": "/index.html#platform",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "report-ai-readiness",
+      "section": "reports",
+      "title": "A practical framework for moving enterprise AI into operation.",
+      "text": "Where to start, what to measure, and how to take AI from pilot to dependable production work.",
+      "keywords": [
+        "报告",
+        "insight",
+        "研究",
+        "AI READINESS"
+      ],
+      "href": "/index.html#reports",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "report-service",
+      "section": "reports",
+      "title": "Designing high-confidence AI support experiences.",
+      "text": "How leading service teams use governed AI to raise consistency without raising risk.",
+      "keywords": [
+        "报告",
+        "insight",
+        "研究",
+        "SERVICE OPERATIONS"
+      ],
+      "href": "/index.html#reports",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "report-work",
+      "section": "reports",
+      "title": "How connected knowledge becomes measurable productivity.",
+      "text": "Turning fragmented enterprise knowledge into outcomes teams can see and improve.",
+      "keywords": [
+        "报告",
+        "insight",
+        "研究",
+        "AI FOR WORK"
+      ],
+      "href": "/index.html#reports",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "report-governance",
+      "section": "reports",
+      "title": "Operating AI with visibility, policy, and human control.",
+      "text": "A working model for keeping every AI action understandable and accountable.",
+      "keywords": [
+        "报告",
+        "insight",
+        "研究",
+        "GOVERNANCE"
+      ],
+      "href": "/index.html#reports",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "partner-technology-ecosystem",
+      "section": "partners",
+      "title": "Technology ecosystem",
+      "text": "A space for approved cloud, data, and enterprise software relationships that help TAC solutions fit into real operating environments.",
+      "keywords": [
+        "伙伴",
+        "合作伙伴",
+        "partner",
+        "ecosystem"
+      ],
+      "href": "/index.html#partners",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "partner-implementation-ecosystem",
+      "section": "partners",
+      "title": "Implementation ecosystem",
+      "text": "A space for approved delivery and domain partners that extend TAC expertise into client programs.",
+      "keywords": [
+        "伙伴",
+        "合作伙伴",
+        "partner",
+        "ecosystem"
+      ],
+      "href": "/index.html#partners",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "insight-jun 2026",
+      "section": "insights",
+      "title": "What makes an AI workflow operationally useful?",
+      "text": "A practical look at moving enterprise AI from ambition to dependable, measurable work.",
+      "keywords": [
+        "AI INSIGHT",
+        "洞察",
+        "insight",
+        "AI"
+      ],
+      "href": "/index.html#insights",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "insight-jul 2026",
+      "section": "insights",
+      "title": "Where governed automation creates room for better decisions.",
+      "text": "How guardrails and clear ownership turn automation into judgment the business can rely on.",
+      "keywords": [
+        "OPERATIONS",
+        "洞察",
+        "insight",
+        "AI"
+      ],
+      "href": "/index.html#insights",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "insight-aug 2026",
+      "section": "insights",
+      "title": "Designing AI systems that can evolve without losing control.",
+      "text": "Patterns for building an AI operating layer that grows with the business, not against it.",
+      "keywords": [
+        "PLATFORM",
+        "洞察",
+        "insight",
+        "AI"
+      ],
+      "href": "/index.html#insights",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "skills-marketplace",
+      "section": "skills",
+      "title": "Discover skills that turn AI into useful work.",
+      "text": "Explore public community skills for design, development, planning, and presentation workflows. Review each original source before you use it.",
+      "keywords": [
+        "技能",
+        "skill",
+        "marketplace",
+        "市场"
+      ],
+      "href": "/index.html#skills",
+      "pageTitle": "TAC AI Platform",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "marketing-library-1-0",
+      "section": "marketing-library",
+      "pageTitle": "Marketing Library Portal",
+      "title": "The Agent Company",
+      "text": "Ship the next\n|\nThe Agent Company\nReady For Agentic Era\n50+\nCustomer Cases\n30+\nAI Models\n100+\nProducts\n10+\nAvailable Regions",
+      "keywords": [
+        "marketing",
+        "营销素材库",
+        "素材库"
+      ],
+      "href": "/pages/marketing-library.html#typewriterTarget",
+      "sourceFile": "pages/marketing-library.html"
+    },
+    {
+      "id": "marketing-library-2-0",
+      "section": "marketing-library",
+      "pageTitle": "Marketing Library Portal",
+      "title": "Ship the Next Big Thing",
+      "text": "Ship the Next Big Thing\nOur showcase highlights the latest campaigns, product launches, and creative work from teams across The Agent Company.",
+      "keywords": [
+        "marketing",
+        "营销素材库",
+        "素材库"
+      ],
+      "href": "/pages/marketing-library.html",
+      "sourceFile": "pages/marketing-library.html"
+    },
+    {
+      "id": "marketing-library-3-0",
+      "section": "marketing-library",
+      "pageTitle": "Marketing Library Portal",
+      "title": "All Categories",
+      "text": "All Categories\n6 sections\nAI Models and MaaS Products\nLatest branding materials for our AI models, and more.\n8 assets\nSub-categories\nFoundation Models\nBranding materials for our foundation models.\nVision Models\nImage and video model branding.\nVoice Models\nSpeech and audio model branding.\nAgent Runtime\nAgent execution platform identity.\nThe Agent Company Cloud\nCloud platform logos, icons, and service marks.\n12 assets\nCustomer Cases & Success Stories\nReal-world implementations and customer testimonials.\n47+ assets\nProduct Documentation\nAPI docs, user guides, technical whitepapers.\n15 assets\nDeveloper Resources\nSDKs, code samples, GitHub repos, and dev tools.\n19 assets\nArchive\nLegacy assets and deprecated materials.\n58+ assets",
+      "keywords": [
+        "marketing",
+        "营销素材库",
+        "素材库"
+      ],
+      "href": "/pages/marketing-library.html#categoriesSection",
+      "sourceFile": "pages/marketing-library.html"
+    },
+    {
+      "id": "ai-models-0-0",
+      "section": "ai-models",
+      "pageTitle": "AI Models & MaaS Products | Marketing Library",
+      "title": "AI Models and MaaS Products",
+      "text": "Marketing Library / AI Models\nAI Models and MaaS Products\nLatest branding materials for our AI models, and more. Click any item to access the full asset library.\nFoundation Models\nComplete brand kit: logos, wordmarks, color variations, lockups, and usage guidelines.\nVision Models\nImage and video model identity system including animated logos and motion guidelines.\nVoice Models\nSpeech and audio model brand materials with voice identity assets.\nAgent Runtime\nAgent execution platform visual identity with technical iconography.\nAgent Code Assistant — 智能体编程助手\nAI programming assistant brand assets and developer-facing materials.\nThe Agent MaaS Platform — 模型即服务平台\nPlatform service marks, API documentation badges, and integration kits.\nVision-Language Model — 视觉语言模型\nMultimodal model branding with vision-language capability demonstrations.\nText Generation Suite — 文本生成套件\nText generation and NLP product line brand materials.",
+      "keywords": [
+        "models",
+        "MaaS",
+        "模型",
+        "模型服务"
+      ],
+      "href": "/pages/ai-models.html",
+      "sourceFile": "pages/ai-models.html"
+    },
+    {
+      "id": "brand-guidelines-0-0",
+      "section": "brand-guidelines",
+      "pageTitle": "Brand Guidelines | Marketing Library",
+      "title": "Brand Guidelines",
+      "text": "Marketing Library / Brand Guidelines\nBrand Guidelines\nLogo usage rules, color palette specifications, typography hierarchy, and icon library — everything you need to stay on-brand.\nLogo Usage & Clear Space\nMinimum sizes, clear space requirements, approved backgrounds, and prohibited modifications.\nColor Palette & Gradients\nPrimary purple (#7B2FFF), blue (#4158D0), cyan accents, and gradient combinations.\nTypography System\nInter font family, size scale (xs–4xl), weight scale (300–800), line-height guidelines.\nIcon Library & Symbols\nBrand icons in SVG, Font Awesome integration, custom symbols for internal use.\nVoice & Tone Guide\nWriting principles, terminology dos/don'ts, example copy patterns.\nComplete Brand Kit (Download)\nZIP archive containing all logos, colors, fonts, icons, and templates.",
+      "keywords": [
+        "brand",
+        "品牌",
+        "品牌指南",
+        "配色",
+        "字体"
+      ],
+      "href": "/pages/brand-guidelines.html",
+      "sourceFile": "pages/brand-guidelines.html"
+    },
+    {
+      "id": "tacwork-download-1-0",
+      "section": "tacwork-download",
+      "pageTitle": "Download TACWork",
+      "title": "Download TACWork.",
+      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable workspace for building, sharing, and running AI workflows with your team.\n·\nTACWORK / 01",
+      "keywords": [
+        "TACWork",
+        "download",
+        "installer",
+        "下载",
+        "安装",
+        "桌面应用",
+        "版本"
+      ],
+      "href": "/pages/tacwork-download.html",
+      "sourceFile": "pages/tacwork-download.html"
+    },
+    {
+      "id": "tacwork-download-2-0",
+      "section": "tacwork-download",
+      "pageTitle": "Download TACWork",
+      "title": "A workspace built for the work in front of you.",
+      "text": "PRODUCT IN VIEW\nA workspace built for the work in front of you.\nExplore the TACWork desktop experience: start a focused session, connect your providers, and create a workspace that keeps the operating context together.\n01\nStart with a focused workspace\nTurn a plain-language task into a new TACWork session.\n02\nConnect the tools you use\nKeep provider configuration close to the workspace.\n03\nBuild on local or remote work\nChoose the workspace setup that fits your operating model.",
+      "keywords": [
+        "TACWork",
+        "download",
+        "installer",
+        "下载",
+        "安装",
+        "桌面应用",
+        "版本"
+      ],
+      "href": "/pages/tacwork-download.html#showcaseTitle",
+      "sourceFile": "pages/tacwork-download.html"
+    },
+    {
+      "id": "tacwork-download-3-0",
+      "section": "tacwork-download",
+      "pageTitle": "Download TACWork",
+      "title": "Everything you need to start useful work.",
+      "text": "WHAT YOU GET\nEverything you need to start useful work.\n01\nOne focused workspace\nKeep projects, tasks, tools, and AI workflows together in one desktop app.\n02\nShareable workflows\nCreate once, then reuse the same operating patterns across your team.\n03\nReady for iteration\nStart locally and evolve your setup as your work becomes more connected.",
+      "keywords": [
+        "TACWork",
+        "download",
+        "installer",
+        "下载",
+        "安装",
+        "桌面应用",
+        "版本"
+      ],
+      "href": "/pages/tacwork-download.html#detailsTitle",
+      "sourceFile": "pages/tacwork-download.html"
+    },
+    {
+      "id": "tacwork-download-4-0",
+      "section": "tacwork-download",
+      "pageTitle": "Download TACWork",
+      "title": "Get started with TACWork.",
+      "text": "QUICKSTART\nGet started with TACWork.\n01\nDownload the installer\nChoose the Windows download above and save the installer to your computer.\n02\nRun the installer\nOpen the downloaded file and follow the installation prompts.\n03\nOpen TACWork\nLaunch TACWork, create your first workspace, and begin building.",
+      "keywords": [
+        "TACWork",
+        "download",
+        "installer",
+        "下载",
+        "安装",
+        "桌面应用",
+        "版本"
+      ],
+      "href": "/pages/tacwork-download.html#stepsTitle",
+      "sourceFile": "pages/tacwork-download.html"
+    },
+    {
+      "id": "tacwork-download-5-0",
+      "section": "tacwork-download",
+      "pageTitle": "Download TACWork",
+      "title": "Download TACWork",
+      "text": "RELEASE INFORMATION\ninstaller for the current TACWork desktop preview.\nPlatform\nFile\nSHA-256",
+      "keywords": [
+        "TACWork",
+        "download",
+        "installer",
+        "下载",
+        "安装",
+        "桌面应用",
+        "版本"
+      ],
+      "href": "/pages/tacwork-download.html",
+      "sourceFile": "pages/tacwork-download.html"
+    },
+    {
+      "id": "tac-harness-1-0",
+      "section": "tac-harness",
+      "pageTitle": "TAC Harness — Smarter Agents. Bigger Possibilities.",
+      "title": "TAC Harness Smarter agents. Bigger possibilities.",
+      "text": "✧ Preview\nTAC Harness\nSmarter agents. Bigger possibilities.\nA workspace for everyday work, development, and the agent tools you want to build.\nExtend the experience with composable plugins, reusable skills, and your own agent presets.\n↓ Download Desktop\nTAC Harness\n⊕ New Session\n♧ Plugins◷ Automation\nWorkspace ⌕ ⚙ ＋\n▱ Default workspace\nMeet TAC HarnessQ3 summary slidesReview prepSales reportData analysisPlugin development\n◉ TAC\nMeet TAC Harness ◫ − □ ×\nCould you introduce yourself?\n✧ Thought for a while\nI'm TAC Harness, a desktop workspace for working with AI agents and composable plugins.\nI can help you explore:\nEveryday work — Work with documents, data, and presentations.\nCoding — Understand repositories and develop changes.\nResearch — Gather information and review sources.\nBackground tasks — Organize scripts and scheduled work.\nPlugins — Add capabilities or create your own.\nAnd so much more…\nDescribe what you want to build, / commands, @ files or sessions\n＋ ♧ Workspace Write⌄Select model ⌄ ↑\nInteractive presentation of the product experience",
+      "keywords": [
+        "TAC Harness",
+        "harness",
+        "工作台",
+        "插件化"
+      ],
+      "href": "/pages/tac-harness.html",
+      "sourceFile": "pages/tac-harness.html"
+    },
+    {
+      "id": "tac-harness-2-0",
+      "section": "tac-harness",
+      "pageTitle": "TAC Harness — Smarter Agents. Bigger Possibilities.",
+      "title": "More capabilities. A workspace that adapts to you.",
+      "text": "More capabilities.\nA workspace that adapts to you.\nEverything is a plugin\nAdd tools and skills, or use Creator mode to shape new capabilities through conversation.\nCreator mode\nCreate a floating focus timer.\n✧ Planning the plugin…\n✓ Load plugin development skill\n✓ Create the timer interface\n✓ Install plugin bundle\n✓ Timer ready\n◴ Pomodoro timer ⋯Focus Short break25:00Start focus\nComplete a range of tasks\nBring documents, spreadsheets, and code into the same workflow. Review an output and keep refining it in conversation.\nReview · turn 1\nsrc/label.ts +2 −1\nfunction label(name: string) {\n− return name;\n+ const text = name.trim();\n+ return text || 'Untitled';\n}\nAdapt to your workflow\nUse scheduled tasks for recurring work, and follow the steps your agent takes along the way.\nPrepare a weekly project summary every Friday at 17:00.\n✧ Working…\n◷ Create reminderWeekly project report{\n\"title\": \"Weekly project report\",\n\"weekly\": {\n\"time\": \"17:00:00\",\n\"time_zone\": \"Asia/Shanghai\",\n\"weekdays\": [5]\n}\n}\n◷\nWeekly project reportEvery Friday at 17:00 · UTC+08:00\nScheduled\nDeveloper tools\nExplore execution traces, tool calls, and timing information to understand how a task ran.\nTrajectory Duration Turns Calls ⌕\nSYSTEM Initial workspace context\nUSER Review the project files.\nAGENT Inspect the workspace and prepare a plan.\nTOOL read README.md\nTOOL search project sources\nAGENT Summarize findings and next steps.\nTOOL read src/index.ts\nAGENT Review complete.\nTOOL · Step 1Summary Payload Result\nread",
+      "keywords": [
+        "TAC Harness",
+        "harness",
+        "工作台",
+        "插件化"
+      ],
+      "href": "/pages/tac-harness.html#capabilities-title",
+      "sourceFile": "pages/tac-harness.html"
+    },
+    {
+      "id": "tac-harness-3-0",
+      "section": "tac-harness",
+      "pageTitle": "TAC Harness — Smarter Agents. Bigger Possibilities.",
+      "title": "Developer experience",
+      "text": "Developer experience\nLaunch the desktop workspace\nThe current TAC source workspace includes a desktop launcher.\n& \".\\TAC Harness Desktop.bat\"",
+      "keywords": [
+        "TAC Harness",
+        "harness",
+        "工作台",
+        "插件化"
+      ],
+      "href": "/pages/tac-harness.html#developers-title",
+      "sourceFile": "pages/tac-harness.html"
+    },
+    {
+      "id": "tac-harness-4-0",
+      "section": "tac-harness",
+      "pageTitle": "TAC Harness — Smarter Agents. Bigger Possibilities.",
+      "title": "Build your own agent experience.",
+      "text": "✧ TAC Harness Preview\nBuild your own agent experience.\nExplore composable tools, skills, and plugins. TAC Harness is currently available as a local source build; the desktop installer will be listed here when it is ready.\nExplore plugins ↗Skill Marketplace ↗",
+      "keywords": [
+        "TAC Harness",
+        "harness",
+        "工作台",
+        "插件化"
+      ],
+      "href": "/pages/tac-harness.html#download",
+      "sourceFile": "pages/tac-harness.html"
+    },
+    {
+      "id": "tac-cli-0-0",
+      "section": "tac-cli",
+      "pageTitle": "TAC CLI — Coming Soon",
+      "title": "TAC CLI.",
+      "text": "COMING SOON\nTAC CLI.\nA new way to work with TAC from the command line is under construction.\nThere is no public download or release date to announce yet.\nBack to TAC AI",
+      "keywords": [
+        "TAC CLI",
+        "cli",
+        "命令行"
+      ],
+      "href": "/pages/tac-cli.html#main",
+      "sourceFile": "pages/tac-cli.html"
+    },
+    {
+      "id": "tac-plugins-0-0",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "Built for TAC Harness.",
+      "text": "DIRECTORY SOURCE\nBuilt for TAC Harness.\nFull list sourced from the Visual & Multimodal category. Each plugin card links directly to its GitHub repository. Source snapshot: 2026-10-13.\nView source directory",
+      "keywords": [
+        "plugins",
+        "plugin",
+        "插件",
+        "多模态"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "pages/tac-plugins.html"
+    },
+    {
+      "id": "tac-plugins-1-0",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "Extend the way your agents see and create.",
+      "text": "TAC HARNESS / PLUGINS\nExtend the way your agents see and create.\nBrowse all 110 entries in the Visual & Multimodal directory. Search and sort the list, then open a plugin's GitHub repository.\nExplore all plugins\nPLUGIN CAPABILITIES\n01 — 03\n01\nUnderstand imagesVision · OCR · visual context\n02\nCreate visualsImage generation · workflows\n03\nReview designsCompare · inspect · improve\nTAC HARNESSVISUAL WORKFLOWS ↗\nSearch plugins",
+      "keywords": [
+        "plugins",
+        "plugin",
+        "插件",
+        "多模态"
+      ],
+      "href": "/pages/tac-plugins.html#plugins-title",
+      "sourceFile": "pages/tac-plugins.html"
+    },
+    {
+      "id": "tac-plugins-2-0",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "Visual & multimodal 110",
+      "text": "PLUGIN DIRECTORY\nVisual & multimodal 110\nVisual & multimodal\nSort\nnpm package",
+      "keywords": [
+        "plugins",
+        "plugin",
+        "插件",
+        "多模态"
+      ],
+      "href": "/pages/tac-plugins.html#directoryTitle",
+      "sourceFile": "pages/tac-plugins.html"
+    },
+    {
+      "id": "skills-1-0",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Explore skills for useful AI work.",
+      "text": "SKILL MARKETPLACE\nExplore skills for useful AI work.\nA curated directory of public community skills for design, development, planning, and presentation workflows.\nTAC AI / SKILL SYSTEMAGENTIC ERA ↗\nSearch the directory",
+      "keywords": [
+        "skills",
+        "skill",
+        "技能",
+        "技能市场"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "pages/skills.html"
+    },
+    {
+      "id": "skills-2-0",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Find a starting point.",
+      "text": "CURATED DIRECTORY\nFind a starting point.",
+      "keywords": [
+        "skills",
+        "skill",
+        "技能",
+        "技能市场"
+      ],
+      "href": "/pages/skills.html#directoryTitle",
+      "sourceFile": "pages/skills.html"
+    },
+    {
+      "id": "skills-3-0",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Community skills are public packages, not TAC certifications.",
+      "text": "REVIEW BEFORE USE\nCommunity skills are public packages, not TAC certifications.\nEach entry links to its original repository. TAC hosts the versioned packages in this directory for local import in TACWork, but users should still review the source, scope, supporting files, and license before use.",
+      "keywords": [
+        "skills",
+        "skill",
+        "技能",
+        "技能市场"
+      ],
+      "href": "/pages/skills.html#safetyTitle",
+      "sourceFile": "pages/skills.html"
+    },
+    {
+      "id": "tac-assistant-assets-1-0",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "TAC AI Assistant Asset Lab",
+      "text": "PRE-INTEGRATION REVIEW\nTAC AI Assistant\nAsset Lab\nAn independent review page for mascot assets, motion states, and playback rules. No homepage Q&A or sales system is connected here.",
+      "keywords": [
+        "Asset Lab",
+        "assistant",
+        "机器人",
+        "素材",
+        "动画",
+        "表情"
+      ],
+      "href": "/pages/tac-assistant-assets.html",
+      "sourceFile": "pages/tac-assistant-assets.html"
+    },
+    {
+      "id": "tac-assistant-assets-2-0",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Unified mascot views",
+      "text": "01 / MASCOT VIEWS\nUnified mascot views\nTransparent assets for brand surfaces, asset maintenance, and responsive adaptations.",
+      "keywords": [
+        "Asset Lab",
+        "assistant",
+        "机器人",
+        "素材",
+        "动画",
+        "表情"
+      ],
+      "href": "/pages/tac-assistant-assets.html#views-title",
+      "sourceFile": "pages/tac-assistant-assets.html"
+    },
+    {
+      "id": "tac-assistant-assets-3-0",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Six feedback expressions",
+      "text": "02 / EXPRESSIONS\nSix feedback expressions\nStatus overlays are drawn in CSS; the robot images remain clean and contain no embedded UI copy.",
+      "keywords": [
+        "Asset Lab",
+        "assistant",
+        "机器人",
+        "素材",
+        "动画",
+        "表情"
+      ],
+      "href": "/pages/tac-assistant-assets.html#expressions-title",
+      "sourceFile": "pages/tac-assistant-assets.html"
+    },
+    {
+      "id": "tac-assistant-assets-4-0",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Motion state simulation",
+      "text": "03 / STATE MACHINE\nMotion state simulation\nIDLEIdle behavior\nTRY A STATE2600ms / LOOP\nSize",
+      "keywords": [
+        "Asset Lab",
+        "assistant",
+        "机器人",
+        "素材",
+        "动画",
+        "表情"
+      ],
+      "href": "/pages/tac-assistant-assets.html#motion-title",
+      "sourceFile": "pages/tac-assistant-assets.html"
+    },
+    {
+      "id": "tac-assistant-assets-5-0",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Motion rules",
+      "text": "04 / MOTION RULES\nMotion rules\nFixed state IDs and transition rules that can map directly to GSAP or Rive later.\nStateTriggerDurationPlaybackNext",
+      "keywords": [
+        "Asset Lab",
+        "assistant",
+        "机器人",
+        "素材",
+        "动画",
+        "表情"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "pages/tac-assistant-assets.html"
+    },
+    {
+      "id": "plugin-directory-overview",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "Plugin directory catalog",
+      "text": "The directory lists 110 community Visual & Multimodal plugins. These are catalog listings with original repository links, not a guarantee of TAC-built integrations. Listed plugins: dsh-vision-fallback; dsh-vision#vision-route; dsh-vision#vision-tool; dsh-vision; dsh-youreyes; dsh-image-conatiner; dsh-vision-bridge; dsh-pdf-reader; dsh-vision-toolkit; dsh-client-vision#tool-vision; dsh-image-generation#tool-image-generation; dsh-guide-dog; dsh-highres-vision; dseyesopen; phone-eye; dsh-vision-solution; dsh-vision-plugin; dsh-gpt-image; dsh-deepseek-vision; aura-vision; Gemini-Eyes; dsh-chat-imagine; dsh-image-pathify; dsh-web-ui#dsh-tool-describe-image; dsh-screen-eye; dsh-imagegen; dsh-llm-vision-bridge; dsh-plugin-image-input; dsh-plugin-mm-vision; dsh-labnana; dsh-comfyui; dsh-vision-proxy; dsh-free-vision; dsh-tool-vision; dsh-vision-guard; dsh-vision-bridge; deepseek-vision#plugins/dsh-plugin-deepseek-vision; dsh-ocr-local; dsh-vision-bridge; dsh-vision-mix; dsh-vision-analysis; dsh-maclens; wechat-ocr; win11-oneocr; dsh-omni-workstation; dsh-open-eyes; dsh-tool-visual-primitives; dsh-quicksight; picturereader; dsh-mmroute; dsh-autovision; dsh-visual-plugin; dsh-auto-vision; dsh-vision-recognizer; dsh-mindseye; deepseek-plugin; dsh-vision-plugin; dsh-image-gen; dsh-eyes; dsh-visibridge; dsh-vision; Deepseek-Continuity; modlens; screenshot-feedback-hook-mcp#dsh-screenshot-feedback-hook-mcp; dsh-plugin-grok2api-media-tool; dsh-image-guard; dsh-capture; lookover#dsh-look; dsh-koboldcpp-hands; dsh-unsloth-hands; dsh-media-skills; dsh-vision-tools; dsh-llm-deepseek-vision; dsh-subagent-vision; free-vision-skill; dsh-auto-vision; dsh-hos-scrcpy; DSH-dseyes; dsh-screenshot; dsh-draw; dsh-vision-opencode; dsh-omni-vision; dsh-vision-subagent; dsh-easyvision; dsh-tool-vision; dsh-vision-pro-bridge; dsh-plugin-multimodal; dsh-deepseek-vision; dsh-design-qa; dsh-plugin-appshot; taxue-dsh-artisan; dsh-plugins#dsh-vision-tool; visual-review; dsh-tool-vision; dsh-image-generation; dsh-appshots; dsh-image-viewer; mimo-vision; dsh-vision; dsh-image-vision; dsh-draw-router; dsh-vision-bridge; dsh-vision-hub#tool-vision; dsh-image-vision; computer-use-vision; deepseek-harness-plugins#vision-bridge; dsh-vision-router; phone-lens#phone-lens; dsh-image-router; dsh-agnes-studio.",
+      "keywords": [
+        "plugin",
+        "plugins",
+        "directory",
+        "catalog",
+        "插件",
+        "插件目录"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-0",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-fallback",
+      "text": "Routes chat images to a fixed OpenAI-compatible vision model, returns factual observations to the selected main model, and reuses session-scoped observations across replay, compaction, and restarts. Author: 1HelloMan1. npm package: dsh-vision-fallback. Community repository: https://github.com/1HelloMan1/dsh-vision-fallback.",
+      "keywords": [
+        "dsh-vision-fallback",
+        "dsh-vision-fallback",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-1",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision#vision-route",
+      "text": "Registers a `deepseek-vision` provider route: the Web GUI accepts pasted images and transcribes them to text via the free Zhipu GLM vision API before delegating to the DeepSeek adapter. Author: 314857493. npm package: dsh-vision-proxy-route. Community repository: https://github.com/314857493/dsh-vision/tree/main/packages/vision-route.",
+      "keywords": [
+        "dsh-vision#vision-route",
+        "dsh-vision-proxy-route",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-2",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision#vision-tool",
+      "text": "Model-facing `vision` tool for DeepSeek Harness: describe and OCR image files by calling the free Zhipu GLM vision API directly (glm-4v-flash fallback chain), no external CLI required. Author: 314857493. npm package: dsh-vision-free-eyes. Community repository: https://github.com/314857493/dsh-vision/tree/main/packages/vision-tool.",
+      "keywords": [
+        "dsh-vision#vision-tool",
+        "dsh-vision-free-eyes",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-3",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision",
+      "text": "Vision for text-only DeepSeek via Doubao Web by default (zero-cost, no API key — drives your logged-in Chrome through a Windows CDP bridge), with Antigravity IDE quota (flash/pro) or Gemini fallback; auto detail escalation, vision evidence memory with compaction rehydration, content-hash cache, and a bilingual client panel. Author: 54xkeee. npm package: dsh-vision-web. Community repository: https://github.com/54xkeee/dsh-vision.",
+      "keywords": [
+        "dsh-vision",
+        "dsh-vision-web",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-4",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-youreyes",
+      "text": "Vision toolkit for text-only DeepSeek: model-invokable `vision` tool, wrapper adapters for deepseek/opencode-go (v4 flash/pro), Antigravity IDE quota (default, flash/pro) / any OpenAI-compatible VLM / Gemini / local Ollama channels, evidence memory with compaction rehydration, content-hash cache, and a bilingual client panel. Author: 54xkeee. npm package: dsh-youreyes. Community repository: https://github.com/54xkeee/dsh-youreyes.",
+      "keywords": [
+        "dsh-youreyes",
+        "dsh-youreyes",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-5",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-conatiner",
+      "text": "Displays generated images in a conversation gallery with a lightbox viewer. Author: aa2246740. npm package: not listed. Community repository: https://github.com/aa2246740/dsh-image-conatiner.",
+      "keywords": [
+        "dsh-image-conatiner",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-6",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-bridge",
+      "text": "Adds image input and recognition through configured DSH providers or an OpenAI-compatible endpoint. Author: alaxrpg. npm package: not listed. Community repository: https://github.com/alaxrpg/dsh-vision-bridge.",
+      "keywords": [
+        "dsh-vision-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-7",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-pdf-reader",
+      "text": "A content-aware PDF reading plugin for vision models: profiles each page for figures (vector and raster), tables, formula risk and double-column layout, then applies content-aware hybrid extraction, rendering figure/table/formula pages as high-DPI region crops. Provides a low-resolution preview to understand the page layout, and renders a specified region at high resolution. Packaged as multiple tools for agents. Author: AngelosZou. npm package: not listed. Community repository: https://github.com/AngelosZou/dsh-pdf-reader.",
+      "keywords": [
+        "dsh-pdf-reader",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-8",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-toolkit",
+      "text": "Vision for text-only models: paste an image and the model switches to a Vision Toolkit variant for image Q&A, multi-image comparison, long-screenshot OCR, screenshot-to-UI reproduction, element grounding, and pixel diff. No API key by default — images are processed by the author-hosted free service, 100 per machine per day; configurable to your own provider. Author: Anionex. npm package: @anionex/dsh-vision-toolkit. Community repository: https://github.com/Anionex/dsh-vision-toolkit.",
+      "keywords": [
+        "dsh-vision-toolkit",
+        "@anionex/dsh-vision-toolkit",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-9",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-client-vision#tool-vision",
+      "text": "Screen capture and external vision recognition: take_screenshot, list_windows, analyze_image and view_image tools with a configurable GPT vision channel (gpt-5.5 / gpt-5.6-sol / gpt-5.6-terra), API key via the credentials service, and a settings card; view_image shows the screenshot in the Web UI while the model context keeps text only. Author: ankye. npm package: not listed. Community repository: https://github.com/ankye/dsh-client-vision/tree/main/packages/tool-vision.",
+      "keywords": [
+        "dsh-client-vision#tool-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-10",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-generation#tool-image-generation",
+      "text": "Model-facing image-generation tool with a configurable channel and normalized image parameters. Author: ankye. npm package: not listed. Community repository: https://github.com/ankye/dsh-image-generation/tree/main/packages/tool-image-generation.",
+      "keywords": [
+        "dsh-image-generation#tool-image-generation",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-11",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-guide-dog",
+      "text": "MiniMax-powered multimodal plugin: real-time voice call mode (streaming conversation, floating dock UI), voice mode and mic voice input, plus image/video/music/speech generation and vision inspection tools. Author: AtropinolTT. npm package: not listed. Community repository: https://github.com/AtropinolTT/dsh-guide-dog.",
+      "keywords": [
+        "dsh-guide-dog",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-12",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-highres-vision",
+      "text": "For the DeepSeek Harness native vision model deepseek-v4-flash-vision-exp, raises image admission limits to 32 MiB / 8192 px / 600 images and adds a highres_read tool that tiles large images, then returns the whole image plus 800x800 tiles through the host read_image tool. Author: azwosile. npm package: not listed. Community repository: https://github.com/azwosile/dsh-highres-vision.",
+      "keywords": [
+        "dsh-highres-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-13",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dseyesopen",
+      "text": "Vision bridge for text-only DeepSeek: send images (alone or mixed with text) and a fast tiny vision model describes them behind the scenes — the chat keeps the picture, DeepSeek sees only text. Pure plugin: uninstall restores everything. Author: balue8246-maker. npm package: not listed. Community repository: https://github.com/balue8246-maker/dseyesopen.",
+      "keywords": [
+        "dseyesopen",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-14",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "phone-eye",
+      "text": "Let your AI agent see and operate a real Android phone: phone_look (vision + UI-tree fusion), tap/swipe/type, screenshot — over adb, for any MCP client. Author: boheastill. npm package: not listed. Community repository: https://github.com/boheastill/phone-eye.",
+      "keywords": [
+        "phone-eye",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-15",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-solution",
+      "text": "Give DSH text-only models vision: an image/OCR/document recognition skill (race pool → custom channels → local) plus an idempotent host patch so image messages reach the model. Author: br1nosense. npm package: not listed. Community repository: https://github.com/br1nosense/dsh-vision-solution.",
+      "keywords": [
+        "dsh-vision-solution",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-16",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-plugin",
+      "text": "Configurable image recognition for text-only DSH models: image messages are first transcribed by an OpenAI-compatible vision model (Base URL, model ID and API key set in a Settings section) and then passed to the main model as text, while image-input support is advertised. The API key auth scheme is selectable — OpenAI, Anthropic, Gemini or Azure style request headers — and a missing key is reported before any request is sent. Author: bug-huntter. npm package: @lp181818/dsh-vision-plugin. Community repository: https://github.com/bug-huntter/dsh-vision-plugin.",
+      "keywords": [
+        "dsh-vision-plugin",
+        "@lp181818/dsh-vision-plugin",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-17",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-gpt-image",
+      "text": "Generate images through a logged-in web ChatGPT session and download them to a local directory. Author: CAI-MH. npm package: not listed. Community repository: https://github.com/CAI-MH/dsh-gpt-image.",
+      "keywords": [
+        "dsh-gpt-image",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-18",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-deepseek-vision",
+      "text": "Reuses DeepSeek web's built-in vision mode for text-only models: the deepseek_vision tool drives the local deepseek-vision-cli browser automation (manual login helper, deep-think enabled, auto-closes browser) and returns image descriptions as text. Author: Cheng-cheng9669. npm package: not listed. Community repository: https://github.com/Cheng-cheng9669/dsh-deepseek-vision.",
+      "keywords": [
+        "dsh-deepseek-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-19",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "aura-vision",
+      "text": "Free vision OCR with adaptive tile recognition for long documents and Markdown/Word/PNG/Excel export. Author: Ck-epsilon. npm package: aura-vision. Community repository: https://github.com/Ck-epsilon/aura-vision.",
+      "keywords": [
+        "aura-vision",
+        "aura-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-20",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "Gemini-Eyes",
+      "text": "MCP bridge to gemini.google.com: vision analysis of images and videos, Imagen image and Veo video generation, and conversation management using the logged-in browser session with no API key. Author: ConsoleSun. npm package: not listed. Community repository: https://github.com/ConsoleSun/Gemini-Eyes.",
+      "keywords": [
+        "Gemini-Eyes",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-21",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-chat-imagine",
+      "text": "Automatically generates and displays images in the DSH chat via API channels or local CLIs (mmx / codex / agy), and can also recognize images using the corresponding CLI. Author: corrinehu. npm package: dsh-chat-imagine. Community repository: https://github.com/corrinehu/dsh-chat-imagine.",
+      "keywords": [
+        "dsh-chat-imagine",
+        "dsh-chat-imagine",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-22",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-pathify",
+      "text": "Lets text-only models handle pasted chat images, with a native vision experience, batch image viewing, and a built-in OpenAI-compatible analyze_image tool; vision-capable models are unaffected. Author: dami9527. npm package: dsh-image-pathify. Community repository: https://github.com/dami9527/dsh-image-pathify.",
+      "keywords": [
+        "dsh-image-pathify",
+        "dsh-image-pathify",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-23",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-web-ui#dsh-tool-describe-image",
+      "text": "Gives a text-only model image understanding via a vision-language model, exposed as a `describe_image` tool. Author: DamonKoy. npm package: not listed. Community repository: https://github.com/DamonKoy/dsh-web-ui/tree/main/packages/dsh-tool-describe-image.",
+      "keywords": [
+        "dsh-web-ui#dsh-tool-describe-image",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-24",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-screen-eye",
+      "text": "Agent screen capture on macOS and Windows: one tool captures the screen and returns the image itself, so the model sees it without a second call. On Windows a whole burst runs in one engine call; on macOS a resident helper drops a region capture to 13ms and a change check to 23ms. A second tool, macOS only, reports whether Screen Recording is granted and opens the settings pane that fixes it. Author: davidekingsss. npm package: not listed. Community repository: https://github.com/davidekingsss/dsh-screen-eye.",
+      "keywords": [
+        "dsh-screen-eye",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-25",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-imagegen",
+      "text": "AI image generation for the DSH Web GUI: text-to-image and image-to-image through a configurable OpenAI-compatible endpoint (gpt-image-2 / gpt-image-1 / dall-e-3), with an api_url/api_key settings card and a sidebar split-pane generation studio. Author: dickpy. npm package: @dickpy/dsh-imagegen. Community repository: https://github.com/dickpy/dsh-imagegen.",
+      "keywords": [
+        "dsh-imagegen",
+        "@dickpy/dsh-imagegen",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-26",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-llm-vision-bridge",
+      "text": "Native LLM-provider vision bridge: images pasted in the chat are described by a vision model (Qwen3-VL via pi-ai/llama.cpp) and the text description is fed to text-only DeepSeek for the reply — image admission, routing and compaction all run through harness-native mechanisms, with an LRU description cache and 503 retry. Author: Einskyle. npm package: dsh-llm-vision-bridge. Community repository: https://github.com/Einskyle/dsh-llm-vision-bridge.",
+      "keywords": [
+        "dsh-llm-vision-bridge",
+        "dsh-llm-vision-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-27",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-plugin-image-input",
+      "text": "Image-to-text input for the Web UI: paste or drag an image and it is transcribed into structured text and sent, giving text-only LLMs image-input takeover (OpenAI-compatible vision API). Author: Elohia. npm package: dsh-plugin-image-input. Community repository: https://github.com/Elohia/dsh-plugin-image-input.",
+      "keywords": [
+        "dsh-plugin-image-input",
+        "dsh-plugin-image-input",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-28",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-plugin-mm-vision",
+      "text": "Synesthesia Encoder for DSH: a vision model translates images into compact structured spatial text (canvas/elements/percentage coordinates), giving text-only LLMs pixel-level image understanding via the `mm_vision` tool. Author: Elohia. npm package: not listed. Community repository: https://github.com/Elohia/dsh-plugin-mm-vision.",
+      "keywords": [
+        "dsh-plugin-mm-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-29",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-labnana",
+      "text": "Labnana image generation for DeepSeek Harness: text-to-image / image-to-image / precise editing with credits estimation, subscription balance and web settings UI. Author: exoticknight. npm package: dsh-labnana. Community repository: https://github.com/exoticknight/dsh-labnana.",
+      "keywords": [
+        "dsh-labnana",
+        "dsh-labnana",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-30",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-comfyui",
+      "text": "Drive a local or remote ComfyUI server from DeepSeek Harness: comfyui_run / comfyui_object_info / comfyui_workflow tools generate and edit images and videos, with a workflow library (graph extraction: per component / main flow / all), a load area with resolution auto-match, a live queue, SDXL and Wan 2.1 templates, a companion skill, and a same-origin media proxy. Author: fandc520. npm package: dsh-comfyui. Community repository: https://github.com/fandc520/dsh-comfyui.",
+      "keywords": [
+        "dsh-comfyui",
+        "dsh-comfyui",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-31",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-proxy",
+      "text": "DeepSeek brain + automatic image transcription: attach images in the GUI and each one is transcribed via the official deepseek-v4-flash-vision-exp by default (a pure-text V4-Pro brain can see images), with any OpenAI-compatible VLM or local Ollama as alternatives. Author: Flyvhidbwo. npm package: dsh-vision-proxy. Community repository: https://github.com/Flyvhidbwo/dsh-vision-proxy.",
+      "keywords": [
+        "dsh-vision-proxy",
+        "dsh-vision-proxy",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-32",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-free-vision",
+      "text": "Free vision bridge for text-only models: image understanding, OCR, UI and debug analysis via free-tier providers (Qwen3-VL-Flash, Doubao, DeepSeek-OCR) with a settings GUI. Author: FuzzySoul. npm package: dsh-free-vision. Community repository: https://github.com/FuzzySoul/dsh-free-vision.",
+      "keywords": [
+        "dsh-free-vision",
+        "dsh-free-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-33",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-tool-vision",
+      "text": "Local-first structured vision for text-only agents: images go to a local OpenAI-compatible VLM and come back as JSON evidence (summary, verbatim OCR, layout regions, entities/relations, colors, explicit uncertainty), with anti-hallucination fallback and an optional paste/upload bridge; zero cloud cost, images never leave the machine. Author: gloryxpnv. npm package: not listed. Community repository: https://github.com/gloryxpnv/dsh-tool-vision.",
+      "keywords": [
+        "dsh-tool-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-34",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-guard",
+      "text": "Transparent image guard for text-only routes: paste images without the 400 session deadlock, plus a vision_analyze tool for OCR/PDF/docx/pptx/video. Author: good-boy4069. npm package: dsh-vision-guard. Community repository: https://github.com/good-boy4069/dsh-vision-guard.",
+      "keywords": [
+        "dsh-vision-guard",
+        "dsh-vision-guard",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-35",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-bridge",
+      "text": "Routes images to a vision model of your choice - auto-rewrite, explicit tools, or hybrid - so a text-only chat model does not fail a turn that contains a picture. Author: GooDAnDReaDY. npm package: @goodandready/dsh-vision-bridge. Community repository: https://github.com/GooDAnDReaDY/dsh-vision-bridge.",
+      "keywords": [
+        "dsh-vision-bridge",
+        "@goodandready/dsh-vision-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-36",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "deepseek-vision#plugins/dsh-plugin-deepseek-vision",
+      "text": "Vision MCP and DSH bundle for text-only DeepSeek: analyze_image, analyze_clipboard, compare_images and vision_status tools, a visual settings page, free GLM-4.6V-Flash by default, result caching and rate-limit tolerance; keys stay out of logs. Author: GOU-GEE. npm package: dsh-plugin-deepseek-vision. Community repository: https://github.com/GOU-GEE/deepseek-vision/tree/main/plugins/dsh-plugin-deepseek-vision.",
+      "keywords": [
+        "deepseek-vision#plugins/dsh-plugin-deepseek-vision",
+        "dsh-plugin-deepseek-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-37",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-ocr-local",
+      "text": "Local OCR fallback for text-only routes: when the session model declares it cannot accept images, the attached image is cached locally and its path injected so the model can call ocr_image — PP-OCRv5 + ONNX Runtime on CPU, no API key, images never leave the machine. Silent when the model can see images. Author: grelvan. npm package: dsh-ocr-local. Community repository: https://github.com/grelvan/dsh-ocr-local.",
+      "keywords": [
+        "dsh-ocr-local",
+        "dsh-ocr-local",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-38",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-bridge",
+      "text": "Bridges session images to configurable vision providers and returns text-only analysis to eligible DeepSeek Harness model routes. Author: GXX182. npm package: not listed. Community repository: https://github.com/GXX182/dsh-vision-bridge.",
+      "keywords": [
+        "dsh-vision-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-39",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-mix",
+      "text": "Combine text, vision, and image-generation APIs into one Mix model with automatic routing: text-only requests go to the chat model, user images and agent screenshots go to the vision model, follow-ups keep using the same session image, and agents can generate or edit images with session-scoped call history. Author: haiziyao. npm package: dsh-vision-mix. Community repository: https://github.com/haiziyao/dsh-vision-mix.",
+      "keywords": [
+        "dsh-vision-mix",
+        "dsh-vision-mix",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-40",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-analysis",
+      "text": "DeepSeek Harness vision plugin: 8 analysis modes (describe, OCR, chart data, UI review, object detection, compare, code-gen, debug), any OpenAI- or Anthropic-compatible vision API, with a built-in free vision model and automatic rate-limit failover. Author: Harvey-Will. npm package: not listed. Community repository: https://github.com/Harvey-Will/dsh-vision-analysis.",
+      "keywords": [
+        "dsh-vision-analysis",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-41",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-maclens",
+      "text": "Apple on-device Vision tools for text-only dsh models: local OCR (zh-Hans + 30 langs), image classification, face detection, document layout, and a combined describe — 100% offline, no API key, tall-screenshot slicing. Author: Harzva. npm package: not listed. Community repository: https://github.com/Harzva/dsh-maclens.",
+      "keywords": [
+        "dsh-maclens",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-42",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "wechat-ocr",
+      "text": "Local WeChat OCR tool for DSH: `wechat_ocr_recognize` returns recognized text and the engine structured result for a local image path. Author: hawkhai. npm package: not listed. Community repository: https://github.com/hawkhai/wechat-ocr.",
+      "keywords": [
+        "wechat-ocr",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-43",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "win11-oneocr",
+      "text": "Local Windows 11 OneOCR tool for DSH: `oneocr_recognize` returns OCR text and structured line/word polygons, confidence, rotation, and handwriting style. Author: hawkhai. npm package: not listed. Community repository: https://github.com/hawkhai/win11-oneocr.",
+      "keywords": [
+        "win11-oneocr",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-44",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-omni-workstation",
+      "text": "Omni-modal workstation for DSH: analyze_image over an ordered multi-card VLM failover chain, a six-tool vision toolkit (zoom, colour sampling, pixel diff, OCR, element detection, inline display) sharing the same image resolver, generate_image over OpenAI/DashScope/ComfyUI protocols, multi-card async generate_video with a /build-video-tool builder, and speak/clone_voice TTS over seven providers, all driven by one auto-saving settings page. Author: huashenglian. npm package: dsh-omni-workstation. Community repository: https://github.com/huashenglian/dsh-omni-workstation.",
+      "keywords": [
+        "dsh-omni-workstation",
+        "dsh-omni-workstation",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-45",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-open-eyes",
+      "text": "Vision bridge for text-only DeepSeek routes that analyzes attached and local images through configurable OpenAI Responses, Chat Completions, or Anthropic Messages endpoints while leaving image-capable routes native. Author: hyper-dsh-plugins. npm package: not listed. Community repository: https://github.com/hyper-dsh-plugins/dsh-open-eyes.",
+      "keywords": [
+        "dsh-open-eyes",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-46",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-tool-visual-primitives",
+      "text": "Analyzes conversation images through mode-specific prompts (caption, UI, document, grounding, topology, etc.) and injects structured evidence with coordinate primitives (boxes, points, refs) as text, with session-level caching for reuse across replay and compaction. Author: InkshadeWoods. npm package: dsh-tool-visual-primitives. Community repository: https://github.com/InkshadeWoods/dsh-tool-visual-primitives.",
+      "keywords": [
+        "dsh-tool-visual-primitives",
+        "dsh-tool-visual-primitives",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-47",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-quicksight",
+      "text": "Two-tier image reading for text-only models: fast local OCR (RapidOCR, offline) first, vision-model fallback (modlens). Author: Isanti2016. npm package: dsh-quicksight. Community repository: https://github.com/Isanti2016/dsh-quicksight.",
+      "keywords": [
+        "dsh-quicksight",
+        "dsh-quicksight",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-48",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "picturereader",
+      "text": "Image \"reading\" for text-only models: downscale + reduce color depth + structure/color fingerprints into text grids fed back to the conversation, letting the model zoom, sample and OCR autonomously like a multimodal model; fully local with zero external model dependency, ships an image-reading methodology skill and optional PaddleOCR. Author: jing-hy. npm package: picturereader. Community repository: https://github.com/jing-hy/picturereader.",
+      "keywords": [
+        "picturereader",
+        "picturereader",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-49",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-mmroute",
+      "text": "Transparent multimodal routing for text-only models: every image in every model call is fully transcribed (verbatim OCR, data, uncertainty zones, injection-hardened) by your own multimodal understander, with focused re-look via vision_relook and automatic retry on image-related failures. No bundled endpoints, no borrowed logins. Author: jmxsxwyzjdwl. npm package: not listed. Community repository: https://github.com/jmxsxwyzjdwl/dsh-mmroute.",
+      "keywords": [
+        "dsh-mmroute",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-50",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-autovision",
+      "text": "Vision for text-only dsh models: paste an image and a configured multimodal model transcribes it to text automatically — transparent twin routing, an agent-callable read-image tool, no built-in keys or relay. Author: Junkrat9527. npm package: @iroam2375/dsh-autovision. Community repository: https://github.com/Junkrat9527/dsh-autovision.",
+      "keywords": [
+        "dsh-autovision",
+        "@iroam2375/dsh-autovision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-51",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-visual-plugin",
+      "text": "Gives text-only models vision: forwards user images to an OpenAI-compatible vision model and shows the descriptions in a Web UI right panel. Author: jyh20030112. npm package: not listed. Community repository: https://github.com/jyh20030112/dsh-visual-plugin.",
+      "keywords": [
+        "dsh-visual-plugin",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-52",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-auto-vision",
+      "text": "Auto-switch the DeepSeek route to the vision model on demand: flash main session switches (A), pro keeps deep reasoning and delegates image reading to a vision subagent (B), subagents always switch, with fatal-failure fallback. No manual model switching. Author: k2d5rqjpkg-art. npm package: not listed. Community repository: https://github.com/k2d5rqjpkg-art/dsh-auto-vision.",
+      "keywords": [
+        "dsh-auto-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-53",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-recognizer",
+      "text": "Vision provider route that transcribes attached images to text through a configurable model (15+ OpenAI-compatible and Anthropic vendors) while DeepSeek keeps answering. Author: kaixinbaba. npm package: dsh-vision-recognizer. Community repository: https://github.com/kaixinbaba/dsh-vision-recognizer.",
+      "keywords": [
+        "dsh-vision-recognizer",
+        "dsh-vision-recognizer",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-54",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-mindseye",
+      "text": "Plug-in vision for text-only models on DSH, with native interaction for image understanding and generation, GUI automation, through layered evidence memory and cache. Author: kanchengw. npm package: dsh-mindseye. Community repository: https://github.com/kanchengw/dsh-mindseye.",
+      "keywords": [
+        "dsh-mindseye",
+        "dsh-mindseye",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-55",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "deepseek-plugin",
+      "text": "Turn every idea into an image or video with Kling AI. In DeepSeek Harness, use natural language for text-to-image, image-to-image, text-to-video, image-to-video, reference-image creation, task tracking, and result previews. Author: klingai-dev. npm package: not listed. Community repository: https://github.com/klingai-dev/deepseek-plugin.",
+      "keywords": [
+        "deepseek-plugin",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-56",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-plugin",
+      "text": "Give your text-only model eyes - chat image attachments are auto-described via a vision model (default prompt), with iterative re-parsing through model-generated prompts when details are missing; system/custom model modes + GUI config panel, key-safe secret handling, and a small host patch for DSH 0.1.0-rc.6 (see repo README). Author: ld-1101. npm package: not listed. Community repository: https://github.com/ld-1101/dsh-vision-plugin.",
+      "keywords": [
+        "dsh-vision-plugin",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-57",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-gen",
+      "text": "GPT Image 2 `image_gen` with Codex subscription OAuth by default or explicit API-key mode: developing card, up to three live API partials, durable attachment replay/lightbox/download, text-only model output, and bounded credential-safe requests. Author: LeemanCheung. npm package: not listed. Community repository: https://github.com/LeemanCheung/dsh-image-gen.",
+      "keywords": [
+        "dsh-image-gen",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-58",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-eyes",
+      "text": "On-demand vision for text-only DeepSeek models: upload images, and the model calls a view_image tool backed by any OpenAI-compatible vision endpoint (Qwen/DashScope by default). Author: Leeminjing. npm package: not listed. Community repository: https://github.com/Leeminjing/dsh-eyes.",
+      "keywords": [
+        "dsh-eyes",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-59",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-visibridge",
+      "text": "Structured vision evidence (OCR/layout/semantics) plus a USB camera capture tool for a \"shoot-look-adjust\" debug loop; backends: Ollama, DeepSeek, Xiaomi. Author: lhbsaa. npm package: not listed. Community repository: https://github.com/lhbsaa/dsh-visibridge.",
+      "keywords": [
+        "dsh-visibridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-60",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision",
+      "text": "External vision plugin for DeepSeek Harness: whale-button config panel, image recognition with auto-reply, and agent screenshot/recognize tools. Author: linenxi-ctrl. npm package: not listed. Community repository: https://github.com/linenxi-ctrl/dsh-vision.",
+      "keywords": [
+        "dsh-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-61",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "Deepseek-Continuity",
+      "text": "Local image, voice, music and SFX generation plus transcription, with pinned identity: characters, animals, objects and actor voices are defined once and reused on every later call, degenerate output (a near-flat image, silent audio) is rejected instead of returned as success, and a generated line can be read back as text so a clone that swallowed its ending becomes visible. The engines unload when idle, and image generation and transcription can each be pointed at an OpenAI-shaped API instead of the local Vulkan backend. Author: linxuhao. npm package: dsh-plugin-continuity. Community repository: https://github.com/linxuhao/Deepseek-Continuity.",
+      "keywords": [
+        "Deepseek-Continuity",
+        "dsh-plugin-continuity",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-62",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "modlens",
+      "text": "Vision bridge for text-only models: paste an image, get structured JSON evidence (OCR, layout, semantics). Author: liustack. npm package: @liustack/modlens. Community repository: https://github.com/liustack/modlens.",
+      "keywords": [
+        "modlens",
+        "@liustack/modlens",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-63",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "screenshot-feedback-hook-mcp#dsh-screenshot-feedback-hook-mcp",
+      "text": "Adds a take screenshot tool plus two optional automatic capture points, putting the screen into the conversation as an image block; requires an image-capable model. Author: lkh081231. npm package: dsh-screenshot-feedback-hook-mcp. Community repository: https://github.com/lkh081231/screenshot-feedback-hook-mcp/tree/main/dsh-plugin.",
+      "keywords": [
+        "screenshot-feedback-hook-mcp#dsh-screenshot-feedback-hook-mcp",
+        "dsh-screenshot-feedback-hook-mcp",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-64",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-plugin-grok2api-media-tool",
+      "text": "Gives dsh the ability to generate images and videos through the grok2api API. Author: lsjspl. npm package: dsh-plugin-grok2api-media-tool. Community repository: https://github.com/lsjspl/dsh-plugin-grok2api-media-tool.",
+      "keywords": [
+        "dsh-plugin-grok2api-media-tool",
+        "dsh-plugin-grok2api-media-tool",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-65",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-guard",
+      "text": "Trims historical images in outgoing chat requests down to a recent-image count, learns the provider per-prompt image cap from HTTP 400 responses, and retries with fewer images so image-heavy sessions keep working. Author: mafeis. npm package: dsh-image-guard. Community repository: https://github.com/mafeis/dsh-image-guard.",
+      "keywords": [
+        "dsh-image-guard",
+        "dsh-image-guard",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-66",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-capture",
+      "text": "Dual-engine screen capture for DSH: inside the SSiD desktop shell, a global hotkey or tray opens a fullscreen box-select overlay (all monitors, per-display pixel-perfect frames) with in-place red-box annotation and a WeChat-style toolbar; in plain DSH (browser), the composer camera button captures the display via getDisplayMedia and reuses the same single-phase box-select + annotation overlay in-page. The cropped image lands in the current conversation composer through the official attachment intake. Author: Max-Null. npm package: not listed. Community repository: https://github.com/Max-Null/dsh-capture.",
+      "keywords": [
+        "dsh-capture",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-67",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "lookover#dsh-look",
+      "text": "Scene-awareness probe for DSH on macOS: a privacy-first, pull-model `look` tool that reads the frontmost non-self window (app info, AX title/selection, gated local OCR), plus a summon-hotkey snapshot captured the instant you press. Author: mengxiaoxian. npm package: dsh-look. Community repository: https://github.com/mengxiaoxian/lookover/tree/main/dsh-look.",
+      "keywords": [
+        "lookover#dsh-look",
+        "dsh-look",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-68",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-koboldcpp-hands",
+      "text": "Hands repetitive text and vision labor (OCR, image analysis, comparison) to a local KoboldCpp (llama.cpp) server through koboldcpp_run and koboldcpp_vision tools, with on-demand server lifecycle management. Author: MicroHEROX. npm package: dsh-koboldcpp-hands. Community repository: https://github.com/MicroHEROX/dsh-koboldcpp-hands.",
+      "keywords": [
+        "dsh-koboldcpp-hands",
+        "dsh-koboldcpp-hands",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-69",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-unsloth-hands",
+      "text": "Hands repetitive text and vision labor (OCR, image analysis, comparison) to a locally running Unsloth Desktop (Unsloth Studio) server through unsloth_run and unsloth_vision tools; pure HTTP client, never spawns or owns processes. Author: MicroHEROX. npm package: dsh-unsloth-hands. Community repository: https://github.com/MicroHEROX/dsh-unsloth-hands.",
+      "keywords": [
+        "dsh-unsloth-hands",
+        "dsh-unsloth-hands",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-70",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-media-skills",
+      "text": "Free vision bridge and image generation for text-only models: paste-image reading, GLM-4V-Flash and Gemini engine failover, ModLens-style structured evidence, and a seeded free vision model route. Author: MJorgin. npm package: not listed. Community repository: https://github.com/MJorgin/dsh-media-skills.",
+      "keywords": [
+        "dsh-media-skills",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-71",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-tools",
+      "text": "Full vision-capability bundle for DeepSeek Harness: a vision_understand tool (OpenAI-compatible vision APIs, free Zhipu GLM-4V-Flash by default) plus paste/drag-and-drop/button entry points for image recognition. Author: moon09300731. npm package: dsh-vision-tools. Community repository: https://github.com/moon09300731/dsh-vision-tools.",
+      "keywords": [
+        "dsh-vision-tools",
+        "dsh-vision-tools",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-72",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-llm-deepseek-vision",
+      "text": "Vision-augmented DeepSeek adapter: a vision-capable model describes image input, then a text-only DeepSeek model reasons over the description. Author: NagasakiSoyo-ui. npm package: not listed. Community repository: https://github.com/NagasakiSoyo-ui/dsh-llm-deepseek-vision.",
+      "keywords": [
+        "dsh-llm-deepseek-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-73",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-subagent-vision",
+      "text": "Lets a text-only DeepSeek agent read images in the same session by delegating to a vision-capable subagent, with send-time image-to-path conversion. Author: niuniuaba. npm package: dsh-subagent-vision. Community repository: https://github.com/niuniuaba/dsh-subagent-vision.",
+      "keywords": [
+        "dsh-subagent-vision",
+        "dsh-subagent-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-74",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "free-vision-skill",
+      "text": "Fully-local image understanding & OCR via macOS Vision Framework: `ocr_image` (text, table layout + coordinates) and `view_image` (scene, faces, QR) — paste multiple images into the web input box or pass path/URL/base64; images never leave your Mac. Author: niyongsheng. npm package: not listed. Community repository: https://github.com/niyongsheng/free-vision-skill.",
+      "keywords": [
+        "free-vision-skill",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-75",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-auto-vision",
+      "text": "Auto-discovery vision bridge for text-only DeepSeek Harness agents: automatically finds an image-capable model from your configured providers and returns picture descriptions as plain text via a vision tool. Author: NormanFxxkingRockwell. npm package: dsh-auto-vision. Community repository: https://github.com/NormanFxxkingRockwell/dsh-auto-vision.",
+      "keywords": [
+        "dsh-auto-vision",
+        "dsh-auto-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-76",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-hos-scrcpy",
+      "text": "Control a HarmonyOS phone from the DSH web UI with AI: live H.264 screen mirroring, mouse touch and system keys, hilog streaming, and agentic tools that let the model read the screen, locate UI controls, then tap, long-press, press keys, or type. Author: ns-zzj. npm package: not listed. Community repository: https://github.com/ns-zzj/dsh-hos-scrcpy.",
+      "keywords": [
+        "dsh-hos-scrcpy",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-77",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "DSH-dseyes",
+      "text": "Native image attachments for text-only DeepSeek in the Web GUI: pasted or dropped images appear as thumbnails in the session, and before dispatch the host reads them with the free Zhipu GLM-4V-Flash vision API (glm-4v-flash fallback chain) and substitutes the description, so DeepSeek answers about the image while the original is kept in history. Author: Okkay712. npm package: dsh-dseyes. Community repository: https://github.com/Okkay712/DSH-dseyes.",
+      "keywords": [
+        "DSH-dseyes",
+        "dsh-dseyes",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-78",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-screenshot",
+      "text": "Zero-dependency screen capture for DSH: Lightweight — zero deps, zero binaries; Stage & shoot — one-click full screen, window layout, hover-snap capture of occluded windows; Agent self-service — path-only delivery; paths are universal, pair with modlens (optional) for one-call structured evidence. Author: paicat1. npm package: @paicat1/dsh-screenshot. Community repository: https://github.com/paicat1/dsh-screenshot.",
+      "keywords": [
+        "dsh-screenshot",
+        "@paicat1/dsh-screenshot",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-79",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-draw",
+      "text": "Multi-engine text-to-image generation (OpenAI Images and Zhipu CogView presets) with per-session quota tracking, engine failover, credential-safe config, and a result card with regenerate. Author: PerryLink. npm package: dsh-draw. Community repository: https://github.com/PerryLink/dsh-draw.",
+      "keywords": [
+        "dsh-draw",
+        "dsh-draw",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-80",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-opencode",
+      "text": "Adds a configurable vision model to text-only main models: a vision_read_image tool, a composer-bar vision-model selector, and automatic image-to-text conversion for text-only routes. Author: poiuyjie. npm package: not listed. Community repository: https://github.com/poiuyjie/dsh-vision-opencode.",
+      "keywords": [
+        "dsh-vision-opencode",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-81",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-omni-vision",
+      "text": "Local eyes for text-only models: eyes_render draws text/shapes/Mermaid onto a canvas in the Web GUI, eyes_paste captures pasted images, eyes_ocr reads text via the built-in Windows OCR (offline), and eyes_analyze inspects pixels as structured data — no vision model required. Author: Renji004. npm package: not listed. Community repository: https://github.com/Renji004/dsh-omni-vision.",
+      "keywords": [
+        "dsh-omni-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-82",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-subagent",
+      "text": "Vision for any DSH route: paste images in the Web composer with intent-aware auto-analysis, delegate workspace image reads to a Kimi/MiniMax vision subagent, and materialize pasted originals for editing. Author: ruby1304. npm package: dsh-vision-subagent. Community repository: https://github.com/ruby1304/dsh-vision-subagent.",
+      "keywords": [
+        "dsh-vision-subagent",
+        "dsh-vision-subagent",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-83",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-easyvision",
+      "text": "Give text-only models vision: a describe_image tool that delegates images to a vision model from your dsh model list over the harness's own LLM runtime. Author: s3yf1337. npm package: not listed. Community repository: https://github.com/s3yf1337/dsh-easyvision.",
+      "keywords": [
+        "dsh-easyvision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-84",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-tool-vision",
+      "text": "Send local images or HTTP(S) image URLs to a configured OpenAI-compatible vision endpoint with the inspect_image tool and return its text response to the conversation. Author: Scorp1o117. npm package: dsh-tool-vision. Community repository: https://github.com/Scorp1o117/dsh-tool-vision.",
+      "keywords": [
+        "dsh-tool-vision",
+        "dsh-tool-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-85",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-pro-bridge",
+      "text": "Vision bridge for text-only DeepSeek models: transcribes attached images with deepseek-v4-flash-vision-exp before they reach deepseek-v4-pro, with no third-party dependencies. Author: ShaineDemo. npm package: dsh-vision-pro-bridge. Community repository: https://github.com/ShaineDemo/dsh-vision-pro-bridge.",
+      "keywords": [
+        "dsh-vision-pro-bridge",
+        "dsh-vision-pro-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-86",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-plugin-multimodal",
+      "text": "Advertise image paste on text-only DeepSeek routes, describe attachments with a vision sidecar, and leave native vision models untouched. Author: shinjiyu. npm package: not listed. Community repository: https://github.com/shinjiyu/dsh-plugin-multimodal.",
+      "keywords": [
+        "dsh-plugin-multimodal",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-87",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-deepseek-vision",
+      "text": "A vision-language gateway provider route: pasted images are described by a configurable VL model (Qwen-VL by default) before the DeepSeek wire. Author: siegfly. npm package: dsh-deepseek-vision. Community repository: https://github.com/siegfly/dsh-deepseek-vision.",
+      "keywords": [
+        "dsh-deepseek-vision",
+        "dsh-deepseek-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-88",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-design-qa",
+      "text": "Design-fidelity QA for text-only models: a `deepseek_vision` tool borrows an eye from any OpenAI-compatible vision route, so the model can judge whether an implementation matches its mock — shipped with the benchmark behind that judgement (four fixtures, 23 injected defects, raw transcripts) and the questioning discipline it depends on. Author: sunxin-ai. npm package: dsh-design-qa. Community repository: https://github.com/sunxin-ai/dsh-design-qa.",
+      "keywords": [
+        "dsh-design-qa",
+        "dsh-design-qa",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-89",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-plugin-appshot",
+      "text": "Codex Appshots for DSH: capture the frontmost active window via global shortcut and seamlessly mount it into the composer for agent queries. Author: TaurusWood. npm package: dsh-plugin-appshot. Community repository: https://github.com/TaurusWood/dsh-plugin-appshot.",
+      "keywords": [
+        "dsh-plugin-appshot",
+        "dsh-plugin-appshot",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-90",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "taxue-dsh-artisan",
+      "text": "Integrated visual creation toolchain for DSH: prompt reverse-engineering and audit optimization plus multi-provider image generation with async background rendering. Author: taxueseek. npm package: not listed. Community repository: https://github.com/taxueseek/taxue-dsh-artisan.",
+      "keywords": [
+        "taxue-dsh-artisan",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-91",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-plugins#dsh-vision-tool",
+      "text": "Agent-callable vision tool that describes local images via any OpenAI-compatible vision endpoint you configure, with an optional multi-model cross-check and no built-in keys. Author: TZHR-invest. npm package: not listed. Community repository: https://github.com/TZHR-invest/dsh-plugins/tree/main/packages/dsh-vision.",
+      "keywords": [
+        "dsh-plugins#dsh-vision-tool",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-92",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "visual-review",
+      "text": "Renders pasted/uploaded images inline in the DSH Web chat and gives text-only models vision: the model-invokable visual_review tool calls any OpenAI-compatible multimodal API first, falling back to a local Qwen3-VL worker. Author: wang-bool. npm package: visual-review. Community repository: https://github.com/wang-bool/visual-review.",
+      "keywords": [
+        "visual-review",
+        "visual-review",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-93",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-tool-vision",
+      "text": "Model-facing image_describe (识图) tool over the DashScope OpenAI-compatible API (qwen3.7-flash), plus a paste bridge: on text-only sessions, pasted images auto-convert to file paths at send time and render back in the transcript, so they never trip image admission. Bring your own DASHSCOPE_API_KEY; endpoint/model/budgets configurable, redirect-proof HTTP client, works in every agent preset. Author: wanshichenguang. npm package: not listed. Community repository: https://github.com/wanshichenguang/dsh-tool-vision.",
+      "keywords": [
+        "dsh-tool-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-94",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-generation",
+      "text": "Configure multiple image providers in Settings and call image_generate with the one selected model; images save under generate/image and show inline in the conversation. Author: whiteS18. npm package: dsh-image-generation. Community repository: https://github.com/whiteS18/dsh-image-generation.",
+      "keywords": [
+        "dsh-image-generation",
+        "dsh-image-generation",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-95",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-appshots",
+      "text": "Codex-style window capture for DSH Desktop on macOS and Windows: press both Command keys (macOS) or both Ctrl keys (Windows), or the camera button, to grab the frontmost window, attach it to the current chat, and inject a VoiceOver-style accessibility tree as hidden context. Author: WongYuYe. npm package: dsh-appshots. Community repository: https://github.com/WongYuYe/dsh-appshots.",
+      "keywords": [
+        "dsh-appshots",
+        "dsh-appshots",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-96",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-viewer",
+      "text": "Upgrades DSH image viewing with pointer-centered zoom, pan, galleries, downloads, keyboard support, and inline region notes. Author: WSL043. npm package: dsh-image-viewer. Community repository: https://github.com/WSL043/dsh-image-viewer.",
+      "keywords": [
+        "dsh-image-viewer",
+        "dsh-image-viewer",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-97",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "mimo-vision",
+      "text": "`describe_image` tool: a vision bridge that sends images to mimo-v2.5 through the opencode Zen API (credential `OPENCODE_GO_API_KEY`, free route first with paid fallback) and returns text descriptions for text-only models, with native passthrough and ImageMagick transcoding of SVG/TIFF/HEIC formats. Author: wulusai2333. npm package: mimo-vision. Community repository: https://github.com/wulusai2333/mimo-vision.",
+      "keywords": [
+        "mimo-vision",
+        "mimo-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-98",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision",
+      "text": "Native vision capability extension, using either Zhipu (free) or Qwen-VL (local). Author: xiaoshihou514. npm package: not listed. Community repository: https://github.com/xiaoshihou514/dsh-vision.",
+      "keywords": [
+        "dsh-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-99",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-vision",
+      "text": "Image understanding for any DSH model: vision, OCR, grounding, and crop tools with domain presets for histopathology, cell biology, anatomy, clinical images and scientific figures. Author: xiaoyuink. npm package: not listed. Community repository: https://github.com/xiaoyuink/dsh-image-vision.",
+      "keywords": [
+        "dsh-image-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-100",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-draw-router",
+      "text": "Unified image generation router for DeepSeek Harness (DSH): auto-discovers image models from any OpenAI-compatible endpoint, provides draw_image and draw_list_sources tools, supports SenseNova, StepFun, Agnes, Qwen, Flux, SD, Imagen and more. Author: xiaozhe7772222. npm package: not listed. Community repository: https://github.com/xiaozhe7772222/dsh-draw-router.",
+      "keywords": [
+        "dsh-draw-router",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-101",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-bridge",
+      "text": "Composer-attached images are transcribed to text by an OpenAI-compatible vision model before reaching text-only DeepSeek models. Author: ximengxiaolan. npm package: not listed. Community repository: https://github.com/ximengxiaolan/dsh-vision-bridge.",
+      "keywords": [
+        "dsh-vision-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-102",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-hub#tool-vision",
+      "text": "Enhanced vision toolbox: 14 pixel-level vision tools (describe, ground, detect, crop, pixel-diff, OCR, long-screenshot OCR, vectorize, colors, cutout, screenshot, present, materialize, html-screenshot) driven by one OpenAI-compatible endpoint, with clean \\[图片: path] bridge markers, content-safety classification and rate-limit auto-retry. Author: xing666173. npm package: not listed. Community repository: https://github.com/xing666173/dsh-vision-hub/tree/main/tool-vision.",
+      "keywords": [
+        "dsh-vision-hub#tool-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-103",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-vision",
+      "text": "Chat image-attachment bridge with a `view_image` tool for any OpenAI-compatible VLM (local Ollama or cloud): pasted/dropped images become `view_image` path markers before reaching text-only DeepSeek models. Author: xsoc1. npm package: not listed. Community repository: https://github.com/xsoc1/dsh-image-vision.",
+      "keywords": [
+        "dsh-image-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-104",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "computer-use-vision",
+      "text": "Windows computer-use capability for DSH: screenshot → vision model → simulated mouse/keyboard with self-evolving knowledge base. Dual-mode plugin tools + skill-only pwsh fallback. Author: xuanyuanluoxue. npm package: dsh-computer-use-vision. Community repository: https://github.com/xuanyuanluoxue/computer-use-vision.",
+      "keywords": [
+        "computer-use-vision",
+        "dsh-computer-use-vision",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-105",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "deepseek-harness-plugins#vision-bridge",
+      "text": "Let text-only models see images: when a picture arrives with a placeholder like \\[image omitted because this model accepts text only], the model calls the vision_describe tool and the plugin forwards the image reference plus the question to a multimodal model, retrying with a fallback model on failure. Configured in the settings page and persisted via the official settings API. Author: Yinxe. npm package: not listed. Community repository: https://github.com/Yinxe/deepseek-harness-plugins/tree/main/plugins/vision-bridge.",
+      "keywords": [
+        "deepseek-harness-plugins#vision-bridge",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-106",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-vision-router",
+      "text": "Free vision for text-only agents: built-in keyless vision chain plus pixel tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots); paste an image to use it. Author: ysr666. npm package: dsh-vision-router. Community repository: https://github.com/ysr666/dsh-vision-router.",
+      "keywords": [
+        "dsh-vision-router",
+        "dsh-vision-router",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-107",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "phone-lens#phone-lens",
+      "text": "Turn a phone camera into a live viewfinder and photo input for your dsh session, over LAN or USB. Author: yxqfg. npm package: phone-lens. Community repository: https://github.com/yxqfg/phone-lens/tree/main/packages/phone-lens.",
+      "keywords": [
+        "phone-lens#phone-lens",
+        "phone-lens",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-108",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-image-router",
+      "text": "Digests the images in a prompt with a vision model before admission, so any model — a text-only one included — can read them without the session ever switching models, and adds a describe_image tool for image paths. Author: zhiwuli0228. npm package: dsh-image-router. Community repository: https://github.com/zhiwuli0228/dsh-image-router.",
+      "keywords": [
+        "dsh-image-router",
+        "dsh-image-router",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "plugin-109",
+      "section": "tac-plugins",
+      "pageTitle": "TAC Harness Plugin Directory",
+      "title": "dsh-agnes-studio",
+      "text": "AI image and video studio as a floating DSH panel, so creation runs alongside the conversation instead of replacing it: text-to-image, image-to-image and multi-image composition at 1K-4K across eight aspect ratios; text-to-video and image-to-video with first-frame control at 4-12 seconds; short-drama mode that imports a script (.txt/.md/.json), breaks it into storyboard shots for preview and batch generation; and a prompt-expert workspace. Zero runtime dependencies. Author: zmm863-commits. npm package: dsh-agnes-studio. Community repository: https://github.com/zmm863-commits/dsh-agnes-studio.",
+      "keywords": [
+        "dsh-agnes-studio",
+        "dsh-agnes-studio",
+        "plugin",
+        "插件"
+      ],
+      "href": "/pages/tac-plugins.html",
+      "sourceFile": "src/data/tac-plugins.json"
+    },
+    {
+      "id": "skill-directory-overview",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Skill Marketplace catalog",
+      "text": "The marketplace lists 40 skills. Categories: Data, Design, Development, Documents, Marketing, Office, Planning, Presentations, Product, QA, Video, Writing. Listed skills: Prisma PostgreSQL Setup; Supabase Postgres Best Practices; Brand Guidelines; Canvas Design; Design Taste Frontend; Frontend Design; UI UX Pro Max; Web Design Guidelines; Code Review; React Composition Patterns; Diagnosing Bugs; MCP Builder; React Best Practices; Skill Creator; Systematic Debugging; Word Documents; PDF; Excel Spreadsheets; Content Strategy; Copywriting; SEO Audit; Document Co-authoring; Conversation Handoff; Internal Comms; Large Excel Analysis; Infographic; Report to HTML; Report Format Discovery; Research Report Structure; Teach Me; Questionnaire Builder; Brainstorming; Writing Plans; PowerPoint; Product Spec; Spec to Tickets; Test-Driven Development; Web App Testing; Remotion Best Practices; Writing Guidelines. Community authors and source repositories are identified on the page.",
+      "keywords": [
+        "skills",
+        "skill",
+        "catalog",
+        "技能",
+        "技能市场"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-prisma-postgres-setup",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Prisma PostgreSQL Setup",
+      "text": "Set up Prisma with PostgreSQL, including project configuration, schema workflow, migrations, and verification. Category: Data. Author: Prisma. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/prisma/skills/tree/main/prisma-postgres-setup.",
+      "keywords": [
+        "Prisma PostgreSQL Setup",
+        "Data",
+        "Prisma",
+        "PostgreSQL",
+        "ORM",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-supabase-postgres-best-practices",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Supabase Postgres Best Practices",
+      "text": "Design and optimize Supabase Postgres schemas, indexes, policies, and production data patterns. Category: Data. Author: Supabase. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/supabase/agent-skills/tree/main/skills/supabase-postgres-best-practices.",
+      "keywords": [
+        "Supabase Postgres Best Practices",
+        "Data",
+        "Postgres",
+        "Database",
+        "Supabase",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-brand-guidelines",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Brand Guidelines",
+      "text": "Apply brand identity consistently across logos, color, typography, voice, and application contexts. Category: Design. Author: Anthropic. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/brand-guidelines.",
+      "keywords": [
+        "Brand Guidelines",
+        "Design",
+        "Branding",
+        "Identity",
+        "Guidelines",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-canvas-design",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Canvas Design",
+      "text": "Design visual canvas artifacts with clear composition, hierarchy, and purposeful visual language. Category: Design. Author: Anthropic. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/canvas-design.",
+      "keywords": [
+        "Canvas Design",
+        "Design",
+        "Visual Design",
+        "Diagrams",
+        "Layout",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-design-taste-frontend",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Design Taste Frontend",
+      "text": "Improve frontend design taste with polished layout, hierarchy, typography, color, and interface judgment. Category: Design. Author: leonxlnx. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/leonxlnx/taste-skill/tree/main/skills/taste-skill.",
+      "keywords": [
+        "Design Taste Frontend",
+        "Design",
+        "Frontend",
+        "Aesthetics",
+        "UI",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-frontend-design",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Frontend Design",
+      "text": "Practical guidance for designing distinctive, production-ready web interfaces and visual systems. Category: Design. Author: Anthropic. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/frontend-design.",
+      "keywords": [
+        "Frontend Design",
+        "Design",
+        "UI",
+        "Web",
+        "Design Systems",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-ui-ux-pro-max",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "UI UX Pro Max",
+      "text": "Comprehensive UI/UX design intelligence with patterns, palettes, typography, and production checks. Category: Design. Author: NextLevelBuilder. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max.",
+      "keywords": [
+        "UI UX Pro Max",
+        "Design",
+        "UI",
+        "UX",
+        "Design Systems",
+        "Tailwind",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-web-design-guidelines",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Web Design Guidelines",
+      "text": "UI review rules covering accessibility, forms, focus states, performance, typography, and interaction. Category: Design. Author: Vercel Labs. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines.",
+      "keywords": [
+        "Web Design Guidelines",
+        "Design",
+        "Accessibility",
+        "UX",
+        "Web",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-code-review-mattpocock",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Code Review",
+      "text": "Review changes for correctness, type safety, maintainability, and concrete improvement opportunities. Category: Development. Author: Matt Pocock. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/code-review.",
+      "keywords": [
+        "Code Review",
+        "Development",
+        "Code Review",
+        "TypeScript",
+        "Quality",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-composition-patterns",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "React Composition Patterns",
+      "text": "Patterns for scalable React component APIs, compound components, state lifting, and avoiding boolean prop sprawl. Category: Development. Author: Vercel Labs. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/vercel-labs/agent-skills/tree/main/skills/composition-patterns.",
+      "keywords": [
+        "React Composition Patterns",
+        "Development",
+        "React",
+        "Architecture",
+        "Components",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-diagnosing-bugs",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Diagnosing Bugs",
+      "text": "Diagnose defects methodically by reproducing behavior, isolating causes, and validating fixes. Category: Development. Author: Matt Pocock. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs.",
+      "keywords": [
+        "Diagnosing Bugs",
+        "Development",
+        "Debugging",
+        "Investigation",
+        "Bugs",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-mcp-builder",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "MCP Builder",
+      "text": "Design, scaffold, and validate Model Context Protocol servers that connect agents to external systems. Category: Development. Author: Anthropic. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/mcp-builder.",
+      "keywords": [
+        "MCP Builder",
+        "Development",
+        "MCP",
+        "Integrations",
+        "Tools",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-react-best-practices",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "React Best Practices",
+      "text": "Prioritized React and Next.js rules for performance, rendering, data fetching, and maintainability. Category: Development. Author: Vercel Labs. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices.",
+      "keywords": [
+        "React Best Practices",
+        "Development",
+        "React",
+        "Next.js",
+        "Performance",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-skill-creator",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Skill Creator",
+      "text": "Guidance and workflows for creating, testing, and refining reusable Agent Skills. Category: Development. Author: Anthropic. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/skill-creator.",
+      "keywords": [
+        "Skill Creator",
+        "Development",
+        "Authoring",
+        "Testing",
+        "Agent Skills",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-systematic-debugging",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Systematic Debugging",
+      "text": "Four-phase root-cause debugging process with evidence gathering and defense-in-depth checks. Category: Development. Author: obra / Prime Radiant. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/obra/superpowers/tree/main/skills/systematic-debugging.",
+      "keywords": [
+        "Systematic Debugging",
+        "Development",
+        "Debugging",
+        "Root Cause",
+        "Reliability",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-docx",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Word Documents",
+      "text": "Create and edit Microsoft Word documents with structured formatting, revisions, and reusable templates. Category: Documents. Author: Anthropic. License: Source-available; see repository. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/docx.",
+      "keywords": [
+        "Word Documents",
+        "Documents",
+        "Word",
+        "Documents",
+        "Editing",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-pdf",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "PDF",
+      "text": "Create, inspect, and edit PDF documents through structured document workflows. Category: Documents. Author: Anthropic. License: Source-available; see repository. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/pdf.",
+      "keywords": [
+        "PDF",
+        "Documents",
+        "PDF",
+        "Documents",
+        "Reporting",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-xlsx",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Excel Spreadsheets",
+      "text": "Create and edit Excel workbooks, formulas, formatting, charts, and multi-sheet analyses. Category: Documents. Author: Anthropic. License: Source-available; see repository. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/xlsx.",
+      "keywords": [
+        "Excel Spreadsheets",
+        "Documents",
+        "Excel",
+        "Spreadsheets",
+        "Data",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-content-strategy",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Content Strategy",
+      "text": "Plan content around audience intent, topics, channels, publishing cadence, and measurable business goals. Category: Marketing. Author: Corey Haines. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy.",
+      "keywords": [
+        "Content Strategy",
+        "Marketing",
+        "Content",
+        "Planning",
+        "SEO",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-copywriting",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Copywriting",
+      "text": "Write clear, persuasive marketing copy for landing pages, offers, emails, and conversion-focused journeys. Category: Marketing. Author: Corey Haines. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/coreyhaines31/marketingskills/tree/main/skills/copywriting.",
+      "keywords": [
+        "Copywriting",
+        "Marketing",
+        "Copy",
+        "Messaging",
+        "Conversion",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-seo-audit",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "SEO Audit",
+      "text": "Audit pages and content for search visibility, technical SEO, metadata, structure, and ranking opportunities. Category: Marketing. Author: Corey Haines. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit.",
+      "keywords": [
+        "SEO Audit",
+        "Marketing",
+        "SEO",
+        "Growth",
+        "Audit",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-doc-coauthoring",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Document Co-authoring",
+      "text": "Collaboratively co-author and revise long-form documents with structure, voice, and reader-first editing. Category: Office. Author: anthropics. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring.",
+      "keywords": [
+        "Document Co-authoring",
+        "Office",
+        "Documents",
+        "Writing",
+        "Editing",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-handoff",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Conversation Handoff",
+      "text": "Compact the current conversation into a handoff document so a fresh agent or teammate can continue the work. Category: Office. Author: mattpocock. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff.",
+      "keywords": [
+        "Conversation Handoff",
+        "Office",
+        "Handoff",
+        "Productivity",
+        "Continuity",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-internal-comms",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Internal Comms",
+      "text": "Plan and draft clear internal communications such as announcements, updates, and org-wide messages with the right tone and structure. Category: Office. Author: anthropics. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/internal-comms.",
+      "keywords": [
+        "Internal Comms",
+        "Office",
+        "Communication",
+        "Writing",
+        "Internal",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-sn-da-large-file-analysis",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Large Excel Analysis",
+      "text": "High-performance patterns for analyzing 10k+ row Excel datasets with streaming reads, Parquet acceleration, chunking, and memory-safe writes. Category: Office. Author: OpenSenseNova. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/OpenSenseNova/SenseNova-Skills/tree/main/skills/sn-da-large-file-analysis.",
+      "keywords": [
+        "Large Excel Analysis",
+        "Office",
+        "Excel",
+        "Data",
+        "Performance",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-sn-infographic",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Infographic",
+      "text": "Generate professional infographics with recommended layouts and visual styles for publication-ready visual summaries. Category: Office. Author: OpenSenseNova. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/OpenSenseNova/SenseNova-Skills/tree/main/skills/sn-infographic.",
+      "keywords": [
+        "Infographic",
+        "Office",
+        "Infographic",
+        "Visual",
+        "Design",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-sn-md-to-html-report",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Report to HTML",
+      "text": "Transform Markdown reports, memos, white papers, and weekly summaries into self-contained, well-designed HTML feature pages. Category: Office. Author: OpenSenseNova. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/OpenSenseNova/SenseNova-Skills/tree/main/skills/sn-md-to-html-report.",
+      "keywords": [
+        "Report to HTML",
+        "Office",
+        "Reports",
+        "HTML",
+        "Publishing",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-sn-report-format-discovery",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Report Format Discovery",
+      "text": "Recommend the best final deliverable format for a research request when the output form cannot be inferred directly. Category: Office. Author: OpenSenseNova. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/OpenSenseNova/SenseNova-Skills/tree/main/skills/sn-report-format-discovery.",
+      "keywords": [
+        "Report Format Discovery",
+        "Office",
+        "Reports",
+        "Planning",
+        "Format",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-sn-research-report",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Research Report Structure",
+      "text": "Choose the right structure for research and decision reports based on the reader cognitive task and domain conventions. Category: Office. Author: OpenSenseNova. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/OpenSenseNova/SenseNova-Skills/tree/main/skills/sn-research-report.",
+      "keywords": [
+        "Research Report Structure",
+        "Office",
+        "Reports",
+        "Research",
+        "Structure",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-teach",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Teach Me",
+      "text": "Teach the user a new skill or concept within the current workspace with a tailored explanation. Category: Office. Author: mattpocock. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/teach.",
+      "keywords": [
+        "Teach Me",
+        "Office",
+        "Learning",
+        "Productivity",
+        "Explanation",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-to-questionnaire",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Questionnaire Builder",
+      "text": "Turn a decision you cannot fully answer into a structured questionnaire for someone else to fill in. Category: Office. Author: mattpocock. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/to-questionnaire.",
+      "keywords": [
+        "Questionnaire Builder",
+        "Office",
+        "Questionnaire",
+        "Productivity",
+        "Clarification",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-brainstorming",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Brainstorming",
+      "text": "Socratic brainstorming workflow that turns rough ideas into clear, validated design direction. Category: Planning. Author: obra / Prime Radiant. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/obra/superpowers/tree/main/skills/brainstorming.",
+      "keywords": [
+        "Brainstorming",
+        "Planning",
+        "Ideation",
+        "Discovery",
+        "Specs",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-writing-plans",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Writing Plans",
+      "text": "Turn approved designs into detailed implementation plans with exact files, tasks, and verification steps. Category: Planning. Author: obra / Prime Radiant. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/obra/superpowers/tree/main/skills/writing-plans.",
+      "keywords": [
+        "Writing Plans",
+        "Planning",
+        "Planning",
+        "Execution",
+        "Specs",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-pptx",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "PowerPoint",
+      "text": "Plan and produce polished PowerPoint presentations with editable slides and structured layouts. Category: Presentations. Author: Anthropic. License: Source-available; see repository. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/pptx.",
+      "keywords": [
+        "PowerPoint",
+        "Presentations",
+        "Slides",
+        "PowerPoint",
+        "Presentations",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-to-spec",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Product Spec",
+      "text": "Convert product intent into a clear specification with scope, requirements, and acceptance boundaries. Category: Product. Author: Matt Pocock. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec.",
+      "keywords": [
+        "Product Spec",
+        "Product",
+        "Specs",
+        "Product",
+        "Planning",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-to-tickets",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Spec to Tickets",
+      "text": "Break approved specifications into actionable engineering tickets with scope, dependencies, and acceptance criteria. Category: Product. Author: Matt Pocock. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets.",
+      "keywords": [
+        "Spec to Tickets",
+        "Product",
+        "Tickets",
+        "Planning",
+        "Delivery",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-test-driven-development",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Test-Driven Development",
+      "text": "Enforce a RED-GREEN-REFACTOR workflow and prevent code from being written before a failing test exists. Category: QA. Author: obra / Prime Radiant. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/obra/superpowers/tree/main/skills/test-driven-development.",
+      "keywords": [
+        "Test-Driven Development",
+        "QA",
+        "TDD",
+        "Testing",
+        "Refactoring",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-webapp-testing",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Web App Testing",
+      "text": "Exercise web applications through realistic browser interactions and verify behavior before completion. Category: QA. Author: Anthropic. License: Apache-2.0. TAC-hosted ZIP download available. Source: https://github.com/anthropics/skills/tree/main/skills/webapp-testing.",
+      "keywords": [
+        "Web App Testing",
+        "QA",
+        "Testing",
+        "Browser",
+        "QA",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-remotion-best-practices",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Remotion Best Practices",
+      "text": "Create programmatic videos in React using Remotion patterns for timing, composition, assets, and rendering. Category: Video. Author: Remotion. License: See source repository. TAC-hosted ZIP download available. Source: https://github.com/remotion-dev/skills/tree/main/skills/remotion-best-practices.",
+      "keywords": [
+        "Remotion Best Practices",
+        "Video",
+        "Remotion",
+        "Video",
+        "React",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "skill-writing-guidelines",
+      "section": "skills",
+      "pageTitle": "TAC Skill Marketplace",
+      "title": "Writing Guidelines",
+      "text": "Audit documentation and prose for voice, structure, clarity, code samples, typography, and reader-first writing. Category: Writing. Author: Vercel Labs. License: MIT. TAC-hosted ZIP download available. Source: https://github.com/vercel-labs/agent-skills/tree/main/skills/writing-guidelines.",
+      "keywords": [
+        "Writing Guidelines",
+        "Writing",
+        "Docs",
+        "Style",
+        "Copy",
+        "skill",
+        "技能"
+      ],
+      "href": "/pages/skills.html",
+      "sourceFile": "public/skill-artifacts/MANIFEST.json"
+    },
+    {
+      "id": "tacwork-release",
+      "section": "tacwork-download",
+      "pageTitle": "Download TACWork",
+      "title": "TACWork release and download availability",
+      "text": "Product: TACWork. Version: 0.2.1-rc.1. Platform: Windows x64. File: tacwork-win-x64-0.2.1-rc.1.exe. Size: 171 MB. Availability: Internal preview; an access key is required. Public download is not enabled.",
+      "keywords": [
+        "TACWork",
+        "download",
+        "installer",
+        "下载",
+        "安装",
+        "桌面应用",
+        "版本"
+      ],
+      "href": "/pages/tacwork-download.html",
+      "sourceFile": "src/data/tac-home-content.js"
+    },
+    {
+      "id": "assistant-asset-inventory",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Mascot views and expressions",
+      "text": "Views: TAC AI assistant robot front view; TAC AI assistant robot side view; TAC AI assistant robot back view; TAC AI assistant robot left view; TAC AI assistant robot right view; TAC AI assistant robot three-quarter view. Expressions: 开心 / Happy; 眨眼 / Wink; 思考 / Thinking; 惊讶 / Surprised; 睡眠 / Sleep; 疑惑 / Question. Canvas: 1024x1024. Transparency: real transparent RGBA. Supported display sizes: 64, 48, 32, 24px.",
+      "keywords": [
+        "assistant",
+        "mascot",
+        "expression",
+        "expressions",
+        "素材",
+        "机器人",
+        "表情",
+        "视角"
+      ],
+      "href": "/pages/tac-assistant-assets.html#expressions-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-asset-manifest.json"
+    },
+    {
+      "id": "assistant-motion-idle",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: idle",
+      "text": "State: idle. Trigger: assistant is closed and the page is visible. Duration: 2600ms. Playback: loop. Next state: idle. Motion: float-and-breathe. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "idle"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-greeting",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: greeting",
+      "text": "State: greeting. Trigger: assistant opens. Duration: 600ms. Playback: once. Next state: idle. Motion: pop-and-settle. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "greeting"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-thinking",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: thinking",
+      "text": "State: thinking. Trigger: question submitted. Duration: 2400ms. Playback: loop. Next state: typing. Motion: scan-and-pulse. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "thinking"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-typing",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: typing",
+      "text": "State: typing. Trigger: answer generation is active. Duration: 1100ms. Playback: loop. Next state: complete|no-answer|error-offline. Motion: thinking-pulse. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "typing"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-complete",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: complete",
+      "text": "State: complete. Trigger: grounded answer is available. Duration: 900ms. Playback: once. Next state: idle. Motion: success-bounce. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "complete"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-no-answer",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: no-answer",
+      "text": "State: no-answer. Trigger: no supported TAC knowledge base evidence is found. Duration: 700ms. Playback: once. Next state: sales. Motion: question-nudge. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "no-answer"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-sales",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: sales",
+      "text": "State: sales. Trigger: visitor chooses contact sales or high-intent handoff is detected. Duration: 700ms. Playback: once. Next state: idle. Motion: handoff-point. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "sales"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    },
+    {
+      "id": "assistant-motion-error-offline",
+      "section": "tac-assistant-assets",
+      "pageTitle": "TAC AI Assistant · Asset Lab",
+      "title": "Assistant animation: error-offline",
+      "text": "State: error-offline. Trigger: network or assistant request fails. Duration: 4200ms. Playback: loop. Next state: thinking. Motion: low-power-pulse. Reduced motion uses a static image and short fade; loops are disabled.",
+      "keywords": [
+        "assistant",
+        "animation",
+        "motion",
+        "动画",
+        "机器人",
+        "error-offline"
+      ],
+      "href": "/pages/tac-assistant-assets.html#rules-title",
+      "sourceFile": "public/assets/tac/assistant/assistant-motion-rules.json"
+    }
+  ]
+}

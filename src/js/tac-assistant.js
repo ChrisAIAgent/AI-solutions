@@ -15,12 +15,6 @@ const stateLabels = {
 
 const stateOverlays = { idle: '', greeting: '✦', thinking: '✧', typing: '•••', complete: '✓', 'no-answer': '×', sales: '↗', 'error-offline': '⌁' };
 const stateDurations = { idle: '2600ms / LOOP', greeting: '600ms / ONCE', thinking: '2400ms / LOOP', typing: '1100ms / LOOP', complete: '900ms / ONCE', 'no-answer': '700ms / ONCE', sales: '700ms / ONCE', 'error-offline': '4200ms / LOOP' };
-const quickQuestions = [
-  { question: 'What can TAC do?', label: 'What can TAC do?' },
-  { question: 'Which industries does TAC support?', label: 'Industry solutions' },
-  { question: 'What is the Agent Platform?', label: 'Agent Platform' },
-  { question: 'Contact sales', label: 'Contact sales' }
-];
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
 
@@ -37,7 +31,6 @@ export function mountTacAssistant() {
       </header>
       <div class="tac-assistant-state-readout"><span class="tac-assistant-state-label">Idle</span><small class="tac-assistant-duration">2600ms / LOOP</small></div>
       <div class="tac-assistant-messages" aria-live="polite"></div>
-      <div class="tac-assistant-quick" aria-label="Common questions">${quickQuestions.map(({ question, label }) => `<button type="button" data-question="${escapeHtml(question)}">${escapeHtml(label)}</button>`).join('')}</div>
       <form class="tac-assistant-form">
         <label class="tac-assistant-input-label"><span class="visually-hidden">Ask TAC AI Assistant a question</span><input name="question" autocomplete="off" placeholder="Ask about TAC..." maxlength="240"></label>
         <button type="submit" aria-label="Send question">↗</button>
@@ -74,7 +67,7 @@ export function mountTacAssistant() {
   const refreshControls = () => {
     const pending = state === 'thinking' || state === 'typing';
     const seconds = Math.max(0, Math.ceil((retryAvailableAt - Date.now()) / 1000));
-    root.querySelectorAll('[data-question], [data-assistant-retry], .tac-assistant-form > button').forEach((button) => {
+    root.querySelectorAll('[data-assistant-retry], .tac-assistant-form > button').forEach((button) => {
       button.disabled = pending || seconds > 0;
       if (button.hasAttribute('data-assistant-retry')) button.textContent = seconds > 0 ? `Retry in ${seconds}s` : 'Retry';
     });
@@ -203,7 +196,6 @@ export function mountTacAssistant() {
   root.querySelector('[data-assistant-open]').addEventListener('click', open);
   root.querySelector('[data-assistant-close]').addEventListener('click', close);
   root.querySelector('.tac-assistant-form').addEventListener('submit', (event) => { event.preventDefault(); submit(input.value); });
-  root.querySelectorAll('[data-question]').forEach((button) => button.addEventListener('click', () => submit(button.dataset.question)));
   root.querySelector('[data-assistant-error]')?.addEventListener('click', () => {
     clearTimers();
     requestSequence += 1;

@@ -4,6 +4,40 @@ import { requestChatCompletion } from '../server/tac-assistant-provider.js';
 import { fetchAssistantAnswer, failurePresentation } from '../src/js/tac-assistant-client.js';
 import { CLIENT_TIMEOUT_MS, PROVIDER_TIMEOUT_MS } from '../src/data/tac-assistant-runtime.js';
 import worker from '../worker.js';
+import { content } from '../src/data/tac-home-content.js';
+import { buildHomepageKnowledge, retrieveRelevantHomepageKnowledge } from '../src/data/tac-assistant-knowledge.js';
+
+test('industry overview questions supply every actual sector to the model in both languages', async () => {
+  const originalFetch = globalThis.fetch;
+  try {
+    for (const question of ['Which industries does TAC support?', 'TAC有哪些行业方案？']) {
+      let called = false;
+      globalThis.fetch = async (_, options) => {
+        called = true;
+        const payload = JSON.parse(options.body);
+        const context = payload.messages.map((message) => message.content).join('\n');
+        for (const industry of content.industries) assert.ok(context.includes(industry.label), industry.label);
+        return Response.json({ choices: [{ message: { content: 'Grounded sector answer' } }] });
+      };
+      const response = await worker.fetch(new Request('https://example.com/api/assistant/chat', {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ question })
+      }), { ASSISTANT_API_KEY: 'test-key' });
+      assert.equal(response.status, 200);
+      assert.equal((await response.json()).state, 'complete');
+      assert.ok(called);
+    }
+  } finally { globalThis.fetch = originalFetch; }
+});
+
+test('specific industry questions retain sector details and explicit sector labels', () => {
+  const knowledge = buildHomepageKnowledge(content);
+  for (const question of ['Banking industry solutions', '银行行业方案']) {
+    const matches = retrieveRelevantHomepageKnowledge(question, knowledge);
+    assert.equal(matches[0].item.id, 'industry-banking');
+    assert.ok(matches[0].item.title.includes('BANKING'));
+    assert.ok(matches[0].item.text.includes('Risk operations'));
+  }
+});
 
 test('provider uses the configured base URL and preserves the custom port', async () => {
   await requestChatCompletion({ model: 'deepseek-v4-flash' }, 'test-key', {

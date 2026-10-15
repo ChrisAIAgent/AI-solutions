@@ -58,8 +58,11 @@ export function buildHomepageKnowledge(content) {
     entry('contact', 'contact', 'Contact TAC', 'Tell TAC what work you want to make clearer, faster, or easier to govern. Start a conversation with TAC.', ['联系', '销售', '演示', '合作', 'contact', 'sales', 'demo'], '#contact')
   ];
 
+  items.push(entry('industries-overview', 'industries', 'Industries supported by TAC',
+    `TAC presents solutions for these sectors: ${content.industries.map((item) => item.label).join('; ')}.`,
+    ['行业', '行业方案', 'industries', 'industry', 'sectors', 'verticals'], '#industries'));
   content.industries.forEach((item) => {
-    items.push(entry(`industry-${item.id}`, 'industries', item.title, `${item.text} Relevant capabilities: ${item.logos.join(', ')}.`, ['行业', '方案', 'industry', 'industries', 'solution', 'solutions', item.label, ...(industryAliases[item.id] || [])], '#industries'));
+    items.push(entry(`industry-${item.id}`, 'industries', `${item.label}: ${item.title}`, `${item.text} Relevant capabilities: ${item.logos.join(', ')}.`, ['行业', '方案', 'industry', 'industries', 'solution', 'solutions', item.label, ...(industryAliases[item.id] || [])], '#industries'));
   });
   content.applications.forEach((item) => {
     items.push(entry(`application-${item.accent.toLowerCase()}`, 'applications', item.title, item.text, [item.accent, ...(applicationAliases[item.accent] || []), 'AI application'], '#applications'));
@@ -120,6 +123,13 @@ export function retrieveHomepageKnowledge(query, knowledge) {
 
 export function retrieveRelevantHomepageKnowledge(query, knowledge) {
   const normalized = normalize(query);
+  const industryIntent = /industry|industries|sector|vertical|行业/.test(normalized);
+  const specificIndustry = Object.values(industryAliases).flat().some((alias) =>
+    /[\u3400-\u9fff]/.test(alias) ? normalized.includes(alias) : terms(normalized).includes(alias));
+  if (industryIntent && !specificIndustry) {
+    const overview = knowledge.find((item) => item.id === 'industries-overview');
+    if (overview) return [{ item: overview, score: 20 }, ...retrieveHomepageKnowledge(query, knowledge.filter((item) => item.section === 'industries' && item.id !== overview.id)).slice(0, 2)];
+  }
   const intentSections = /industry|industries|sector|vertical|行业|行业方案/.test(normalized)
     ? ['industries']
     : /what can tac|what does tac do|capabilities|overview|介绍|能做什么|能力/.test(normalized)

@@ -49,7 +49,7 @@
       "loop": false,
       "durationMs": 700,
       "holdMs": 3600,
-      "trigger": "no supported homepage evidence is found",
+      "trigger": "no supported TAC knowledge base evidence is found",
       "next": "sales",
       "motion": "question-nudge"
     },

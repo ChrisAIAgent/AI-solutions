@@ -2,6 +2,9 @@ name = "aisolutions"
 compatibility_date = "2025-04-01"
 main = "worker.js"
 
+[build]
+command = "node scripts/build-assistant-index.js"
+
 # Route API requests through the server-side Worker; static pages remain asset-served.
 [assets]
 directory = "dist"

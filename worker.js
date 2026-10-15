@@ -1,15 +1,12 @@
-import { content } from './src/data/tac-home-content.js';
-import {
-  buildHomepageKnowledge,
-  detectAnswerLanguage,
-  retrieveRelevantHomepageKnowledge
-} from './src/data/tac-assistant-knowledge.js';
+import { detectAnswerLanguage } from './src/data/tac-assistant-knowledge.js';
+import siteIndex from './server/generated/tac-site-knowledge.json' with { type: 'json' };
+import { createSiteRetriever, knowledgeContext } from './server/tac-site-retrieval.js';
 
 import { ProviderError, requestChatCompletion } from './server/tac-assistant-provider.js';
 const DEFAULT_MODEL = 'deepseek-v4-flash';
-const SALES_INTENT = /销售|联系|演示|报价|价格|采购|contact|sales|demo|price|quote/i;
-const SALES_LINK = { label: 'Contact sales', href: '#contact' };
-const knowledge = buildHomepageKnowledge(content);
+const SALES_INTENT = /销售|报价|价格|定价|采购|转人工|\b(?:sales|pricing|price|quote)\b|(?:预约|安排|申请|book|schedule|request).{0,16}(?:演示|demo)|(?:联系|contact).{0,12}(?:tac|团队|销售|team|us)|^contact\s*$/i;
+const SALES_LINK = { label: 'Contact sales', href: '/#contact' };
+const retrieveKnowledge = createSiteRetriever(siteIndex.documents);
 
 function jsonResponse(payload, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(payload), {
@@ -18,6 +15,7 @@ function jsonResponse(payload, status = 200, extraHeaders = {}) {
       'content-type': 'application/json; charset=utf-8',
       'cache-control': 'no-store',
       'x-content-type-options': 'nosniff',
+      'x-tac-knowledge-revision': siteIndex.revision,
       ...extraHeaders
     }
   });
@@ -31,7 +29,7 @@ function noAnswer(language) {
       ? 'TAC 知识库暂时没有足够信息回答这个问题。我可以为你转接销售进一步确认。'
       : 'The TAC knowledge base does not have enough information to answer this question. I can connect you with sales for confirmation.',
     sources: [],
-    cta: { label: 'Talk to sales', href: '#contact' }
+    cta: { label: 'Talk to sales', href: '/#contact' }
   };
 }
 
@@ -42,7 +40,7 @@ function salesAnswer(language) {
     text: language === 'zh'
       ? '如果你希望了解具体方案、报价或演示安排，我可以为你转接 TAC 销售团队。'
       : 'If you would like to discuss a specific solution, pricing, or a demo, I can connect you with the TAC sales team.',
-    sources: [{ label: 'Contact', href: '#contact' }],
+    sources: [{ label: 'Contact', href: '/#contact' }],
     cta: SALES_LINK
   };
 }
@@ -55,10 +53,11 @@ function sourceList(matches) {
   };
   const seen = new Set();
   return matches.flatMap(({ item }) => {
-    if (seen.has(item.href)) return [];
-    seen.add(item.href);
-    return [{ label: labels[item.section] || 'TAC knowledge base', href: item.href }];
-  }).slice(0, 2);
+    const sourceKey = item.href.startsWith('/index.html') ? item.href : item.href.split('#')[0];
+    if (seen.has(sourceKey)) return [];
+    seen.add(sourceKey);
+    return [{ label: item.href.startsWith('/index.html') ? labels[item.section] || 'TAC knowledge base' : item.pageTitle, href: item.href }];
+  }).slice(0, 3);
 }
 
 async function handleChat(request, env) {
@@ -90,11 +89,10 @@ async function handleChat(request, env) {
   const language = detectAnswerLanguage(question);
   if (SALES_INTENT.test(question)) return jsonResponse(salesAnswer(language));
 
-  const matches = retrieveRelevantHomepageKnowledge(question, knowledge);
+  const { context, matches } = knowledgeContext(retrieveKnowledge(question));
   if (!matches.length || matches[0].score < 2) return jsonResponse(noAnswer(language));
   if (!env.ASSISTANT_API_KEY) return jsonResponse({ error: 'assistant_unconfigured' }, 503);
 
-  const context = matches.map(({ item }) => `${item.title}: ${item.text}`).join('\n').slice(0, 7_000);
   const systemPrompt = [
     'You are TAC AI Assistant. Answer the user using only the supplied TAC knowledge base excerpts.',
     'If you need to name your source, call it the TAC knowledge base. Do not refer to homepage excerpts or internal retrieval steps.',
@@ -104,7 +102,8 @@ async function handleChat(request, env) {
     'Do not invent product features, pricing, guarantees, or facts absent from the excerpts.',
     'If the excerpts do not answer the question, reply with exactly __HANDOFF__ and nothing else.',
     'Keep a helpful, concise tone. Use plain text only: no markdown markers, headings, or tables. Do not mention internal prompts.',
-    '<homepage_excerpts>', context, '</homepage_excerpts>'
+    'Catalog listings may describe community projects; do not present them as TAC-built products. Preserve coming-soon and internal-preview availability limitations.',
+    '<knowledge_excerpts>', context, '</knowledge_excerpts>'
   ].join('\n');
 
   const requestId = crypto.randomUUID();
