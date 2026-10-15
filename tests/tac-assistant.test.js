@@ -1,13 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { requestAgnesCompletion } from '../server/tac-assistant-provider.js';
+import { requestChatCompletion } from '../server/tac-assistant-provider.js';
 import { fetchAssistantAnswer, failurePresentation } from '../src/js/tac-assistant-client.js';
 import { CLIENT_TIMEOUT_MS, PROVIDER_TIMEOUT_MS } from '../src/data/tac-assistant-runtime.js';
 import worker from '../worker.js';
 
+test('provider uses the configured base URL and preserves the custom port', async () => {
+  await requestChatCompletion({ model: 'deepseek-v4-flash' }, 'test-key', {
+    baseUrl: 'http://43.172.73.230:3002/v1/',
+    fetchImpl: async (url, options) => {
+      assert.equal(url, 'http://43.172.73.230:3002/v1/chat/completions');
+      assert.equal(options.headers.authorization, 'Bearer test-key');
+      assert.equal(JSON.parse(options.body).model, 'deepseek-v4-flash');
+      return Response.json({ choices: [{ message: { content: 'Answer' } }] });
+    }
+  });
+});
+
 test('temporary provider rejection retries once and returns the real answer', async () => {
   let calls = 0;
-  const result = await requestAgnesCompletion({}, 'test-key', {
+  const result = await requestChatCompletion({}, 'test-key', {
     retryBaseMs: 1, log() {},
     fetchImpl: async () => ++calls === 1
       ? Response.json({ error: { code: 'rate_limit_exceeded' } }, { status: 429 })
@@ -20,7 +32,7 @@ test('temporary provider rejection retries once and returns the real answer', as
 test('authentication errors are not retried and do not expose upstream bodies', async () => {
   let calls = 0;
   const logs = [];
-  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+  await assert.rejects(requestChatCompletion({}, 'test-key', {
     log: (line) => logs.push(line), fetchImpl: async () => {
       calls += 1;
       return Response.json({ error: { code: 'invalid_api_key', message: 'test-key' } }, { status: 401 });
@@ -32,7 +44,7 @@ test('authentication errors are not retried and do not expose upstream bodies', 
 
 test('long Retry-After is honored by declining an immediate retry', async () => {
   let calls = 0;
-  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+  await assert.rejects(requestChatCompletion({}, 'test-key', {
     log() {}, fetchImpl: async () => {
       calls += 1;
       return Response.json({}, { status: 429, headers: { 'retry-after': '60' } });
@@ -42,7 +54,7 @@ test('long Retry-After is honored by declining an immediate retry', async () => 
 });
 
 test('stalled upstream is canceled within the provider budget', async () => {
-  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+  await assert.rejects(requestChatCompletion({}, 'test-key', {
     timeoutMs: 20, fetchImpl: (_, { signal }) => new Promise((resolve, reject) => {
       signal.addEventListener('abort', () => reject(new DOMException('Aborted', 'AbortError')), { once: true });
     })
@@ -66,7 +78,7 @@ test('malformed success replies do not render an empty or undefined answer', asy
 
 test('persistent throttling is bounded to two attempts', async () => {
   let calls = 0;
-  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+  await assert.rejects(requestChatCompletion({}, 'test-key', {
     log() {}, retryBaseMs: 1, fetchImpl: async () => {
       calls += 1;
       return Response.json({}, { status: 429 });
@@ -77,7 +89,7 @@ test('persistent throttling is bounded to two attempts', async () => {
 
 test('non-JSON gateway throttling is identified without logging response bodies', async () => {
   const logs = [];
-  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+  await assert.rejects(requestChatCompletion({}, 'test-key', {
     log: (line) => logs.push(JSON.parse(line)),
     fetchImpl: async () => new Response('error code: 1015', {
       status: 429, headers: { 'retry-after': '60', server: 'cloudflare', 'content-type': 'text/plain' }
@@ -90,7 +102,7 @@ test('non-JSON gateway throttling is identified without logging response bodies'
 
 test('Cloudflare 1015 is never immediately retried even without Retry-After', async () => {
   let calls = 0;
-  await assert.rejects(requestAgnesCompletion({}, 'test-key', {
+  await assert.rejects(requestChatCompletion({}, 'test-key', {
     log() {}, retryBaseMs: 1, fetchImpl: async () => {
       calls += 1;
       return new Response('error code: 1015', { status: 429 });
@@ -109,11 +121,11 @@ test('Worker distinguishes empty model output from a genuine knowledge handoff',
   try {
     console.error = () => {};
     globalThis.fetch = async () => Response.json({ choices: [{ message: { content: '' } }] });
-    const empty = await worker.fetch(request(), { AGNES_API_KEY: 'test-key' });
+    const empty = await worker.fetch(request(), { ASSISTANT_API_KEY: 'test-key' });
     assert.equal(empty.status, 502);
     assert.equal((await empty.json()).error, 'invalid_provider_response');
     globalThis.fetch = async () => Response.json({ choices: [{ message: { content: '__HANDOFF__' } }] });
-    const handoff = await worker.fetch(request(), { AGNES_API_KEY: 'test-key' });
+    const handoff = await worker.fetch(request(), { ASSISTANT_API_KEY: 'test-key' });
     assert.equal(handoff.status, 200);
     assert.equal((await handoff.json()).state, 'no-answer');
   } finally {

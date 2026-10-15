@@ -8,6 +8,10 @@ directory = "dist"
 binding = "ASSETS"
 run_worker_first = ["/api/*"]
 
+[vars]
+ASSISTANT_BASE_URL = "https://freellmapi.worldtoolx.com/v1"
+ASSISTANT_MODEL = "deepseek-v4-flash"
+
 # Local development reads this from process.env or an ignored .dev.vars file.
 [secrets]
-required = ["AGNES_API_KEY"]
+required = ["ASSISTANT_API_KEY"]

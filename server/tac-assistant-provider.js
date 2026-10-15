@@ -1,6 +1,6 @@
 import { PROVIDER_TIMEOUT_MS } from '../src/data/tac-assistant-runtime.js';
 
-const CHAT_ENDPOINT = 'https://apihub.agnes-ai.com/v1/chat/completions';
+const DEFAULT_BASE_URL = 'https://freellmapi.worldtoolx.com/v1';
 
 export class ProviderError extends Error {
   constructor(code, status, retryAfterSeconds = 0) {
@@ -19,16 +19,16 @@ function retryDelay(value) {
     : Math.max(1000, Date.parse(value) - Date.now() || 1500);
 }
 
-export async function requestAgnesCompletion(payload, apiKey, {
+export async function requestChatCompletion(payload, apiKey, {
   fetchImpl = fetch, timeoutMs = PROVIDER_TIMEOUT_MS, log = console.warn,
-  requestId = '', retryBaseMs = 1500
+  requestId = '', retryBaseMs = 1500, baseUrl = DEFAULT_BASE_URL
 } = {}) {
   const controller = new AbortController();
   const deadline = Date.now() + timeoutMs;
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     for (let attempt = 1; attempt <= 2; attempt += 1) {
-      const response = await fetchImpl(CHAT_ENDPOINT, {
+      const response = await fetchImpl(`${baseUrl.replace(/\/+$/, '')}/chat/completions`, {
         method: 'POST',
         headers: { authorization: `Bearer ${apiKey}`, 'content-type': 'application/json' },
         body: JSON.stringify(payload), signal: controller.signal

@@ -32,7 +32,7 @@ export function mountTacAssistant() {
   root.innerHTML = `
     <section class="tac-assistant-panel" aria-label="TAC AI Assistant" aria-hidden="true">
       <header class="tac-assistant-panel-header">
-        <div><span class="tac-assistant-status-dot"></span><strong>TAC AI Assistant</strong><small>AGNES AI · LIVE API</small></div>
+        <div><span class="tac-assistant-status-dot"></span><strong>TAC AI Assistant</strong><small>HOMEPAGE AI ASSISTANT</small></div>
         <button type="button" class="tac-assistant-close" data-assistant-close aria-label="Close assistant">×</button>
       </header>
       <div class="tac-assistant-state-readout"><span class="tac-assistant-state-label">Idle</span><small class="tac-assistant-duration">2600ms / LOOP</small></div>
