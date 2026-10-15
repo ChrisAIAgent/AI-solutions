@@ -25,10 +25,12 @@ Run `npm run knowledge:build` to refresh the index manually during development. 
 
 `server/tac-site-retrieval.js` ranks passages, expands common Chinese/English terms, and keeps product-specific questions within the named product pages. General industry questions include the complete sector list. Specific catalog queries use individual entries; broad catalog questions include the catalog overview. Unrelated queries with no evidence return a sales handoff.
 
-The Worker sends up to five passages within a 9,000-character context budget to the existing LLM. Returned sources link to those passages' actual website pages or existing section anchors. The LLM is instructed to follow the question's language, preserve release limitations, and hand off when the excerpts do not support an answer.
+The Worker sends retrieved passages and a compact website overview within a 9,000-character context budget to the existing LLM. It returns structured answers and validates source IDs against the supplied evidence before linking to website pages. The LLM follows the question's language and preserves release limitations.
 
-This is lexical retrieval with aliases, so an unfamiliar paraphrase can still miss relevant material. Add aliases or improve source wording when those misses appear; the index does not automatically infer facts absent from the website.
+Greetings, thanks and goodbye have natural replies without retrieval. Other questions always reach the LLM with website overview evidence, even when lexical retrieval has no matches. Recent conversation also helps retrieve follow-up context. A first-pass handoff gets one semantic recovery attempt: the LLM rewrites standalone search queries using the website catalog and recent conversation, then answers from refreshed evidence. This needs no embedding model. The search and answer calls share the existing 45-second provider budget. A timeout in the optional search stage preserves the first answer instead of turning it into a connection error.
+
+Only the latest six conversation messages are sent, with each message limited to 480 characters. History stays in browser memory and is used to resolve references, not as verified product facts. Clarifications and unrelated requests do not trigger sales; a concrete unavailable TAC fact or an explicit sales request can offer contact. No-answer no longer automatically changes the frontend to the Sales state.
 
 ## Checks
 
-`node --test tests/tac-assistant.test.js tests/tac-site-knowledge.test.js` checks provider behavior, complete industry coverage, published-page coverage, extraction exclusions, catalog parity, bilingual retrieval, release restrictions, and Worker requests using secondary-page context.
+`node --test tests/tac-assistant.test.js tests/tac-site-knowledge.test.js tests/tac-assistant-conversation.test.js` checks provider behavior, complete industry coverage, published-page coverage, extraction exclusions, catalog parity, bilingual retrieval, release restrictions, semantic recovery, normal conversation, follow-up context, and source validation.

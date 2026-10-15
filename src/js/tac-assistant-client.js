@@ -7,10 +7,10 @@ export class AssistantRequestError extends Error {
   }
 }
 
-export async function fetchAssistantAnswer(question, { signal, fetchImpl = fetch } = {}) {
+export async function fetchAssistantAnswer(question, { signal, fetchImpl = fetch, history = [] } = {}) {
   const response = await fetchImpl('/api/assistant/chat', {
     method: 'POST', headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ question }), signal
+    body: JSON.stringify({ question, history }), signal
   });
   let answer;
   try { answer = await response.json(); }

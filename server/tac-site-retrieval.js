@@ -113,7 +113,7 @@ export function knowledgeContext(matches, budget = 9000) {
   let context = '';
   for (const match of matches) {
     const { item } = match;
-    const excerpt = `Source: ${item.pageTitle} (${item.href})\n${item.title}: ${item.text}\n`;
+    const excerpt = `Source ID: ${item.id}\nSource: ${item.pageTitle} (${item.href})\n${item.title}: ${item.text}\n`;
     if (context.length + excerpt.length > budget) continue;
     context += excerpt;
     selected.push(match);

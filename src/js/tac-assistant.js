@@ -56,6 +56,7 @@ export function mountTacAssistant() {
   let activeRequest;
   let retryAvailableAt = 0;
   let cooldownTimer;
+  let conversation = [];
 
   const clearTimers = () => {
     window.clearTimeout(responseTimer);
@@ -166,7 +167,7 @@ export function mountTacAssistant() {
     }, CLIENT_TIMEOUT_MS);
 
     try {
-      const answer = await fetchAssistantAnswer(value, { signal: controller.signal });
+      const answer = await fetchAssistantAnswer(value, { signal: controller.signal, history: conversation });
       if (sequence !== requestSequence) return;
 
       clearTimers();
@@ -174,8 +175,8 @@ export function mountTacAssistant() {
       lastLanguage = answer.language || lastLanguage;
       updateState(answer.state || 'complete');
       addMessage('assistant', answer.text, { ...answer, language: lastLanguage });
-      if (answer.state === 'no-answer') terminalTimer = window.setTimeout(() => { if (state === 'no-answer') updateState('sales'); }, 740);
-      else if (answer.state === 'complete') terminalTimer = window.setTimeout(() => { if (state === 'complete') updateState('idle'); }, 1_000);
+      conversation = [...conversation, { role: 'user', content: value }, { role: 'assistant', content: answer.text.slice(0, 480) }].slice(-6);
+      if (answer.state === 'complete') terminalTimer = window.setTimeout(() => { if (state === 'complete') updateState('idle'); }, 1_000);
     } catch (error) {
       if (sequence !== requestSequence) return;
       clearTimers();
