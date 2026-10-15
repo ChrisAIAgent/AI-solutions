@@ -32,17 +32,17 @@ export function mountTacAssistant() {
   root.innerHTML = `
     <section class="tac-assistant-panel" aria-label="TAC AI Assistant" aria-hidden="true">
       <header class="tac-assistant-panel-header">
-        <div><span class="tac-assistant-status-dot"></span><strong>TAC AI Assistant</strong><small>HOMEPAGE AI ASSISTANT</small></div>
+        <div><span class="tac-assistant-status-dot"></span><strong>TAC AI Assistant</strong><small>TAC KNOWLEDGE ASSISTANT</small></div>
         <button type="button" class="tac-assistant-close" data-assistant-close aria-label="Close assistant">×</button>
       </header>
       <div class="tac-assistant-state-readout"><span class="tac-assistant-state-label">Idle</span><small class="tac-assistant-duration">2600ms / LOOP</small></div>
       <div class="tac-assistant-messages" aria-live="polite"></div>
       <div class="tac-assistant-quick" aria-label="Common questions">${quickQuestions.map(({ question, label }) => `<button type="button" data-question="${escapeHtml(question)}">${escapeHtml(label)}</button>`).join('')}</div>
       <form class="tac-assistant-form">
-        <label class="tac-assistant-input-label"><span class="visually-hidden">Ask TAC AI Assistant a question</span><input name="question" autocomplete="off" placeholder="Ask about TAC homepage..." maxlength="240"></label>
+        <label class="tac-assistant-input-label"><span class="visually-hidden">Ask TAC AI Assistant a question</span><input name="question" autocomplete="off" placeholder="Ask about TAC..." maxlength="240"></label>
         <button type="submit" aria-label="Send question">↗</button>
       </form>
-      <div class="tac-assistant-form-note"><span>Answers grounded in TAC homepage</span>${import.meta.env.DEV ? '<button type="button" data-assistant-error>Simulate offline</button>' : ''}</div>
+      <div class="tac-assistant-form-note"><span>Answers based on the TAC knowledge base</span>${import.meta.env.DEV ? '<button type="button" data-assistant-error>Simulate offline</button>' : ''}</div>
     </section>
     <button type="button" class="tac-assistant-launcher" data-assistant-open aria-label="Open TAC AI Assistant">
       <span class="tac-assistant-launcher-ring"></span><img class="tac-assistant-state-image" src="${mascot}" alt="TAC AI Assistant"><span class="tac-assistant-launcher-badge tac-assistant-state-overlay">✦</span>
@@ -114,7 +114,7 @@ export function mountTacAssistant() {
     panel.setAttribute('aria-hidden', 'false');
     if (!messages.children.length) {
       updateState('greeting');
-      addMessage('assistant', 'Hi, I’m TAC AI Assistant. I can answer questions based on the current homepage.', { language: 'en' });
+      addMessage('assistant', 'Hi, I’m TAC AI Assistant. I can help you find answers in the TAC knowledge base.', { language: 'en' });
       window.setTimeout(() => { if (state === 'greeting') updateState('idle'); }, 620);
     }
     window.setTimeout(() => input.focus(), 120);
@@ -161,7 +161,7 @@ export function mountTacAssistant() {
     }, 360);
     slowTimer = window.setTimeout(() => {
       if (sequence !== requestSequence) return;
-      addMessage('assistant', lastLanguage === 'zh' ? '我还在检索主页内容，请稍候…' : 'I’m still checking the homepage. One moment…', { language: lastLanguage });
+      addMessage('assistant', lastLanguage === 'zh' ? '我正在查询 TAC 知识库，请稍候…' : 'I’m checking the TAC knowledge base. One moment…', { language: lastLanguage });
     }, PROGRESS_AFTER_MS);
     fallbackTimer = window.setTimeout(() => {
       if (sequence !== requestSequence) return;
