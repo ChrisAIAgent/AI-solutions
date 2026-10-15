@@ -32,7 +32,7 @@ export function semanticCatalog(index, question = '') {
 }
 
 export function overviewEvidence(index) {
-  const ids = ['hero', 'solutions', 'industries-overview', 'agent-platform', ...index.documents.filter((item) => item.id.startsWith('application-')).map((item) => item.id)];
+  const ids = ['hero', 'solutions', 'industries-overview', 'agent-platform', 'contact', ...index.documents.filter((item) => item.id.startsWith('application-')).map((item) => item.id)];
   const selected = ids.map((id) => index.documents.find((item) => item.id === id));
   for (const page of index.pages.filter((item) => item.href !== '/index.html')) {
     selected.push(index.documents.find((item) => item.href.split('#')[0] === page.href));

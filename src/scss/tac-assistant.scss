@@ -69,3 +69,5 @@
 @media (prefers-reduced-motion: reduce) {
   .tac-assistant *, .tac-assistant *::before, .tac-assistant *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+.tac-assistant-contact-details { margin: 10px 0; font-size: 13px; line-height: 1.8; overflow-wrap: anywhere; }
+.tac-assistant-contact-details a { color: #315e70; text-decoration: underline; text-underline-offset: 3px; }

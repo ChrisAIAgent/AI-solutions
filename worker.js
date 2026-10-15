@@ -3,11 +3,12 @@ import siteIndex from './server/generated/tac-site-knowledge.json' with { type: 
 import { createSiteRetriever, knowledgeContext } from './server/tac-site-retrieval.js';
 import { sanitizeHistory, socialReply, semanticCatalog, overviewEvidence, modelText, parseSearchPlan, parseAnswer } from './server/tac-assistant-conversation.js';
 import { PROVIDER_TIMEOUT_MS } from './src/data/tac-assistant-runtime.js';
+import { contactEmail, contactLinks } from './src/data/tac-contact.js';
 
 import { ProviderError, requestChatCompletion } from './server/tac-assistant-provider.js';
 const DEFAULT_MODEL = 'deepseek-v4-flash';
 const SALES_INTENT = /销售|报价|价格|定价|采购|转人工|\b(?:sales|pricing|price|quote)\b|(?:预约|安排|申请|book|schedule|request).{0,16}(?:演示|demo)|(?:联系|contact).{0,12}(?:tac|团队|销售|team|us)|^contact\s*$/i;
-const SALES_LINK = { label: 'Contact sales', href: '/#contact' };
+const SALES_LINK = { label: 'Email sales', href: contactLinks.sales };
 const retrieveKnowledge = createSiteRetriever(siteIndex.documents);
 const catalog = semanticCatalog(siteIndex);
 const overview = overviewEvidence(siteIndex);
@@ -33,7 +34,7 @@ function noAnswer(language, text) {
       ? '网站目前没有公布这项具体信息。你可以告诉我更多需求，或联系 TAC 销售团队进一步确认。'
       : 'The website does not currently publish that specific information. Tell me more about what you need, or contact TAC sales to confirm.'),
     sources: [],
-    cta: { label: 'Talk to sales', href: '/#contact' }
+    cta: SALES_LINK
   };
 }
 
@@ -42,8 +43,8 @@ function salesAnswer(language) {
     language,
     state: 'sales',
     text: language === 'zh'
-      ? '如果你希望了解具体方案、报价或演示安排，我可以为你转接 TAC 销售团队。'
-      : 'If you would like to discuss a specific solution, pricing, or a demo, I can connect you with the TAC sales team.',
+      ? `如需具体方案、报价或演示安排，请发送邮件至 ${contactEmail}。点击下方按钮可打开邮件客户端。`
+      : `For solutions, pricing, or a demo, email ${contactEmail}. The button below opens your email app.`,
     sources: [{ label: 'Contact', href: '/#contact' }],
     cta: SALES_LINK
   };

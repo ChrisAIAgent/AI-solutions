@@ -1,11 +1,16 @@
 {
   "schemaVersion": 1,
-  "revision": "b769557a07e7ce02",
+  "revision": "24dd3418943eaf82",
   "pages": [
     {
       "href": "/index.html",
       "title": "TAC AI Platform",
       "documentCount": 40
+    },
+    {
+      "href": "/pages/contact-us.html",
+      "title": "Contact Us — TAC.AI",
+      "documentCount": 2
     },
     {
       "href": "/pages/marketing-library.html",
@@ -106,13 +111,16 @@
       "id": "contact",
       "section": "contact",
       "title": "Contact TAC",
-      "text": "Tell TAC what work you want to make clearer, faster, or easier to govern. Start a conversation with TAC.",
+      "text": "Email TAC at tac.aisolution@gmail.com for product enquiries, demo requests, support and partnerships. Email buttons open the visitor's email app; this is an email contact channel, not a live human chat transfer.",
       "keywords": [
         "联系",
         "销售",
         "演示",
         "合作",
+        "邮箱",
+        "邮件",
         "contact",
+        "email",
         "sales",
         "demo"
       ],
@@ -708,6 +716,26 @@
       "sourceFile": "src/data/tac-home-content.js"
     },
     {
+      "id": "contact-us-1-0",
+      "section": "contact-us",
+      "pageTitle": "Contact Us — TAC.AI",
+      "title": "Let’s build something useful.",
+      "text": "CONTACT TAC\nLet’s build something useful.\nTell us about your business, explore TAC solutions, or request a demo. We’d love to hear from you.\nEmail us directly\ntac.aisolution@gmail.com\nProduct enquiries · Demo requests · Partnerships · Support",
+      "keywords": [],
+      "href": "/pages/contact-us.html",
+      "sourceFile": "pages/contact-us.html"
+    },
+    {
+      "id": "contact-us-2-0",
+      "section": "contact-us",
+      "pageTitle": "Contact Us — TAC.AI",
+      "title": "Start a conversation",
+      "text": "Start a conversation\nFill in your details to prepare an email to our team.",
+      "keywords": [],
+      "href": "/pages/contact-us.html#formTitle",
+      "sourceFile": "pages/contact-us.html"
+    },
+    {
       "id": "marketing-library-1-0",
       "section": "marketing-library",
       "pageTitle": "Marketing Library Portal",
@@ -875,7 +903,7 @@
       "section": "tac-harness",
       "pageTitle": "TAC Harness — Smarter Agents. Bigger Possibilities.",
       "title": "TAC Harness Smarter agents. Bigger possibilities.",
-      "text": "✧ Preview\nTAC Harness\nSmarter agents. Bigger possibilities.\nA workspace for everyday work, development, and the agent tools you want to build.\nExtend the experience with composable plugins, reusable skills, and your own agent presets.\n↓ Download Desktop\nTAC Harness\n⊕ New Session\n♧ Plugins◷ Automation\nWorkspace ⌕ ⚙ ＋\n▱ Default workspace\nMeet TAC HarnessQ3 summary slidesReview prepSales reportData analysisPlugin development\n◉ TAC\nMeet TAC Harness ◫ − □ ×\nCould you introduce yourself?\n✧ Thought for a while\nI'm TAC Harness, a desktop workspace for working with AI agents and composable plugins.\nI can help you explore:\nEveryday work — Work with documents, data, and presentations.\nCoding — Understand repositories and develop changes.\nResearch — Gather information and review sources.\nBackground tasks — Organize scripts and scheduled work.\nPlugins — Add capabilities or create your own.\nAnd so much more…\nDescribe what you want to build, / commands, @ files or sessions\n＋ ♧ Workspace Write⌄Select model ⌄ ↑\nInteractive presentation of the product experience",
+      "text": "✧ Preview\nTAC Harness\nSmarter agents. Bigger possibilities.\nA workspace for everyday work, development, and the agent tools you want to build.\nExtend the experience with composable plugins, reusable skills, and your own agent presets.\n↓ View preview details\nTAC Harness\n⊕ New Session\n♧ Plugins◷ Automation\nWorkspace ⌕ ⚙ ＋\n▱ Default workspace\nMeet TAC HarnessQ3 summary slidesReview prepSales reportData analysisPlugin development\n◉ TAC\nMeet TAC Harness ◫ − □ ×\nCould you introduce yourself?\n✧ Thought for a while\nI'm TAC Harness, a desktop workspace for working with AI agents and composable plugins.\nI can help you explore:\nEveryday work — Work with documents, data, and presentations.\nCoding — Understand repositories and develop changes.\nResearch — Gather information and review sources.\nBackground tasks — Organize scripts and scheduled work.\nPlugins — Add capabilities or create your own.\nAnd so much more…\nDescribe what you want to build, / commands, @ files or sessions\n＋ ♧ Workspace Write⌄Select model ⌄ ↑\nInteractive presentation of the product experience",
       "keywords": [
         "TAC Harness",
         "harness",

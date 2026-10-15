@@ -352,3 +352,11 @@ body.tac-home { margin: 0; background: #edf5f7; color: #111415; font-family: 'TA
   .tac-home .tac-capability-tabs button { min-height: 96px; padding: 12px; }
   .tac-home .tac-capability-tabs button b { font-size: 13px; }
 }
+.tac-nav-unavailable { display: flex; justify-content: space-between; gap: 20px; padding: 10px; color: #697d83; font-size: 12px; cursor: default; }
+.tac-nav-unavailable small, .tac-signin--unavailable small { font-size: 10px; color: #697d83; }
+.tac-signin--unavailable { cursor: default; display: grid; gap: 4px; }
+.tac-contact-email { display: inline-block; font-size: clamp(18px, 3vw, 28px); overflow-wrap: anywhere; margin-bottom: 24px; }
+.tac-contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+.tac-contact-note { font-size: 13px; }
+.tac-footer-email { overflow-wrap: anywhere; }
+.tac-coming-soon { color: #607780; font-size: 12px; }

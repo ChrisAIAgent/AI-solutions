@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact TAC for AI solutions, product enquiries, demos and partnerships.">
+  <title>Contact Us — TAC.AI</title>
+  <script type="module" src="/src/js/tac-contact.js"></script>
+</head>
+<body>
+  <header class="contact-nav"><a class="brand" href="/index.html"><img src="/assets/tac/tac-mark.png" alt="">TAC.AI</a><a href="/index.html">← Back to home</a></header>
+  <main class="contact-layout">
+    <section class="contact-intro">
+      <p class="eyebrow">CONTACT TAC</p>
+      <h1>Let’s build something useful.</h1>
+      <p>Tell us about your business, explore TAC solutions, or request a demo. We’d love to hear from you.</p>
+      <div class="email-card"><h2>Email us directly</h2><a data-contact-email href="mailto:tac.aisolution@gmail.com">tac.aisolution@gmail.com</a><button type="button" id="copyEmail">Copy email</button><p id="copyStatus" role="status"></p></div>
+      <p>Product enquiries · Demo requests · Partnerships · Support</p>
+    </section>
+    <section class="form-card" aria-labelledby="formTitle">
+      <h2 id="formTitle">Start a conversation</h2>
+      <p>Fill in your details to prepare an email to our team.</p>
+      <form id="contactForm">
+        <label>Your name <input name="name" autocomplete="name" required maxlength="100"></label>
+        <label>Email address <input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+        <label>Company <input name="company" autocomplete="organization" maxlength="150"></label>
+        <label>Interested in <select name="interest"><option>Product enquiry</option><option>Request a demo</option><option>Partnership</option><option>Support</option></select></label>
+        <label>How can we help? <textarea name="message" rows="5" required maxlength="2000"></textarea></label>
+        <p class="form-note">This form opens your email app with a draft. Please send the email there to complete your enquiry. Nothing is submitted or stored on this website.</p>
+        <button class="primary" type="submit">Prepare email ↗</button>
+        <p id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer>© 2026 TAC · <a data-contact-email></a></footer>
+</body>
+</html>

@@ -174,5 +174,8 @@ test('sales handoff works without sending a model request', async () => {
     body: JSON.stringify({ question: 'Contact sales' })
   }), {});
   assert.equal(response.status, 200);
-  assert.equal((await response.json()).state, 'sales');
+  const result = await response.json();
+  assert.equal(result.state, 'sales');
+  assert.ok(JSON.stringify(result).includes('tac.aisolution@gmail.com'));
+  assert.ok(result.cta.href.startsWith('mailto:tac.aisolution@gmail.com'));
 });

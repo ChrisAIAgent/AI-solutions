@@ -1,6 +1,7 @@
 // Published HTML entry points shared by Vite and the assistant indexer.
 export const sitePages = {
   main: 'index.html',
+  'pages/contact-us': 'pages/contact-us.html',
   'pages/marketing-library': 'pages/marketing-library.html',
   'pages/ai-models': 'pages/ai-models.html',
   'pages/brand-guidelines': 'pages/brand-guidelines.html',

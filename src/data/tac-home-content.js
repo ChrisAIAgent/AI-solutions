@@ -1,6 +1,8 @@
 // TAC home page content is deliberately centralized so the internal preview
 // structure can later be swapped for approved production copy without DOM edits.
 // Local-only visual alignment mode. Switch to `tac` before any public build.
+import { contactLinks, emailTac } from './tac-contact.js';
+
 export const CONTENT_MODE = 'tac';
 
 const action = (label, href = '#contact') => ({ label, href });
@@ -13,7 +15,7 @@ export const tacContent = {
     available: false,
     artifact: '../downloads/tacwork-win-x64-0.2.1-rc.1.exe',
     label: 'Download for Windows',
-    navLabel: 'Download TACWork',
+    navLabel: 'Explore TACWork',
     fileName: 'tacwork-win-x64-0.2.1-rc.1.exe',
     fileSize: '171 MB',
     checksum: '06F7B9202F8153E852ED7D6ED8F72BE8F9EF2AEB32C4ECF76937C0ACA56E1E6C',
@@ -25,15 +27,29 @@ export const tacContent = {
       { label: 'TAC Harness', href: './pages/tac-harness.html' },
       { label: 'TAC CLI', href: './pages/tac-cli.html', note: 'Coming soon' }
     ] },
-    { label: 'Agentic AI Apps', target: '#applications', items: ['Pre-built applications', 'Application accelerators', 'Tailored applications'] },
-    { label: 'Agent Marketplace', target: '#accelerators', items: ['Agents', { label: 'Plugin', href: './pages/tac-plugins.html' }, 'Integrations', { label: 'Skills', href: './pages/skills.html' }, { label: 'TAC AI Assistant Asset Lab', href: './pages/tac-assistant-assets.html' }] },
-    { label: 'More', target: '#insights', items: ['Industry insights', 'Partner ecosystem', 'Contact TAC'] }
+    { label: 'Agentic AI Apps', target: '#applications', items: [
+      { label: 'Pre-built applications', href: '#Pre-built-Applications', kind: 'section' },
+      { label: 'Application accelerators', href: '#Application-Accelerators', kind: 'section' },
+      { label: 'Tailored applications', href: '#Tailored-Applications', kind: 'section' }
+    ] },
+    { label: 'Agent Marketplace', target: '#applications', items: [
+      { label: 'Agents', disabled: true, note: 'Coming soon' },
+      { label: 'Plugin', href: './pages/tac-plugins.html' },
+      { label: 'Integrations', disabled: true, note: 'Coming soon' },
+      { label: 'Skills', href: './pages/skills.html' },
+      { label: 'TAC AI Assistant Asset Lab', href: './pages/tac-assistant-assets.html' }
+    ] },
+    { label: 'More', target: '#insights', items: [
+      { label: 'Industry insights', href: '#insights', kind: 'section' },
+      { label: 'Partner ecosystem', href: '#partners', kind: 'section' },
+      { label: 'Contact TAC', href: '/pages/contact-us.html' }
+    ] }
   ],
   hero: {
     eyebrow: 'TAC AI PLATFORM',
     title: 'Build AI operations that move with your business.',
     lead: 'TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.',
-    primary: action('GET A DEMO'),
+    primary: action('GET A DEMO', contactLinks.demo),
     secondary: action('EXPLORE THE PLATFORM', '#platform'),
     featureCards: [
       { title: 'Pre-built Applications', text: 'Use applications for Banking, Healthcare, Retail, HR, IT, and Recruiting today.' },
@@ -55,12 +71,12 @@ export const tacContent = {
     { id: 'platform-tab', label: 'AGENT PLATFORM { ARTEMIS }' }
   ],
   applications: [
-    { title: 'AI for Banking', accent: 'Banking', text: 'Coordinate self-service and agent support with shared context, consistency, and built-in compliance.', actions: [action('LEARN MORE'), action('GUIDE: BANKING')] },
-    { title: 'AI for Healthcare', accent: 'Healthcare', text: 'Enable 24/7 patient and member self-service and reduce staff burden with HIPAA-compliant intelligent assistance.', actions: [action('LEARN MORE'), action('GUIDE: HEALTHCARE')] },
-    { title: 'AI for Retail', accent: 'Retail', text: 'Frictionless shopping and optimized operations with instant, personalized support at every touchpoint.', actions: [action('LEARN MORE'), action('GUIDE: RETAIL')] },
-    { title: 'AI for IT', accent: 'IT', text: 'Resolve incidents, reduce ticket volume, and deliver 24/7 IT support.', actions: [action('LEARN MORE')] },
-    { title: 'AI for HR', accent: 'HR', text: 'Automate, resolve, and reduce employee queries and manual workload.', actions: [action('LEARN MORE')] },
-    { title: 'AI for Recruiting', accent: 'Recruiting', text: 'Automate screening, accelerate hiring, and engage top talent.', actions: [action('LEARN MORE')] }
+    { title: 'AI for Banking', accent: 'Banking', text: 'Coordinate self-service and agent support with shared context, consistency, and built-in compliance.', actions: [action('DISCUSS BANKING', emailTac('TAC AI for Banking enquiry'))] },
+    { title: 'AI for Healthcare', accent: 'Healthcare', text: 'Enable 24/7 patient and member self-service and reduce staff burden with HIPAA-compliant intelligent assistance.', actions: [action('DISCUSS HEALTHCARE', emailTac('TAC AI for Healthcare enquiry'))] },
+    { title: 'AI for Retail', accent: 'Retail', text: 'Frictionless shopping and optimized operations with instant, personalized support at every touchpoint.', actions: [action('DISCUSS RETAIL', emailTac('TAC AI for Retail enquiry'))] },
+    { title: 'AI for IT', accent: 'IT', text: 'Resolve incidents, reduce ticket volume, and deliver 24/7 IT support.', actions: [action('DISCUSS IT', emailTac('TAC AI for IT enquiry'))] },
+    { title: 'AI for HR', accent: 'HR', text: 'Automate, resolve, and reduce employee queries and manual workload.', actions: [action('DISCUSS HR', emailTac('TAC AI for HR enquiry'))] },
+    { title: 'AI for Recruiting', accent: 'Recruiting', text: 'Automate screening, accelerate hiring, and engage top talent.', actions: [action('DISCUSS RECRUITING', emailTac('TAC AI for Recruiting enquiry'))] }
   ],
   accelerators: {
     title: 'Start faster with reusable building blocks.',
@@ -72,8 +88,8 @@ export const tacContent = {
     ]
   },
   tailored: [
-    { title: 'AI for Service', text: 'Give customers and service teams clear, contextual support through every channel.', links: ['EXPLORE SERVICE', 'SERVICE BRIEF'] },
-    { title: 'AI for Work', text: 'Connect knowledge, systems, and people to remove the friction from daily enterprise work.', links: ['EXPLORE WORK', 'WORKFLOW GUIDE'] }
+    { title: 'AI for Service', text: 'Give customers and service teams clear, contextual support through every channel.', links: ['DISCUSS SERVICE'] },
+    { title: 'AI for Work', text: 'Connect knowledge, systems, and people to remove the friction from daily enterprise work.', links: ['DISCUSS WORK'] }
   ],
   capabilities: [
     { id: 'build', label: 'Build with AI', headline: 'From idea to useful workflow — without a long runway.', text: 'Start from the business logic and move quickly toward a measurable, governed experience.', metric: 'FASTER STARTS' },

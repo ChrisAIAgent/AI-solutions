@@ -2,6 +2,7 @@ import '../scss/tac-assistant.scss';
 import { detectAnswerLanguage } from '../data/tac-assistant-knowledge.js';
 import { CLIENT_TIMEOUT_MS, PROGRESS_AFTER_MS } from '../data/tac-assistant-runtime.js';
 import { fetchAssistantAnswer, failurePresentation } from './tac-assistant-client.js';
+import { contactEmail, contactLinks } from '../data/tac-contact.js';
 
 const assistantRoot = '/assets/tac/assistant/';
 const mascot = `${assistantRoot}expressions/happy.webp`;
@@ -99,6 +100,18 @@ export function mountTacAssistant() {
     message.className = `tac-assistant-message tac-assistant-message--${role}`;
     message.innerHTML = `<div class="tac-assistant-message-bubble">${plainText.replace(/\n/g, '<br>')}</div>${meta.sources?.length ? `<div class="tac-assistant-sources">${meta.sources.map((source) => `<a href="${escapeHtml(source.href)}">${sourcePrefix}${escapeHtml(source.label)}</a>`).join('')}</div>` : ''}${meta.cta ? `<a class="tac-assistant-sales-cta" href="${escapeHtml(meta.cta.href)}">${escapeHtml(meta.cta.label)} <span aria-hidden="true">↗</span></a>` : ''}${meta.retry ? '<button type="button" class="tac-assistant-retry" data-assistant-retry>Retry</button>' : ''}`;
     messages.appendChild(message);
+    if (meta.cta) {
+      const contact = document.createElement('div');
+      contact.className = 'tac-assistant-contact-details';
+      const email = document.createElement('a');
+      email.href = contactLinks.sales;
+      email.textContent = contactEmail;
+      const page = document.createElement('a');
+      page.href = '/pages/contact-us.html';
+      page.textContent = 'Contact us';
+      contact.append(email, document.createElement('br'), page);
+      message.appendChild(contact);
+    }
     messages.scrollTop = messages.scrollHeight;
     refreshControls();
   };
@@ -130,7 +143,7 @@ export function mountTacAssistant() {
     updateState('error-offline', failure.label);
     addMessage('assistant', failure.text, {
       language: lastLanguage,
-      cta: { label: 'Contact sales', href: '#contact' },
+      cta: { label: 'Email sales', href: contactLinks.sales },
       retry: true
     });
   };
@@ -208,7 +221,7 @@ export function mountTacAssistant() {
       ? '当前请求不可用。请检查网络后重试，或联系 TAC 销售团队。'
       : 'This request is currently unavailable. Check your connection and try again, or contact TAC sales.', {
       language: lastLanguage,
-      cta: { label: 'Contact sales', href: '#contact' },
+      cta: { label: 'Email sales', href: contactLinks.sales },
       retry: true
     });
   });

@@ -13,6 +13,7 @@ const synonymGroups = [
   ['platform', '平台'], ['workflow', 'workflows', '工作流'],
   ['capabilities', 'capability', '功能', '能力'],
   ['brand', '品牌'], ['typography', 'font', '字体'], ['palette', 'color', '配色', '颜色'],
+  ['email', '邮箱', '邮件'], ['contact', '联系'],
   ['model', 'models', '模型'], ['marketing', '营销'],
   ['assistant', '机器人', '助手'], ['animation', 'motion', '动画'], ['expression', 'expressions', '表情'],
   ['asset', 'assets', '素材'], ['license', '许可', '许可证'], ['category', 'categories', '分类'],

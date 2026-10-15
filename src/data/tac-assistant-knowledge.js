@@ -1,3 +1,5 @@
+import { contactEmail, contactLinks } from './tac-contact.js';
+
 const entry = (id, section, title, text, keywords, href) => ({ id, section, title, text, keywords, href });
 
 const industryAliases = {
@@ -26,7 +28,7 @@ const zhAnswers = {
   hero: 'TAC 帮助企业构建随业务发展的智能运营能力，将智能自动化、互联知识和受治理的工作流整合到一个统一体验中。',
   solutions: 'TAC 提供预构建应用、应用加速器和定制应用，帮助企业更快落地客户服务与员工生产力场景。',
   'agent-platform': 'TAC 智能体平台为企业提供可靠的工作流基础，将人员、系统、知识和智能助手连接到统一的运营模式中。',
-  contact: '如果你希望进一步了解 TAC 的方案、合作方式或演示安排，可以通过主页联系 TAC 团队。',
+  contact: `如需产品咨询、合作或演示安排，请发送邮件至 ${contactEmail}。邮件按钮会打开你的邮件客户端。`,
   'industry-banking': '银行与金融行业方案聚焦风险运营、客户服务、顾问支持和合规场景，帮助团队在复杂客户旅程中保持统一上下文。',
   'industry-healthcare': '医疗与健康行业方案帮助护理、会员服务和运营团队处理高频问题，并将分散的内部知识转化为安全、可引导的服务体验。',
   'industry-retail': '零售行业方案连接产品知识、服务政策和运营流程，为每个零售触点提供快速、个性化的支持。',
@@ -55,7 +57,7 @@ export function buildHomepageKnowledge(content) {
     entry('hero', 'hero', content.hero.eyebrow, `${content.hero.title} ${content.hero.lead}`, ['TAC', 'AI', '平台', '智能体', '自动化', 'AI platform'], '#top'),
     entry('solutions', 'solutions', 'AI Solutions', `${content.hero.featureCards.map((card) => `${card.title}: ${card.text}`).join(' ')}`, ['解决方案', 'solutions', '应用', 'enterprise AI'], '#applications'),
     entry('agent-platform', 'platform', 'Agent Platform', 'TAC provides a platform foundation for building dependable agent workflows across enterprise teams and systems.', ['平台', '智能体平台', 'agent platform', 'workflow', '工作流'], '#platform'),
-    entry('contact', 'contact', 'Contact TAC', 'Tell TAC what work you want to make clearer, faster, or easier to govern. Start a conversation with TAC.', ['联系', '销售', '演示', '合作', 'contact', 'sales', 'demo'], '#contact')
+    entry('contact', 'contact', 'Contact TAC', `Email TAC at ${contactEmail} for product enquiries, demo requests, support and partnerships. Email buttons open the visitor's email app; this is an email contact channel, not a live human chat transfer.`, ['联系', '销售', '演示', '合作', '邮箱', '邮件', 'contact', 'email', 'sales', 'demo'], '#contact')
   ];
 
   items.push(entry('industries-overview', 'industries', 'Industries supported by TAC',
@@ -159,9 +161,9 @@ export function buildMockAnswer(query, knowledge) {
     return {
       language: locale,
       state: 'sales',
-      text: locale === 'zh' ? '如果你希望了解具体方案、报价或演示安排，我可以为你转接 TAC 销售团队。' : 'If you would like to discuss a specific solution, pricing, or a demo, I can connect you with the TAC sales team.',
+      text: locale === 'zh' ? `如需具体方案、报价或演示安排，请发送邮件至 ${contactEmail}。` : `For solutions, pricing, or a demo, email ${contactEmail}.`,
       sources: [{ label: sectionLabels.en.contact, href: '#contact' }],
-      cta: { label: 'Contact sales', href: '#contact' }
+      cta: { label: 'Email sales', href: contactLinks.sales }
     };
   }
 
@@ -172,7 +174,7 @@ export function buildMockAnswer(query, knowledge) {
       state: 'no-answer',
       text: locale === 'zh' ? '这个问题不在当前 TAC 主页的知识范围内。我不会编造答案，可以为你转接销售进一步确认。' : 'That question is outside the current TAC homepage knowledge scope. I will not make up an answer, but I can connect you with sales for confirmation.',
       sources: [],
-      cta: { label: 'Talk to sales', href: '#contact' }
+      cta: { label: 'Email sales', href: contactLinks.sales }
     };
   }
 
