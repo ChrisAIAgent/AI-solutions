@@ -1,29 +1,822 @@
-@font-face { font-family: 'TAC Download Roboto'; src: url('/assets/tac/fonts/Roboto-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'TAC Download Roboto'; src: url('/assets/tac/fonts/Roboto-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'TAC Download Roboto'; src: url('/assets/tac/fonts/Roboto-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+@font-face {
+  font-family: 'TAC Download Roboto';
+  src: url('/assets/tac/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
 
-* { box-sizing: border-box; }
-.tac-download-button--disabled { cursor: pointer; opacity: .58; box-shadow: none; }.tac-download-button--disabled:hover { background: #121918; transform: none; }
-.tac-download-button { border: 0; font-family: 'TAC Download Roboto', Arial, sans-serif; }
-html { scroll-behavior: smooth; }
-body.tac-download { min-height: 100vh; margin: 0; overflow-x: hidden; background: #eef8fb; color: #10191d; font-family: 'TAC Download Roboto', Arial, sans-serif; }
-.tac-download a { color: inherit; text-decoration: none; }
-.tac-download-skip { position: fixed; z-index: 10; top: -60px; left: 20px; padding: 10px 14px; background: #111; color: #fff; }.tac-download-skip:focus { top: 20px; }
-.tac-download-header { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; width: min(1280px, calc(100% - 56px)); min-height: 72px; margin: 18px auto 0; padding: 12px 20px; border: 1px solid rgba(30, 75, 92, .1); border-radius: 18px; background: rgba(255,255,255,.88); box-shadow: 0 14px 30px rgba(46, 108, 132, .1); }
-.tac-download-brand img { display: block; width: 118px; height: auto; }.tac-download-back { font-size: 14px; color: #45606a; }.tac-download-back span { margin-left: 7px; color: #167fc1; }
-.tac-download-hero, .tac-download-details, .tac-download-steps, .tac-download-release { width: min(1180px, calc(100% - 56px)); margin-inline: auto; }
-.tac-download-hero { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; min-height: 650px; gap: 70px; padding: 90px 0 105px; }
-.tac-download-hero::before { position: absolute; z-index: -1; top: 0; right: -26%; width: 75%; height: 100%; content: ''; background: radial-gradient(circle, rgba(134, 210, 244, .5), transparent 62%); filter: blur(20px); }
-.tac-download-eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: #55727d; font-size: 11px; font-weight: 700; letter-spacing: .14em; }.tac-download-eyebrow span { width: 28px; height: 2px; background: #ef3e3a; }
-.tac-download h1, .tac-download h2, .tac-download h3, .tac-download p { margin-top: 0; }.tac-download h1 { max-width: 680px; margin-bottom: 25px; font-size: clamp(56px, 8vw, 105px); font-weight: 500; line-height: .93; letter-spacing: -.075em; }.tac-download-lead { max-width: 540px; margin-bottom: 30px; color: #5c727b; font-size: clamp(19px, 2vw, 25px); line-height: 1.3; letter-spacing: -.03em; }.tac-download-button { display: inline-flex; align-items: center; gap: 18px; min-height: 56px; padding: 0 21px; border-radius: 6px; background: #121918; color: #fff !important; font-size: 15px; font-weight: 700; box-shadow: 0 13px 24px rgba(14, 31, 34, .18); transition: transform .2s ease, background .2s ease; }.tac-download-button:hover, .tac-download-button:focus-visible { background: #167fc1; transform: translateY(-3px); }.tac-download-button span { font-size: 18px; }.tac-download-note { margin: 16px 0 0; color: #718890; font-size: 13px; }
-.tac-download-hero-art { position: relative; display: grid; min-height: 405px; place-items: center; overflow: hidden; border: 1px solid rgba(39, 103, 127, .17); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.76), rgba(202, 233, 243, .6)); box-shadow: 0 25px 55px rgba(37, 102, 127, .13); }.tac-download-hero-art::before { position: absolute; width: 220px; height: 220px; content: ''; border-radius: 50%; background: radial-gradient(circle, rgba(115, 201, 247, .45), transparent 67%); filter: blur(12px); }.tac-download-hero-art img { position: relative; z-index: 1; width: 74%; height: auto; mix-blend-mode: multiply; }.tac-download-art-label { position: absolute; right: 22px; bottom: 20px; color: #5e808c; font-size: 11px; font-weight: 700; letter-spacing: .12em; }.tac-download-orbit { position: absolute; border: 1px solid rgba(38, 128, 171, .35); border-radius: 50%; transform: rotate(-18deg); }.tac-download-orbit--one { width: 75%; aspect-ratio: 1.6; }.tac-download-orbit--two { width: 96%; aspect-ratio: 1.6; transform: rotate(22deg); border-color: rgba(115, 197, 102, .28); }
-.tac-download-showcase { width: min(1180px, calc(100% - 56px)); margin-inline: auto; padding: 0 0 118px; }.tac-download-showcase-heading { display: grid; grid-template-columns: .95fr 1.05fr; align-items: end; gap: 70px; padding: 34px 0 42px; border-top: 1px solid rgba(24, 70, 84, .13); }.tac-download-showcase-heading h2 { max-width: 620px; margin-bottom: 0; }.tac-download-showcase-heading > p { max-width: 480px; margin: 0 0 3px; color: #607983; font-size: 18px; line-height: 1.45; letter-spacing: -.02em; }.tac-download-showcase-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }.tac-download-screen { min-width: 0; margin: 0; padding: 12px; border: 1px solid rgba(33, 92, 111, .13); border-radius: 20px; background: rgba(255, 255, 255, .62); box-shadow: 0 18px 45px rgba(37, 102, 127, .1); }.tac-download-screen-frame { overflow: hidden; aspect-ratio: 16 / 10; border: 1px solid rgba(255, 255, 255, .16); border-radius: 13px; background: #111416; }.tac-download-screen-frame img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }.tac-download-screen figcaption { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 18px 8px 5px; }.tac-download-screen figcaption > span { color: #e74641; font-size: 12px; font-weight: 700; line-height: 1.35; }.tac-download-screen figcaption strong { display: block; margin-bottom: 6px; font-size: 18px; font-weight: 500; letter-spacing: -.035em; }.tac-download-screen figcaption p { margin: 0; color: #607983; font-size: 14px; line-height: 1.45; }
-.tac-download-details { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; padding: 108px 0; border-top: 1px solid rgba(24, 70, 84, .13); }.tac-download h2 { font-size: clamp(37px, 4.2vw, 60px); font-weight: 500; line-height: 1; letter-spacing: -.065em; }.tac-download-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }.tac-download-detail-grid article { min-height: 245px; padding: 22px; border: 1px solid rgba(33, 92, 111, .12); border-radius: 15px; background: rgba(255,255,255,.67); }.tac-download-detail-grid article > span, .tac-download-steps li > span { color: #e74641; font-size: 12px; font-weight: 700; }.tac-download-detail-grid h3 { margin: 76px 0 12px; font-size: 21px; line-height: 1.05; letter-spacing: -.04em; }.tac-download-detail-grid p, .tac-download-steps p, .tac-download-release p { color: #607983; line-height: 1.55; }
-.tac-download-steps { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; padding: 106px 0; border-top: 1px solid rgba(24, 70, 84, .13); }.tac-download-steps ol { margin: 0; padding: 0; list-style: none; }.tac-download-steps li { display: grid; grid-template-columns: 42px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(24, 70, 84, .14); }.tac-download-steps li:first-child { padding-top: 0; }.tac-download-steps li:last-child { border-bottom: 0; }.tac-download-steps h3 { margin-bottom: 7px; font-size: 25px; font-weight: 500; letter-spacing: -.04em; }.tac-download-steps p { margin: 0; }
-.tac-download-release { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-bottom: 100px; padding: 46px; border-radius: 20px; background: #142529; color: #edf9fa; }.tac-download-release .tac-download-eyebrow { color: #acd2d7; }.tac-download-release h2 { margin-bottom: 12px; }.tac-download-release p { margin-bottom: 0; color: #b4ced2; }.tac-download-release dl { display: grid; gap: 17px; margin: 0; }.tac-download-release dl div { display: grid; grid-template-columns: 100px 1fr; gap: 15px; padding-bottom: 12px; border-bottom: 1px solid rgba(202, 241, 243, .14); }.tac-download-release dt { color: #85aeb5; font-size: 13px; }.tac-download-release dd { margin: 0; overflow-wrap: anywhere; font-size: 13px; }.tac-download-footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px max(28px, calc((100% - 1180px) / 2)); background: #0c1618; color: #9bb8bc; font-size: 13px; }.tac-download-footer a { color: #fff; font-weight: 700; }.tac-download-footer a span { color: #e74641; }
-.tac-download-hero-copy, .tac-download-hero-art, .tac-download-showcase, .tac-download-details, .tac-download-steps, .tac-download-release { opacity: 1; }.tac-download-hero-copy.is-ready, .tac-download-hero-art.is-ready, .tac-download-showcase.is-ready, .tac-download-details.is-ready, .tac-download-steps.is-ready, .tac-download-release.is-ready { animation: tac-download-in .7s cubic-bezier(.2,.75,.25,1) both; animation-delay: var(--delay); }
-@keyframes tac-download-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
- .tac-download-gate { max-width: 430px; margin-top: 17px; }.tac-download-gate label { display: block; margin-bottom: 7px; color: #55727d; font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }.tac-download-gate-row { display: flex; gap: 8px; }.tac-download-gate input { min-width: 0; flex: 1; height: 43px; padding: 0 12px; border: 1px solid rgba(27, 79, 96, .2); border-radius: 6px; background: rgba(255, 255, 255, .74); color: #14252b; font: 14px 'TAC Download Roboto', Arial, sans-serif; outline: none; }.tac-download-gate input:focus { border-color: #167fc1; box-shadow: 0 0 0 3px rgba(22, 127, 193, .13); }.tac-download-gate button { height: 43px; padding: 0 16px; border: 1px solid rgba(27, 79, 96, .22); border-radius: 6px; background: rgba(255, 255, 255, .82); color: #14252b; font: 700 12px 'TAC Download Roboto', Arial, sans-serif; cursor: pointer; transition: border-color .2s ease, color .2s ease, transform .2s ease; }.tac-download-gate button:hover, .tac-download-gate button:focus-visible { border-color: #167fc1; color: #167fc1; transform: translateY(-2px); }.tac-download-gate > p { margin: 8px 0 0; color: #718890; font-size: 12px; line-height: 1.35; }.tac-download-gate > p.is-error { color: #d4433e; }
-@media (max-width: 820px) { .tac-download-hero, .tac-download-showcase-heading, .tac-download-details, .tac-download-steps, .tac-download-release { grid-template-columns: 1fr; gap: 36px; }.tac-download-hero { min-height: 0; padding-top: 76px; }.tac-download-hero-art { min-height: 300px; }.tac-download-showcase { padding-bottom: 84px; }.tac-download-showcase-heading { gap: 18px; }.tac-download-showcase-heading > p { font-size: 16px; }.tac-download-detail-grid { grid-template-columns: 1fr; }.tac-download-detail-grid article { min-height: 0; }.tac-download-detail-grid h3 { margin-top: 32px; }.tac-download-footer { flex-wrap: wrap; } }
-@media (max-width: 520px) { .tac-download-header, .tac-download-hero, .tac-download-showcase, .tac-download-details, .tac-download-steps, .tac-download-release { width: calc(100% - 32px); }.tac-download-header { min-height: 62px; margin-top: 10px; padding: 9px 13px; }.tac-download-brand img { width: 96px; }.tac-download-back { font-size: 12px; }.tac-download-hero { padding: 62px 0 76px; }.tac-download h1 { font-size: 58px; }.tac-download-lead { font-size: 18px; }.tac-download-gate-row { display: grid; grid-template-columns: 1fr; }.tac-download-gate button { width: 100%; }.tac-download-showcase { padding-bottom: 70px; }.tac-download-showcase-heading { padding: 26px 0 30px; }.tac-download-showcase-heading h2 { font-size: 39px; }.tac-download-showcase-grid { grid-template-columns: 1fr; gap: 15px; }.tac-download-screen { padding: 8px; border-radius: 16px; }.tac-download-screen-frame { border-radius: 10px; }.tac-download-screen figcaption { padding: 15px 6px 4px; }.tac-download-details, .tac-download-steps { padding: 76px 0; }.tac-download-release { margin-bottom: 70px; padding: 28px 22px; }.tac-download-release dl div { grid-template-columns: 78px 1fr; }.tac-download-footer { padding: 25px 16px; flex-direction: column; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.tac-download-button { transition: none; }.tac-download-hero-copy.is-ready, .tac-download-hero-art.is-ready, .tac-download-showcase.is-ready, .tac-download-details.is-ready, .tac-download-steps.is-ready, .tac-download-release.is-ready { animation: none; } }
+@font-face {
+  font-family: 'TAC Download Roboto';
+  src: url('/assets/tac/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TAC Download Roboto';
+  src: url('/assets/tac/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.tac-download {
+  --tac-space-1: 8px;
+  --tac-space-2: 12px;
+  --tac-space-3: 16px;
+  --tac-space-4: 24px;
+  --tac-space-5: 32px;
+  --tac-space-6: 48px;
+  --tac-space-7: 64px;
+  --tac-space-8: 80px;
+  --tac-ink: #10191d;
+  --tac-muted: #5c727b;
+  --tac-line: rgba(24, 70, 84, .14);
+  --tac-blue: #167fc1;
+  --tac-paper: rgba(255, 255, 255, .72);
+
+  min-height: 100vh;
+  margin: 0;
+  background: #eef8fb;
+  color: var(--tac-ink);
+  font-family: 'TAC Download Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tac-download *,
+.tac-download *::before,
+.tac-download *::after {
+  box-sizing: border-box;
+}
+
+.tac-download :where(h1, h2, h3, p, figure, dl, ol) {
+  margin: 0;
+}
+
+.tac-download img {
+  max-width: 100%;
+}
+
+.tac-download a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tac-download a:focus-visible,
+.tac-download button:focus-visible {
+  outline: 3px solid var(--tac-blue);
+  outline-offset: 3px;
+}
+
+.tac-download-skip {
+  position: fixed;
+  z-index: 10;
+  top: -60px;
+  left: 20px;
+  padding: 10px 14px;
+  background: #111;
+  color: #fff;
+}
+
+.tac-download-skip:focus {
+  top: 20px;
+}
+
+.tac-download-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1280px, calc(100% - 56px));
+  min-height: 72px;
+  margin: 18px auto 0;
+  padding: 12px 20px;
+  border: 1px solid rgba(30, 75, 92, .1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 14px 30px rgba(46, 108, 132, .1);
+}
+
+.tac-download-brand img {
+  display: block;
+  width: 118px;
+  height: auto;
+}
+
+.tac-download-back {
+  color: #45606a;
+  font-size: 14px;
+}
+
+.tac-download-back span {
+  margin-left: 7px;
+  color: var(--tac-blue);
+}
+
+.tac-download-hero,
+.tac-download-showcase,
+.tac-download-details,
+.tac-download-steps,
+.tac-download-release {
+  width: min(1180px, calc(100% - 56px));
+  margin-inline: auto;
+}
+
+.tac-download-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 64px);
+  padding: clamp(64px, 7vw, 88px) 0 clamp(72px, 8vw, 96px);
+}
+
+.tac-download-hero::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  content: '';
+  background: radial-gradient(circle at 65% 45%, rgba(134, 210, 244, .36), transparent 68%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.tac-download-hero-copy,
+.tac-download-hero-art {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.tac-download-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--tac-space-4);
+  color: #55727d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.4;
+}
+
+.tac-download-eyebrow span {
+  flex: 0 0 28px;
+  height: 2px;
+  background: #ef3e3a;
+}
+
+.tac-download h1 {
+  max-width: 600px;
+  margin-bottom: var(--tac-space-4);
+  font-size: clamp(60px, 5.3vw, 76px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.tac-download-lead {
+  max-width: 510px;
+  margin-bottom: var(--tac-space-4);
+  color: var(--tac-muted);
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.tac-download-action-group {
+  display: grid;
+  justify-items: start;
+  gap: var(--tac-space-2);
+}
+
+.tac-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 56px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 7px;
+  background: #121918;
+  color: #fff !important;
+  font-family: 'TAC Download Roboto', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 13px 24px rgba(14, 31, 34, .16);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.tac-download-button:hover {
+  transform: translateY(-2px);
+  background: #26383b;
+}
+
+.tac-download-button span {
+  font-size: 18px;
+}
+
+.tac-download-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 9px;
+  row-gap: 3px;
+  color: #647b84;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.tac-download-note-separator {
+  color: #9aadb2;
+}
+
+.tac-download-access-note {
+  max-width: 510px;
+  margin-top: var(--tac-space-3);
+  color: #45606a;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.tac-download-security-note {
+  max-width: 540px;
+  margin-top: var(--tac-space-3);
+  padding: 12px 16px;
+  border-inline-start: 2px solid #8a9ba0;
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, .62);
+  color: #536970;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.tac-download-hero-art {
+  padding: 12px;
+  border: 1px solid rgba(39, 103, 127, .17);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .6);
+  box-shadow: 0 18px 40px rgba(37, 102, 127, .1);
+}
+
+.tac-download-hero-screen,
+.tac-download-screen-frame {
+  overflow: hidden;
+  border: 1px solid rgba(33, 92, 111, .14);
+  border-radius: 13px;
+  background: #111416;
+}
+
+.tac-download-hero-screen img,
+.tac-download-screen-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tac-download-hero-art figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 4px 2px;
+  color: #536970;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tac-download-hero-art figcaption span,
+.tac-download-detail-grid article > span,
+.tac-download-steps li > span {
+  color: #e74641;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tac-download-showcase {
+  padding-bottom: var(--tac-space-8);
+  border-top: 1px solid var(--tac-line);
+}
+
+.tac-download-showcase-heading,
+.tac-download-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+  align-items: end;
+  gap: clamp(28px, 5vw, 64px);
+  padding: 32px 0;
+}
+
+.tac-download-showcase-heading .tac-download-eyebrow,
+.tac-download-section-heading .tac-download-eyebrow,
+.tac-download-steps-heading .tac-download-eyebrow,
+.tac-download-release-heading .tac-download-eyebrow {
+  margin-bottom: var(--tac-space-3);
+}
+
+.tac-download h2 {
+  font-size: clamp(34px, 3.5vw, 44px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -.02em;
+}
+
+.tac-download-showcase-title h2,
+.tac-download-section-heading h2 {
+  max-width: 650px;
+}
+
+.tac-download-showcase-heading > p,
+.tac-download-section-heading > p,
+.tac-download-steps-heading > p:last-child {
+  max-width: 540px;
+  color: #607983;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tac-download-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tac-download-screen {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(33, 92, 111, .13);
+  border-radius: 18px;
+  background: var(--tac-paper);
+  box-shadow: 0 14px 32px rgba(37, 102, 127, .08);
+}
+
+.tac-download-screen figcaption {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px 12px;
+  padding: 18px 8px 6px;
+}
+
+.tac-download-screen figcaption > span {
+  grid-row: 1 / span 2;
+  color: #e74641;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.tac-download-screen figcaption strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -.015em;
+}
+
+.tac-download-screen figcaption p {
+  color: #607983;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.tac-download-screen figcaption a {
+  grid-column: 2;
+  justify-self: start;
+  color: var(--tac-blue);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tac-download-screen figcaption a span {
+  margin-left: 3px;
+}
+
+.tac-download-details,
+.tac-download-steps {
+  padding: var(--tac-space-8) 0;
+  border-top: 1px solid var(--tac-line);
+}
+
+.tac-download-section-heading {
+  padding: 0 0 var(--tac-space-5);
+}
+
+.tac-download-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--tac-space-3);
+}
+
+.tac-download-detail-grid article {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--tac-space-3);
+  padding: var(--tac-space-4);
+  border: 1px solid rgba(33, 92, 111, .12);
+  border-radius: 16px;
+  background: var(--tac-paper);
+}
+
+.tac-download-detail-grid h3,
+.tac-download-steps h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -.015em;
+}
+
+.tac-download-detail-grid p,
+.tac-download-steps li p {
+  color: #607983;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tac-download-steps-heading {
+  max-width: 660px;
+  margin-bottom: var(--tac-space-5);
+}
+
+.tac-download-steps-heading h2 {
+  margin-bottom: var(--tac-space-3);
+}
+
+.tac-download-steps ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--tac-space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.tac-download-steps li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-content: start;
+  gap: 8px 12px;
+  min-width: 0;
+  padding: var(--tac-space-4);
+  border: 1px solid rgba(33, 92, 111, .12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .56);
+}
+
+.tac-download-steps li > span {
+  grid-row: 1 / span 2;
+  line-height: 1.5;
+}
+
+.tac-download-steps h3 {
+  font-size: 20px;
+}
+
+.tac-download-release {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 64px);
+  margin-bottom: var(--tac-space-8);
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: 20px;
+  background: #142529;
+  color: #edf9fa;
+}
+
+.tac-download-release .tac-download-eyebrow {
+  color: #acd2d7;
+}
+
+.tac-download-release h2 {
+  margin-bottom: var(--tac-space-3);
+  font-size: clamp(30px, 3.2vw, 40px);
+}
+
+.tac-download-release-heading > p:last-child {
+  color: #b4ced2;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tac-download-release dl {
+  display: grid;
+  min-width: 0;
+}
+
+.tac-download-release dl > div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(202, 241, 243, .14);
+}
+
+.tac-download-release dt {
+  color: #85aeb5;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.tac-download-release dd {
+  min-width: 0;
+  margin: 0;
+  color: #edf9fa;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.tac-download-checksum-row dd {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px 14px;
+}
+
+.tac-download-checksum-row code {
+  min-width: 0;
+  color: #edf9fa;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.tac-download-copy {
+  min-height: 36px;
+  padding: 5px 10px;
+  border: 1px solid rgba(202, 241, 243, .28);
+  border-radius: 6px;
+  background: transparent;
+  color: #edf9fa;
+  font: 500 12px/1.35 'TAC Download Roboto', Arial, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tac-download-copy:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+.tac-download-copy-status {
+  grid-column: 1 / -1;
+  color: #b4ced2;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.tac-download-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 24px max(28px, calc((100% - 1180px) / 2));
+  background: #0c1618;
+  color: #9bb8bc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tac-download-footer a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.tac-download-footer a span {
+  color: #e74641;
+}
+
+.tac-download-hero-copy,
+.tac-download-hero-art,
+.tac-download-showcase,
+.tac-download-details,
+.tac-download-steps,
+.tac-download-release {
+  opacity: 1;
+}
+
+.tac-download-hero-copy.is-ready,
+.tac-download-hero-art.is-ready,
+.tac-download-showcase.is-ready,
+.tac-download-details.is-ready,
+.tac-download-steps.is-ready,
+.tac-download-release.is-ready {
+  animation: tac-download-in .7s cubic-bezier(.2, .75, .25, 1) both;
+  animation-delay: var(--delay);
+}
+
+@keyframes tac-download-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  .tac-download-hero {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .tac-download-hero-copy {
+    max-width: 720px;
+  }
+
+  .tac-download-hero-art {
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .tac-download-showcase-heading,
+  .tac-download-section-heading,
+  .tac-download-release {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .tac-download-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tac-download-steps ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tac-download-header,
+  .tac-download-hero,
+  .tac-download-showcase,
+  .tac-download-details,
+  .tac-download-steps,
+  .tac-download-release {
+    width: calc(100% - 32px);
+  }
+
+  .tac-download-header {
+    min-height: 62px;
+    margin-top: 10px;
+    padding: 9px 13px;
+    border-radius: 14px;
+  }
+
+  .tac-download-brand img {
+    width: 96px;
+  }
+
+  .tac-download-back {
+    font-size: 12px;
+  }
+
+  .tac-download-hero {
+    gap: 32px;
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .tac-download-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .tac-download h1 {
+    max-width: 500px;
+    margin-bottom: 16px;
+    font-size: clamp(40px, 10.5vw, 48px);
+    line-height: 1.1;
+  }
+
+  .tac-download-lead {
+    margin-bottom: 20px;
+    font-size: 17px;
+  }
+
+  .tac-download-button {
+    min-height: 54px;
+    padding-inline: 18px;
+    font-size: 15px;
+  }
+
+  .tac-download-note,
+  .tac-download-access-note {
+    font-size: 13px;
+  }
+
+  .tac-download-security-note {
+    font-size: 13px;
+  }
+
+  .tac-download-hero-art {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .tac-download-hero-screen,
+  .tac-download-screen-frame {
+    border-radius: 10px;
+  }
+
+  .tac-download-showcase {
+    padding-bottom: 64px;
+  }
+
+  .tac-download-showcase-heading,
+  .tac-download-section-heading {
+    gap: 14px;
+    padding: 24px 0;
+  }
+
+  .tac-download h2 {
+    font-size: clamp(32px, 8.5vw, 38px);
+  }
+
+  .tac-download-showcase-heading > p,
+  .tac-download-section-heading > p,
+  .tac-download-steps-heading > p:last-child {
+    font-size: 15px;
+  }
+
+  .tac-download-showcase-grid,
+  .tac-download-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .tac-download-screen {
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .tac-download-screen figcaption {
+    padding: 15px 6px 5px;
+  }
+
+  .tac-download-screen figcaption strong {
+    font-size: 19px;
+  }
+
+  .tac-download-details,
+  .tac-download-steps {
+    padding-block: 64px;
+  }
+
+  .tac-download-section-heading {
+    padding-bottom: 24px;
+  }
+
+  .tac-download-detail-grid article,
+  .tac-download-steps li {
+    padding: 20px;
+  }
+
+  .tac-download-detail-grid h3 {
+    font-size: 21px;
+  }
+
+  .tac-download-release {
+    gap: 24px;
+    margin-bottom: 64px;
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .tac-download-release dl > div {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .tac-download-checksum-row dd {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .tac-download-copy-status {
+    grid-column: 1;
+  }
+
+  .tac-download-footer {
+    flex-direction: column;
+    padding: 22px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tac-download-button { transition: none; }
+  .tac-download-hero-copy.is-ready,
+  .tac-download-hero-art.is-ready,
+  .tac-download-showcase.is-ready,
+  .tac-download-details.is-ready,
+  .tac-download-steps.is-ready,
+  .tac-download-release.is-ready { animation: none; }
+}

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Download TACWork for Windows and get started with a shared AI workspace.">
-  <title>Download TACWork</title>
+  <title>Download TACWork 0.2.3 | TAC AI</title>
   <link rel="icon" type="image/webp" href="/assets/tac/assistant/expressions/happy.webp" sizes="1024x1024">
   <link rel="apple-touch-icon" href="/assets/tac/assistant/expressions/happy.webp">
 </head>
@@ -17,64 +17,63 @@
     <a class="tac-download-back" href="../index.html">Back to TAC AI <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
-    <section class="tac-download-hero">
+    <section class="tac-download-hero" aria-labelledby="downloadTitle">
       <div class="tac-download-hero-copy">
         <p class="tac-download-eyebrow"><span></span>DESKTOP WORKSPACE</p>
-        <h1>Download TACWork.</h1>
-        <p class="tac-download-lead">A dependable workspace for building, sharing, and running AI workflows with your team.</p>
-        <div id="tacDownloadAction"></div>
-        <form class="tac-download-gate" id="tacDownloadGate" hidden>
-          <label for="tacDownloadKey">Internal access key</label>
-          <div class="tac-download-gate-row">
-            <input id="tacDownloadKey" name="accessKey" type="password" autocomplete="off" spellcheck="false" placeholder="Enter access key">
-            <button type="submit">Activate</button>
-          </div>
-          <p id="tacDownloadGateStatus" role="status">Enter the internal key to enable this download.</p>
-        </form>
-        <p class="tac-download-note"><span id="tacDownloadHeroMeta"></span> · <span id="tacDownloadAvailability"></span></p>
+        <h1 id="downloadTitle">Download TACWork.</h1>
+        <p class="tac-download-lead">A dependable desktop workspace for building, sharing, and running AI workflows with your team.</p>
+        <div class="tac-download-action-group">
+          <div id="tacDownloadAction"></div>
+          <p class="tac-download-note" aria-label="Download platform and version">
+            <span id="tacDownloadHeroMeta"></span>
+            <span class="tac-download-note-separator" aria-hidden="true">·</span>
+            <span id="tacDownloadVersionMeta"></span>
+            <span class="tac-download-note-separator" aria-hidden="true">·</span>
+            <span id="tacDownloadReleaseType"></span>
+          </p>
+        </div>
+        <p class="tac-download-access-note" id="tacDownloadAvailability"></p>
+        <p class="tac-download-security-note" id="tacDownloadSecurityNote" role="note"></p>
       </div>
-      <div class="tac-download-hero-art" aria-label="TACWork product mark">
-        <div class="tac-download-orbit tac-download-orbit--one"></div>
-        <div class="tac-download-orbit tac-download-orbit--two"></div>
-        <img src="../assets/tac/tacwork-logo-black.png" alt="TACWork">
-        <span class="tac-download-art-label">TACWORK / 01</span>
-      </div>
+      <figure class="tac-download-hero-art">
+        <div class="tac-download-hero-screen">
+          <img src="../assets/tac/tacwork/tacwork-new-session.png" alt="TACWork desktop showing a new session workspace" width="1749" height="1218" fetchpriority="high" decoding="async">
+        </div>
+        <figcaption><span>01</span>New session workspace</figcaption>
+      </figure>
     </section>
 
     <section class="tac-download-showcase" aria-labelledby="showcaseTitle">
       <div class="tac-download-showcase-heading">
-        <div>
+        <div class="tac-download-showcase-title">
           <p class="tac-download-eyebrow"><span></span>PRODUCT IN VIEW</p>
-          <h2 id="showcaseTitle">A workspace built for the work in front of you.</h2>
+          <h2 id="showcaseTitle">A closer look at the TACWork workspace.</h2>
         </div>
-        <p>Explore the TACWork desktop experience: start a focused session, connect your providers, and create a workspace that keeps the operating context together.</p>
+        <p>Connect your model providers and choose how each project runs, while keeping setup close to your everyday work.</p>
       </div>
       <div class="tac-download-showcase-grid">
         <figure class="tac-download-screen">
           <div class="tac-download-screen-frame">
-            <img src="../assets/tac/tacwork/tacwork-new-session.png" alt="TACWork new session workspace" loading="lazy" decoding="async">
-          </div>
-          <figcaption><span>01</span><div><strong>Start with a focused workspace</strong><p>Turn a plain-language task into a new TACWork session.</p></div></figcaption>
-        </figure>
-        <figure class="tac-download-screen">
-          <div class="tac-download-screen-frame">
             <img src="../assets/tac/tacwork/tacwork-ai-providers.png" alt="TACWork AI Providers settings" loading="lazy" decoding="async">
           </div>
-          <figcaption><span>02</span><div><strong>Connect the tools you use</strong><p>Keep provider configuration close to the workspace.</p></div></figcaption>
+          <figcaption><span>02</span><div><strong>Connect model providers</strong><p>Manage model services from the TACWork workspace.</p></div><a href="../assets/tac/tacwork/tacwork-ai-providers.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full AI Providers screenshot in a new tab">Open full image <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
         <figure class="tac-download-screen">
           <div class="tac-download-screen-frame">
             <img src="../assets/tac/tacwork/tacwork-workspace.png" alt="TACWork workspace setup dialog" loading="lazy" decoding="async">
           </div>
-          <figcaption><span>03</span><div><strong>Build on local or remote work</strong><p>Choose the workspace setup that fits your operating model.</p></div></figcaption>
+          <figcaption><span>03</span><div><strong>Choose a workspace setup</strong><p>Start with a local workspace or connect a supported remote worker.</p></div><a href="../assets/tac/tacwork/tacwork-workspace.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full workspace setup screenshot in a new tab">Open full image <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
       </div>
     </section>
 
     <section class="tac-download-details" aria-labelledby="detailsTitle">
-      <div>
+      <div class="tac-download-section-heading">
+        <div>
         <p class="tac-download-eyebrow"><span></span>WHAT YOU GET</p>
         <h2 id="detailsTitle">Everything you need to start useful work.</h2>
+        </div>
+        <p>Explore the core ways TACWork brings your work and AI tools together.</p>
       </div>
       <div class="tac-download-detail-grid">
         <article><span>01</span><h3>One focused workspace</h3><p>Keep projects, tasks, tools, and AI workflows together in one desktop app.</p></article>
@@ -86,18 +85,24 @@
     <section class="tac-download-steps" aria-labelledby="stepsTitle">
       <div class="tac-download-steps-heading">
         <p class="tac-download-eyebrow"><span></span>QUICKSTART</p>
-        <h2 id="stepsTitle">Get started with TACWork.</h2>
+        <h2 id="stepsTitle">Install in three steps.</h2>
+        <p>Continue to the official download page, then follow the installer on your Windows PC.</p>
       </div>
       <ol>
-        <li><span>01</span><div><h3>Download the installer</h3><p>Choose the Windows download above and save the installer to your computer.</p></div></li>
+        <li><span>01</span><div><h3>Download the installer</h3><p>Continue to the official TACWork download page, enter your download Key, and save the installer.</p></div></li>
         <li><span>02</span><div><h3>Run the installer</h3><p>Open the downloaded file and follow the installation prompts.</p></div></li>
         <li><span>03</span><div><h3>Open TACWork</h3><p>Launch TACWork, create your first workspace, and begin building.</p></div></li>
       </ol>
     </section>
 
-    <section class="tac-download-release" aria-label="Release information">
-      <div><p class="tac-download-eyebrow"><span></span>RELEASE INFORMATION</p><h2><span id="tacDownloadProduct"></span> <span id="tacDownloadVersion"></span></h2><p><span id="tacDownloadPlatformCopy"></span> installer for the current TACWork desktop preview.</p></div>
-      <dl><div><dt>Platform</dt><dd id="tacDownloadPlatform"></dd></div><div><dt>File</dt><dd id="tacDownloadFile"></dd></div><div><dt>SHA-256</dt><dd id="tacDownloadChecksum"></dd></div></dl>
+    <section class="tac-download-release" aria-labelledby="releaseTitle">
+      <div class="tac-download-release-heading"><p class="tac-download-eyebrow"><span></span>RELEASE INFORMATION</p><h2 id="releaseTitle"><span id="tacDownloadProduct"></span> <span id="tacDownloadVersion"></span></h2><p><span id="tacDownloadPlatformCopy"></span> stable installer. The download Key is verified on the official download page.</p></div>
+      <dl>
+        <div><dt>Platform</dt><dd id="tacDownloadPlatform"></dd></div>
+        <div><dt>File</dt><dd id="tacDownloadFile"></dd></div>
+        <div><dt>Size</dt><dd id="tacDownloadFileSize"></dd></div>
+        <div class="tac-download-checksum-row"><dt>SHA-256</dt><dd><code id="tacDownloadChecksum"></code><button class="tac-download-copy" type="button" data-copy-checksum aria-label="Copy the full SHA-256 checksum">Copy checksum</button><span class="tac-download-copy-status" id="tacDownloadChecksumStatus" role="status" aria-live="polite"></span></dd></div>
+      </dl>
     </section>
   </main>
   <footer class="tac-download-footer"><a href="../index.html">TAC<span>.</span>AI</a><span>© 2026 TAC. All rights reserved.</span><span>More platforms coming soon.</span></footer>
