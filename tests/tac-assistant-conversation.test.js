@@ -49,8 +49,8 @@ test('follow-up pronouns use recent conversation during search and answer genera
       const payload = JSON.parse(options.body);
       assert.deepEqual(payload.messages.slice(1, -1), history);
       calls++;
-      assert.ok(payload.messages[0].content.includes('Internal preview; an access key is required'));
-      return completion({ action: 'answer', answer: '它目前是内部预览，需要访问密钥。', sourceIds: ['tacwork-release'] });
+      assert.ok(payload.messages[0].content.includes('server verifies the download Key'));
+      return completion({ action: 'answer', answer: '前往 TACWork 官方下载页后输入下载 Key。', sourceIds: ['tacwork-release'] });
     };
     const answer = await (await worker.fetch(request('那它要从哪儿弄？', history), { ASSISTANT_API_KEY: 'test-key' })).json();
     assert.equal(answer.state, 'complete');

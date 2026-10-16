@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "24dd3418943eaf82",
+  "revision": "f44c87900aad5e1a",
   "pages": [
     {
       "href": "/index.html",
@@ -29,7 +29,7 @@
     },
     {
       "href": "/pages/tacwork-download.html",
-      "title": "Download TACWork",
+      "title": "Download TACWork 0.2.3 | TAC AI",
       "documentCount": 6
     },
     {
@@ -41,6 +41,11 @@
       "href": "/pages/tac-cli.html",
       "title": "TAC CLI — Coming Soon",
       "documentCount": 1
+    },
+    {
+      "href": "/pages/tac-workspaces.html",
+      "title": "TACWork Workspaces | TAC.AI",
+      "documentCount": 4
     },
     {
       "href": "/pages/tac-plugins.html",
@@ -811,9 +816,9 @@
     {
       "id": "tacwork-download-1-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork",
+      "pageTitle": "Download TACWork 0.2.3 | TAC AI",
       "title": "Download TACWork.",
-      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable workspace for building, sharing, and running AI workflows with your team.\n·\nTACWORK / 01",
+      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable desktop workspace for building, sharing, and running AI workflows with your team.\n01New session workspace",
       "keywords": [
         "TACWork",
         "download",
@@ -823,15 +828,15 @@
         "桌面应用",
         "版本"
       ],
-      "href": "/pages/tacwork-download.html",
+      "href": "/pages/tacwork-download.html#downloadTitle",
       "sourceFile": "pages/tacwork-download.html"
     },
     {
       "id": "tacwork-download-2-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork",
-      "title": "A workspace built for the work in front of you.",
-      "text": "PRODUCT IN VIEW\nA workspace built for the work in front of you.\nExplore the TACWork desktop experience: start a focused session, connect your providers, and create a workspace that keeps the operating context together.\n01\nStart with a focused workspace\nTurn a plain-language task into a new TACWork session.\n02\nConnect the tools you use\nKeep provider configuration close to the workspace.\n03\nBuild on local or remote work\nChoose the workspace setup that fits your operating model.",
+      "pageTitle": "Download TACWork 0.2.3 | TAC AI",
+      "title": "A closer look at the TACWork workspace.",
+      "text": "PRODUCT IN VIEW\nA closer look at the TACWork workspace.\nConnect your model providers and choose how each project runs, while keeping setup close to your everyday work.\n02\nConnect model providers\nManage model services from the TACWork workspace.\nOpen full image\n03\nChoose a workspace setup\nStart with a local workspace or connect a supported remote worker.\nOpen full image",
       "keywords": [
         "TACWork",
         "download",
@@ -847,9 +852,9 @@
     {
       "id": "tacwork-download-3-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork",
+      "pageTitle": "Download TACWork 0.2.3 | TAC AI",
       "title": "Everything you need to start useful work.",
-      "text": "WHAT YOU GET\nEverything you need to start useful work.\n01\nOne focused workspace\nKeep projects, tasks, tools, and AI workflows together in one desktop app.\n02\nShareable workflows\nCreate once, then reuse the same operating patterns across your team.\n03\nReady for iteration\nStart locally and evolve your setup as your work becomes more connected.",
+      "text": "WHAT YOU GET\nEverything you need to start useful work.\nExplore the core ways TACWork brings your work and AI tools together.\n01\nOne focused workspace\nKeep projects, tasks, tools, and AI workflows together in one desktop app.\n02\nShareable workflows\nCreate once, then reuse the same operating patterns across your team.\n03\nReady for iteration\nStart locally and evolve your setup as your work becomes more connected.",
       "keywords": [
         "TACWork",
         "download",
@@ -865,9 +870,9 @@
     {
       "id": "tacwork-download-4-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork",
-      "title": "Get started with TACWork.",
-      "text": "QUICKSTART\nGet started with TACWork.\n01\nDownload the installer\nChoose the Windows download above and save the installer to your computer.\n02\nRun the installer\nOpen the downloaded file and follow the installation prompts.\n03\nOpen TACWork\nLaunch TACWork, create your first workspace, and begin building.",
+      "pageTitle": "Download TACWork 0.2.3 | TAC AI",
+      "title": "Install in three steps.",
+      "text": "QUICKSTART\nInstall in three steps.\nContinue to the official download page, then follow the installer on your Windows PC.\n01\nDownload the installer\nContinue to the official TACWork download page, enter your download Key, and save the installer.\n02\nRun the installer\nOpen the downloaded file and follow the installation prompts.\n03\nOpen TACWork\nLaunch TACWork, create your first workspace, and begin building.",
       "keywords": [
         "TACWork",
         "download",
@@ -883,9 +888,9 @@
     {
       "id": "tacwork-download-5-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork",
-      "title": "Download TACWork",
-      "text": "RELEASE INFORMATION\ninstaller for the current TACWork desktop preview.\nPlatform\nFile\nSHA-256",
+      "pageTitle": "Download TACWork 0.2.3 | TAC AI",
+      "title": "Download TACWork 0.2.3 | TAC AI",
+      "text": "RELEASE INFORMATION\nstable installer. The download Key is verified on the official download page.\nPlatform\nFile\nSize\nSHA-256",
       "keywords": [
         "TACWork",
         "download",
@@ -895,7 +900,7 @@
         "桌面应用",
         "版本"
       ],
-      "href": "/pages/tacwork-download.html",
+      "href": "/pages/tacwork-download.html#releaseTitle",
       "sourceFile": "pages/tacwork-download.html"
     },
     {
@@ -971,6 +976,46 @@
       ],
       "href": "/pages/tac-cli.html#main",
       "sourceFile": "pages/tac-cli.html"
+    },
+    {
+      "id": "tac-workspaces-1-0",
+      "section": "tac-workspaces",
+      "pageTitle": "TACWork Workspaces | TAC.AI",
+      "title": "Bring a repeatable way of working to your team.",
+      "text": "TACWORK / WORKSPACES\nBring a repeatable way of working to your team.\nExplore workspace concepts for sales, marketing, office work, analysis, and delivery. See what goes in, how the work is organized, and what a draft output could look like.\nSearch workspaces\nA WORKSPACE ORGANIZES01 — 03\n01\nYour contextFiles, guidance, and a clear task\n02\nA suggested workflowSteps and review points\n03\nDraft outputsFor a person to review",
+      "keywords": [],
+      "href": "/pages/tac-workspaces.html#workspaces-title",
+      "sourceFile": "pages/tac-workspaces.html"
+    },
+    {
+      "id": "tac-workspaces-2-0",
+      "section": "tac-workspaces",
+      "pageTitle": "TACWork Workspaces | TAC.AI",
+      "title": "Find a workflow for the work you do.",
+      "text": "Prototype directory. This prototype does not include executable workspace packages or an importer.\nEXPLORE WORKSPACES\nFind a workflow for the work you do.\nCompare the inputs, suggested steps, and expected outputs before shaping a workspace for your team.\nAll workspaces",
+      "keywords": [],
+      "href": "/pages/tac-workspaces.html#directoryTitle",
+      "sourceFile": "pages/tac-workspaces.html"
+    },
+    {
+      "id": "tac-workspaces-3-0",
+      "section": "tac-workspaces",
+      "pageTitle": "TACWork Workspaces | TAC.AI",
+      "title": "Start with a clear task. Keep a person in the loop.",
+      "text": "HOW TO USE A WORKSPACE\nStart with a clear task. Keep a person in the loop.\nUse a workspace as a repeatable starting point, then review its drafts before they are shared or acted on.\n01\nChoose a starting point\nFind a workflow that matches the task your team needs to do.\n02\nPrepare the materials\nUse the guide to identify the files and context the task needs.\n03\nReview and adapt\nCheck draft outputs with your team and adjust the process to fit your work.",
+      "keywords": [],
+      "href": "/pages/tac-workspaces.html#howTitle",
+      "sourceFile": "pages/tac-workspaces.html"
+    },
+    {
+      "id": "tac-workspaces-4-0",
+      "section": "tac-workspaces",
+      "pageTitle": "TACWork Workspaces | TAC.AI",
+      "title": "Explore TACWork or plan a workspace for your team.",
+      "text": "YOUR NEXT STEP\nExplore TACWork or plan a workspace for your team.\nGet the TACWork desktop app or talk with TAC about a workspace shaped around your business process.\nGet TACWork Discuss a custom workspace",
+      "keywords": [],
+      "href": "/pages/tac-workspaces.html#ctaTitle",
+      "sourceFile": "pages/tac-workspaces.html"
     },
     {
       "id": "tac-plugins-0-0",
@@ -3503,9 +3548,9 @@
     {
       "id": "tacwork-release",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork",
+      "pageTitle": "Download TACWork 0.2.3 | TAC AI",
       "title": "TACWork release and download availability",
-      "text": "Product: TACWork. Version: 0.2.1-rc.1. Platform: Windows x64. File: tacwork-win-x64-0.2.1-rc.1.exe. Size: 171 MB. Availability: Internal preview; an access key is required. Public download is not enabled.",
+      "text": "Product: TACWork. Version: 0.2.3 (Stable release). Platform: Windows x64. File: tacwork-win-x64-0.2.3.exe. Size: 179.3 MB (171 MiB). Availability: Available through the official TACWork download page; the server verifies the download Key there. Installer status: not code-signed; Windows may display an unknown publisher or SmartScreen warning.",
       "keywords": [
         "TACWork",
         "download",

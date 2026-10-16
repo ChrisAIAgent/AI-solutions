@@ -120,7 +120,7 @@ export function buildSiteIndex(root = ROOT) {
 
   const download = content.download;
   add('tacwork-release', 'tacwork-download', 'TACWork release and download availability',
-    `Product: ${download.product}. Version: ${download.version}. Platform: ${download.platform}. File: ${download.fileName}. Size: ${download.fileSize}. Availability: ${download.available ? 'Public download available' : 'Internal preview; an access key is required. Public download is not enabled'}.`,
+    `Product: ${download.product}. Version: ${download.version} (${download.releaseType}). Platform: ${download.platform}. File: ${download.fileName}. Size: ${download.fileSize}. Availability: ${download.available ? 'Available through the official TACWork download page; the server verifies the download Key there' : 'Download is not currently available'}. Installer status: not code-signed; Windows may display an unknown publisher or SmartScreen warning.`,
     aliases['tacwork-download'], 'src/data/tac-home-content.js');
 
   const assetFile = 'public/assets/tac/assistant/assistant-asset-manifest.json';

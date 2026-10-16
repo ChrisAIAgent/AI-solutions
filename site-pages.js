@@ -8,6 +8,7 @@ export const sitePages = {
   'pages/tacwork-download': 'pages/tacwork-download.html',
   'pages/tac-harness': 'pages/tac-harness.html',
   'pages/tac-cli': 'pages/tac-cli.html',
+  'pages/tac-workspaces': 'pages/tac-workspaces.html',
   'pages/tac-plugins': 'pages/tac-plugins.html',
   'pages/skills': 'pages/skills.html',
   'pages/tac-assistant-assets': 'pages/tac-assistant-assets.html'

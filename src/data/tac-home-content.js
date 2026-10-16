@@ -1,7 +1,7 @@
 // TAC home page content is deliberately centralized so the internal preview
 // structure can later be swapped for approved production copy without DOM edits.
 // Local-only visual alignment mode. Switch to `tac` before any public build.
-import { contactLinks, emailTac } from './tac-contact.js';
+import { emailTac } from './tac-contact.js';
 
 export const CONTENT_MODE = 'tac';
 
@@ -35,7 +35,7 @@ export const tacContent = {
       { label: 'Tailored applications', href: '#Tailored-Applications', kind: 'section' }
     ] },
     { label: 'Agent Marketplace', target: '#applications', items: [
-      { label: 'Agents', disabled: true, note: 'Coming soon' },
+      { label: 'Workspaces', href: './pages/tac-workspaces.html' },
       { label: 'Plugin', href: './pages/tac-plugins.html' },
       { label: 'Integrations', disabled: true, note: 'Coming soon' },
       { label: 'Skills', href: './pages/skills.html' },
@@ -51,7 +51,7 @@ export const tacContent = {
     eyebrow: 'TAC AI PLATFORM',
     title: 'Build AI operations that move with your business.',
     lead: 'TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.',
-    primary: action('GET A DEMO', contactLinks.demo),
+    primary: action('GET IN TOUCH', '#contact'),
     secondary: action('EXPLORE THE PLATFORM', '#platform'),
     featureCards: [
       { title: 'Pre-built Applications', text: 'Use applications for Banking, Healthcare, Retail, HR, IT, and Recruiting today.' },

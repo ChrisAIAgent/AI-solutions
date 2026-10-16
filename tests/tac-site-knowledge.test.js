@@ -78,7 +78,7 @@ test('Worker supplies real secondary-page context, release restrictions and page
   const originalFetch = globalThis.fetch;
   try {
     for (const [question, expected, path] of [
-      ['TACWork怎么下载？', 'Internal preview; an access key is required', '/pages/tacwork-download.html'],
+      ['TACWork怎么下载？', 'server verifies the download Key', '/pages/tacwork-download.html'],
       ['When will TAC CLI launch?', 'There is no public download or release date', '/pages/tac-cli.html'],
       ['Show TAC Harness demos', 'Creator mode', '/pages/tac-harness.html']
     ]) {

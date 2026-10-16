@@ -10,7 +10,7 @@ The assistant searches public website content before asking the configured LLM t
 - Secondary pages: visible `<main>` content parsed with parse5, split into passages with page or section links.
 - Plugins: the same `src/data/tac-plugins.json` catalog used by the directory.
 - Skills: the same publishable `public/skill-artifacts/MANIFEST.json` entries used by the marketplace, with the UI's fallback catalog when no publishable manifest entries exist.
-- TACWork availability: selected public release fields from the homepage data. Internal preview restrictions accompany TACWork answers. The activation key is never copied into the knowledge index.
+- TACWork availability: selected public release fields from the homepage data. Download Key verification happens on the official TACWork download page; the Key is never copied into the knowledge index.
 - Asset Lab: the public asset inventory and motion-state metadata in its JSON manifests.
 
 Navigation, forms, buttons, scripts, hidden content, private configuration, ZIP contents, installers, and external repositories are excluded. Catalog metadata describes community listings, not TAC-built integrations. An external link on the website does not cause that external website to be crawled.
