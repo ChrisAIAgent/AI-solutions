@@ -72,7 +72,9 @@ export function renderSeoHtml(html, file) {
   }
   visit(tree, node => {
     if (node.tagName !== 'a') return;
-    const href = node.attrs.find(a => a.name === 'href'); if (!href) return;
+    const href = node.attrs.find(a => a.name === 'href');
+    // Preserve same-document fragments used by the homepage interaction handlers.
+    if (!href || href.value.startsWith('#')) return;
     const url = new URL(href.value, origin + '/' + file);
     if (url.origin === origin && (Object.values(sitePages).some(f => '/'+f === url.pathname))) href.value = pagePath(url.pathname.slice(1)) + url.search + url.hash;
   });

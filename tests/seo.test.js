@@ -43,3 +43,11 @@ test('sitemap includes only indexable canonical pages and robots allows noindex 
   assert.ok(emitted.find(f=>f.fileName==='robots.txt').source.includes('Allow: /'));
   assert.ok(existsSync('public/404.html'));
 });
+
+test('same-document fragments preserve homepage scrolling and product navigation', () => {
+  const html = renderSeoHtml(readFileSync('index.html', 'utf8'), 'index.html');
+  const hrefs = nodes(html, n => n.tagName === 'a').map(n => attr(n, 'href'));
+  for (const fragment of ['#contact', '#platform', '#Application-Accelerators', '#top']) assert.ok(hrefs.includes(fragment), fragment);
+  assert.ok(!hrefs.includes('/#contact'));
+  assert.ok(hrefs.includes('/pages/skills'));
+});
