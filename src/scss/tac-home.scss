@@ -173,7 +173,7 @@ body.tac-home { margin: 0; background: #edf5f7; color: #111415; font-family: 'TA
 .tac-home .tac-feature-rive canvas { display: block; width: 100%; height: 100%; }
 .tac-home .tac-feature-fallback { position: absolute; inset: 0; opacity: 0; transition: opacity .2s ease; pointer-events: none; }
 .tac-home .tac-feature-rive.has-error canvas { display: none; }
-.tac-home .tac-feature-rive.has-error .tac-feature-fallback { opacity: 1; }
+.tac-home .tac-feature-rive:not(.is-loaded) .tac-feature-fallback { opacity: 1; }
 @media (max-width: 980px) { .tac-home .tac-feature-rive { height: 245px; } }
 @media (max-width: 620px) { .tac-home .tac-feature-rive { right: 4%; left: 4%; height: 220px; } }
 

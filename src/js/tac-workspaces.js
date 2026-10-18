@@ -1,3 +1,4 @@
+import { renderWorkspaceCard } from './tac-workspaces-render.js';
 import '../scss/tac-workspaces.scss';
 import { getWorkspaceById, workspaceCategories, workspaceStatuses, workspaces } from '../data/tac-workspaces.js';
 import {
@@ -61,23 +62,7 @@ function renderFilters() {
   }));
 }
 
-function renderWorkspaceCard(workspace) {
-  const categoryLabel = categoryName(workspace.categoryId);
-  const featureTag = workspace.featured ? '<span class="tw-featured-tag">Featured</span>' : '';
-  const importLabel = importLabelFor(workspace);
-  return `<article class="tw-card">
-    <div class="tw-card-copy">
-      <div class="tw-card-meta"><span class="tw-category-label">${escapeHtml(categoryLabel)}</span><span class="tw-status">${escapeHtml(statusFor(workspace).label)}</span></div>
-      <div class="tw-card-title-row"><h4>${escapeHtml(workspace.name)}</h4>${featureTag}</div>
-      <p class="tw-card-purpose">${escapeHtml(workspace.purpose)}</p>
-      <div class="tw-card-io">
-        <div><span>INPUT</span><p>${escapeHtml(workspace.inputs.join(' · '))}</p></div>
-        <div><span>EXPECTED OUTPUT</span><p>${escapeHtml(workspace.outputs.join(' · '))}</p></div>
-      </div>
-      <div class="tw-card-actions"><button class="tw-detail-link" type="button" data-workspace-id="${escapeHtml(workspace.id)}">View details <span aria-hidden="true">↗</span></button><span class="tw-import-hint">${escapeHtml(importLabel)}</span></div>
-    </div>
-  </article>`;
-}
+
 
 function renderEmptyState() {
   return `<div class="tw-empty-state" role="status"><span aria-hidden="true">⌕</span><h4>No workspaces found</h4><p>Try a different search or business area, or clear your filters to view the directory.</p><button type="button" data-reset-filters>Clear search and filters</button></div>`;
@@ -86,12 +71,13 @@ function renderEmptyState() {
 function renderDirectory() {
   const filtered = filterWorkspaces(workspaces, state, workspaceCategories);
   elements.count.textContent = `Showing ${numberFormat.format(filtered.length)} of ${numberFormat.format(workspaces.length)} workspaces`;
-  elements.grid.innerHTML = filtered.length ? filtered.map(renderWorkspaceCard).join('') : renderEmptyState();
+  if (!(elements.grid.dataset.staticCatalog === 'true' && !state.query && state.categoryId === 'all')) elements.grid.innerHTML = filtered.length ? filtered.map(renderWorkspaceCard).join('') : renderEmptyState();
   elements.filters.querySelectorAll('[data-category-id]').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.categoryId === state.categoryId));
   });
   elements.clearFilters.hidden = state.categoryId === 'all' && !state.query;
   elements.clearSearch.hidden = !state.query;
+  delete elements.grid.dataset.staticCatalog;
 }
 
 function renderList(items) {

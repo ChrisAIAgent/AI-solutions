@@ -1,3 +1,4 @@
+import { renderCard } from './tac-skills-render.js';
 import '../scss/tac-skills.scss';
 import { skills as fallbackSkills } from '../data/tac-skills.js';
 
@@ -8,11 +9,12 @@ const escapeHtml = (value) => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
+const initialSkills = JSON.parse(document.querySelector('#staticSkillCatalog')?.textContent || 'null') || fallbackSkills;
 const state = {
   query: '',
   category: 'All',
-  skills: [...fallbackSkills],
-  categories: ['All', ...new Set(fallbackSkills.map((skill) => skill.category))]
+  skills: [...initialSkills],
+  categories: ['All', ...new Set(initialSkills.map((skill) => skill.category))]
 };
 let selectedId = '';
 
@@ -60,20 +62,7 @@ function renderFilters() {
   container.innerHTML = state.categories.map((category, index) => `<button type="button" role="tab" aria-selected="${category === state.category}" tabindex="${index === 0 ? '0' : '-1'}" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('');
 }
 
-function renderCard(skill) {
-  const selected = selectedId === skill.id;
-  const label = skill.trust === 'tac-authored' ? 'TAC AUTHORED' : skill.featured ? 'FEATURED' : 'COMMUNITY';
-  const availability = skill.artifactUrl ? 'TACWORK PACKAGE' : 'SOURCE ONLY';
-  return `<button type="button" class="tac-skill-card${skill.featured ? ' is-featured' : ''}${skill.artifactUrl ? ' is-downloadable' : ''}${selected ? ' is-selected' : ''}" data-skill-id="${escapeHtml(skill.id)}" aria-pressed="${selected}">
-    <span class="tac-skill-card-top"><span>${label}</span><span>${escapeHtml(skill.category)}</span></span>
-    <span class="tac-skill-card-number">${String(state.skills.indexOf(skill) + 1).padStart(2, '0')}</span>
-    <strong>${escapeHtml(skill.name)}</strong>
-    <span class="tac-skill-card-description">${escapeHtml(skill.description)}</span>
-    <span class="tac-skill-card-tags">${skill.tags.map((tag) => `<i>${escapeHtml(tag)}</i>`).join('')}</span>
-    <span class="tac-skill-card-availability">${availability}${skill.version ? ` · v${escapeHtml(skill.version)}` : ''}</span>
-    <span class="tac-skill-card-arrow" aria-hidden="true">↗</span>
-  </button>`;
-}
+
 
 function getDetailStatus(skill) {
   if (skill.trust === 'tac-authored') return 'TAC AUTHORED';
@@ -130,9 +119,10 @@ function renderGrid() {
   const grid = document.querySelector('#skillGrid');
   const count = document.querySelector('#skillResultCount');
   count.textContent = `${filtered.length} ${filtered.length === 1 ? 'skill' : 'skills'} shown`;
-  grid.innerHTML = filtered.length
-    ? filtered.map(renderCard).join('')
+  if (!(grid.dataset.staticCatalog === 'true' && !state.query && state.category === 'All' && !selectedId)) grid.innerHTML = filtered.length
+    ? filtered.map(skill => renderCard(skill, state.skills, selectedId)).join('')
     : '<div class="tac-skills-empty"><h3>No matching skills.</h3><p>Try another keyword or category.</p></div>';
+  delete grid.dataset.staticCatalog;
 }
 
 function setSelectedSkill(id, { updateHash = false } = {}) {

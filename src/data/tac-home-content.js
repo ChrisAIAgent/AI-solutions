@@ -50,7 +50,7 @@ export const tacContent = {
   hero: {
     eyebrow: 'TAC AI PLATFORM',
     title: 'Build AI operations that move with your business.',
-    lead: 'TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.',
+    lead: 'TAC brings AI workspaces, connected knowledge, and agent workflows together for individuals, teams, businesses, and solo founders. Explore TACWork for everyday work or discuss a tailored business workflow.',
     primary: action('GET IN TOUCH', '#contact'),
     secondary: action('EXPLORE THE PLATFORM', '#platform'),
     featureCards: [

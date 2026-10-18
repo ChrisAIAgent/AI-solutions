@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "f44c87900aad5e1a",
+  "revision": "8f681df08916d12e",
   "pages": [
     {
       "href": "/index.html",
@@ -68,7 +68,7 @@
       "id": "hero",
       "section": "hero",
       "title": "TAC AI PLATFORM",
-      "text": "Build AI operations that move with your business. TAC brings intelligent automation, connected knowledge, and governed AI workflows together for teams ready to operate at scale.",
+      "text": "Build AI operations that move with your business. TAC brings AI workspaces, connected knowledge, and agent workflows together for individuals, teams, businesses, and solo founders. Explore TACWork for everyday work or discuss a tailored business workflow.",
       "keywords": [
         "TAC",
         "AI",

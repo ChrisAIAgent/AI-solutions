@@ -1,3 +1,4 @@
+import { seoPlugin } from './scripts/seo-build.js';
 import { defineConfig } from 'vite';
 import { existsSync, rmSync } from 'fs';
 import { resolve } from 'path';
@@ -18,7 +19,8 @@ const excludeLocalDownloadArtifact = {
 
 export default defineConfig({
   base: './',
-  plugins: [{ name: 'tac-assistant-site-index', buildStart() { writeSiteIndex(); } }, excludeLocalDownloadArtifact],
+  appType: 'mpa',
+  plugins: [seoPlugin(), { name: 'tac-assistant-site-index', buildStart() { writeSiteIndex(); } }, excludeLocalDownloadArtifact],
   css: {
     preprocessorOptions: {
       scss: {}
