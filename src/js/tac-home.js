@@ -18,11 +18,11 @@ const productHashes = { prebuilt: '#Pre-built-Applications', accelerators: '#App
 function scrollToTacSection(target) {
   const element = typeof target === 'string' ? document.querySelector(target) : target;
   if (!element) return;
-  if (tacLenis) {
-    tacLenis.scrollTo(element, { offset: -94, duration: 1.05, lock: false });
-    return;
-  }
-  element.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  const header = document.querySelector('.tac-header');
+  const headerOffset = header ? Math.ceil(header.getBoundingClientRect().height + 10) : 94;
+  const top = Math.max(0, window.scrollY + element.getBoundingClientRect().top - headerOffset);
+  const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  window.scrollTo({ top, behavior });
 }
 
 function setupHeroVideo() {
