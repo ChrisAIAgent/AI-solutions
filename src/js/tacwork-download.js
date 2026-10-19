@@ -26,10 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#tacDownloadPlatform').textContent = download.platform;
   document.querySelector('#tacDownloadFile').textContent = download.fileName;
   document.querySelector('#tacDownloadFileSize').textContent = download.fileSize;
-  document.querySelector('#tacDownloadChecksum').textContent = download.checksum;
+  const checksumRow = document.querySelector('.tac-download-checksum-row');
+  if (download.checksum) {
+    document.querySelector('#tacDownloadChecksum').textContent = download.checksum;
+  } else {
+    checksumRow?.remove();
+  }
 
   const checksumStatus = document.querySelector('#tacDownloadChecksumStatus');
-  document.querySelector('[data-copy-checksum]')?.addEventListener('click', async () => {
+  if (download.checksum) document.querySelector('[data-copy-checksum]')?.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(download.checksum);
       checksumStatus.textContent = 'Full SHA-256 checksum copied.';
