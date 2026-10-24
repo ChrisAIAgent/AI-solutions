@@ -20,8 +20,8 @@ export const tacContent = {
     fileName: 'tacwork-win-x64-0.2.5.exe',
     fileSize: '208,096,958 bytes (198.4 MiB)',
     checksum: 'f63d4a406cf5b89d07da5b01bf3921d527fb9f2f65195d16f730da849061672f',
-    accessNote: 'Enter your download Key on the official TACWork download page. / 请在 TACWork 官方下载页输入下载 Key。',
-    securityNotice: 'Not code-signed; Windows may show a publisher or security prompt. / 暂未进行代码签名，Windows 可能显示发布者或安全提示。'
+    accessNote: 'Enter your download Key on the official TACWork download page.',
+    securityNotice: 'Not code-signed; Windows may show a publisher or security prompt.'
   },
   nav: [
     { label: 'Agent Platform', target: '#platform', items: [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "7f47345b67a9da55",
+  "revision": "da17c49bda65a0bf",
   "pages": [
     {
       "href": "/index.html",
@@ -818,7 +818,7 @@
       "section": "tacwork-download",
       "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "Download TACWork.",
-      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable desktop workspace for building, sharing, and running AI workflows with your team.\nWhat’s new in 0.2.5 / 0.2.5 更新内容\nDefault interface font is now 13px and adjustable in Appearance settings.默认界面字体调整为 13px，并支持在外观设置中调整。\nExtension, plugin, and skill management improvements.扩展、插件和技能管理体验改进。\nImproved Office attachment handling and file previews.Office 附件处理与文件预览改进。\nEnhanced diagnostics and stability.增强诊断能力并优化稳定性。\nUpdated activation instructions.激活说明更新。\nUpgrade / 升级：Installing the update preserves existing workspaces, settings, and sessions. 安装升级会保留已有工作区、设置和会话。\nCompatibility / 兼容性：Versions below 0.2.5 must be upgraded before creating new tasks, sending messages, or running scheduled tasks. Existing work, stop-task controls, history, exports, settings, and the update entry remain available. 低于 0.2.5 的版本需要升级后，才能继续创建新任务、发送消息和运行定时任务；已有工作、停止任务、历史记录、导出、设置和更新入口仍可使用。\n01New session workspace",
+      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable desktop workspace for building, sharing, and running AI workflows with your team.\nWhat’s new in 0.2.5\nDefault interface font is now 13px and adjustable in Appearance settings.\nExtension, plugin, and skill management improvements.\nImproved Office attachment handling and file previews.\nEnhanced diagnostics and stability.\nUpdated activation instructions.\nUpgrade: Installing the update preserves existing workspaces, settings, and sessions.\nCompatibility: Versions below 0.2.5 must be upgraded before creating new tasks, sending messages, or running scheduled tasks. Existing work, stop-task controls, history, exports, settings, and the update entry remain available.\n01New session workspace",
       "keywords": [
         "TACWork",
         "download",
@@ -890,7 +890,7 @@
       "section": "tacwork-download",
       "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "Download TACWork 0.2.5 | TAC AI",
-      "text": "RELEASE INFORMATION\nstable installer. The download Key is verified on the official download page.\nPlatform\nFile\nSize\nCode signing / 代码签名\nSHA-256",
+      "text": "RELEASE INFORMATION\nstable installer. The download Key is verified on the official download page.\nPlatform\nFile\nSize\nCode signing\nSHA-256",
       "keywords": [
         "TACWork",
         "download",

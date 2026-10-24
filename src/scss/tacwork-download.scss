@@ -298,11 +298,6 @@ body.tac-download {
   content: '';
 }
 
-.tac-download-whats-new li span[lang='zh-CN'] {
-  display: block;
-  color: #647b84;
-}
-
 .tac-download-upgrade-notes {
   display: grid;
   gap: 10px;
@@ -315,10 +310,6 @@ body.tac-download {
 
 .tac-download-upgrade-notes strong {
   color: #334e57;
-}
-
-.tac-download-upgrade-notes [lang='zh-CN'] {
-  color: #647b84;
 }
 
 .tac-download-hero-art {
