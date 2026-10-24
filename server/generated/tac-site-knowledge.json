@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "08ef0089fe3676c0",
+  "revision": "7f47345b67a9da55",
   "pages": [
     {
       "href": "/index.html",
@@ -29,7 +29,7 @@
     },
     {
       "href": "/pages/tacwork-download.html",
-      "title": "Download TACWork 0.2.4 | TAC AI",
+      "title": "Download TACWork 0.2.5 | TAC AI",
       "documentCount": 6
     },
     {
@@ -816,9 +816,9 @@
     {
       "id": "tacwork-download-1-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork 0.2.4 | TAC AI",
+      "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "Download TACWork.",
-      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable desktop workspace for building, sharing, and running AI workflows with your team.\n01New session workspace",
+      "text": "DESKTOP WORKSPACE\nDownload TACWork.\nA dependable desktop workspace for building, sharing, and running AI workflows with your team.\nWhat’s new in 0.2.5 / 0.2.5 更新内容\nDefault interface font is now 13px and adjustable in Appearance settings.默认界面字体调整为 13px，并支持在外观设置中调整。\nExtension, plugin, and skill management improvements.扩展、插件和技能管理体验改进。\nImproved Office attachment handling and file previews.Office 附件处理与文件预览改进。\nEnhanced diagnostics and stability.增强诊断能力并优化稳定性。\nUpdated activation instructions.激活说明更新。\nUpgrade / 升级：Installing the update preserves existing workspaces, settings, and sessions. 安装升级会保留已有工作区、设置和会话。\nCompatibility / 兼容性：Versions below 0.2.5 must be upgraded before creating new tasks, sending messages, or running scheduled tasks. Existing work, stop-task controls, history, exports, settings, and the update entry remain available. 低于 0.2.5 的版本需要升级后，才能继续创建新任务、发送消息和运行定时任务；已有工作、停止任务、历史记录、导出、设置和更新入口仍可使用。\n01New session workspace",
       "keywords": [
         "TACWork",
         "download",
@@ -834,7 +834,7 @@
     {
       "id": "tacwork-download-2-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork 0.2.4 | TAC AI",
+      "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "A closer look at the TACWork workspace.",
       "text": "PRODUCT IN VIEW\nA closer look at the TACWork workspace.\nConnect your model providers and choose how each project runs, while keeping setup close to your everyday work.\n02\nConnect model providers\nManage model services from the TACWork workspace.\nOpen full image\n03\nChoose a workspace setup\nStart with a local workspace or connect a supported remote worker.\nOpen full image",
       "keywords": [
@@ -852,7 +852,7 @@
     {
       "id": "tacwork-download-3-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork 0.2.4 | TAC AI",
+      "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "Everything you need to start useful work.",
       "text": "WHAT YOU GET\nEverything you need to start useful work.\nExplore the core ways TACWork brings your work and AI tools together.\n01\nOne focused workspace\nKeep projects, tasks, tools, and AI workflows together in one desktop app.\n02\nShareable workflows\nCreate once, then reuse the same operating patterns across your team.\n03\nReady for iteration\nStart locally and evolve your setup as your work becomes more connected.",
       "keywords": [
@@ -870,7 +870,7 @@
     {
       "id": "tacwork-download-4-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork 0.2.4 | TAC AI",
+      "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "Install in three steps.",
       "text": "QUICKSTART\nInstall in three steps.\nContinue to the official download page, then follow the installer on your Windows PC.\n01\nDownload the installer\nContinue to the official TACWork download page, enter your download Key, and save the installer.\n02\nRun the installer\nOpen the downloaded file and follow the installation prompts.\n03\nOpen TACWork\nLaunch TACWork, create your first workspace, and begin building.",
       "keywords": [
@@ -888,9 +888,9 @@
     {
       "id": "tacwork-download-5-0",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork 0.2.4 | TAC AI",
-      "title": "Download TACWork 0.2.4 | TAC AI",
-      "text": "RELEASE INFORMATION\nstable installer. The download Key is verified on the official download page.\nPlatform\nFile\nSize\nSHA-256",
+      "pageTitle": "Download TACWork 0.2.5 | TAC AI",
+      "title": "Download TACWork 0.2.5 | TAC AI",
+      "text": "RELEASE INFORMATION\nstable installer. The download Key is verified on the official download page.\nPlatform\nFile\nSize\nCode signing / 代码签名\nSHA-256",
       "keywords": [
         "TACWork",
         "download",
@@ -3548,9 +3548,9 @@
     {
       "id": "tacwork-release",
       "section": "tacwork-download",
-      "pageTitle": "Download TACWork 0.2.4 | TAC AI",
+      "pageTitle": "Download TACWork 0.2.5 | TAC AI",
       "title": "TACWork release and download availability",
-      "text": "Product: TACWork. Version: 0.2.4 (Stable release). Platform: Windows x64. File: tacwork-win-x64-0.2.4.exe. Size: 179.3 MB (171 MiB). Availability: Available through the official TACWork download page; the server verifies the download Key there. Installer status: not code-signed; Windows may display an unknown publisher or SmartScreen warning.",
+      "text": "Product: TACWork. Version: 0.2.5 (Stable release). Platform: Windows x64. File: tacwork-win-x64-0.2.5.exe. Size: 208,096,958 bytes (198.4 MiB). Availability: Available through the official TACWork download page; the server verifies the download Key there. Installer status: not code-signed; Windows may display an unknown publisher or SmartScreen warning.",
       "keywords": [
         "TACWork",
         "download",

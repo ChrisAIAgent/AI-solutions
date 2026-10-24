@@ -10,18 +10,18 @@ const action = (label, href = '#contact') => ({ label, href });
 export const tacContent = {
   download: {
     product: 'TACWork',
-    version: '0.2.4',
+    version: '0.2.5',
     releaseType: 'Stable release',
     platform: 'Windows x64',
     available: true,
-    artifact: 'https://43.172.73.230/downloads/tacwork/0.2.4',
+    artifact: 'https://43.172.73.230/downloads/tacwork/latest',
     label: 'Download for Windows',
     navLabel: 'Explore TACWork',
-    fileName: 'tacwork-win-x64-0.2.4.exe',
-    fileSize: '179.3 MB (171 MiB)',
-    checksum: '',
-    accessNote: 'Enter your download Key on the official TACWork download page.',
-    securityNotice: 'This Windows installer is not code-signed. Windows may display an unknown publisher or SmartScreen warning. Review the prompt carefully and do not disable security protections.'
+    fileName: 'tacwork-win-x64-0.2.5.exe',
+    fileSize: '208,096,958 bytes (198.4 MiB)',
+    checksum: 'f63d4a406cf5b89d07da5b01bf3921d527fb9f2f65195d16f730da849061672f',
+    accessNote: 'Enter your download Key on the official TACWork download page. / 请在 TACWork 官方下载页输入下载 Key。',
+    securityNotice: 'Not code-signed; Windows may show a publisher or security prompt. / 暂未进行代码签名，Windows 可能显示发布者或安全提示。'
   },
   nav: [
     { label: 'Agent Platform', target: '#platform', items: [
